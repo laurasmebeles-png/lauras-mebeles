@@ -366,12 +366,12 @@ h3 { font-weight: 500; line-height: 1.25; }
 
 /* Pakalpojumu bloks: virtuvju kolāža + pārējo kategoriju saraksts */
 .services-layout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 72px); align-items: stretch; }
-.service-feature { display: flex; flex-direction: column; gap: 20px; }
+.service-feature { display: flex; flex-direction: column; gap: 32px; }
 .collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: clamp(340px, 34vw, 480px); }
 .collage img { width: 100%; height: 100%; border-radius: 8px; }
 .collage img:first-child { grid-row: span 2; }
 .service-feature-copy h3 { display: flex; align-items: center; gap: 12px; font-size: 28px; }
-.service-feature-copy p { margin-top: 6px; font-size: 15px; }
+.service-feature-copy p { margin-top: 10px; font-size: 15px; }
 .service-feature:hover h3, .service-rows a:hover h3 { color: var(--red); }
 .service-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; }
 .service-rows li { flex: 1; border-bottom: 1px solid var(--line); }
