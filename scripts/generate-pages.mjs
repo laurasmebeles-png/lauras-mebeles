@@ -24,7 +24,19 @@ const crumbs = label => `<p class="breadcrumbs"><a href="/">Sākums</a><span>/</
 const pageIntro = (label,title,text) => `<section class="section page-intro">${crumbs(label)}<p class="eyebrow">${esc(label)}</p><h1>${esc(title)}</h1><p>${esc(text)}</p></section>`;
 const card = p => `<article class="project" data-category="${p.categories.join(' ')}"><button class="project-open" data-project="${p.id}" aria-label="Atvērt projektu: ${esc(p.title)}"><img src="/images/${p.photos[0]}" alt="${esc(p.title)}" width="800" height="600" loading="lazy"><span class="project-zoom" aria-hidden="true">${arrow}</span>${p.photos.length>1?`<span class="photo-badge">${p.photos.length} foto</span>`:''}</button><div class="project-caption"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p></div></article>`;
 const grid = list => `<div class="projects-grid uniform-grid">${list.map(card).join('')}</div>`;
-const categoryCards = () => `<div class="service-grid">${categories.map((c,i)=>`<a class="service-card" href="/${c.path}/" data-event="category_select" data-category="${c.id}"><div class="image-wrap"><img src="/images/${c.image}" alt="${esc(c.label)}" width="800" height="600" loading="lazy"></div><div class="service-card-copy"><h3>${esc(c.label)} ${arrow}</h3><p>${esc(c.short)}</p></div></a>`).join('')}</div>`;
+// Pakalpojumu bloks: virtuves ir galvenais virziens (kolāža), pārējās kategorijas ir saraksts.
+// Kolāžas foto izvēlēti tā, lai tie nesakristu ar sākumlapas hero un "Realizētie projekti" foto.
+// Kad citai kategorijai būs 3+ foto, tai var pievienot kolāžu tāpat.
+const featuredCategory = 'virtuve';
+const featuredCollage = ['sala','gaisa','kompakta'];
+const categoryCards = () => {
+  const feat = categories.find(c=>c.id===featuredCategory);
+  const shots = featuredCollage.map(id=>projects.find(p=>p.id===id)).map(p=>({src:p.photos[0],alt:p.title}));
+  const rest = categories.filter(c=>c!==feat);
+  const collage = shots.map((s,i)=>`<img src="/images/${s.src}" alt="${esc(s.alt)}" width="800" height="${i===0?1000:600}" loading="lazy">`).join('');
+  const rows = rest.map(c=>`<li><a href="/${c.path}/" data-event="category_select" data-category="${c.id}"><div class="service-row-text"><h3>${esc(c.label)}</h3><p>${esc(c.short)}</p></div>${arrow}</a></li>`).join('');
+  return `<div class="services-layout"><a class="service-feature" href="/${feat.path}/" data-event="category_select" data-category="${feat.id}"><div class="collage">${collage}</div><div class="service-feature-copy"><h3>${esc(feat.label)} ${arrow}</h3><p>${esc(feat.short)}</p></div></a><ul class="service-rows">${rows}</ul></div>`;
+};
 const reviewCard = r => { const text = r.text.replace(/[\u2013\u2014]/g, '-'); const cut = text.indexOf('. ',160); const excerpt = cut>0?text.slice(0,cut+1):text; const rest=cut>0?text.slice(cut+2):''; return `<article class="review-card" data-review-source="${r.source}"><h3>${esc(r.author)}</h3><blockquote><p>${esc(excerpt)}</p>${rest?`<details><summary>Lasīt vairāk</summary><p>${esc(rest)}</p></details>`:''}</blockquote></article>`; };
 const reviewGrid = list => `<div class="review-grid">${list.map(reviewCard).join('')}</div>`;
 const homeServices = `<section id="mebeles" class="section"><div class="section-heading"><div><p class="eyebrow">01 / Pakalpojumi</p><h2>Ko mēs izgatavojam?</h2></div><p>No virtuves līdz garderobei. Mēbeles, kas iederas jūsu mājās.</p></div>${categoryCards()}</section>`;

@@ -13,3 +13,12 @@ Avots: Claude Design ieteikumi par "amatieriskuma" sajūtu. Skaitļi ieteikumā 
 | 7 | Ikonas | Gaida | Aizstāt ar faktiem, kas apstiprināti (piem., "kopš 2008. gada"). Nevar lietot izdomātus skaitļus ("100%"). |
 | 8 | Atstarpes un viena kreisā mala | Gaida | "Par mums" sekcijai kreisā mala ir 117px pret 72px citām. |
 | 9 | Tipogrāfijas sīkumi (text-wrap, vienāds max-width) | Gaida | |
+
+## Pakalpojumu bloks (02.11.2026)
+
+"Ko mēs izgatavojam" vairs nav seši vienādi kartiņu bloki ar lielām bildēm (tie dublēja "Realizētie projekti"). Tagad:
+- Virtuves (galvenais virziens) ir lielā kartiņa ar 3 foto kolāžu; foto izvēlēti tā, lai nesakristu ar sākumlapas hero un "Realizētie projekti" foto (`featuredCollage` scripts/generate-pages.mjs).
+- Pārējās piecas kategorijas ir teksta saraksts (nosaukums, viens teikums, bultiņa), bez bildēm.
+- Bloks aizņem ~565px (iepriekš ~950px+); mobilajā kolāža augšā, saraksts zem tās.
+- Noteikums: sākumlapā katrs foto parādās vienu reizi. Pašlaik pārējām kategorijām ir pa vienam foto, tāpēc tām kolāžas nav; kad būs 3+ foto, kolāžu var pievienot tāpat kā virtuvēm.
+- Izmaiņa attiecas arī uz /pakalpojumi/, jo abas lapas lieto vienu `categoryCards()`.
