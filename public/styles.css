@@ -517,3 +517,4 @@ h1 em,h2 em,.hero h1 em{font-style:normal;font-weight:500}
   #saturs .stats-band dt{font-size:30px}
 }
 #saturs .stats-band dt{font-size:clamp(28px,2.5vw,36px)}
+.stats-band dt .star{color:var(--red);font-family:"Segoe UI Symbol","Apple Symbols",sans-serif;font-size:.75em;margin-left:6px;vertical-align:.08em}
