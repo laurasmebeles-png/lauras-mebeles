@@ -43,3 +43,6 @@ Skaitļu josla un trīs ieguvumu rindiņa apvienotas vienā joslā ar ikonām (3
 
 ## Process
 Procesa sadaļa paplašināta uz 6 soļiem (konsultācija, uzmērīšana, 3D projekts, tāme un līgums, ražošana, montāža) pēc klienta piemēra un vecā vietnes teksta. Aprakstos nav termiņu vai garantiju.
+
+## Par mums labojumi
+Virsraksts, CTA un eksporta virsraksts nomainīti; ritināmā bilžu sadaļa aizstāta ar pamīšus teksta/attēla blokiem bez numerācijas; detaļu teksts vispārināts; partneriem ikonas, eksporta valstīm SVG karodziņi (public/flags, flag-icons, MIT).
