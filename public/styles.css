@@ -491,3 +491,29 @@ h1 em,h2 em,.hero h1 em{font-style:normal;font-weight:500}
 .steps p{font-size:16px;line-height:1.65;color:var(--ink-soft);max-width:34ch}
 #process.section{padding-bottom:clamp(72px,8vw,110px)}
 @media(max-width:900px){.steps{grid-template-columns:1fr;gap:36px}.steps article{padding-left:0}.steps p{max-width:none}}
+
+/* Vienota tipogrāfijas skala (galīgais pārraksts; #saturs nodrošina prioritāti) */
+#saturs .hero h1{font-size:clamp(36px,4vw,58px);line-height:1.08}
+#saturs h2{font-size:clamp(28px,2.9vw,42px);line-height:1.15}
+#saturs .page-intro h1,#saturs .service-hero h1,#saturs .price-intro h1{font-size:clamp(32px,3.3vw,46px);line-height:1.12}
+#saturs .project-cta h2{font-size:clamp(22px,2vw,28px)}
+#saturs .value h2,#saturs .price-factors h2{font-size:clamp(20px,1.7vw,24px);line-height:1.25}
+#saturs .eyebrow{font-size:12px}
+#saturs .stats-band dt{font-size:clamp(30px,2.9vw,42px)}
+#saturs .stat-icon{width:24px;height:24px;margin-bottom:14px}
+#saturs .stats-band dd strong{font-size:17px}
+#saturs .steps .step-number{font-size:clamp(30px,2.7vw,40px);margin-bottom:16px}
+#saturs .steps h3{font-size:clamp(20px,1.6vw,23px)}
+#saturs .steps article{padding-top:26px}
+#saturs .service-feature-copy h3{font-size:clamp(22px,2vw,26px)}
+#saturs .service-row-text h3{font-size:clamp(18px,1.5vw,21px)}
+#saturs .partner-list h3{font-size:clamp(17px,1.4vw,20px)}
+#saturs .export-row h3{font-size:clamp(20px,1.7vw,24px)}
+@media(max-width:760px){
+  #saturs .hero h1{font-size:36px}
+  #saturs h2{font-size:28px}
+  #saturs .page-intro h1,#saturs .service-hero h1,#saturs .price-intro h1{font-size:32px}
+  #saturs .steps .step-number{font-size:30px}
+  #saturs .stats-band dt{font-size:30px}
+}
+#saturs .stats-band dt{font-size:clamp(28px,2.5vw,36px)}
