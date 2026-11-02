@@ -469,3 +469,12 @@ h2 em{color:var(--red)}
 .export-row li+li::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--red);margin-right:28px;vertical-align:middle}
 .export-row li+li::before{display:none}
 .export-row ul{gap:10px 24px}
+
+/* Apvienota skaitļu un ieguvumu josla */
+.stats-band dl{padding:36px 0;column-gap:clamp(24px,3vw,56px)}
+.stats-band div{display:flex;flex-direction:column;align-items:flex-start}
+.stat-icon{color:var(--red);margin-bottom:18px}
+.stats-band dd{margin:10px 0 0;display:flex;flex-direction:column;gap:6px}
+.stats-band dd strong{font-size:clamp(16px,1.3vw,18px);font-weight:600;color:var(--ink)}
+.stats-band dd span{font-size:14px;line-height:1.6;color:var(--ink-soft);max-width:30ch}
+.stats-band + .section,.stats-band + section{margin-top:0}
