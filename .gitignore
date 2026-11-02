@@ -1,0 +1,24 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated output
+node_modules/
+.next/
+.astro/
+dist/
+out/
+coverage/
+*.tsbuildinfo
+
+# Hosting state and local files
+.vercel/
+.DS_Store
+*.log
+
+# Large original assets: retain separately and back up
+assets/originals/*
+!assets/originals/README.md

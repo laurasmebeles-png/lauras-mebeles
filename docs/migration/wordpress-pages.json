@@ -1,0 +1,497 @@
+[
+  {
+    "id": "11",
+    "title": "Sākums",
+    "url": "https://laurasmebeles.lv/sakums/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "111",
+    "title": "Vannas istabas mēbeles",
+    "url": "https://laurasmebeles.lv/vannasistabas-mebeles/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "113",
+    "title": "Skapji",
+    "url": "https://laurasmebeles.lv/skapji/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "115",
+    "title": "Sekcijas",
+    "url": "https://laurasmebeles.lv/sekcijas/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "117",
+    "title": "Koridora iekārtas",
+    "url": "https://laurasmebeles.lv/koridora-iekartas/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "119",
+    "title": "Citas mēbeles",
+    "url": "https://laurasmebeles.lv/citas-mebeles/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "121",
+    "title": "Pakalpojumi",
+    "url": "https://laurasmebeles.lv/pakalpojumi/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "123",
+    "title": "Partneri",
+    "url": "https://laurasmebeles.lv/partneri/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "125",
+    "title": "Kontakti",
+    "url": "https://laurasmebeles.lv/kontakti/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "149",
+    "title": "Sākums",
+    "url": "https://laurasmebeles.lv/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "267",
+    "title": "Veikals",
+    "url": "https://laurasmebeles.lv/veikals/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "534",
+    "title": "OTHER FURNITURE",
+    "url": "https://laurasmebeles.lv/en/other-furniture/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "538",
+    "title": "Contacts",
+    "url": "https://laurasmebeles.lv/en/contacts/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "541",
+    "title": "Hallway furniture",
+    "url": "https://laurasmebeles.lv/en/corridors/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "550",
+    "title": "Partners",
+    "url": "https://laurasmebeles.lv/en/partners/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "555",
+    "title": "Home",
+    "url": "https://laurasmebeles.lv/en/home/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "560",
+    "title": "Wardrobes",
+    "url": "https://laurasmebeles.lv/en/cabinets/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "564",
+    "title": "TV cupboards",
+    "url": "https://laurasmebeles.lv/en/tv-cupboards/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "568",
+    "title": "Bathroom furniture",
+    "url": "https://laurasmebeles.lv/en/bathroom-furniture/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "572",
+    "title": "Kitchens",
+    "url": "https://laurasmebeles.lv/en/kitchens/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "598",
+    "title": "Furniture",
+    "url": "https://laurasmebeles.lv/en/furniture/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "en",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "612",
+    "title": "Hачало",
+    "url": "https://laurasmebeles.lv/ru/h%d0%b0%d1%87%d0%b0%d0%bb%d0%be/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "616",
+    "title": "Kухни",
+    "url": "https://laurasmebeles.lv/ru/k%d1%83%d1%85%d0%bd%d1%8f/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "673",
+    "title": "Мебель для ванных",
+    "url": "https://laurasmebeles.lv/ru/%d0%b2%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b5%d0%b1%d0%b5%d0%bb%d1%8c/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "678",
+    "title": "Шкафы",
+    "url": "https://laurasmebeles.lv/ru/%d1%88%d0%ba%d0%b0%d1%84%d1%8b/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "682",
+    "title": "Секции",
+    "url": "https://laurasmebeles.lv/ru/%d1%81%d0%b5%d0%ba%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b9/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "686",
+    "title": "Прихожие",
+    "url": "https://laurasmebeles.lv/ru/%d0%ba%d0%be%d1%80%d0%b8%d0%b4%d0%be%d1%80%d0%bd%d0%be%d0%b5-%d0%be%d0%b1%d0%be%d1%80%d1%83%d0%b4%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "690",
+    "title": "Офисная и  другая мебель",
+    "url": "https://laurasmebeles.lv/ru/%d0%be%d1%84%d0%b8%d1%81%d0%bd%d0%b0%d1%8f-%d0%b8-%d0%bc%d0%b5%d0%b1%d0%b5%d0%bb%d1%8c/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "695",
+    "title": "Партнёры",
+    "url": "https://laurasmebeles.lv/ru/%d0%bf%d0%b0%d1%80%d1%82%d0%bd%d1%91%d1%80%d1%8b/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "698",
+    "title": "Контакты",
+    "url": "https://laurasmebeles.lv/ru/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "710",
+    "title": "Мебель",
+    "url": "https://laurasmebeles.lv/ru/%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "ru",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "719",
+    "title": "Virtuves iekārta-stils un dizains",
+    "url": "https://laurasmebeles.lv/virtuves-iekarta-stils-un-dizains/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "726",
+    "title": "Virtuves iekārtas – apdare un pēdējie pieskārieni",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-apdare-un-pedejie-pieskarieni/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "730",
+    "title": "Virtuves iekārtas-komplektācija,furnitūra un tehniskie risinājumi",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "733",
+    "title": "Virtuves mēbeles",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "736",
+    "title": "Virtuves iekārta-iebūvēta, vai brīvi stāvoša",
+    "url": "https://laurasmebeles.lv/virtuves-iekarta-iebuveta-vai-brivi-stavosa/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "739",
+    "title": "Virtuves mēbeles-moderni risinājumi",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-moderni-risinajumi/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "742",
+    "title": "Publikācijas – Virtuves mēbeles",
+    "url": "https://laurasmebeles.lv/publikacijas-virtuves-mebeles/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "770",
+    "title": "Privātuma politika",
+    "url": "https://laurasmebeles.lv/privatuma-politika/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1188",
+    "title": "Virtuves mēbeles - veikals",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-veikals/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1247",
+    "title": "Virtuves iekārtas komplekts mini",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-mini/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1251",
+    "title": "Virtuves Iekārtas komplekts No1",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-no1/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1254",
+    "title": "Virtuves Iekārtas komplekts No2",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-no2/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1258",
+    "title": "Virtuves Iekārtas komplekts No3",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-no3/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1262",
+    "title": "Virtuves Iekārtas Komplekts Standarts Mini",
+    "url": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-standarts-mini/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1266",
+    "title": "Virtuves mēbeles – Galds un Krēsli",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-galds-un-kresli/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1271",
+    "title": "Virtuves mēbeles – Iebūvētais Modulis",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-iebuvetais-modulis/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1275",
+    "title": "Virtuves mēbeles – Komplekts Premium",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-komplekts-premium/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1279",
+    "title": "Virtuves mēbeles – Komplekts Standarts",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-komplekts-standarts/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1283",
+    "title": "Virtuves mēbeles – Komplekts Standarts Maxi",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-komplekts-standarts-maxi/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1287",
+    "title": "Virtuves mēbeles – Standarta komplekts",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-standarta-komplekts/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1736",
+    "title": "ATSAUKSMES",
+    "url": "https://laurasmebeles.lv/atsauksmes/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "1740",
+    "title": "Atsauksmes",
+    "url": "https://laurasmebeles.lv/virtuves-mebeles-atsauksmes-virtuves-iekartas/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "2641",
+    "title": "virtuves",
+    "url": "https://laurasmebeles.lv/virtuves/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  },
+  {
+    "id": "2647",
+    "title": "test",
+    "url": "https://laurasmebeles.lv/test/",
+    "status": "publish",
+    "parent_id": "0",
+    "language_by_url": "lv",
+    "migration_decision": "review_pending"
+  }
+]

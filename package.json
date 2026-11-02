@@ -1,0 +1,16 @@
+{
+  "name": "lauras-mebeles",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lauras mēbeles — lokāls sākumlapas prototips",
+  "scripts": {
+    "dev": "node scripts/generate-pages.mjs && node scripts/dev.mjs",
+    "build": "node scripts/generate-pages.mjs && node scripts/build.mjs",
+    "check": "node --check public/app.js && node --check scripts/dev.mjs && node --check scripts/build.mjs && node --check scripts/generate-pages.mjs && node --check src/catalog.mjs",
+    "generate": "node scripts/generate-pages.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
