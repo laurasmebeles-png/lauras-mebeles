@@ -39,4 +39,4 @@ Visām apakšlapām (page-intro, kategoriju hero, cenas) vienots h1 izmērs clam
 Palete nomainīta uz siltu (krēms #f6f2ec, smilšu #efe8de, brūngans tumšais #231f1b, bronzas akcents #9a6a38 vietā sarkanajam). Virsraksti: Lora (lokāli public/fonts). Pogu formas nemainītas (pill noraidītas). Pievienota skaitļu josla sākumlapā un sadarbības partneri + eksporta valstis lapā Par mums (dati no esošās laurasmebeles.lv; "30+" jāapstiprina pret "kopš 2008").
 
 ## Apvienota josla
-Skaitļu josla un trīs ieguvumu rindiņa apvienotas vienā joslā ar ikonām (30+, 11 200+, 4 200+, 98%). Ceturtā kolonna: "98% iesaka mūs Facebook" un "5 zvaigžņu vērtējums Google" - skaitļi no Laila, JĀPĀRBAUDA pret īstajiem Google/Facebook rādītājiem pirms publicēšanas.
+Skaitļu josla un trīs ieguvumu rindiņa apvienotas vienā joslā ar ikonām (30+, 11 200+, 4 200+, 5 ★ Google). Ceturtā kolonna: "5 ★ Vērtējums Google" - vērtējums no Laila, JĀPĀRBAUDA pret īstajiem Google/Facebook rādītājiem pirms publicēšanas.
