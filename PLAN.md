@@ -21,7 +21,9 @@ Atjaunots 02.11.2026. Šis fails ir darba saraksts nākamajām sesijām. Katru p
 
 ## Darbu secība
 
-### 1. Repozitorijs un Vercel priekšskatījums
+### 1. Repozitorijs un Vercel priekšskatījums (IZPILDĪTS 02.11.2026)
+
+Pārbaudīts: 13 lapas atbild 200 ar `X-Robots-Tag: noindex, nofollow`, visi attēli ielādējas. Atlikušais pie šī punkta: pamata title/description/OG tagi katrai lapai un Vercel Pro pirms publiskas palaišanas.
 
 Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 
