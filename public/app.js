@@ -174,3 +174,17 @@ if (valueItems.length && 'IntersectionObserver' in window) {
   const valueObserver = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) setActiveValue(e.target.dataset.value); }), { rootMargin: '-45% 0px -45% 0px' });
   valueItems.forEach(v => valueObserver.observe(v));
 }
+
+(() => {
+  const hero = document.querySelector('[data-hero]'); if (!hero) return;
+  const slides = [...hero.querySelectorAll('.nk-hero-slides img')]; const btn = hero.querySelector('[data-hero-pause]');
+  if (slides.length < 2) { btn?.remove(); return; }
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0, timer = null;
+  const show = n => { slides[i].classList.remove('is-active'); i = n; slides[i].classList.add('is-active'); };
+  const start = () => { timer = setInterval(() => show((i + 1) % slides.length), 6500); btn.textContent = 'Pauze'; btn.setAttribute('aria-label', 'Apturēt bilžu maiņu'); };
+  const stop = () => { clearInterval(timer); timer = null; btn.textContent = 'Atskaņot'; btn.setAttribute('aria-label', 'Turpināt bilžu maiņu'); };
+  slides.forEach(s => s.loading = 'eager');
+  btn.addEventListener('click', () => timer ? stop() : start());
+  reduce ? stop() : start();
+})();

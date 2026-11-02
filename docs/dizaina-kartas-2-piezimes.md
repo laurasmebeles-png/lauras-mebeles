@@ -51,3 +51,10 @@ Virsraksts, CTA un eksporta virsraksts nomainīti; ritināmā bilžu sadaļa aiz
 - Sākumlapa: hero, skaitļu josla, kategorijas, darbi, īss cenu bloks (saite uz /cenas/), īss process (6 soļi, saite uz Par mums), atsauksmes, kontakti.
 - Noņemts: kalkulators no sākumlapas (paliek /cenas/), dublētais `project-cta`, BUJ (pārcelts uz /cenas/).
 - Nākamais: kategorijām katrai sava bilde, vienota "Mūsu darbi" galerija ar filtriem, cenu piemēri, bilžu atlase pēc gaismas/toņiem.
+
+## Nordiska Kök virziens, sākumlapa (2026-11-02)
+- Fonti: Karla (teksts, izvēlne lielie burti ar atstarpēm) + EB Garamond (virsraksti), pašu hostēti. Lora vairs netiek lietota.
+- Hero: 2 kadri (57., 64. bilde) ar lēnu pāreju, pauzes poga, `prefers-reduced-motion` neatskaņo; viena balta taisnstūra poga "Apskatīt virtuves".
+- Flīzes: Virtuves / Vannas istabas / Viesistabas (209., 117., 192. bilde) + saites uz pārējām kategorijām; otrā rinda: Process / Cenas / Kontakti.
+- Sākumlapā noņemta kontaktu forma (ir /kontakti/).
+- JĀPĀRBAUDA: 117. bilde nāk no stylefoto.lv (autortiesības); hero 57./64. autors.
