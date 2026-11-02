@@ -350,3 +350,16 @@ h3 { font-weight: 500; line-height: 1.25; }
 @media (max-width: 760px) {
   .proof-strip p { column-gap: 12px; }
 }
+
+/* Dizaina kārta 2 (02.11.2026), 1.-3. punkts: lasāmība un sekciju galvenes */
+:root { --muted: #5a5650; --ink-soft: #4a4741; }
+.hero-intro { line-height: 1.6; }
+.steps p { font-size: 15px; line-height: 1.6; }
+.project-caption p { line-height: 1.6; }
+.review-card blockquote { line-height: 1.65; }
+.faq-list p { line-height: 1.65; }
+.section-heading > p, .section-heading > div + div { font-size: clamp(16px, 1.25vw, 18px); line-height: 1.55; color: var(--ink-soft); }
+@media (min-width: 761px) {
+  .section-heading { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(40px, 6vw, 96px); align-items: end; }
+  .section-heading > p, .section-heading > div + div, .section-heading > a { max-width: 480px; justify-self: start; }
+}
