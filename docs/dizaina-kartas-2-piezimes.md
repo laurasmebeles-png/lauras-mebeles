@@ -31,3 +31,6 @@ Avots: Claude Design ieteikumi par "amatieriskuma" sajūtu. Skaitļi ieteikumā 
 
 ## Cenu lapas ievads
 Virsraksts + liels teksts nomainīts ar sarakstu "Kas veido mēbeļu cenu?" (izmēri, materiāli, aprīkojums, piegāde un montāža) un CTA joslu; zem tā paliek kalkulators. Teksts balstīts tikai uz esošajiem faktiem no vietnes.
+
+## Vienoti apakšlapu ievadi
+Visām apakšlapām (page-intro, kategoriju hero, cenas) vienots h1 izmērs clamp(34-54px), ievada teksts 16-18px ar tumšāku krāsu, vienādas atstarpes (48px augšā, 56px apakšā; mobilajā 32/40).
