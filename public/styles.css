@@ -623,3 +623,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-tile:after{background:linear-gradient(180deg,rgba(20,18,16,0) 40%,rgba(20,18,16,.68))}
 .nk-reviews-head{text-align:center}
 @media(max-width:760px){.nk-cat-hero{min-height:56svh}}
+
+.nk-cat-hero{min-height:min(58svh,560px)}
+.nk-cat-hero>img{object-position:center 40%}
+@media(max-width:760px){.nk-cat-hero{min-height:52svh}}
