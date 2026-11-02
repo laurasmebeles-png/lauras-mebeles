@@ -596,3 +596,15 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-more{margin:36px 0 0;justify-content:center}
 .nk-button-outline{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:18px 38px}
 .nk-button-outline:hover{background:var(--ink);color:#fff}
+
+.nk-feature{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(32px,5vw,80px);align-items:center;padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)}
+.nk-feature-media{position:relative;padding-bottom:12%}
+.nk-feature-main{display:block;width:100%;height:auto;border-radius:2px}
+.nk-feature-side{position:absolute;right:-6%;bottom:0;width:46%;height:auto;border:8px solid var(--paper);border-radius:2px}
+.nk-feature-text h2{font-size:clamp(30px,3.2vw,44px);margin:0 0 20px}
+.nk-feature-text p{max-width:46ch;line-height:1.7;color:var(--ink-soft)}
+.nk-eyebrow-dark{color:var(--red)!important}
+.nk-feature-links{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px!important}
+.nk-link{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px}
+.nk-link:hover{color:var(--red);border-color:var(--red)}
+@media(max-width:900px){.nk-feature{grid-template-columns:1fr}.nk-feature-side{right:0;width:44%}}
