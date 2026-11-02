@@ -478,3 +478,6 @@ h2 em{color:var(--red)}
 .stats-band dd strong{font-size:clamp(16px,1.3vw,18px);font-weight:600;color:var(--ink)}
 .stats-band dd span{font-size:14px;line-height:1.6;color:var(--ink-soft);max-width:30ch}
 .stats-band + .section,.stats-band + section{margin-top:0}
+
+/* Akcenta rindas virsrakstos: taisns raksts (slīpraksts ar garumzīmēm izskatījās neglīti) */
+h1 em,h2 em,.hero h1 em{font-style:normal;font-weight:500}
