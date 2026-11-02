@@ -40,3 +40,6 @@ Palete nomainīta uz siltu (krēms #f6f2ec, smilšu #efe8de, brūngans tumšais 
 
 ## Apvienota josla
 Skaitļu josla un trīs ieguvumu rindiņa apvienotas vienā joslā ar ikonām (30+, 11 200+, 4 200+, 5 ★ Google). Ceturtā kolonna: "5 ★ Vērtējums Google" - vērtējums no Laila, JĀPĀRBAUDA pret īstajiem Google/Facebook rādītājiem pirms publicēšanas.
+
+## Process
+Procesa sadaļa paplašināta uz 6 soļiem (konsultācija, uzmērīšana, 3D projekts, tāme un līgums, ražošana, montāža) pēc klienta piemēra un vecā vietnes teksta. Aprakstos nav termiņu vai garantiju.
