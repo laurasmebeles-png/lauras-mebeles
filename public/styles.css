@@ -587,8 +587,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.05) 45%,rgba(20,18,16,.55))}
 .nk-tile-label{position:absolute;z-index:2;left:0;right:0;bottom:30px;text-align:center;color:#fff;text-transform:uppercase;letter-spacing:.2em;font-size:14px;font-weight:500;padding:0 12px}
 .nk-more{display:flex;justify-content:center;gap:12px 36px;flex-wrap:wrap;margin:30px 0 0}
-.nk-more a{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}
-.nk-more a:hover{border-color:var(--red)}
+
+
 @media(max-width:760px){.nk-tiles-3{grid-template-columns:1fr}.nk-tile{aspect-ratio:4/3}.nk-hero{min-height:78svh}.nk-button{padding:18px 28px}}
 @media(prefers-reduced-motion:reduce){.nk-hero-slides img{transition:none}.nk-tile img{transition:none}}
 .nk-hero .nk-eyebrow{color:#fff!important;opacity:.9}
+
+.nk-more{margin:36px 0 0;justify-content:center}
+.nk-button-outline{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:18px 38px}
+.nk-button-outline:hover{background:var(--ink);color:#fff}
