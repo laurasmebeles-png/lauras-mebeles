@@ -539,3 +539,12 @@ h1 em,h2 em,.hero h1 em{font-style:normal;font-weight:500}
 .export-row li{display:inline-flex;align-items:center;gap:9px}
 .export-row li img{width:20px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);object-fit:cover}
 .about-row-media img,.about-figure{height:auto}
+
+/* Sākumlapas vienkāršošana */
+.home-price-box{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
+.home-price-box h2{margin:0 0 12px}.home-price-box p{max-width:56ch}
+.home-price-actions{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.process-short{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);counter-reset:s}
+.process-short li{counter-increment:s;padding:20px 12px 0 0;font-family:var(--serif);font-size:1.05rem}
+.process-short li::before{content:counter(s);display:block;color:var(--red);font-size:.85rem;margin-bottom:6px}
+@media(max-width:900px){.home-price-box{grid-template-columns:1fr;gap:20px}.process-short{grid-template-columns:repeat(2,1fr)}}

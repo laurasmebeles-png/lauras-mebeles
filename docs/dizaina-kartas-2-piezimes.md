@@ -46,3 +46,8 @@ Procesa sadaļa paplašināta uz 6 soļiem (konsultācija, uzmērīšana, 3D pro
 
 ## Par mums labojumi
 Virsraksts, CTA un eksporta virsraksts nomainīti; ritināmā bilžu sadaļa aizstāta ar pamīšus teksta/attēla blokiem bez numerācijas; detaļu teksts vispārināts; partneriem ikonas, eksporta valstīm SVG karodziņi (public/flags, flag-icons, MIT).
+
+## Sākumlapas vienkāršošana (2026-11-02)
+- Sākumlapa: hero, skaitļu josla, kategorijas, darbi, īss cenu bloks (saite uz /cenas/), īss process (6 soļi, saite uz Par mums), atsauksmes, kontakti.
+- Noņemts: kalkulators no sākumlapas (paliek /cenas/), dublētais `project-cta`, BUJ (pārcelts uz /cenas/).
+- Nākamais: kategorijām katrai sava bilde, vienota "Mūsu darbi" galerija ar filtriem, cenu piemēri, bilžu atlase pēc gaismas/toņiem.
