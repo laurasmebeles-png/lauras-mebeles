@@ -22,3 +22,7 @@ coverage/
 # Large original assets: retain separately and back up
 assets/originals/*
 !assets/originals/README.md
+
+# Foto atlase (lokāli, lieli faili)
+source-photos/
+triage/
