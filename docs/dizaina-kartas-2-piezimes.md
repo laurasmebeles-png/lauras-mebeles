@@ -28,3 +28,6 @@ Avots: Claude Design ieteikumi par "amatieriskuma" sajūtu. Skaitļi ieteikumā 
 - Sākumlapā izņemta sadaļa "05 / Lauras mēbeles, Risinājumi, kas pielāgojas telpai". Tā bija pirmais bloks no lapas "Par mums", kas bija nokopēts atsevišķi un bez pārējiem vērtību punktiem; tā dublēja augšējo joslu un galerijas projektu. "kopš 2008. gada" sākumlapā tagad parādās divreiz (hero un josla).
 - /par-mums/ pārbūvēta: 4 numurēti vērtību punkti (pielāgoti risinājumi, kvalitāte un materiāli, uzmanība detaļām, pieredze un darbnīca). Platā ekrānā labajā pusē viena sticky bilde, kas mainās ritinot (IntersectionObserver, `public/app.js`; reduced-motion respektēts). Mobilajā katram punktam sava 260px bilde. Pieredzes punktam bildes nav, tur liels gads "2008".
 - Trūkst: komandas un darbnīcas foto. Kad tie būs, pieredzes punktam var pievienot bildi (`values` masīvs scripts/generate-pages.mjs).
+
+## Cenu lapas ievads
+Virsraksts + liels teksts nomainīts ar sarakstu "Kas veido mēbeļu cenu?" (izmēri, materiāli, aprīkojums, piegāde un montāža) un CTA joslu; zem tā paliek kalkulators. Teksts balstīts tikai uz esošajiem faktiem no vietnes.
