@@ -53,6 +53,8 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 
 ### 4. Attēli un fotogalerija (pēc klienta foto saņemšanas)
 
+- Signes Google Drive ir liels foto arhīvs no vecās WordPress vietnes. Pirms klienta jaunajiem foto: pārskatīt, atlasīt kvalitatīvos (vecos un nekvalitatīvos neņemt), izņemt dublikātus un sagrupēt pa kategorijām. Mērķis: katrai kategorijai vismaz 3 labi foto (tad virtuvju kolāžas principu var attiecināt uz citām kategorijām) un katrs foto sākumlapā tikai vienu reizi.
+
 - Attēlu konveijers: oriģināli assets/originals/, skripts, kas ģenerē WebP 800/1600 uz public/images/ (sharp var instalēt kā devDependency, vai Node 20 + squoosh). Lazy loading, width/height atribūti, alt teksti no src/catalog.mjs.
 - /musu-darbi/ galerija ar kategoriju filtriem jau ir; papildināt ar lightbox šķirstīšanu un "ielādēt vēl" lielam attēlu skaitam.
 - Pakalpojumu lapās 5 līdz 6 projekti katrai kategorijai; saite uz galeriju ar attiecīgo filtru.

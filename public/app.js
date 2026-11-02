@@ -162,3 +162,15 @@ const heroPhoto = $('.hero-image > img');
 function revealHero() { heroPhoto.classList.add('is-ready'); }
 if (heroPhoto?.complete && heroPhoto.naturalWidth) revealHero();
 else heroPhoto?.addEventListener('load', revealHero, { once: true });
+
+// "Par mums": aktīvais vērtību punkts maina bildi (redzams platā ekrānā; mobilajā katram punktam sava bilde).
+const valueItems = $$('.value');
+if (valueItems.length && 'IntersectionObserver' in window) {
+  const frames = $$('.values-frame [data-value]');
+  const setActiveValue = n => {
+    valueItems.forEach(v => v.classList.toggle('active', v.dataset.value === n));
+    frames.forEach(f => f.classList.toggle('active', f.dataset.value === n));
+  };
+  const valueObserver = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) setActiveValue(e.target.dataset.value); }), { rootMargin: '-45% 0px -45% 0px' });
+  valueItems.forEach(v => valueObserver.observe(v));
+}

@@ -383,3 +383,29 @@ h3 { font-weight: 500; line-height: 1.25; }
   .collage { height: 300px; }
   .service-rows a { padding: 18px 0; }
 }
+
+/* "Par mums": vērtību punkti ar mainīgu bildi */
+.values-layout { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.values-visual { order: 2; position: sticky; top: 130px; height: min(560px, calc(100vh - 170px)); }
+.values-list { order: 1; list-style: none; margin: 0; padding: 0; }
+.values-frame { position: relative; width: 100%; height: 100%; border-radius: 8px; overflow: hidden; background: var(--surface); }
+.values-frame > * { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .5s ease; }
+.values-frame > .active { opacity: 1; }
+.values-figure { display: grid; place-items: center; }
+.values-figure span { font-size: clamp(88px, 12vw, 190px); line-height: 1; letter-spacing: -.05em; font-weight: 500; color: var(--red); }
+.value { min-height: 58vh; display: flex; flex-direction: column; justify-content: center; padding: 6vh 0 6vh 28px; border-top: 1px solid var(--line); position: relative; }
+.value:last-child { border-bottom: 1px solid var(--line); }
+.value:before { content: ""; position: absolute; left: 0; top: 6vh; bottom: 6vh; width: 2px; background: var(--line); transition: background .3s; }
+.value.active:before { background: var(--red); }
+.value-num { font-size: 13px; color: var(--red); }
+.value h2 { font-size: clamp(30px, 3vw, 42px); margin: 16px 0 14px; }
+.value p { font-size: clamp(16px, 1.25vw, 18px); line-height: 1.55; color: var(--ink-soft); max-width: 46ch; }
+.value-photo { display: none; }
+@media (max-width: 900px) {
+  .values-layout { grid-template-columns: 1fr; }
+  .values-visual { display: none; }
+  .value { min-height: 0; padding: 36px 0; }
+  .value:before { display: none; }
+  .value-photo { display: block; width: 100%; height: 260px; margin-top: 24px; border-radius: 8px; object-fit: cover; }
+}
+@media (prefers-reduced-motion: reduce) { .values-frame > * { transition: none; } }
