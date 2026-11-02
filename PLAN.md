@@ -23,7 +23,7 @@ Atjaunots 02.11.2026. Šis fails ir darba saraksts nākamajām sesijām. Katru p
 
 ### 1. Repozitorijs un Vercel priekšskatījums (IZPILDĪTS 02.11.2026)
 
-Pārbaudīts: 13 lapas atbild 200 ar `X-Robots-Tag: noindex, nofollow`, visi attēli ielādējas. Atlikušais pie šī punkta: pamata title/description/OG tagi katrai lapai un Vercel Pro pirms publiskas palaišanas.
+Pārbaudīts: 13 lapas atbild 200 ar `X-Robots-Tag: noindex, nofollow`, visi attēli ielādējas. Pamata title, description, canonical un OG tagi katrai lapai pievienoti (ģenerators scripts/generate-pages.mjs, OG attēls public/images/og-default.jpg). Atlikušais: Vercel Pro pirms publiskas palaišanas.
 
 Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 
@@ -79,7 +79,7 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 
 ### 8. Palaišana un nodošana
 
-- Pirms palaišanas: izņemt noindex, robots atļauj, sitemap pieejams, redirects vercel.json, forma pārbaudīta uz info@laurasmebeles.lv, GA4 strādā, privātuma politika publicēta.
+- Pirms palaišanas: Vercel vides mainīgais `SITE_URL=https://laurasmebeles.lv` (tad canonical un OG adreses ģenerējas uz īsto domēnu; līdz tam tās rāda Vercel adresi). Izņemt noindex, robots atļauj, sitemap pieejams, redirects vercel.json, forma pārbaudīta uz info@laurasmebeles.lv, GA4 strādā, privātuma politika publicēta.
 - Domēns laurasmebeles.lv Vercel projektā; DNS pārslēgt A/CNAME, nemainot MX/SPF/DKIM e-pastam. Pārbaudīt e-pasta piegādi pēc pārslēgšanas.
 - GSC: jaunā versija tajā pašā īpašumā, iesniegt sitemap, pēc nedēļas pārbaudīt Coverage un 404.
 - Nodošana: GitHub repo, Vercel projekts, Resend, Turnstile konti uz klienta vārda vai ar klientu kā īpašnieku. Pieejas dokumentēt atsevišķi, ne git.

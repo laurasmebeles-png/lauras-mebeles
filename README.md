@@ -68,3 +68,5 @@ Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109
 ## Priekšskatījums (Vercel)
 
 Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, visām atbildēm `X-Robots-Tag: noindex, nofollow`. Pirms īstās palaišanas šo galveni un `robots.txt` aizliegumu izņem (PLAN.md, 8. punkts). Priekšskatījuma saite: https://lauras-mebeles.vercel.app/ (Vercel Hobby, GitHub repo laurasmebeles-png/lauras-mebeles; katrs `git push` uz `main` to atjaunina).
+
+Canonical un OG adreses ģenerē `scripts/generate-pages.mjs` no vides mainīgā `SITE_URL`; ja tā nav, izmanto Vercel produkcijas adresi, lokāli `http://127.0.0.1:4173`. Katras lapas title un description ir `save(...)` izsaukumos tajā pašā failā.
