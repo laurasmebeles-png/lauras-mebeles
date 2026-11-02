@@ -64,3 +64,7 @@ Sākumlapas pamats ir `src/home.html`, pakalpojumi un projekti — `src/catalog.
 Oriģinālie attēli un īstās piekļuves atslēgas Git repozitorijā netiek iekļautas. Attēlu oriģināliem vajadzīga atsevišķa rezerves kopija; publicēšanai sagatavotās versijas glabājam `public/images/`.
 
 Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109a5abfa2558b5b02a).
+
+## Priekšskatījums (Vercel)
+
+Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, visām atbildēm `X-Robots-Tag: noindex, nofollow`. Pirms īstās palaišanas šo galveni un `robots.txt` aizliegumu izņem (PLAN.md, 8. punkts). Priekšskatījuma saite: vēl nav izveidota.
