@@ -27,3 +27,7 @@ Pārbaudīts: 13 lapas, 1440 px un 390 px platumā (uzbūvēta versija ar komitu
 
 ## Nav pārbaudīts
 Safari/iPhone, tastatūras fokuss, formāls kontrasta mērījums, ielādes ātrums.
+
+## Labots (2026-11-02, pēc audita)
+Kategoriju lapas ar lielu hero bildi; vienota kvadrātveida pogu valoda un noapaļojumi 2 px; izvēlne lielie burti; kājene sakopta (5 saites, bez uzmetuma tekstiem); cenu numerācija noņemta; dublētās CTA joslas noņemtas no kategoriju lapām; atstarpe projekta sadaļā; stiprāks flīžu ēnojums.
+Palicis: atsauksmju virsraksta līdzināšana, tukšums zem atsauksmēm, flīžu bildes Cenas/Kontakti, "Kopš 2008" vs "30+ gadu", uzmetuma teksti formās.

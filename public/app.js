@@ -16,8 +16,8 @@ function track(event, parameters = {}) {
   if (window.dataLayer.length > 100) window.dataLayer.shift();
   const item = document.createElement('li');
   item.textContent = `${event} ${JSON.stringify(Object.fromEntries(Object.entries(record).filter(([key]) => key !== 'event')))}`;
-  $('#event-log')?.prepend(item);
-  if ($('#event-log').children.length > 30) $('#event-log').lastElementChild.remove();
+  const log = $('#event-log');
+  if (log) { log.prepend(item); if (log.children.length > 30) log.lastElementChild.remove(); }
 }
 
 const menuButton = $('.menu-toggle');
