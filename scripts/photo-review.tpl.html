@@ -1,0 +1,49 @@
+<!doctype html><html lang="lv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Foto atlase</title>
+<style>
+:root{--bg:#f6f2ec;--ink:#231f1b;--line:#ded4c6;--red:#8f3b2e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Avenir Next",sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+header h1{font-size:18px;margin:0 12px 0 0}
+button,select{font:inherit;padding:6px 12px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer}
+button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+label{display:flex;gap:6px;align-items:center}
+#stats{margin-left:auto;font-weight:600}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:20px}
+.card{background:#fff;border:2px solid transparent;border-radius:10px;overflow:hidden;position:relative}
+.card.yes{border-color:#3d7a4a}.card.no{opacity:.35}
+.card img{width:100%;height:200px;object-fit:cover;display:block;cursor:zoom-in}
+.meta{padding:8px 10px;font-size:12px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.tag{background:#efe8de;border-radius:6px;padding:1px 7px}.warn{background:#f3d9d3;color:var(--red)}
+.act{display:flex;gap:6px;padding:0 10px 10px}.act button{flex:1;padding:6px}
+.act .y.sel{background:#3d7a4a;color:#fff;border-color:#3d7a4a}.act .n.sel{background:var(--red);color:#fff;border-color:var(--red)}
+.num{position:absolute;top:6px;left:6px;background:#000a;color:#ff0;font-weight:700;padding:1px 7px;border-radius:6px;font-size:12px}
+#lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:20;cursor:zoom-out}#lb img{max-width:96vw;max-height:96vh}
+</style></head><body>
+<header><h1>Foto atlase</h1>
+<label>Veids <select id="fType"><option value="">Visi</option></select></label>
+<label>Rādīt <select id="fShow"><option value="cand">Kandidāti (bez cilvēkiem, gatavas telpas)</option><option value="all">Visi</option><option value="rej">Tikai automātiski noraidītie</option><option value="yes">Tikai manas "jā"</option><option value="undec">Vēl nelemtie</option></select></label>
+<label><input type="checkbox" id="fNoWm"> Slēpt ar ūdenszīmi</label>
+<label>Min. kvalitāte <select id="fQ"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label>
+<button id="exp">Eksportēt manu izvēli</button><span id="stats"></span></header>
+<main id="grid"></main><div id="lb"><img alt=""></div>
+<script>
+const DATA=__DATA__;const KEY='lm-photo-decisions';let dec={};try{dec=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const TN={virtuve:'Virtuve',skapis:'Skapis',prieksnams:'Priekšnams',vannasistaba:'Vannasistaba',viesistaba:'Viesistaba',cita:'Cita',darbnica:'Darbnīca',nav:'Nav mēbele'};
+const $=s=>document.querySelector(s);const fT=$('#fType');
+[...new Set(DATA.map(d=>d.t))].forEach(t=>fT.insertAdjacentHTML('beforeend',`<option value="${t}">${TN[t]||t}</option>`));
+function save(){try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}}
+function vis(d){const s=$('#fShow').value,rej=d.p||!d.ok||d.t==='nav';
+ if(fT.value&&d.t!==fT.value)return false;if(d.q<+$('#fQ').value)return false;if($('#fNoWm').checked&&d.w)return false;
+ if(s==='cand')return !rej;if(s==='rej')return rej;if(s==='yes')return dec[d.n]==='y';if(s==='undec')return !rej&&!dec[d.n];return true}
+function render(){const g=$('#grid');g.innerHTML='';let c=0;
+ DATA.filter(vis).forEach(d=>{c++;const el=document.createElement('div');el.className='card '+(dec[d.n]==='y'?'yes':dec[d.n]==='n'?'no':'');
+  el.innerHTML=`<span class="num">${d.n}</span><img loading="lazy" src="thumbs/${String(d.n).padStart(3,'0')}.jpg" alt=""><div class="meta"><span class="tag">${TN[d.t]||d.t}</span><span class="tag">kval. ${d.q}</span>${d.w?'<span class="tag warn">ūdenszīme</span>':''}${d.p?'<span class="tag warn">cilvēki</span>':''}${!d.ok?'<span class="tag warn">nav gatava telpa</span>':''}</div><div class="act"><button class="y ${dec[d.n]==='y'?'sel':''}">Jā</button><button class="n ${dec[d.n]==='n'?'sel':''}">Nē</button></div>`;
+  el.querySelector('img').onclick=()=>{$('#lb img').src='../source-photos/'+encodeURIComponent(d.file);$('#lb').style.display='flex'};
+  el.querySelector('.y').onclick=()=>{dec[d.n]=dec[d.n]==='y'?'':'y';save();render()};
+  el.querySelector('.n').onclick=()=>{dec[d.n]=dec[d.n]==='n'?'':'n';save();render()};g.appendChild(el)});
+ const y=Object.values(dec).filter(v=>v==='y').length,n=Object.values(dec).filter(v=>v==='n').length;$('#stats').textContent=`Rāda ${c} | Jā: ${y} | Nē: ${n}`}
+$('#lb').onclick=()=>{$('#lb').style.display='none'};
+['fType','fShow','fNoWm','fQ'].forEach(i=>$('#'+i).onchange=render);
+$('#exp').onclick=()=>{const out=DATA.filter(d=>dec[d.n]==='y').map(d=>({n:d.n,file:d.file,type:d.t}));const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,1)],{type:'application/json'}));a.download='izveletas-bildes.json';a.click()};
+render();
+</script></body></html>
