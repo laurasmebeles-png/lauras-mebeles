@@ -34,3 +34,6 @@ Virsraksts + liels teksts nomainīts ar sarakstu "Kas veido mēbeļu cenu?" (izm
 
 ## Vienoti apakšlapu ievadi
 Visām apakšlapām (page-intro, kategoriju hero, cenas) vienots h1 izmērs clamp(34-54px), ievada teksts 16-18px ar tumšāku krāsu, vienādas atstarpes (48px augšā, 56px apakšā; mobilajā 32/40).
+
+## Siltā paleti un serifs
+Palete nomainīta uz siltu (krēms #f6f2ec, smilšu #efe8de, brūngans tumšais #231f1b, bronzas akcents #9a6a38 vietā sarkanajam). Virsraksti: Lora (lokāli public/fonts). Pogu formas nemainītas (pill noraidītas). Pievienota skaitļu josla sākumlapā un sadarbības partneri + eksporta valstis lapā Par mums (dati no esošās laurasmebeles.lv; "30+" jāapstiprina pret "kopš 2008").
