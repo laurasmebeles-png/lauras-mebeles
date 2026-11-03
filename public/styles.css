@@ -684,3 +684,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-service-body p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin:0 auto;max-width:30ch}
 @media(max-width:900px){.nk-service-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.nk-service-grid{grid-template-columns:1fr}.nk-service-card img{aspect-ratio:4/3}}
+
+/* Pakalpojumu kartītes mazākas */
+.nk-services .nk-service-grid{max-width:1060px;margin-left:auto;margin-right:auto;gap:16px}
+.nk-service-card img{aspect-ratio:1/1}
+.nk-service-body{padding:16px 14px 20px}
+.nk-service-body h2{font-size:clamp(20px,1.7vw,24px)}
+.nk-service-body p{font-size:14px}
+@media(max-width:600px){.nk-service-card img{aspect-ratio:4/3}}
+.nk-service-body h2{font-size:clamp(18px,1.55vw,22px)}
