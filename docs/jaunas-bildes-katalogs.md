@@ -13,3 +13,4 @@ Iepriekšējā piezīme pēc failu nosaukumiem:
 Hero: 11/1, 03/1, 14 (datorā 14/3 apgriezts, telefonā 14/1).
 - 03.11: sākumlapas kategoriju flīzes: Virtuves = 01/c3155c8d (11/IMG_9663 atstāts hero 1), Skapji = 15/e71403bc, Vannas istabas = 16.jpg (07. mapes virtuve un 115. bilde no flīzēm izņemtas).
 - 03.11: kategoriju banneri: Virtuves = 01/72e6c913, Viesistaba = 17/IMG_7755; Skapji/Vannas/Priekšnams/Citas vēl vecie (jaunajās mapēs nav piemērotu platu kadru).
+- 03.11: Priekšnama baneris = source-photos/IMG_1235 (apgriezts, y=1800).
