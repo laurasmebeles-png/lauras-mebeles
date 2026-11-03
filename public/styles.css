@@ -651,3 +651,13 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-hero-slides picture{position:absolute;inset:0;display:block}
 .nk-hero-slides img:first-child{object-position:center 60%}
 @media(max-width:760px){.nk-hero-slides img:first-child{object-position:60% 55%}}
+
+/* Apakšējā rinda: mazākas, ainavas formāta flīzes */
+.nk-tiles-sub{grid-template-columns:repeat(3,1fr);gap:14px;max-width:980px;margin-inline:auto}
+.nk-tiles-sub .nk-tile img{aspect-ratio:3/2;object-position:center 30%}
+.nk-tiles-sub .nk-tile-label{padding:14px 10px;font-size:13px}
+.nk-tiles-sub .nk-tile-text-body{padding:20px 18px;gap:10px}
+.nk-tiles-sub .nk-tile-text-title{font-size:clamp(22px,2vw,28px)}
+.nk-tiles-sub .nk-tile-text-contact{font-size:14px}
+.nk-tiles-sub .nk-tile-text-body span:nth-child(2){font-size:14px}
+@media(max-width:760px){.nk-tiles-sub{grid-template-columns:1fr;max-width:none}.nk-tiles-sub .nk-tile img{aspect-ratio:16/9}}
