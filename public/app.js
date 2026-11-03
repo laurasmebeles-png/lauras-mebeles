@@ -66,10 +66,10 @@ const filters = $$('[data-filter]');
 function applyProjectFilter(filter, updateUrl = true) {
   if (!filters.some(button => button.dataset.filter === filter)) filter = 'all';
   filters.forEach(button => { const active = button.dataset.filter === filter; button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
-  $$('.project').forEach(project => { project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter); });
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) $$('.project:not([hidden])').forEach(project => project.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'}));
-  const count = $$('.project:not([hidden])').length;
-  $('#gallery-count').textContent = `Atlasīti projekti: ${count}`;
+  $$('.project, .gphoto').forEach(project => { project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter); });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) $$('.project:not([hidden]), .gphoto:not([hidden])').forEach(project => project.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'}));
+  const count = $$('.project:not([hidden]), .gphoto:not([hidden])').length;
+  $('#gallery-count').textContent = `Foto: ${count}`;
   if (updateUrl) { const url = new URL(location.href); if (filter === 'all') url.searchParams.delete('kategorija'); else url.searchParams.set('kategorija',filter); history.replaceState(null,'',url); }
 }
 filters.forEach(button => button.addEventListener('click',()=> { applyProjectFilter(button.dataset.filter); track('gallery_filter',{category:button.dataset.filter}); }));
