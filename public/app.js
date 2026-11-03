@@ -230,3 +230,61 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
   const open = tail.hidden; tail.hidden = !open; dots.hidden = open;
   btn.textContent = open ? 'Rādīt mazāk' : 'Lasīt vairāk'; btn.setAttribute('aria-expanded', String(open));
 }));
+
+// Cenu kalkulators (aprēķina likmes ir src/calc-config.json)
+(() => {
+  const form = document.getElementById('calc'); if (!form) return;
+  const cfg = JSON.parse(document.getElementById('calc-config').textContent);
+  const fieldsBox = document.getElementById('calc-fields'), resultBox = document.getElementById('calc-result');
+  const fmt = n => (Math.round(n / 100) * 100).toLocaleString('lv-LV').replace(/ /g, ' ');
+  const num = v => Number(v).toLocaleString('lv-LV', { maximumFractionDigits: 1 });
+  let started = false, last = null;
+  const type = () => form.elements.ctype.value;
+  function build() {
+    const t = cfg.types[type()]; fieldsBox.innerHTML = '';
+    if (t.individual) { compute(); return; }
+    let html = '';
+    if (t.size.kind === 'range') {
+      html += `<div class="calc-field"><label for="c-size">${t.size.label} <output id="c-out">${num(t.size.default)} ${t.size.unit}</output></label><input id="c-size" type="range" min="${t.size.min}" max="${t.size.max}" step="${t.size.step}" value="${t.size.default}"><div class="range-labels"><span>${t.size.min} ${t.size.unit}</span><span>${t.size.max} ${t.size.unit}</span></div>${t.size.note ? `<p class="calc-hint">${t.size.note}</p>` : ''}</div>`;
+    } else {
+      html += `<fieldset class="calc-field"><legend>${t.size.label}</legend><div class="calc-opts">${t.size.options.map((o, i) => `<label><input type="radio" name="c-size" value="${i}"${o.default ? ' checked' : ''}><span>${o.label}</span></label>`).join('')}</div></fieldset>`;
+    }
+    t.fields.forEach((f, n) => {
+      html += `<fieldset class="calc-field"><legend>${n + 2}. ${f.label}</legend><div class="calc-opts">${f.options.map((o, i) => `<label><input type="radio" name="f-${f.id}" value="${i}"${o.default ? ' checked' : ''}><span>${o.label}</span></label>`).join('')}</div></fieldset>`;
+    });
+    fieldsBox.innerHTML = html; compute();
+  }
+  function compute() {
+    const key = type(), t = cfg.types[key];
+    if (t.individual) {
+      resultBox.innerHTML = '<span>Cena</span><strong>Individuāls piedāvājums</strong><p>Nestandarta mēbelēm cenu aprēķinām pēc projekta. Atsūtiet ieceri, un atbildēsim.</p>';
+      last = { key, summary: t.label + '. Nestandarta risinājums.' }; return;
+    }
+    let units = 1, base, sizeText;
+    if (t.size.kind === 'range') {
+      units = Number(document.getElementById('c-size').value); base = units * t.rate; sizeText = `${num(units)} ${t.size.unit}`;
+      document.getElementById('c-out').textContent = sizeText;
+    } else {
+      const o = t.size.options[Number(form.elements['c-size'].value)]; base = o.base; sizeText = o.label;
+    }
+    let price = base, lo = base, hi = base; const parts = [sizeText];
+    t.fields.forEach(f => {
+      const o = f.options[Number(form.elements['f-' + f.id].value)];
+      const cost = x => (x.add || 0) + (x.addPerUnit || 0) * units;
+      const mult = x => x.mult || 1;
+      if (o.unknown) {
+        const others = f.options.filter(x => !x.unknown);
+        const costs = others.map(x => cost(x) + (mult(x) - 1) * base);
+        lo += Math.min(...costs); hi += Math.max(...costs); price += (Math.min(...costs) + Math.max(...costs)) / 2;
+      } else { const d = cost(o) + (mult(o) - 1) * base; price += d; lo += d; hi += d; }
+      parts.push(`${f.label.split(' (')[0].toLowerCase()}: ${o.label.toLowerCase()}`);
+    });
+    const low = Math.max(0, Math.min(lo, price * (1 - t.lo))), high = Math.max(hi, price * (1 + t.hi));
+    resultBox.innerHTML = `<span>Orientējošā cena</span><strong>${fmt(low)} – ${fmt(high)} €</strong><p>${cfg.includes}</p>${cfg.testMode ? '<p class="calc-test-inline">Testa skaitļi</p>' : ''}`;
+    last = { key, summary: `${t.label}. ${parts.join('; ')}. Orientējošā cena ${fmt(low)} – ${fmt(high)} € (${cfg.testMode ? 'testa režīms, ' : ''}ar PVN, bez piegādes un montāžas).` };
+  }
+  form.addEventListener('change', e => { if (!started) { track('configurator_start'); started = true; } if (e.target.name === 'ctype') build(); else compute(); });
+  form.addEventListener('input', e => { if (e.target.id === 'c-size') compute(); });
+  form.addEventListener('submit', e => { e.preventDefault(); compute(); track('configurator_complete', { category: last.key }); moveToForm(last.key, last.summary); });
+  build();
+})();

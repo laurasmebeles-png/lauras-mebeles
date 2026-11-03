@@ -1,0 +1,555 @@
+{
+ "testMode": true,
+ "note": "Testa režīms: skaitļi ir demonstrācijas vērtības, nevis Lauras mēbeļu cenas. Tos nomainīsim pēc klienta tāmēm.",
+ "includes": "Ar PVN. Neietver piegādi, montāžu, sadzīves tehniku un santehniku.",
+ "types": {
+  "virtuve": {
+   "label": "Virtuve",
+   "desc": "Taisna, L vai U veida virtuve",
+   "rate": 1300,
+   "lo": 0.23,
+   "hi": 0.23,
+   "size": {
+    "kind": "range",
+    "label": "Aptuvenais virtuves garums (summā pa visām sienām)",
+    "unit": "m",
+    "min": 2,
+    "max": 8,
+    "step": 0.5,
+    "default": 3
+   },
+   "fields": [
+    {
+     "id": "upper",
+     "label": "Augšējie skapji",
+     "options": [
+      {
+       "label": "Nav",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": -250
+      },
+      {
+       "label": "Parasti",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Līdz griestiem",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 120
+      }
+     ]
+    },
+    {
+     "id": "tall",
+     "label": "Augstie skapji (ledusskapim, krāsnij, pārtikai)",
+     "options": [
+      {
+       "label": "Nav",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "1",
+       "add": 450,
+       "mult": 1,
+       "addPerUnit": 0
+      },
+      {
+       "label": "2",
+       "add": 900,
+       "mult": 1,
+       "addPerUnit": 0
+      },
+      {
+       "label": "3",
+       "add": 1350,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    },
+    {
+     "id": "facade",
+     "label": "Fasāžu apdare",
+     "options": [
+      {
+       "label": "Laminēta",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Krāsota matēta",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 250
+      },
+      {
+       "label": "Koka špons",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 400
+      },
+      {
+       "label": "Vēl nezinu",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "unknown": true
+      }
+     ]
+    },
+    {
+     "id": "top",
+     "label": "Darba virsma",
+     "options": [
+      {
+       "label": "Lamināta",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Kvarca vai akmens",
+       "add": 1200,
+       "mult": 1,
+       "addPerUnit": 0
+      },
+      {
+       "label": "Vēl nezinu",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "unknown": true
+      }
+     ]
+    },
+    {
+     "id": "island",
+     "label": "Sala vai pussala",
+     "options": [
+      {
+       "label": "Nav",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Pussala",
+       "add": 900,
+       "mult": 1,
+       "addPerUnit": 0
+      },
+      {
+       "label": "Sala",
+       "add": 1800,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    }
+   ]
+  },
+  "skapis": {
+   "label": "Skapis vai garderobe",
+   "desc": "Iebūvējams skapis, garderobe",
+   "rate": 800,
+   "lo": 0.27,
+   "hi": 0.25,
+   "size": {
+    "kind": "range",
+    "label": "Skapja platums",
+    "unit": "m",
+    "min": 1,
+    "max": 6,
+    "step": 0.2,
+    "default": 2.4,
+    "note": "Aprēķināts skapim ar augstumu 2,4 m un dziļumu 0,6 m."
+   },
+   "fields": [
+    {
+     "id": "doors",
+     "label": "Durvis",
+     "options": [
+      {
+       "label": "Veramas",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Bīdāmas",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 150
+      },
+      {
+       "label": "Bez durvīm",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": -150
+      }
+     ]
+    },
+    {
+     "id": "inside",
+     "label": "Iekšējais izkārtojums",
+     "options": [
+      {
+       "label": "Plaukti un drēbju stieņi",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Vairāk atvilktņu",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 120
+      },
+      {
+       "label": "Garderobes sistēma",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 250
+      }
+     ]
+    },
+    {
+     "id": "facade",
+     "label": "Fasāžu apdare",
+     "options": [
+      {
+       "label": "Laminēta",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Krāsota matēta",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 180
+      },
+      {
+       "label": "Vēl nezinu",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "unknown": true
+      }
+     ]
+    },
+    {
+     "id": "mirror",
+     "label": "Spoguļi",
+     "options": [
+      {
+       "label": "Nē",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Jā",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 100
+      }
+     ]
+    },
+    {
+     "id": "special",
+     "label": "Telpas īpatnības (slīpi griesti, niša)",
+     "options": [
+      {
+       "label": "Nē",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Jā",
+       "add": 0,
+       "mult": 1.1,
+       "addPerUnit": 0
+      }
+     ]
+    }
+   ]
+  },
+  "vannasistaba": {
+   "label": "Vannas istabas mēbele",
+   "desc": "Izlietnes skapītis",
+   "lo": 0.2,
+   "hi": 0.2,
+   "size": {
+    "kind": "choice",
+    "label": "Izlietnes skapīša platums",
+    "options": [
+     {
+      "label": "60 cm",
+      "base": 600
+     },
+     {
+      "label": "80 cm",
+      "base": 750,
+      "default": true
+     },
+     {
+      "label": "100 cm",
+      "base": 950
+     },
+     {
+      "label": "120 cm",
+      "base": 1150
+     }
+    ]
+   },
+   "fields": [
+    {
+     "id": "front",
+     "label": "Fasādes",
+     "options": [
+      {
+       "label": "Divas atvilktnes",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Durvis",
+       "add": -50,
+       "mult": 1,
+       "addPerUnit": 0
+      },
+      {
+       "label": "Atvilktnes un atvērts plaukts",
+       "add": 80,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    },
+    {
+     "id": "mount",
+     "label": "Stiprinājums",
+     "options": [
+      {
+       "label": "Uz grīdas",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Piekarams",
+       "add": 60,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    },
+    {
+     "id": "tall",
+     "label": "Augstais skapis blakus",
+     "options": [
+      {
+       "label": "Nē",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Jā",
+       "add": 450,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    }
+   ]
+  },
+  "prieksnams": {
+   "label": "Priekšnama mēbeles",
+   "desc": "Skapis, sēdvieta, pakaramie",
+   "lo": 0.22,
+   "hi": 0.22,
+   "size": {
+    "kind": "choice",
+    "label": "Mēbeļu kopējais garums",
+    "options": [
+     {
+      "label": "Ap 1,2 m",
+      "base": 1100
+     },
+     {
+      "label": "Ap 2 m",
+      "base": 1800,
+      "default": true
+     },
+     {
+      "label": "Ap 3 m",
+      "base": 2700
+     }
+    ]
+   },
+   "fields": [
+    {
+     "id": "height",
+     "label": "Augstums",
+     "options": [
+      {
+       "label": "Standarta",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Līdz griestiem",
+       "add": 300,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    },
+    {
+     "id": "seat",
+     "label": "Sēdvieta apaviem",
+     "options": [
+      {
+       "label": "Ar sēdvietu",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Bez sēdvietas",
+       "add": -250,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    },
+    {
+     "id": "mirror",
+     "label": "Spogulis",
+     "options": [
+      {
+       "label": "Nē",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Jā",
+       "add": 120,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    }
+   ]
+  },
+  "viesistaba": {
+   "label": "TV mēbele",
+   "desc": "TV skapītis, plaukti, TV siena",
+   "lo": 0.2,
+   "hi": 0.2,
+   "size": {
+    "kind": "choice",
+    "label": "Mēbeles garums",
+    "options": [
+     {
+      "label": "Ap 1,6 m",
+      "base": 1200
+     },
+     {
+      "label": "Ap 2 m",
+      "base": 1500,
+      "default": true
+     },
+     {
+      "label": "Ap 2,6 m",
+      "base": 1900
+     },
+     {
+      "label": "Ap 3 m",
+      "base": 2300
+     }
+    ]
+   },
+   "fields": [
+    {
+     "id": "kind",
+     "label": "Kas ietilpst",
+     "options": [
+      {
+       "label": "Tikai zems skapītis",
+       "add": -300,
+       "mult": 1,
+       "addPerUnit": 0
+      },
+      {
+       "label": "Skapītis un atvērti plaukti",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "TV siena ar augstajiem skapjiem",
+       "add": 1200,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    },
+    {
+     "id": "light",
+     "label": "Apgaismojums",
+     "options": [
+      {
+       "label": "Nē",
+       "add": 0,
+       "mult": 1,
+       "addPerUnit": 0,
+       "default": true
+      },
+      {
+       "label": "Jā",
+       "add": 150,
+       "mult": 1,
+       "addPerUnit": 0
+      }
+     ]
+    }
+   ]
+  },
+  "citas": {
+   "label": "Citas mēbeles",
+   "desc": "Nestandarta risinājumi",
+   "individual": true
+  }
+ }
+}
