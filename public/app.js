@@ -201,3 +201,25 @@ document.querySelectorAll('[data-ba]').forEach(frame => {
     range.value = value; set(value);
   });
 });
+
+// Galerijas foto skats (lightbox)
+(() => {
+  const box = document.getElementById('lightbox'); if (!box) return;
+  const img = document.getElementById('lb-img'), count = document.getElementById('lb-count');
+  let list = [], idx = 0;
+  const show = () => { const el = list[idx]; img.src = el.currentSrc || el.src; img.alt = el.alt; count.textContent = `${idx + 1} / ${list.length}`; };
+  const step = d => { idx = (idx + d + list.length) % list.length; show(); };
+  document.querySelectorAll('.gphoto-open').forEach(btn => btn.addEventListener('click', () => {
+    list = [...document.querySelectorAll('.gphoto:not([hidden]) img')];
+    idx = list.indexOf(btn.querySelector('img')); if (idx < 0) idx = 0;
+    show(); box.showModal();
+  }));
+  box.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
+  box.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); step(1); });
+  box.querySelector('.lb-close').addEventListener('click', () => box.close());
+  box.addEventListener('click', e => { if (e.target === box || e.target === img) box.close(); });
+  box.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); step(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); } });
+  let x0 = null;
+  box.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); x0 = null; });
+})();
