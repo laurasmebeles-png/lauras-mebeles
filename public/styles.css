@@ -728,3 +728,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 @media(max-width:800px){.kcases{grid-template-columns:1fr}}
 .kcase-media:not(:has(figcaption)){padding-bottom:25px}
 @media(max-width:800px){.kcase-media:not(:has(figcaption)){padding-bottom:0}}
+/* "Pirms" foto priekšskatījumā blāvāki, lai izceltos Lauras mēbeļu rezultāts */
+.kcase-media .is-before img{filter:grayscale(.85) contrast(.9) brightness(1.04);opacity:.72;transition:filter .3s,opacity .3s}
+.kcase-media .is-before:hover img,.kcase-media .is-before:focus-within img{filter:none;opacity:1}
+.kcase-media .is-before figcaption{opacity:.8}
