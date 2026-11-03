@@ -747,3 +747,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y;-webkit-appearance:none;appearance:none}
 .ba-frame:focus-within{outline:2px solid var(--red);outline-offset:2px}
 @media(max-width:800px){.ba-grid{grid-template-columns:1fr}}
+
+/* Apraksts ar "Lasīt vairāk" un saite uz visiem foto */
+.kcase-text p{margin:0}
+.kcase-text details{margin-top:6px}
+.kcase-text summary{cursor:pointer;display:inline-block;font-size:14px;color:var(--ink);border-bottom:1px solid currentColor;list-style:none}
+.kcase-text summary::-webkit-details-marker{display:none}
+.kcase-text details[open] summary{display:none}
+.kcase-text details p{margin-top:0}
+.ba-more{display:inline-block;margin-top:6px;padding:0;background:none;border:0;border-bottom:1px solid currentColor;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
