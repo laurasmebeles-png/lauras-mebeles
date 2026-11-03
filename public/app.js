@@ -188,3 +188,16 @@ if (valueItems.length && 'IntersectionObserver' in window) {
   btn.addEventListener('click', () => timer ? stop() : start());
   reduce ? stop() : start();
 })();
+
+// Pirms/Pēc salīdzinājums: josla velkama, datorā seko kursoram
+document.querySelectorAll('[data-ba]').forEach(frame => {
+  const range = frame.querySelector('.ba-range');
+  const set = value => frame.style.setProperty('--pos', value + '%');
+  range.addEventListener('input', () => set(range.value));
+  frame.addEventListener('pointermove', event => {
+    if (event.pointerType !== 'mouse') return;
+    const box = frame.getBoundingClientRect();
+    const value = Math.max(0, Math.min(100, ((event.clientX - box.left) / box.width) * 100));
+    range.value = value; set(value);
+  });
+});

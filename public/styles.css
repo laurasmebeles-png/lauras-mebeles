@@ -732,3 +732,18 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .kcase-media .is-before img{filter:grayscale(.85) contrast(.9) brightness(1.04);opacity:.72;transition:filter .3s,opacity .3s}
 .kcase-media .is-before:hover img,.kcase-media .is-before:focus-within img{filter:none;opacity:1}
 .kcase-media .is-before figcaption{opacity:.8}
+
+/* Pirms/Pēc salīdzinājuma josla */
+.nk-ba{padding-top:clamp(56px,6vw,96px)}
+.ba-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4vw,56px) clamp(24px,3vw,48px)}
+.ba h3{font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.6vw,22px);line-height:1.25;margin:14px 0 0}
+.ba-frame{--pos:50%;position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--surface);user-select:none}
+.ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0);filter:saturate(.55) brightness(1.02)}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.ba-handle svg{position:absolute;top:50%;left:50%;width:42px;height:42px;padding:11px;transform:translate(-50%,-50%);background:#fff;color:var(--ink);border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.ba-tag{position:absolute;bottom:12px;padding:5px 9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--ink);border-radius:2px;pointer-events:none}
+.ba-tag-before{left:12px}.ba-tag-after{right:12px}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y;-webkit-appearance:none;appearance:none}
+.ba-frame:focus-within{outline:2px solid var(--red);outline-offset:2px}
+@media(max-width:800px){.ba-grid{grid-template-columns:1fr}}
