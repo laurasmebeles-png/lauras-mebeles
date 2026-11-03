@@ -837,3 +837,5 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 @media(max-width:900px){.calc{grid-template-columns:1fr;gap:28px}.calc-card{padding:20px}.calc-types>div{grid-template-columns:1fr 1fr}}
 #c-size{display:block;width:100%;margin:6px 0 4px;accent-color:var(--red)}
 .calc-card .range-labels{display:flex;justify-content:space-between;font-size:12px;color:#7a7168}
+.ab-intro-text>p+p{margin-top:14px}
+.ab-intro h1{max-width:560px}
