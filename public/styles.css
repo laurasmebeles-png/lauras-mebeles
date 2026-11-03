@@ -648,3 +648,6 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 @media(max-width:760px){.nk-tiles-3 .nk-tile img{aspect-ratio:4/3}.nk-hero-slides img:first-child{object-position:92% 65%}}
 #saturs .contact-copy h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1.12;margin:0 0 18px;letter-spacing:0}
 #saturs .contact-copy h1 em{font-style:normal;color:var(--red)}
+.nk-hero-slides picture{position:absolute;inset:0;display:block}
+.nk-hero-slides img:first-child{object-position:center 60%}
+@media(max-width:760px){.nk-hero-slides img:first-child{object-position:60% 55%}}
