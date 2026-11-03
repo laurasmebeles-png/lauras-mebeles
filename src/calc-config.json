@@ -1,7 +1,7 @@
 {
  "testMode": true,
  "note": "Testa režīms: skaitļi ir demonstrācijas vērtības, nevis Lauras mēbeļu cenas. Tos nomainīsim pēc klienta tāmēm.",
- "includes": "Ar PVN. Neietver piegādi, montāžu, sadzīves tehniku un santehniku.",
+ "includes": "Cenā iekļauta mēbeļu izgatavošana un materiāli. Piegāde, montāža, sadzīves tehnika un santehnika tiek skaitīta atsevišķi.",
  "types": {
   "virtuve": {
    "label": "Virtuve",
@@ -73,7 +73,8 @@
        "mult": 1,
        "addPerUnit": 0
       }
-     ]
+     ],
+     "hint": "Augstie skapji ir tie, kuros ievieto ledusskapi, krāsni vai pārtikas krājumus."
     },
     {
      "id": "facade",
@@ -105,7 +106,8 @@
        "addPerUnit": 0,
        "unknown": true
       }
-     ]
+     ],
+     "hint": "Laminēta ir pieejamāka cenas ziņā, krāsota matēta dod gludu izskatu, koka špons – dabīgu faktūru. Ja vēl neesat izvēlējušies, atzīmējiet “Vēl nezinu”, un cenu diapazons būs plašāks."
     },
     {
      "id": "top",
@@ -131,7 +133,8 @@
        "addPerUnit": 0,
        "unknown": true
       }
-     ]
+     ],
+     "hint": "Lamināta virsma ir pieejamāka, kvarcs vai akmens izturīgāks, bet dārgāks."
     },
     {
      "id": "island",
@@ -200,7 +203,8 @@
        "mult": 1,
        "addPerUnit": -150
       }
-     ]
+     ],
+     "hint": "Bīdāmajām durvīm nav vajadzīga brīva vieta skapja priekšā, veramās ir vienkāršākas un lētākas."
     },
     {
      "id": "inside",
@@ -251,7 +255,8 @@
        "addPerUnit": 0,
        "unknown": true
       }
-     ]
+     ],
+     "hint": "Ja vēl neesat izvēlējušies, atzīmējiet “Vēl nezinu”, un cenu diapazons būs plašāks."
     },
     {
      "id": "mirror",
@@ -289,7 +294,8 @@
        "mult": 1.1,
        "addPerUnit": 0
       }
-     ]
+     ],
+     "hint": "Slīpi griesti vai niša prasa mēbeli izgatavot pēc precīziem izmēriem."
     }
    ]
   },

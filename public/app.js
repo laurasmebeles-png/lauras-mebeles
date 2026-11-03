@@ -250,7 +250,7 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
       html += `<fieldset class="calc-field"><legend>${t.size.label}</legend><div class="calc-opts">${t.size.options.map((o, i) => `<label><input type="radio" name="c-size" value="${i}"${o.default ? ' checked' : ''}><span>${o.label}</span></label>`).join('')}</div></fieldset>`;
     }
     t.fields.forEach((f, n) => {
-      html += `<fieldset class="calc-field"><legend>${n + 2}. ${f.label}</legend><div class="calc-opts">${f.options.map((o, i) => `<label><input type="radio" name="f-${f.id}" value="${i}"${o.default ? ' checked' : ''}><span>${o.label}</span></label>`).join('')}</div></fieldset>`;
+      html += `<fieldset class="calc-field"><legend>${n + 2}. ${f.label}</legend>${f.hint ? `<small class="calc-hint">${f.hint}</small>` : ''}<div class="calc-opts">${f.options.map((o, i) => `<label><input type="radio" name="f-${f.id}" value="${i}"${o.default ? ' checked' : ''}><span>${o.label}</span></label>`).join('')}</div></fieldset>`;
     });
     fieldsBox.innerHTML = html; compute();
   }

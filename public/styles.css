@@ -847,3 +847,19 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-video figcaption{font-size:13px;color:var(--muted,#6b665c);margin-top:10px}
 @media(max-width:860px){.ab-process-grid{grid-template-columns:1fr;gap:32px}.ab-process-main ol{grid-template-columns:1fr}.ab-video{position:static;max-width:420px}}
 @media(prefers-reduced-motion:reduce){.ab-video video{display:none}.ab-video{display:none}}
+
+/* cenas: kompakts ievads + kalkulators */
+#saturs .price-top{padding-top:40px;padding-bottom:8px}
+#saturs .price-top h1{font-size:clamp(28px,2.6vw,36px);line-height:1.18;margin:14px 0 12px;max-width:none}
+.price-top p:not(.breadcrumbs){max-width:620px;margin:0;color:var(--ink-soft);font-size:17px;line-height:1.6}
+.calc{display:block;max-width:820px}
+.calc .calc-test{margin:0 0 14px}
+.calc-hint{display:block;font-size:13px;line-height:1.5;color:#7a7168;margin:-4px 0 10px}
+.price-more{padding-top:0}
+.price-more details{max-width:820px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+.price-more summary{cursor:pointer;font-family:var(--serif);font-size:20px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.price-more summary::-webkit-details-marker{display:none}
+.price-more summary::after{content:"+";font-size:24px;color:var(--red)}
+.price-more details[open] summary::after{content:"–"}
+.price-more p{margin:12px 0 0;color:var(--ink-soft);line-height:1.6;max-width:640px}
+#saturs .price-top{padding-bottom:0}.price-top+.calc{padding-top:28px}
