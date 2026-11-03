@@ -712,3 +712,6 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-extra-cols h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,24px);margin:0 0 8px}
 .nk-extra-cols p{margin:0;max-width:52ch;color:var(--ink-soft);line-height:1.6}
 @media(max-width:700px){.nk-extra-cols{grid-template-columns:1fr}}
+
+/* Augšjosla: abi tālruņi kopā labajā pusē */
+@media(min-width:761px){.topline>a:nth-child(2){margin-left:auto}.topline{gap:28px}}
