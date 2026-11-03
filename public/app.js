@@ -83,7 +83,7 @@ function showProjectPhoto() {
   const project = projects[currentProject];
   $('#dialog-image').src = `/images/${project.photos[photoIndex]}`;
   $('#dialog-image').alt = `${project.title}, foto ${photoIndex + 1}`;
-  $('#photo-count').textContent = `${photoIndex + 1} / ${project.photos.length}`;
+  const label = project.labels?.[photoIndex]; $('#photo-count').textContent = `${label ? label + ' · ' : ''}${photoIndex + 1} / ${project.photos.length}`;
   $('#photo-prev').hidden = project.photos.length < 2;
   $('#photo-next').hidden = project.photos.length < 2;
 }
@@ -91,7 +91,7 @@ $$('[data-project]').forEach(button => button.addEventListener('click', () => {
   currentProject = button.dataset.project;
   const project = projects[currentProject];
   if (!project) return;
-  photoIndex = 0;
+  photoIndex = Number(button.dataset.photo || 0);
   $('#dialog-title').textContent = project.title;
   $('#dialog-description').textContent = project.description;
   showProjectPhoto();

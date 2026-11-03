@@ -715,3 +715,16 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 
 /* Augšjosla: abi tālruņi kopā labajā pusē */
 @media(min-width:761px){.topline>a:nth-child(2){margin-left:auto}.topline{gap:28px}}
+
+/* Virtuvju lapa: darbu piemēri ar "Pirms" un "Pēc" */
+.kcases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,4.5vw,64px) clamp(28px,3.5vw,56px)}
+.kcase-media{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kcase-media figure{margin:0}
+.kcase-open{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.kcase-media img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 40%;border-radius:2px;background:var(--surface)}
+.kcase-media figcaption{margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.kcase h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.8vw,26px);line-height:1.2;margin:16px 0 6px}
+.kcase p{margin:0;max-width:56ch;color:var(--ink-soft);line-height:1.6;font-size:16px}
+@media(max-width:800px){.kcases{grid-template-columns:1fr}}
+.kcase-media:not(:has(figcaption)){padding-bottom:25px}
+@media(max-width:800px){.kcase-media:not(:has(figcaption)){padding-bottom:0}}
