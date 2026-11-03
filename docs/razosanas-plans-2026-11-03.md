@@ -32,3 +32,7 @@ Pamats: Lailas iedotais audits (komits 566e126). Gala foto vēl nav saņemti, t�
 
 ## Jāsaņem no klienta (bloķē tikai D un daļu E)
 Jaunākie oriģinālfoto, darbnīcas/komandas foto, apstiprināti projektu fakti, cenu piemēri un atjaunotājs, "30+" vs "kopš 2008", galvenais tālrunis, Google profils, valodu lēmums, stylefoto.lv foto tiesības.
+
+## Progress
+- A posms izdarīts (03.11.2026): flīzes ar baltu joslu, atsauksmju kartītes, "Visi mēbeļu veidi", īsa statistika ("5,0 ★ Google vērtējums"), kontaktu teksta flīze, process uz `/par-mums/#process`, kājene (logo uz `/`, 5 saites), Kontakti ar vienu H1, atsauksmju lapā noņemti tukšie filtri.
+- Nav izdarīts no A: hero pirmā kadra mobilā izgriezuma gala pārbaude; "30+" vs "kopš 2008" (gaida klientu).

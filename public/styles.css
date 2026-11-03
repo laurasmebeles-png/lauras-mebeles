@@ -627,3 +627,24 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-cat-hero{min-height:min(58svh,560px)}
 .nk-cat-hero>img{object-position:center 40%}
 @media(max-width:760px){.nk-cat-hero{min-height:52svh}}
+
+/* A posms: flīzes ar baltu joslu, atsauksmju kartītes, statistika */
+.nk-tile{display:flex;flex-direction:column;aspect-ratio:auto;background:#fff;border:1px solid var(--line)}
+.nk-tile:after{display:none}
+.nk-tile img{aspect-ratio:4/3;height:auto;flex:none}
+.nk-tiles-3 .nk-tile img{aspect-ratio:4/5}
+.nk-tile-label{position:static;display:block;background:#fff;color:var(--ink);text-align:center;padding:20px 12px;font-size:15px;letter-spacing:.14em;font-weight:500}
+.nk-tile-text{background:var(--surface);justify-content:center}
+.nk-tile-text-body{display:flex;flex-direction:column;gap:18px;padding:36px 28px;text-align:center;color:var(--ink);line-height:1.6;align-items:center;margin:auto}
+.nk-tile-text-title{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px)}
+.nk-tile-text-contact{font-size:16px;font-weight:500;line-height:1.7}
+.review-card{background:#fff!important;border:1px solid var(--line)!important;border-radius:2px;padding:30px 28px 26px!important;position:relative}
+.review-quote{display:block;font-family:var(--serif);font-size:56px;line-height:.6;height:26px;color:var(--red)}
+.review-card blockquote{margin:0}
+.review-author{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:20px;color:var(--ink)}
+.review-grid{gap:24px!important}
+.stats-band dd strong{font-weight:500}
+.contact-crumbs{padding-bottom:0}
+@media(max-width:760px){.nk-tiles-3 .nk-tile img{aspect-ratio:4/3}.nk-hero-slides img:first-child{object-position:92% 65%}}
+#saturs .contact-copy h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1.12;margin:0 0 18px;letter-spacing:0}
+#saturs .contact-copy h1 em{font-style:normal;color:var(--red)}
