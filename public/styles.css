@@ -693,3 +693,13 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-service-body p{font-size:14px}
 @media(max-width:600px){.nk-service-card img{aspect-ratio:4/3}}
 .nk-service-body h2{font-size:clamp(18px,1.55vw,22px)}
+
+/* Statistikas josla: kompaktāka */
+.stats-band,#saturs .stats-band{margin-top:clamp(20px,2.5vw,36px)}
+.stats-band dl,#saturs .stats-band dl{padding:16px 0;column-gap:clamp(16px,2.5vw,40px);row-gap:18px}
+.stats-band div,#saturs .stats-band div{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+.stats-band .stat-icon{grid-row:1/3;width:24px;height:24px}
+.stats-band dt,#saturs .stats-band dt{font-size:clamp(24px,2.1vw,30px);line-height:1.1}
+.stats-band dd,#saturs .stats-band dd{margin:2px 0 0}
+.stats-band dd strong,#saturs .stats-band dd strong{font-size:14px}
+@media(max-width:760px){.stats-band dl,#saturs .stats-band dl{grid-template-columns:1fr 1fr}.stats-band dt,#saturs .stats-band dt{font-size:24px}}
