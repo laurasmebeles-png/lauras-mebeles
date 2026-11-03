@@ -16,3 +16,4 @@ Hero: 11/1, 03/1, 14 (datorā 14/3 apgriezts, telefonā 14/1).
 - 03.11: Priekšnama baneris = source-photos/IMG_1235 (apgriezts, y=1800).
 - 03.11: banneri no source-photos: Viesistaba = IMG-9759-1-scaled, Skapji = IMG-3696-scaled, Vannas istaba = IMG_5633-2-scaled (apgriezti 2.2:1). Virtuves=01/72e6c913, Priekšnams=IMG_1235. Citas = vecais.
 - 03.11: banneri v2: Priekšnams = source-photos/9.jpg, Skapji = IMG-3666-scaled, Viesistaba = IMG-9757-scaled, Citas = f8dbf229... (cat-citas.webp, 960 px avots, mīksts), Vannas = IMG_5633 (nemainīts). stylefoto.lv kadri (7978-1_50, 7968) NAV izmantoti autortiesību dēļ.
+- 03.11: kategoriju lapu augša pārbūvēta (variants A): teksts + 4:5 bilde (home/virtuves, skapji, vannasistabas, top-prieksnams, top-viesistaba, top-citas). Vecie cat-*.webp banneri vairs netiek izmantoti.
