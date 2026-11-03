@@ -11,3 +11,4 @@ Iepriekšējā piezīme pēc failu nosaukumiem:
 
 ## Lailas favorīti hero: 14, 11, 03
 Hero: 11/1, 03/1, 14 (datorā 14/3 apgriezts, telefonā 14/1).
+- 03.11: sākumlapas flīzes Virtuves = 07. mapes ChatGPT Image 07_20_44 (jāpārbauda ar klientu oriģinālu); Vannas istabas = 115. bilde (G_realestate.stylefoto.lv-7976; tāda pati foto tiesību problēma kā 117.)
