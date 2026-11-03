@@ -11,4 +11,4 @@ Iepriekšējā piezīme pēc failu nosaukumiem:
 
 ## Lailas favorīti hero: 14, 11, 03
 Hero: 11/1, 03/1, 14 (datorā 14/3 apgriezts, telefonā 14/1).
-- 03.11: sākumlapas kategoriju flīzes: Virtuves = 11/IMG_9663 (tā pati virtuve kā hero 1), Skapji = 15/e71403bc, Vannas istabas = 16.jpg (07. mapes virtuve un 115. bilde no flīzēm izņemtas).
+- 03.11: sākumlapas kategoriju flīzes: Virtuves = 01/c3155c8d (11/IMG_9663 atstāts hero 1), Skapji = 15/e71403bc, Vannas istabas = 16.jpg (07. mapes virtuve un 115. bilde no flīzēm izņemtas).
