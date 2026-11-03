@@ -69,7 +69,7 @@ function applyProjectFilter(filter, updateUrl = true) {
   $$('.project').forEach(project => { project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter); });
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) $$('.project:not([hidden])').forEach(project => project.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'}));
   const count = $$('.project:not([hidden])').length;
-  $('#gallery-count').textContent = `${count} ${count === 1 ? 'projekts' : 'projekti'} atlasē.`;
+  $('#gallery-count').textContent = `Atlasīti projekti: ${count}`;
   if (updateUrl) { const url = new URL(location.href); if (filter === 'all') url.searchParams.delete('kategorija'); else url.searchParams.set('kategorija',filter); history.replaceState(null,'',url); }
 }
 filters.forEach(button => button.addEventListener('click',()=> { applyProjectFilter(button.dataset.filter); track('gallery_filter',{category:button.dataset.filter}); }));
@@ -183,7 +183,7 @@ if (valueItems.length && 'IntersectionObserver' in window) {
   let i = 0, timer = null;
   const show = n => { slides[i].classList.remove('is-active'); i = n; slides[i].classList.add('is-active'); };
   const start = () => { timer = setInterval(() => show((i + 1) % slides.length), 6500); btn.textContent = 'Pauze'; btn.setAttribute('aria-label', 'Apturēt bilžu maiņu'); };
-  const stop = () => { clearInterval(timer); timer = null; btn.textContent = 'Atskaņot'; btn.setAttribute('aria-label', 'Turpināt bilžu maiņu'); };
+  const stop = () => { clearInterval(timer); timer = null; btn.textContent = 'Turpināt'; btn.setAttribute('aria-label', 'Turpināt bilžu maiņu'); };
   slides.forEach(s => s.loading = 'eager');
   btn.addEventListener('click', () => timer ? stop() : start());
   reduce ? stop() : start();

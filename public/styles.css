@@ -703,3 +703,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .stats-band dd,#saturs .stats-band dd{margin:2px 0 0}
 .stats-band dd strong,#saturs .stats-band dd strong{font-size:14px}
 @media(max-width:760px){.stats-band dl,#saturs .stats-band dl{grid-template-columns:1fr 1fr}.stats-band dt,#saturs .stats-band dt{font-size:24px}}
+
+/* Teksta kārta: cenu faktoru virsraksts un virtuvju papildu bloks */
+.price-factors-heading{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,24px);margin:0 0 14px;line-height:1.25}
+.nk-extra{padding-top:clamp(48px,5vw,72px);padding-bottom:0}
+.nk-extra h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,36px);margin:0 0 20px}
+.nk-extra-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);border-top:1px solid var(--line);padding-top:24px}
+.nk-extra-cols h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,24px);margin:0 0 8px}
+.nk-extra-cols p{margin:0;max-width:52ch;color:var(--ink-soft);line-height:1.6}
+@media(max-width:700px){.nk-extra-cols{grid-template-columns:1fr}}
