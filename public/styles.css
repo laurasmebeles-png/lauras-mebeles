@@ -777,3 +777,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .lb-prev{left:16px}.lb-next{right:16px}
 .lb-count{position:absolute;bottom:16px;left:0;right:0;text-align:center;margin:0;font-size:14px;opacity:.75}
 @media(max-width:700px){#lb-img{max-width:100vw;max-height:calc(100vh - 110px)}.lb-nav{top:auto;bottom:12px;transform:none}.lb-prev{left:16px}.lb-next{right:16px}}
+
+.rm-dots[hidden],.rm-tail[hidden]{display:none}
+.rm-btn{display:inline;padding:0;border:0;background:none;color:var(--red);font:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.rm-btn:hover{text-decoration:underline}

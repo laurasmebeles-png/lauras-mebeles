@@ -223,3 +223,10 @@ document.querySelectorAll('[data-ba]').forEach(frame => {
   box.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
   box.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); x0 = null; });
 })();
+
+// Atsauksmju "Lasīt vairāk": teksts turpinās tajā pašā rindkopā
+document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click', () => {
+  const p = btn.closest('.rm'); const tail = p.querySelector('.rm-tail'); const dots = p.querySelector('.rm-dots');
+  const open = tail.hidden; tail.hidden = !open; dots.hidden = open;
+  btn.textContent = open ? 'Rādīt mazāk' : 'Lasīt vairāk'; btn.setAttribute('aria-expanded', String(open));
+}));
