@@ -1,3 +1,5 @@
+// Valodu palīgs: LV teksts ir atslēga; citās valodās lapa ievieto window.LAURAS_I18N (skat. scripts/generate-pages.mjs)
+const T = s => (window.LAURAS_I18N && window.LAURAS_I18N[s]) || s;
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
@@ -26,12 +28,12 @@ function closeMenu() {
   const services = $('.service-menu');
   if (services) services.open = false;
   menuButton.setAttribute('aria-expanded','false');
-  menuButton.setAttribute('aria-label','Atvērt izvēlni');
+  menuButton.setAttribute('aria-label',T('Atvērt izvēlni'));
 }
 menuButton.addEventListener('click', () => {
   const open = $('#navigation').classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Aizvērt izvēlni' : 'Atvērt izvēlni');
+  menuButton.setAttribute('aria-label', open ? T('Aizvērt izvēlni') : T('Atvērt izvēlni'));
 });
 $$('#navigation a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => {
@@ -69,7 +71,7 @@ function applyProjectFilter(filter, updateUrl = true) {
   $$('.project, .gphoto').forEach(project => { project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter); });
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) $$('.project:not([hidden]), .gphoto:not([hidden])').forEach(project => project.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'}));
   const count = $$('.project:not([hidden]), .gphoto:not([hidden])').length;
-  $('#gallery-count').textContent = `Foto: ${count}`;
+  $('#gallery-count').textContent = T('Foto: {n}').replace('{n}', count);
   if (updateUrl) { const url = new URL(location.href); if (filter === 'all') url.searchParams.delete('kategorija'); else url.searchParams.set('kategorija',filter); history.replaceState(null,'',url); }
 }
 filters.forEach(button => button.addEventListener('click',()=> { applyProjectFilter(button.dataset.filter); track('gallery_filter',{category:button.dataset.filter}); }));
@@ -109,7 +111,7 @@ $$('[data-review-filter]').forEach(button=>button.addEventListener('click',()=>{
   $$('[data-review-filter]').forEach(item=>{item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button));});
   $$('.review-card').forEach(card=>{card.hidden=source!=='all' && card.dataset.reviewSource!==source;});
   const count=$$('.review-card:not([hidden])').length;
-  $('#review-count').textContent=count ? `${count} atsauksmes no esošās mājaslapas.` : 'Šim avotam uzmetumā vēl nav pievienotu atsauksmju.';
+  $('#review-count').textContent=count ? T('{n} atsauksmes no esošās mājaslapas.').replace('{n}', count) : T('Šim avotam uzmetumā vēl nav pievienotu atsauksmju.');
   $('#review-empty').hidden=count>0;
   $('#review-empty-title').textContent=source==='google'?'Google atsauksmes':source==='facebook'?'Facebook atsauksmes':'';
   track('review_filter',{source});
@@ -124,7 +126,7 @@ $('#configurator')?.addEventListener('input', () => {
 $('#configurator')?.addEventListener('submit', event => {
   event.preventDefault();
   const product = $('#configurator input[name=product]:checked').value;
-  const labels = { virtuve:'Virtuve', skapis:'Skapis', citas:'Citas mēbeles' };
+  const labels = { virtuve:T('Virtuve'), skapis:T('Skapis'), citas:T('Citas mēbeles') };
   const priority = $('#priority').selectedOptions[0].textContent;
   const summary = `${labels[product]} · aptuvenais garums ${$('#width-output').value}. ${priority}.`;
   track('configurator_complete', { category: product });
@@ -147,11 +149,11 @@ $('#lead-form')?.addEventListener('input', () => {
 });
 $('#lead-form')?.addEventListener('submit', event => {
   event.preventDefault();
-  $('#name').setCustomValidity($('#name').value.trim() ? '' : 'Lūdzu, norādiet vārdu.');
+  $('#name').setCustomValidity($('#name').value.trim() ? '' : T('Lūdzu, norādiet vārdu.'));
   if (!$('#lead-form').reportValidity()) return;
   // Never emit generate_lead without a confirmed server-side delivery.
   track('form_preview_complete', { category: $('#furniture').value });
-  $('#form-status').textContent = 'Uzmetuma pārbaude pabeigta. Pieteikums nav nosūtīts. Īstajā lapā šeit būs apstiprinājums pēc veiksmīgas nosūtīšanas.';
+  $('#form-status').textContent = T('Uzmetuma pārbaude pabeigta. Pieteikums nav nosūtīts. Īstajā lapā šeit būs apstiprinājums pēc veiksmīgas nosūtīšanas.');
   $('#form-status').focus();
 });
 $('#name')?.addEventListener('input', () => $('#name').setCustomValidity(''));
@@ -182,8 +184,8 @@ if (valueItems.length && 'IntersectionObserver' in window) {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let i = 0, timer = null;
   const show = n => { slides[i].classList.remove('is-active'); i = n; slides[i].classList.add('is-active'); };
-  const start = () => { timer = setInterval(() => show((i + 1) % slides.length), 6500); btn.textContent = 'Pauze'; btn.setAttribute('aria-label', 'Apturēt bilžu maiņu'); };
-  const stop = () => { clearInterval(timer); timer = null; btn.textContent = 'Turpināt'; btn.setAttribute('aria-label', 'Turpināt bilžu maiņu'); };
+  const start = () => { timer = setInterval(() => show((i + 1) % slides.length), 6500); btn.textContent = T('Pauze'); btn.setAttribute('aria-label', T('Apturēt bilžu maiņu')); };
+  const stop = () => { clearInterval(timer); timer = null; btn.textContent = T('Turpināt'); btn.setAttribute('aria-label', T('Turpināt bilžu maiņu')); };
   slides.forEach(s => s.loading = 'eager');
   btn.addEventListener('click', () => timer ? stop() : start());
   reduce ? stop() : start();
@@ -228,7 +230,7 @@ document.querySelectorAll('[data-ba]').forEach(frame => {
 document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click', () => {
   const p = btn.closest('.rm'); const tail = p.querySelector('.rm-tail'); const dots = p.querySelector('.rm-dots');
   const open = tail.hidden; tail.hidden = !open; dots.hidden = open;
-  btn.textContent = open ? 'Rādīt mazāk' : 'Lasīt vairāk'; btn.setAttribute('aria-expanded', String(open));
+  btn.textContent = open ? T('Rādīt mazāk') : T('Lasīt vairāk'); btn.setAttribute('aria-expanded', String(open));
 }));
 
 // Cenu kalkulators (aprēķina likmes ir src/calc-config.json)
@@ -257,8 +259,8 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
   function compute() {
     const key = type(), t = cfg.types[key];
     if (t.individual) {
-      resultBox.innerHTML = '<span>Cena</span><strong>Individuāls piedāvājums</strong><p>Nestandarta mēbelēm cenu aprēķinām pēc projekta. Atsūtiet ieceri, un atbildēsim.</p>';
-      last = { key, summary: t.label + '. Nestandarta risinājums.' }; return;
+      resultBox.innerHTML = `<span>${T('Cena')}</span><strong>${T('Individuāls piedāvājums')}</strong><p>${T('Nestandarta mēbelēm cenu aprēķinām pēc projekta. Atsūtiet ieceri, un atbildēsim.')}</p>`;
+      last = { key, summary: t.label + '. ' + T('Nestandarta risinājums.') }; return;
     }
     let units = 1, base, sizeText;
     if (t.size.kind === 'range') {
@@ -280,8 +282,8 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
       parts.push(`${f.label.split(' (')[0].toLowerCase()}: ${o.label.toLowerCase()}`);
     });
     const low = Math.max(0, Math.min(lo, price * (1 - t.lo))), high = Math.max(hi, price * (1 + t.hi));
-    resultBox.innerHTML = `<span>Orientējošā cena</span><strong>${fmt(low)} – ${fmt(high)} €</strong><p>${cfg.includes}</p>${cfg.testMode ? '<p class="calc-test-inline">Testa skaitļi</p>' : ''}`;
-    last = { key, summary: `${t.label}. ${parts.join('; ')}. Orientējošā cena ${fmt(low)} – ${fmt(high)} € (${cfg.testMode ? 'testa režīms, ' : ''}ar PVN, bez piegādes un montāžas).` };
+    resultBox.innerHTML = `<span>${T('Orientējošā cena')}</span><strong>${fmt(low)} – ${fmt(high)} €</strong><p>${cfg.includes}</p>${cfg.testMode ? `<p class="calc-test-inline">${T('Testa skaitļi')}</p>` : ''}`;
+    last = { key, summary: `${t.label}. ${parts.join('; ')}. ${T('Orientējošā cena')} ${fmt(low)} – ${fmt(high)} € (${cfg.testMode ? T('testa režīms') + ', ' : ''}${T('bez piegādes un montāžas')}).` };
   }
   form.addEventListener('change', e => { if (!started) { track('configurator_start'); started = true; } if (e.target.name === 'ctype') build(); else compute(); });
   form.addEventListener('input', e => { if (e.target.id === 'c-size') compute(); });

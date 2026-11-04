@@ -1,11 +1,14 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { categories, projects } from '../src/catalog.mjs';
+import { config as i18nConfig, enabledLangs, defaultLang, langPrefix, loadDicts, translateHtml, mapProjects } from './i18n.mjs';
 const root = new URL('../', import.meta.url);
 const source = await readFile(new URL('src/home.html', root), 'utf8');
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
 // Kanoniskā adrese: SITE_URL (palaišanai: https://laurasmebeles.lv), citādi Vercel produkcijas adrese, citādi lokāli.
 const siteUrl = (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://127.0.0.1:4173')).replace(/\/+$/,'');
 const siteName = 'Lauras mēbeles';
+const dicts = await loadDicts();
+const appKeys = [...(await readFile(new URL('public/app.js',root),'utf8')).matchAll(/\bT\((['`])((?:\\.|(?!\1).)*)\1\)/g)].map(m=>m[2]);
 const ogImage = { path:'/images/og-default.jpg', width:1200, height:630, alt:'Priekšnama skapis un drēbju pakaramie ar koka latām un dzīvojamo telpu' };
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const arrow = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
@@ -118,16 +121,23 @@ await save('cenas','Mēbeļu cenas un piedāvājums | Lauras mēbeles',pricingIn
 await save('kontakti','Kontakti un cenas piedāvājums | Lauras mēbeles',`<div class="section contact-crumbs">${crumbs('Kontakti')}</div>`+section('pieteikums').replace('<p class="eyebrow">Sāksim ar sarunu</p><h2>Pastāstiet par<br><em>savu ieceri</em></h2>','<h1>Pastāstiet par<br><em>savu ieceri</em></h1>'),'Pastāstiet par savu mēbeļu ieceri. Lauras mēbeles, Matīsa iela 78a, Rīga. Tālrunis +371 2914 2364, +371 2947 2242, e-pasts info@laurasmebeles.lv.');
 const reviewsBody=pageIntro('Atsauksmes','Ko saka mūsu klienti','Par sadarbību, mēbelēm un rezultātu mūsu klientu vārdiem.')+`<section class="section section-tight">${reviewGrid(reviews)}<div class="gallery-bottom"><a href="https://www.facebook.com/LaurasMebeles/" target="_blank" rel="noopener" class="text-link">Apskatiet mūs arī Facebook ${arrow}</a></div>${cta('Pastāstiet par savu ieceri','Iesākumam pietiek ar ideju.')}</section>`;
 await save('virtuves-mebeles-atsauksmes-virtuves-iekartas','Klientu atsauksmes | Lauras mēbeles',reviewsBody,'Lasiet klientu atsauksmes par Lauras mēbeļu izgatavotajām virtuvēm, skapjiem un citām mēbelēm, sadarbību un darba kvalitāti.');
-await writeFile(new URL('public/projects.js',root),`window.LAURAS_PROJECTS = ${JSON.stringify(projects.map(p=>p.before?{...p,photos:[p.before,...p.photos],labels:['Pirms',...p.photos.map(()=>'Pēc')]}:p))};\n`);
+const projectsData = projects.map(p=>p.before?{...p,photos:[p.before,...p.photos],labels:['Pirms',...p.photos.map(()=>'Pēc')]}:p);
+for (const lang of enabledLangs) {
+  const dict = dicts[lang] || {};
+  const data = lang === defaultLang ? projectsData : mapProjects(projectsData, k => dict[k] || k);
+  const dir = new URL(`public${langPrefix(lang)}/`, root); await mkdir(dir, { recursive: true });
+  await writeFile(new URL('projects.js', dir), `window.LAURAS_PROJECTS = ${JSON.stringify(data)};\n`);
+}
 console.log('Sagatavota sākumlapa un 12 apakšlapas no kopīga satura un projektu datiem.');
 
-async function save(path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.') {
-  const folder=new URL(`public/${path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
-  const pageUrl=`${siteUrl}/${path?path+'/':''}`;
+async function renderPage(lang,path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.') {
+  const pre=langPrefix(lang);const folder=new URL(`public${pre}/${path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
+  const pageUrl=`${siteUrl}${pre}/${path?path+'/':''}`;
   const social=[
     `<link rel="canonical" href="${pageUrl}">`,
+    ...(enabledLangs.length>1?[...enabledLangs.map(l=>`<link rel="alternate" hreflang="${l}" href="${siteUrl}${langPrefix(l)}/${path?path+'/':''}">`),`<link rel="alternate" hreflang="x-default" href="${siteUrl}/${path?path+'/':''}">`]:[]),
     `<meta property="og:type" content="website">`,
-    `<meta property="og:locale" content="lv_LV">`,
+    `<meta property="og:locale" content="${i18nConfig.languages[lang].locale}">`,
     `<meta property="og:site_name" content="${siteName}">`,
     `<meta property="og:title" content="${esc(title)}">`,
     `<meta property="og:description" content="${esc(description)}">`,
@@ -138,6 +148,13 @@ async function save(path,title,body,description='Lauras mēbeles. Virtuves, skap
     `<meta property="og:image:alt" content="${esc(ogImage.alt)}">`,
     `<meta name="twitter:card" content="summary_large_image">`
   ].join('\n  ');
-  const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"','<script src="/projects.js" defer></script>\n  <script src="/app.js"');
-  await writeFile(new URL('index.html',folder),`${pageHead}<body>${header}<main id="saturs">${body}</main>${footer}${dialog}</body></html>`);
+  const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`);
+  const switcher=enabledLangs.length>1?`<nav class="lang-switch" aria-label="Language">${enabledLangs.map(l=>l===lang?`<span aria-current="true">${i18nConfig.languages[l].short}</span>`:`<a href="${langPrefix(l)}/${path?path+'/':''}" hreflang="${l}" lang="${l}">${i18nConfig.languages[l].short}</a>`).join('')}</nav>`:'';
+  let html=`${pageHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}</body></html>`;
+  if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang); }
+  await writeFile(new URL('index.html',folder),html);
+}
+
+async function save(path,title,body,description){
+  for (const lang of enabledLangs) await renderPage(lang,path,title,body,description);
 }

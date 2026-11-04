@@ -1,0 +1,10 @@
+{
+  "default": "lv",
+  "languages": {
+    "lv": { "name": "Latviešu", "short": "LV", "locale": "lv_LV" },
+    "en": { "name": "English", "short": "EN", "locale": "en_GB" },
+    "ru": { "name": "Русский", "short": "RU", "locale": "ru_RU" },
+    "no": { "name": "Norsk", "short": "NO", "locale": "nb_NO" }
+  },
+  "enabled": ["lv"]
+}

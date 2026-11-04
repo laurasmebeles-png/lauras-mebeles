@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "node scripts/generate-pages.mjs && node scripts/dev.mjs",
     "build": "node scripts/generate-pages.mjs && node scripts/build.mjs",
-    "check": "node --check public/app.js && node --check scripts/dev.mjs && node --check scripts/build.mjs && node --check scripts/generate-pages.mjs && node --check src/catalog.mjs",
-    "generate": "node scripts/generate-pages.mjs"
+    "check": "node --check public/app.js && node --check scripts/dev.mjs && node --check scripts/build.mjs && node --check scripts/generate-pages.mjs && node --check src/catalog.mjs && node --check scripts/i18n.mjs && node --check scripts/i18n-extract.mjs",
+    "generate": "node scripts/generate-pages.mjs",
+    "i18n:extract": "node scripts/generate-pages.mjs && node scripts/i18n-extract.mjs"
   },
   "engines": {
     "node": ">=20"
