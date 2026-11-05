@@ -898,3 +898,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .lang-switch{display:flex;gap:10px;align-items:center;font-size:13px;letter-spacing:.06em;margin-left:16px}
 .lang-switch a{color:inherit;text-decoration:none;opacity:.7}.lang-switch a:hover{opacity:1}
 .lang-switch [aria-current]{font-weight:600}
+
+/* CTA izmanto neitrālu grafītu; zīmola sarkanais paliek mazajos akcentos. */
+:root{--action:#282b2b;--action-hover:#414646;--action-light-hover:#e8e9e7}
+.button,.nk-button-dark{background:var(--action);color:#fff;transition:background-color .2s ease,color .2s ease}
+.button:hover,.nk-button-dark:hover{background:var(--action-hover);color:#fff}
+.nk-button:not(.nk-button-dark):not(.nk-button-outline):hover{background:var(--action-light-hover);color:var(--ink)}
+.header nav>a:not(.button):hover,.text-link:hover,.nk-link:hover,.contact-links a:hover{color:inherit;opacity:.7}
+.nk-link:hover{border-color:currentColor}
+.calc-types input:checked+span,.calc-opts input:checked+span{border-color:var(--action);background:#efeee9;box-shadow:inset 0 0 0 1px var(--action)}
