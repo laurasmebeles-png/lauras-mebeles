@@ -925,14 +925,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .price-guide p+p{margin-top:10px}
 .price-guide .price-guide-note{font-size:14px;color:var(--ink-soft)}
 .price-example{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:clamp(30px,4.5vw,72px);align-items:start;padding-top:72px;padding-bottom:72px;background:#ede7df}
-.price-example-media{position:relative;aspect-ratio:1378/805;overflow:hidden;background:#eee6da}
-.price-example-straight .price-example-media{aspect-ratio:1347/874}
+.price-example-media{position:relative;aspect-ratio:1157/864;overflow:hidden;background:#eee6da}
 .price-example-alt{background:var(--paper)}
-.price-example-alt .price-example-media{order:2;aspect-ratio:1347/874}
-.price-example-light .price-example-media{aspect-ratio:1157/864}
-.price-example-premium .price-example-media{aspect-ratio:1340/805}
+.price-example-alt .price-example-media{order:2}
+.price-example:not(.price-example-straight):not(.price-example-light) .price-example-media img{inset:5% 5%;width:90%;height:90%}
 .price-example-pending{color:var(--ink-soft);font-style:italic}
-.price-example-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.price-example-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .price-example-sketch{clip-path:inset(0 100% 0 0)}
 .price-example-render{opacity:0}
 .price-example-media.is-visible .price-example-sketch{animation:price-draw 2.1s ease-out forwards}
@@ -941,8 +939,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 @keyframes price-reveal{to{opacity:1}}
 .price-example-media-label{position:absolute;left:14px;bottom:14px;z-index:2;background:#faf8f3e8;color:var(--ink);padding:7px 10px;font-size:11px;letter-spacing:.04em}
 .price-example-copy .eyebrow{margin:0 0 10px}
-.price-example-copy h2{font-family:var(--serif);font-size:clamp(34px,3.4vw,50px);font-weight:500;margin:0 0 16px}
-.price-example-price{font-family:var(--serif);font-size:clamp(30px,3.4vw,48px);line-height:1.1;color:var(--ink);margin-bottom:22px}
+#saturs .price-example-copy h2{font-family:var(--serif);font-size:clamp(28px,2.7vw,38px);font-weight:500;margin:0 0 12px}
+.price-example-price{font-family:var(--serif);font-size:clamp(26px,2.8vw,36px);line-height:1.15;color:var(--ink);margin-bottom:18px}
 .price-example-copy>p:not(.eyebrow):not(.price-example-price){font-size:16px;line-height:1.6;max-width:520px;margin:0 0 14px}
 .price-example-copy>p strong{font-weight:600}
 .price-example-copy .price-example-note{font-size:14px!important;color:var(--ink-soft)}
