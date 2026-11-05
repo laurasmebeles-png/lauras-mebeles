@@ -922,6 +922,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .price-example-media{position:relative;aspect-ratio:1378/805;overflow:hidden;background:#eee6da}
 .price-example-alt{background:var(--paper)}
 .price-example-alt .price-example-media{order:2;aspect-ratio:1347/874}
+.price-example-premium .price-example-media{aspect-ratio:1340/805}
 .price-example-pending{color:var(--ink-soft);font-style:italic}
 .price-example-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .price-example-sketch{clip-path:inset(0 100% 0 0)}
