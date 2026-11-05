@@ -886,12 +886,18 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 
 /* Par mums: process paliek īss, darbnīcas foto ir ievadā */
 .ab-intro{padding-bottom:24px!important}
-.ab-process{padding-top:24px!important;padding-bottom:24px!important}
-.ab-cards{padding-top:24px!important}
-.ab-process-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:24px}
+.ab-process{padding-top:24px!important;padding-bottom:28px!important}
+.ab-cards{padding-top:clamp(44px,5vw,68px)!important;border-top:1px solid var(--line)}
+.ab-cards-heading{grid-column:1/-1;margin-bottom:8px}
+.ab-cards-heading .eyebrow{margin-bottom:12px}
+.ab-cards-heading h2{margin:0}
+.ab-cards article h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2vw,26px);line-height:1.2;margin:0 0 8px}
+.ab-process ol.ab-process-steps{--step-gap:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--step-gap);list-style:none;margin:24px 0 0;padding:0}
+.ab-process-steps .ab-step{position:relative;border:0;padding:0}
+.ab-step:not(:last-child)::after{content:"";position:absolute;top:10px;left:calc(100% + 18px);width:10px;height:10px;border-top:1.5px solid var(--ink-soft);border-right:1.5px solid var(--ink-soft);transform:rotate(45deg)}
 .ab-step h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2vw,26px);line-height:1.25;margin:0 0 8px}
 .ab-step p{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.6}
-@media(max-width:900px){.ab-process-steps{grid-template-columns:1fr;gap:24px}}
+@media(max-width:900px){.ab-process ol.ab-process-steps{grid-template-columns:1fr;gap:20px}.ab-step:not(:last-child)::after{display:none}.ab-process-steps .ab-step+.ab-step{border-top:1px solid var(--line);padding-top:20px}}
 
 /* valodu pārslēdzējs (redzams tikai, ja ieslēgtas vairākas valodas) */
 .lang-switch{display:flex;gap:10px;align-items:center;font-size:13px;letter-spacing:.06em;margin-left:16px}
