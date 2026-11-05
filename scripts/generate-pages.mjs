@@ -49,11 +49,32 @@ const categoryCards = () => {
   const rows = rest.map(c=>`<li><a href="/${c.path}/" data-event="category_select" data-category="${c.id}"><div class="service-row-text"><h3>${esc(c.label)}</h3><p>${esc(c.short)}</p></div>${arrow}</a></li>`).join('');
   return `<div class="services-layout"><a class="service-feature" href="/${feat.path}/" data-event="category_select" data-category="${feat.id}"><div class="collage">${collage}</div><div class="service-feature-copy"><h3>${esc(feat.label)} ${arrow}</h3><p>${esc(feat.short)}</p></div></a><ul class="service-rows">${rows}</ul></div>`;
 };
-const reviewCard = r => { const text = r.text.replace(/[\u2013\u2014]/g, '-'); const cut = text.indexOf('. ',160); const head = cut>0?text.slice(0,cut):text.replace(/[.]$/,''); const rest=cut>0?text.slice(cut+2):''; return `<article class="review-card" data-review-source="${r.source}"><span class="review-quote" aria-hidden="true">“</span><blockquote>${rest?`<p class="rm"><span class="rm-head">${esc(head)}</span><span class="rm-dots">… </span><span class="rm-tail" hidden>. ${esc(rest)}</span> <button type="button" class="rm-btn" aria-expanded="false">Lasīt vairāk</button></p>`:`<p>${esc(text)}</p>`}</blockquote><p class="review-author">${esc(r.author)}</p></article>`; };
+const reviewById = new Map(reviews.map(r => [r.id,r]));
+const selectReviews = ids => ids.map(id => { const review = reviewById.get(id); if (!review) throw Error(`Missing review ${id}`); return review; });
+const homeReviewIds = ['google-karlina-gatere','facebook-dace-milberga','web-3'];
+const pageReviewIds = [
+  'google-karlina-gatere','facebook-dace-milberga','web-3',
+  'google-julia-staudza','facebook-erlens-ernstsons','web-2',
+  'google-kg-knutsson','facebook-lasma-cerina','web-1',
+  'web-4','web-5','web-6'
+];
+const reviewMeta = r => r.source==='google'
+  ? `<div class="review-meta"><span class="review-source">Google</span><span class="review-stars" role="img" aria-label="${r.rating} no 5 zvaigznēm">★★★★★</span></div>`
+  : r.source==='facebook'
+    ? `<div class="review-meta"><span class="review-source">Facebook</span><span class="review-recommendation">Iesaka Lauras mēbeles</span></div>`
+    : `<div class="review-meta"><span class="review-source">Klienta atsauksme</span></div>`;
+const reviewCard = r => {
+  const text = r.text.replace(/[\u2013\u2014]/g,'-');
+  const sentenceEnd = [...text.matchAll(/[.!?](?=\s|$)/g)].map(m=>m.index+1).find(pos=>pos>=120&&pos<=220);
+  const cut = text.length>230 ? (sentenceEnd || text.lastIndexOf(' ',200)) : 0;
+  const head = cut>0?text.slice(0,cut).trimEnd():text;
+  const rest = cut>0?text.slice(cut).trimStart():'';
+  return `<article class="review-card" data-review-source="${r.source}">${reviewMeta(r)}<span class="review-quote" aria-hidden="true">“</span><blockquote>${rest?`<p class="rm"><span class="rm-head">${esc(head)}</span><span class="rm-dots" aria-hidden="true"> …</span><span class="rm-tail" hidden> ${esc(rest)}</span> <button type="button" class="rm-btn" aria-expanded="false">Lasīt vairāk</button></p>`:`<p>${esc(text)}</p>`}</blockquote><p class="review-author">${esc(r.author)}</p></article>`;
+};
 const reviewGrid = list => `<div class="review-grid">${list.map(reviewCard).join('')}</div>`;
 const homeServices = `<section id="mebeles" class="section"><div class="section-heading"><div><p class="eyebrow">01 / Pakalpojumi</p><h2>Ko mēs izgatavojam?</h2></div><p>No virtuves līdz garderobei. Mēbeles, kas iederas jūsu mājās.</p></div>${categoryCards()}</section>`;
 const homeProjects = `<section id="darbi" class="section projects-section"><div class="section-heading"><div><p class="eyebrow">02 / Realizētie projekti</p><h2>Iedvesma jūsu mājām.</h2></div><p>Virtuves, skapji un pārdomāti risinājumi īstās mājās.</p></div>${grid(['peleka','skapis','prieksnams'].map(id=>projects.find(p=>p.id===id)))}<div class="gallery-bottom"><a class="text-link" href="/musu-darbi/">Visi mūsu darbi ${arrow}</a></div></section>`;
-const homeReviews = `<section id="atsauksmes" class="section"><div class="section-heading"><div><p class="eyebrow">Klientu pieredze</p><h2>Ko saka mūsu klienti</h2></div><a class="text-link" href="${reviewPath}">Visas atsauksmes ${arrow}</a></div>${reviewGrid([reviews[0],reviews[2],reviews[5]])}</section>`;
+const homeReviews = `<section id="atsauksmes" class="section"><div class="section-heading"><div><p class="eyebrow">Klientu pieredze</p><h2>Ko saka mūsu klienti</h2></div><a class="text-link" href="${reviewPath}">Visas atsauksmes ${arrow}</a></div>${reviewGrid(selectReviews(homeReviewIds))}</section>`;
 let home = source.slice(source.indexOf('<main id="saturs">')+18,source.indexOf('</main>'));
 home=home.replace(section('mebeles'),homeServices).replace(section('darbi'),homeProjects);
 const homePrice=`<section id="cenas" class="section home-price"><div class="home-price-box"><div><p class="eyebrow">Cenas</p><h2>Cik maksās jūsu mēbeles?</h2><p>Cenu veido izmēri, materiāli, furnitūra un risinājums. Aprēķiniet sākuma punktu vai pastāstiet par savu ieceri, un sagatavosim individuālu piedāvājumu.</p></div><div class="home-price-actions"><a class="button" href="/cenas/">Aprēķināt sākuma punktu</a><a class="text-link" href="/kontakti/#pieteikums">Pieteikt konsultāciju ${arrow}</a></div></div></section>`;
@@ -118,7 +139,7 @@ const calcCfg = JSON.parse(_rf(new URL('../src/calc-config.json', import.meta.ur
 const calcSection = () => `<section id="kalkulators" class="section calc">${calcCfg.testMode?`<p class="calc-test" role="note">${esc(calcCfg.note)}</p>`:''}<form id="calc" class="calc-card" novalidate><fieldset class="calc-types"><legend>1. Kādas mēbeles plānojat?</legend><div>${Object.entries(calcCfg.types).map(([k,t],i)=>`<label><input type="radio" name="ctype" value="${k}"${i===0?' checked':''}><span><strong>${esc(t.label)}</strong><small>${esc(t.desc)}</small></span></label>`).join('')}</div></fieldset><div id="calc-fields" class="calc-fields"></div><div id="calc-result" class="calc-result" aria-live="polite"></div><button type="submit" class="button" id="calc-submit">Saņemt precīzu piedāvājumu ${arrow}</button></form><script type="application/json" id="calc-config">${JSON.stringify(calcCfg).replace(/</g,'\\u003c')}</script></section>`;
 await save('cenas','Mēbeļu cenas un piedāvājums | Lauras mēbeles',pricingIntro+calcSection()+priceFactorsBlock+section('jautajumi')+section('pieteikums'),'Uzziniet, kas ietekmē virtuves, skapja un citu mēbeļu cenu. Izmēri, materiāli un komplektācija. Piesakiet individuālu cenas piedāvājumu.');
 await save('kontakti','Kontakti un cenas piedāvājums | Lauras mēbeles',`<div class="section contact-crumbs">${crumbs('Kontakti')}</div>`+section('pieteikums').replace('<p class="eyebrow">Sāksim ar sarunu</p><h2>Pastāstiet par<br><em>savu ieceri</em></h2>','<h1>Pastāstiet par<br><em>savu ieceri</em></h1>'),'Pastāstiet par savu mēbeļu ieceri. Lauras mēbeles, Matīsa iela 78a, Rīga. Tālrunis +371 2914 2364, +371 2947 2242, e-pasts info@laurasmebeles.lv.');
-const reviewsBody=pageIntro('Atsauksmes','Ko saka mūsu klienti','Par sadarbību, mēbelēm un rezultātu mūsu klientu vārdiem.')+`<section class="section section-tight">${reviewGrid(reviews)}<div class="gallery-bottom"><a href="https://www.facebook.com/LaurasMebeles/" target="_blank" rel="noopener" class="text-link">Apskatiet mūs arī Facebook ${arrow}</a></div>${cta('Pastāstiet par savu ieceri','Iesākumam pietiek ar ideju.')}</section>`;
+const reviewsBody=pageIntro('Atsauksmes','Ko saka mūsu klienti','Atlasītas klientu atsauksmes no Google, Facebook un mūsu iepriekšējās mājaslapas.')+`<section class="section section-tight">${reviewGrid(selectReviews(pageReviewIds))}<div class="review-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Lauras%20M%C4%93beles%2C%20Mat%C4%ABsa%20iela%2078a%2C%20R%C4%ABga" target="_blank" rel="noopener" class="text-link">Lauras mēbeles Google Maps ${arrow}</a><a href="https://www.facebook.com/LaurasMebeles/" target="_blank" rel="noopener" class="text-link">Apskatiet mūs arī Facebook ${arrow}</a></div>${cta('Pastāstiet par savu ieceri','Iesākumam pietiek ar ideju.')}</section>`;
 await save('virtuves-mebeles-atsauksmes-virtuves-iekartas','Klientu atsauksmes | Lauras mēbeles',reviewsBody,'Lasiet klientu atsauksmes par Lauras mēbeļu izgatavotajām virtuvēm, skapjiem un citām mēbelēm, sadarbību un darba kvalitāti.');
 const projectsData = projects.map(p=>p.before?{...p,photos:[p.before,...p.photos],labels:['Pirms',...p.photos.map(()=>'Pēc')]}:p);
 for (const lang of enabledLangs) {
