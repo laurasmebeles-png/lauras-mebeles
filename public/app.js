@@ -6,7 +6,7 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 // Preview-only diagnostics. No external analytics request or personal data.
 const allowedEvents = new Set(['cta_click','phone_click','email_click','category_select','gallery_filter','project_view','project_select','configurator_start','configurator_complete','form_start','form_preview_complete','faq_open','review_filter']);
 const allowedKeys = new Set(['location','category','project_id','question','source']);
-const allowedValues = new Set(['header','hero','price','topbar','contact','footer','gallery','all','virtuve','skapis','prieksnams','vannasistaba','viesistaba','citas','peleka','kompakta','1','2','3','4','5','google','facebook','website', ...(window.LAURAS_PROJECTS || []).map(p => p.id)]);
+const allowedValues = new Set(['header','hero','price','price_example','topbar','contact','footer','gallery','all','virtuve','skapis','prieksnams','vannasistaba','viesistaba','citas','peleka','kompakta','1','2','3','4','5','google','facebook','website','taisna','gaisa-l-veida','egger-l-veida','vitrina-l-veida', ...(window.LAURAS_PROJECTS || []).map(p => p.id)]);
 window.dataLayer = window.dataLayer || [];
 function track(event, parameters = {}) {
   if (!allowedEvents.has(event)) return;
@@ -43,7 +43,7 @@ document.addEventListener('keydown', event => {
     if (menuButton.getAttribute('aria-expanded') === 'true') { closeMenu(); menuButton.focus(); }
   }
 });
-$$('[data-event]').forEach(link => link.addEventListener('click', () => track(link.dataset.event, { location: link.dataset.location, category: link.dataset.category })));
+$$('[data-event]').forEach(link => link.addEventListener('click', () => track(link.dataset.event, { location: link.dataset.location, category: link.dataset.category, source: link.dataset.example })));
 
 function moveToForm(category, context) {
   if (category) $('#furniture').value = category;
@@ -55,15 +55,37 @@ function moveToForm(category, context) {
   $('#pieteikums').scrollIntoView({ behavior: 'instant', block: 'start' });
   $('#name').focus({ preventScroll: true });
 }
+const priceExamples = {
+  taisna: T('Taisna virtuve gar vienu sienu'),
+  'gaisa-l-veida': T('Gaiša L veida virtuve'),
+  'egger-l-veida': T('L veida virtuve ar EGGER apdari'),
+  'vitrina-l-veida': T('L veida virtuve ar izgaismotu vitrīnu')
+};
+const selectedPriceExample = new URLSearchParams(location.search).get('piemers');
+if ($('#lead-form') && Object.hasOwn(priceExamples, selectedPriceExample)) {
+  $('#furniture').value = 'virtuve';
+  $('#price-example-input').value = selectedPriceExample;
+  $('#context-text').textContent = `${T('Izvēlētais cenu piemērs')}: ${priceExamples[selectedPriceExample]}`;
+  $('#project-context').hidden = false;
+}
+function clearFormContext() {
+  $('#project-context').hidden = true;
+  $('#context-text').textContent = '';
+  $('#price-example-input').value = '';
+  const url = new URL(location.href);
+  if (url.searchParams.has('piemers')) {
+    url.searchParams.delete('piemers');
+    history.replaceState(null, '', url);
+  }
+}
 $$('[data-select]').forEach(button => button.addEventListener('click', () => {
   track('category_select', { category: button.dataset.select });
   // Category changes invalidate an earlier project's category-specific context.
-  $('#project-context').hidden = true;
-  $('#context-text').textContent = '';
+  clearFormContext();
   moveToForm(button.dataset.select);
 }));
-$('#clear-context')?.addEventListener('click', () => { $('#project-context').hidden = true; $('#context-text').textContent = ''; $('#furniture').focus(); });
-$('#furniture')?.addEventListener('change', () => { $('#project-context').hidden = true; $('#context-text').textContent = ''; });
+$('#clear-context')?.addEventListener('click', () => { clearFormContext(); $('#furniture').focus(); });
+$('#furniture')?.addEventListener('change', clearFormContext);
 const filters = $$('[data-filter]');
 function applyProjectFilter(filter, updateUrl = true) {
   if (!filters.some(button => button.dataset.filter === filter)) filter = 'all';
@@ -234,7 +256,7 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
   btn.textContent = open ? T('Rādīt mazāk') : T('Lasīt vairāk'); btn.setAttribute('aria-expanded', String(open));
 }));
 
-// Cenu piemēra skice parādās, kad tā nonāk skatā.
+// Cenu piemēros pilna skice īsi pāriet gatavā 3D attēlā, kad tas ir ielādēts.
 (() => {
   const visuals = document.querySelectorAll('[data-price-animation]');
   if (!visuals.length) return;
@@ -242,12 +264,15 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
     visuals.forEach(visual => visual.classList.add('is-visible')); return;
   }
   const observer = new IntersectionObserver(entries => {
-    if (entries.some(entry => entry.isIntersecting)) {
-      entries.filter(entry => entry.isIntersecting).forEach(entry => {
-        entry.target.classList.add('is-visible'); observer.unobserve(entry.target);
-      });
-    }
-  }, { threshold: 0.25 });
+    entries.filter(entry => entry.isIntersecting).forEach(entry => {
+      const visual = entry.target;
+      const render = visual.querySelector('.price-example-render');
+      const show = () => { if (render.naturalWidth) visual.classList.add('is-visible'); };
+      if (render.complete) show();
+      else render.addEventListener('load', show, { once: true });
+      observer.unobserve(visual);
+    });
+  }, { threshold: 0.15 });
   visuals.forEach(visual => observer.observe(visual));
 })();
 
