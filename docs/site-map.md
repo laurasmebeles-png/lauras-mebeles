@@ -6,6 +6,7 @@ Lietotāja kopumā piekritusi šim virzienam. Saglabājam pašreizējās pakalpo
 |---|---|---|
 | Sākumlapa | `/` | Viss piedāvājums, virtuves kā specializācija, uzticamība un saziņa. |
 | Virtuves | `/virtuves/` | Virtuves pēc pasūtījuma, projekti, cenas faktori un pieteikums. |
+| Iedvesmai | `/iedvesmai/` | Atsevišķi skatāmi virtuves projekti pirms un pēc mēbeļu uzstādīšanas. |
 | Skapji | `/skapji/` | Iebūvējamie skapji, garderobes, durvju/pildījuma risinājumi un cena. |
 | Priekšnama mēbeles | `/koridora-iekartas/` | Telpai pielāgota glabāšana un reāli piemēri. |
 | Vannas istabas mēbeles | `/vannasistabas-mebeles/` | Izmēri, materiāli un projekti. |
@@ -31,11 +32,12 @@ Mēbeles · Realizētie projekti · Cenas · Par mums · Atsauksmes · Kontakti.
 
 ## Apstiprinātā struktūra un lokālais izpildījums — 30.10.2026.
 
-Navigācija: Pakalpojumi · Mūsu darbi · Cenas · Par mums · Atsauksmes · Kontakti.
+Navigācija: Pakalpojumi · Iedvesmai · Mūsu darbi · Cenas · Par mums · Atsauksmes · Kontakti.
 
 - `/pakalpojumi/` — visas sešas kategorijas, apraksti, saites uz to lapām.
 - Sešās pakalpojumu lapās saglabātas iepriekš tabulā norādītās adreses. Vienāds karkass: hero un apraksts → atlasītie projekti → pilnā galerija ar kategorijas filtru → vispārīgais pieteikums → praktiskā informācija/cenas faktori.
 - `/musu-darbi/` — vienota galerija. `?kategorija=virtuve` (vai citas atļautās kategorijas ID) saglabā sākuma filtru. Viens projekta ieraksts var parādīties pakalpojuma lapā, sākumlapā un galerijā.
+- `/iedvesmai/` — atsevišķa lapa ar virtuves projektu salīdzinājumiem pirms un pēc. Virtuvju pakalpojuma lapā šis bloks neatkārtojas; tā paliek veltīta piedāvājumam un atlasītajiem projektiem.
 - `/par-mums/` — pielāgoti risinājumi, materiālu/apdares piemēri, uzmanība detaļām, pieredze. Komandas un ražotnes jaunie foto vēl jāiegūst.
 - `/cenas/` — cenas skaidrojums un pašreizējais parametru konfigurators bez EUR aprēķina.
 - `/virtuves-mebeles-atsauksmes-virtuves-iekartas/` — sešas īstās mājaslapas atsauksmes un avotu filtri. Google/Facebook ieraksti vēl nav importēti; izdrukāti skaidri uzmetuma statusi.

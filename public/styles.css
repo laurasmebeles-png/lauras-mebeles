@@ -200,7 +200,7 @@
 .review-empty { background: var(--surface); border-radius:2px; padding: 45px; }
 .review-empty h2 { font-size: 32px; }
 .review-empty p { max-width: 630px; margin: 20px 0; }
-@media (min-width: 761px) and (max-width: 1150px) {
+@media (min-width: 761px) and (max-width: 1300px) {
   .header nav { gap: 13px; }
   .header nav > a[href='/par-mums/'],.header nav > a[href='/kontakti/'] { display: none; }
   .header .button-small { font-size: 11px; gap: 10px; }
@@ -753,10 +753,11 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .kcase-media .is-before:hover img,.kcase-media .is-before:focus-within img{filter:none;opacity:1}
 .kcase-media .is-before figcaption{opacity:.8}
 
-/* Pirms/Pēc salīdzinājuma josla */
+/* Virtuvju pārvērtības atsevišķā iedvesmas lapā */
 .nk-ba{padding-top:clamp(56px,6vw,96px)}
+.inspiration-page{padding-bottom:clamp(64px,7vw,100px)}
 .ba-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4vw,56px) clamp(24px,3vw,48px)}
-.ba h3{font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.6vw,22px);line-height:1.25;margin:14px 0 0}
+.ba h2{font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.6vw,22px);line-height:1.25;margin:14px 0 0}
 .ba-frame{--pos:50%;position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--surface);user-select:none}
 .ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
 .ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0);filter:saturate(.55) brightness(1.02)}
@@ -807,7 +808,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:24px}
 .ab-intro h1{margin:8px 0 18px}
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
-.ab-intro-media img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.ab-intro-media{display:flex;justify-content:center}
+.ab-intro-media img{display:block;width:min(100%,420px);height:auto;aspect-ratio:3/4;object-fit:cover}
 .ab-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:32px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .ab-facts dt{font-family:var(--serif);font-size:34px;line-height:1;color:var(--red)}
 .ab-facts dd{margin:8px 0 0;font-size:13px;line-height:1.4;color:var(--muted,#5d564f)}
@@ -883,14 +885,14 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .price-more p{margin:12px 0 0;color:var(--ink-soft);line-height:1.6;max-width:640px}
 #saturs .price-top{padding-bottom:0}.price-top+.calc{padding-top:28px}
 
-/* process v2 */
-.ab-process .ab-process-grid{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:clamp(40px,6vw,88px);align-items:stretch;margin-top:8px}
-.ab-process-photo{margin:0;position:relative;min-height:360px}
-.ab-process-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
-.ab-process-steps{display:flex;flex-direction:column;justify-content:center;gap:40px;max-width:560px;padding:8px 0}
+/* Par mums: process paliek īss, darbnīcas foto ir ievadā */
+.ab-intro{padding-bottom:24px!important}
+.ab-process{padding-top:24px!important;padding-bottom:24px!important}
+.ab-cards{padding-top:24px!important}
+.ab-process-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:24px}
 .ab-step h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2vw,26px);line-height:1.25;margin:0 0 8px}
 .ab-step p{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.6}
-@media(max-width:860px){.ab-process .ab-process-grid{grid-template-columns:1fr;gap:28px}.ab-process-steps{order:1;gap:28px}.ab-process-photo{order:2;min-height:0;aspect-ratio:4/5;max-width:420px}}
+@media(max-width:900px){.ab-process-steps{grid-template-columns:1fr;gap:24px}}
 
 /* valodu pārslēdzējs (redzams tikai, ja ieslēgtas vairākas valodas) */
 .lang-switch{display:flex;gap:10px;align-items:center;font-size:13px;letter-spacing:.06em;margin-left:16px}
