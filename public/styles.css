@@ -688,6 +688,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}
 .nk-service-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:2px;overflow:hidden;text-decoration:none;color:var(--ink)}
 .nk-service-card img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease}
+.nk-service-card.nk-service-card-portrait img{object-position:center 55%}
 .nk-service-card:hover img{transform:scale(1.03)}
 .nk-service-card{overflow:hidden}
 .nk-service-body{display:block;padding:22px 20px 26px;text-align:center;background:#fff;position:relative;z-index:1}
