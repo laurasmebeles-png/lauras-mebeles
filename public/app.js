@@ -185,8 +185,8 @@ if (valueItems.length && 'IntersectionObserver' in window) {
   let i = 0, timer = null;
   const show = n => { slides[i].classList.remove('is-active'); i = n; slides[i].classList.add('is-active'); };
   const schedule = delay => { timer = setTimeout(() => { show((i + 1) % slides.length); schedule(6000); }, delay); };
-  const start = () => { schedule(5000); btn.textContent = T('Pauze'); btn.setAttribute('aria-label', T('Apturēt bilžu maiņu')); };
-  const stop = () => { clearTimeout(timer); timer = null; btn.textContent = T('Turpināt'); btn.setAttribute('aria-label', T('Turpināt bilžu maiņu')); };
+  const start = () => { schedule(5000); btn.classList.remove('is-paused'); btn.setAttribute('aria-label', T('Apturēt bilžu maiņu')); };
+  const stop = () => { clearTimeout(timer); timer = null; btn.classList.add('is-paused'); btn.setAttribute('aria-label', T('Turpināt bilžu maiņu')); };
   slides.forEach(s => s.loading = 'eager');
   btn.addEventListener('click', () => timer ? stop() : start());
   reduce ? stop() : start();

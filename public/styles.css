@@ -576,7 +576,12 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.6vw,64px);line-height:1.12;margin:0 0 34px;color:#fff;letter-spacing:0}
 .nk-button{display:inline-block;background:#fff;color:#231f1b;text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:500;padding:20px 40px;border-radius:2px;text-decoration:none;transition:background .2s}
 .nk-button:hover{background:#efe8de}
-.nk-hero-pause{position:absolute;right:18px;bottom:16px;z-index:3;background:rgba(0,0,0,.35);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;cursor:pointer}
+.nk-hero-pause{position:absolute;right:18px;bottom:16px;z-index:3;display:grid;place-items:center;width:44px;height:44px;padding:0;background:rgba(0,0,0,.16);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:50%;cursor:pointer;transition:background .2s,border-color .2s}
+.nk-hero-pause:hover,.nk-hero-pause:focus-visible{background:rgba(0,0,0,.42);border-color:#fff}
+.nk-hero-pause:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.nk-hero-pause svg{width:18px;height:18px}
+.nk-hero-icon-play,.nk-hero-pause.is-paused .nk-hero-icon-pause{display:none}
+.nk-hero-pause.is-paused .nk-hero-icon-play{display:block}
 .nk-section{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(40px,5vw,72px)}
 .nk-heading{text-align:center;font-size:clamp(30px,3.2vw,44px);margin:0 0 40px}
 .nk-tiles{display:grid;gap:18px}
