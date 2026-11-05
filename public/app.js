@@ -234,7 +234,24 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
   btn.textContent = open ? T('Rādīt mazāk') : T('Lasīt vairāk'); btn.setAttribute('aria-expanded', String(open));
 }));
 
-// Cenu kalkulators (aprēķina likmes ir src/calc-config.json)
+// Cenu piemēra skice parādās, kad tā nonāk skatā.
+(() => {
+  const visuals = document.querySelectorAll('[data-price-animation]');
+  if (!visuals.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    visuals.forEach(visual => visual.classList.add('is-visible')); return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      entries.filter(entry => entry.isIntersecting).forEach(entry => {
+        entry.target.classList.add('is-visible'); observer.unobserve(entry.target);
+      });
+    }
+  }, { threshold: 0.25 });
+  visuals.forEach(visual => observer.observe(visual));
+})();
+
+// Cenu kalkulators (saglabāts vecajam prototipam, cenās vairs netiek rādīts)
 (() => {
   const form = document.getElementById('calc'); if (!form) return;
   const cfg = JSON.parse(document.getElementById('calc-config').textContent);
