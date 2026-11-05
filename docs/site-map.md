@@ -5,7 +5,7 @@ Lietotāja kopumā piekritusi šim virzienam. Saglabājam pašreizējās pakalpo
 | Lapa | Adrese / statuss | Galvenais uzdevums |
 |---|---|---|
 | Sākumlapa | `/` | Viss piedāvājums, virtuves kā specializācija, uzticamība un saziņa. |
-| Virtuves | `/virtuves/` | Virtuves pēc pasūtījuma, projekti, cenas faktori un pieteikums. |
+| Virtuves mēbeles | `/virtuves/` | Virtuves mēbeles pēc pasūtījuma, projekti, cenas faktori un pieteikums. |
 | Iedvesmai | `/iedvesmai/` | Atsevišķi skatāmi virtuves projekti pirms un pēc mēbeļu uzstādīšanas. |
 | Skapji | `/skapji/` | Iebūvējamie skapji, garderobes, durvju/pildījuma risinājumi un cena. |
 | Priekšnama mēbeles | `/koridora-iekartas/` | Telpai pielāgota glabāšana un reāli piemēri. |

@@ -1,5 +1,5 @@
 export const categories = [
-  { id:'virtuve', path:'virtuves', label:'Virtuves', title:'Virtuves pēc pasūtījuma', image:'cat-virtuves.webp',
+  { id:'virtuve', path:'virtuves', label:'Virtuves mēbeles', title:'Virtuves mēbeles pēc pasūtījuma', image:'cat-virtuves.webp',
     intro:'Izgatavojam virtuves iekārtas pēc pasūtījuma, pielāgojot tās jūsu telpas izmēriem. Kopā izvēlamies plānojumu, fasādes un darba virsmu, paredzot vietu tehnikai un ikdienā vajadzīgajām lietām.',
     short:'No kompaktas virtuves līdz plašai virtuvei ar salu.',
     metaDesc:'Virtuves mēbeles pēc pasūtījuma jūsu telpai un vajadzībām. Apskatiet izgatavotās virtuves un saņemiet individuālu cenas piedāvājumu.',
