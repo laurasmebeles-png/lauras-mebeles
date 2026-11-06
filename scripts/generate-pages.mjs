@@ -59,17 +59,18 @@ const pageReviewIds = [
   'web-4','web-5','web-6'
 ];
 const reviewMeta = r => r.source==='google'
-  ? `<div class="review-meta"><span class="review-source">Google</span><span class="review-stars" role="img" aria-label="${r.rating} no 5 zvaigznēm">★★★★★</span></div>`
+  ? `<div class="review-meta"><span class="review-source"><span class="review-source-icon review-source-icon-google" aria-hidden="true">G</span>Google</span><span class="review-stars" role="img" aria-label="${r.rating} no 5 zvaigznēm">★★★★★</span></div>`
   : r.source==='facebook'
-    ? `<div class="review-meta"><span class="review-source">Facebook</span><span class="review-recommendation">Iesaka Lauras mēbeles</span></div>`
+    ? `<div class="review-meta"><span class="review-source"><span class="review-source-icon review-source-icon-facebook" aria-hidden="true">f</span>Facebook</span><span class="review-recommendation">Iesaka Lauras mēbeles</span></div>`
     : `<div class="review-meta"><span class="review-source">Klienta atsauksme</span></div>`;
+const reviewAvatar = `<span class="review-avatar" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><circle cx="20" cy="14" r="6"/><path d="M8 34c0-7 5-11 12-11s12 4 12 11"/></svg></span>`;
 const reviewCard = r => {
   const text = r.text.replace(/[\u2013\u2014]/g,'-');
   const sentenceEnd = [...text.matchAll(/[.!?](?=\s|$)/g)].map(m=>m.index+1).find(pos=>pos>=120&&pos<=220);
   const cut = text.length>230 ? (sentenceEnd || text.lastIndexOf(' ',200)) : 0;
   const head = cut>0?text.slice(0,cut).trimEnd():text;
   const rest = cut>0?text.slice(cut).trimStart():'';
-  return `<article class="review-card" data-review-source="${r.source}">${reviewMeta(r)}<blockquote>${rest?`<p class="rm"><span class="rm-head">${esc(head)}</span><span class="rm-dots" aria-hidden="true"> …</span><span class="rm-tail" hidden> ${esc(rest)}</span> <button type="button" class="rm-btn" aria-expanded="false">Lasīt vairāk</button></p>`:`<p>${esc(text)}</p>`}</blockquote><p class="review-author">${esc(r.author)}</p></article>`;
+  return `<article class="review-card" data-review-source="${r.source}"><div class="review-bubble">${reviewMeta(r)}<blockquote>${rest?`<p class="rm"><span class="rm-head">${esc(head)}</span><span class="rm-dots" aria-hidden="true"> …</span><span class="rm-tail" hidden> ${esc(rest)}</span> <button type="button" class="rm-btn" aria-expanded="false">Lasīt vairāk</button></p>`:`<p>${esc(text)}</p>`}</blockquote></div><p class="review-author">${reviewAvatar}<span>${esc(r.author)}</span></p></article>`;
 };
 const reviewGrid = list => `<div class="review-grid">${list.map(reviewCard).join('')}</div>`;
 const homeServices = `<section id="mebeles" class="section"><div class="section-heading"><div><p class="eyebrow">01 / Pakalpojumi</p><h2>Ko mēs izgatavojam?</h2></div><p>No virtuves līdz garderobei. Mēbeles, kas iederas jūsu mājās.</p></div>${categoryCards()}</section>`;
