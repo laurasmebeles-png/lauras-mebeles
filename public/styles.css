@@ -644,6 +644,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-tile-text-title{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px)}
 .nk-tile-text-contact{font-size:16px;font-weight:500;line-height:1.7}
 .reviews-section{background:#eeece8}
+@media(max-width:760px){.reviews-section .section-heading>a{margin-top:24px}}
 .review-card{display:flex;flex-direction:column;background:#fff;border:1px solid #d8d1c8;border-radius:2px;padding:28px 28px 26px;min-width:0}
 .review-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;min-height:20px;margin-bottom:22px}
 .review-meta .review-source{margin:0;color:#615b54;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
