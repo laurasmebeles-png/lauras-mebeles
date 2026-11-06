@@ -256,23 +256,44 @@ document.querySelectorAll('.rm-btn').forEach(btn => btn.addEventListener('click'
   btn.textContent = open ? T('Rādīt mazāk') : T('Lasīt vairāk'); btn.setAttribute('aria-expanded', String(open));
 }));
 
-// Cenu piemēros pilna skice īsi pāriet gatavā 3D attēlā, kad tas ir ielādēts.
+// Cenu piemēros skice pāriet 3D attēlā ikreiz, kad piemērs atkal nonāk skatā.
 (() => {
-  const visuals = document.querySelectorAll('[data-price-animation]');
+  const visuals = [...document.querySelectorAll('[data-price-animation]')];
   if (!visuals.length) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
     visuals.forEach(visual => visual.classList.add('is-visible')); return;
   }
+  const states = new WeakMap();
+  const revealDelay = 700;
+  visuals.forEach(visual => {
+    const render = visual.querySelector('.price-example-render');
+    const state = { active: false, timer: null };
+    states.set(visual, state);
+    render.addEventListener('load', () => scheduleReveal(visual, render, state));
+  });
+  function scheduleReveal(visual, render, state) {
+    if (!state.active || state.timer !== null || visual.classList.contains('is-visible') || !render.naturalWidth) return;
+    state.timer = window.setTimeout(() => {
+      state.timer = null;
+      if (state.active) visual.classList.add('is-visible');
+    }, revealDelay);
+  }
   const observer = new IntersectionObserver(entries => {
-    entries.filter(entry => entry.isIntersecting).forEach(entry => {
+    entries.forEach(entry => {
       const visual = entry.target;
+      const state = states.get(visual);
       const render = visual.querySelector('.price-example-render');
-      const show = () => { if (render.naturalWidth) visual.classList.add('is-visible'); };
-      if (render.complete) show();
-      else render.addEventListener('load', show, { once: true });
-      observer.unobserve(visual);
+      if (entry.intersectionRatio >= 0.45) {
+        state.active = true;
+        scheduleReveal(visual, render, state);
+      } else if (!entry.isIntersecting) {
+        state.active = false;
+        window.clearTimeout(state.timer);
+        state.timer = null;
+        visual.classList.remove('is-visible');
+      }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: [0, 0.45] });
   visuals.forEach(visual => observer.observe(visual));
 })();
 

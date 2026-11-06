@@ -933,7 +933,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .price-example:not(.price-example-straight):not(.price-example-light) .price-example-media img{left:5%;width:90%}
 .price-example-pending{color:var(--ink-soft);font-style:italic}
 .price-example-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
-.price-example-render{opacity:0;transition:opacity .85s ease-out .2s}
+.price-example-render{opacity:0;transition:opacity 2.2s ease-in-out}
 .price-example-media.is-visible .price-example-render{opacity:1}
 .price-example-media-label{position:absolute;left:0;bottom:-26px;z-index:2;color:var(--ink-soft);font-size:12px;letter-spacing:0}
 .price-example-straight .price-example-media-label{left:6%}
