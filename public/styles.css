@@ -986,3 +986,37 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .review-avatar svg{width:23px;height:23px;fill:currentColor}
 @media(max-width:760px){.lead-form{padding:28px 24px}.review-card{padding:0}.review-bubble{padding:23px 22px 22px}}
 @media(max-width:380px){.lead-form{padding:23px 19px}}
+
+/* Klienta izvēlētā mierīgā sākumlapa: redzamāki kontakti un viens hero foto. */
+.topline{min-height:52px;padding-inline:var(--gutter);gap:clamp(16px,2vw,32px);border-bottom:2px solid #b63537;font-size:14px;font-weight:500;letter-spacing:.01em}
+.topline>a{padding-block:12px;line-height:1.3}
+.topline .topline-email{margin-right:auto}
+.topline>a:nth-child(2){margin-left:0}
+.topline-social{display:inline-flex;align-items:center;gap:8px;margin-left:clamp(8px,1vw,20px);border-left:1px solid #ffffff45;padding-left:clamp(14px,1.5vw,25px)}
+.topline-social a{display:grid;place-items:center;width:34px;height:34px;color:#f6f2ec;border-radius:3px;transition:background .2s}
+.topline-social a:hover,.topline-social a:focus-visible{background:#ffffff26}
+.topline-social svg{display:block;width:20px;height:20px}
+.nk-hero-copy{width:100%;max-width:1420px}
+.nk-hero-since{display:flex;align-items:center;justify-content:center;gap:17px;margin:0 0 26px;color:#fff;font-size:16px;line-height:1.4;font-weight:600;letter-spacing:.24em}
+.nk-hero-since:before,.nk-hero-since:after{content:"";display:block;width:30px;height:1px;background:#ffffffa8}
+.nk-hero h1{font-size:clamp(52px,5.7vw,104px);line-height:1.04;margin-bottom:38px;text-wrap:balance}
+.nk-hero:after{background:linear-gradient(180deg,rgba(18,17,16,.42),rgba(18,17,16,.29) 45%,rgba(18,17,16,.42))}
+.nk-hero-slides img.is-active{object-position:center 58%}
+@media(max-width:1050px){
+  .topline{font-size:12px;gap:15px}
+  .topline-social{gap:3px;padding-left:12px}
+}
+@media(max-width:760px){
+  .topline{min-height:44px;gap:8px;font-size:13px}
+  .topline .topline-email,.topline .topline-phone-secondary{display:none}
+  .topline .topline-phone{margin-right:auto;white-space:nowrap}
+  .topline-social{margin-left:0;padding-left:10px;gap:2px}
+  .topline-social a{width:32px;height:32px}
+  .topline-social svg{width:19px;height:19px}
+  .nk-hero-copy{padding-inline:var(--gutter)}
+  .nk-hero-since{font-size:12px;letter-spacing:.19em;gap:9px;margin-bottom:25px}
+  .nk-hero-since:before,.nk-hero-since:after{width:18px}
+  .nk-hero h1{font-size:clamp(38px,8.5vw,52px);line-height:1.1;margin-bottom:38px}
+  .nk-hero-slides img.is-active{object-position:center 50%}
+}
+@media(max-width:360px){.topline{font-size:12px}.topline-social a{width:29px;height:32px}}
