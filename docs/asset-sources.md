@@ -33,7 +33,7 @@ Visi pieci attēli vizuāli pārbaudīti; nav apgalvots precīzs virsmu materiā
 
 ## Sadarbības partneru attēli — 11.11.
 
-Partneru saraksts un pirmie seši attēli ņemti no [esošās partneru lapas](https://laurasmebeles.lv/partneri/). Prenta nosaukums jau bija jaunās vietnes uzmetumā; tās logotips ir vecās WordPress vietnes augšupielādētajos failos. Attēlu saturs nav mainīts, tikai pārveidots WebP formātā. Pirms gala publicēšanas klientam jāpārbauda, vai visi septiņi partneri joprojām jāattēlo.
+Seši attēlotie partneri un to attēli ņemti no [esošās partneru lapas](https://laurasmebeles.lv/partneri/). SIA “Prenta” ir vecās sākumlapas WordPress eksportā (post ID 149) kā “Sadarbības partneris”, taču pašreizējā partneru lapā tās nav. Pēc Signes lēmuma Prenta jaunajā lapā netiek rādīta, kamēr Juris neprecizēs sarakstu. Attēlu saturs nav mainīts, tikai pārveidots WebP formātā. Pirms gala publicēšanas klientam jāpārbauda, vai visi seši partneri joprojām jāattēlo.
 
 | Uzmetuma fails | Avots |
 |---|---|
@@ -43,4 +43,3 @@ Partneru saraksts un pirmie seši attēli ņemti no [esošās partneru lapas](ht
 | partneri/hooligan.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/bubbletea.jpg |
 | partneri/tison.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/cropped-tison-logo.png |
 | partneri/rasa.webp | https://laurasmebeles.lv/wp-content/uploads/2020/01/Screenshot-2020-01-22-at-19.14.46-1.png |
-| partneri/prenta.webp | https://laurasmebeles.lv/wp-content/uploads/2026/08/prenta-sia_image001-212-1-_420x180.jpg |
