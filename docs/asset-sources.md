@@ -30,3 +30,17 @@ Abi attēli vizuāli pārbaudīti. Tie rāda vienu telpu dažādās gultas pozī
 - detala.webp — https://laurasmebeles.lv/wp-content/uploads/2022/11/5.jpg (lietotājas norādītais kompaktās virtuves tuvplāns).
 
 Visi pieci attēli vizuāli pārbaudīti; nav apgalvots precīzs virsmu materiāls. Tos izmanto vienota projektu bāze un atbilstošie “Par mums” bloki.
+
+## Sadarbības partneru attēli — 11.11.
+
+Partneru saraksts un pirmie seši attēli ņemti no [esošās partneru lapas](https://laurasmebeles.lv/partneri/). Prenta nosaukums jau bija jaunās vietnes uzmetumā; tās logotips ir vecās WordPress vietnes augšupielādētajos failos. Attēlu saturs nav mainīts, tikai pārveidots WebP formātā. Pirms gala publicēšanas klientam jāpārbauda, vai visi septiņi partneri joprojām jāattēlo.
+
+| Uzmetuma fails | Avots |
+|---|---|
+| partneri/ilze-svence.webp | https://laurasmebeles.lv/wp-content/uploads/2020/01/IMG_2320.jpg |
+| partneri/vita-purcena.webp | https://laurasmebeles.lv/wp-content/uploads/2020/01/12316187_1123046024402265_4305131172685672106_n.jpg |
+| partneri/electrolux.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/electrolux.png |
+| partneri/hooligan.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/bubbletea.jpg |
+| partneri/tison.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/cropped-tison-logo.png |
+| partneri/rasa.webp | https://laurasmebeles.lv/wp-content/uploads/2020/01/Screenshot-2020-01-22-at-19.14.46-1.png |
+| partneri/prenta.webp | https://laurasmebeles.lv/wp-content/uploads/2026/08/prenta-sia_image001-212-1-_420x180.jpg |
