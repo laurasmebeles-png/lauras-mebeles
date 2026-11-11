@@ -779,6 +779,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ba-more{display:inline-block;margin-top:6px;padding:0;background:none;border:0;border-bottom:1px solid currentColor;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
 
 /* Galerijā viena kartīte pārstāv vienu projektu; foto atveras projekta lapā. */
+.gallery-page-intro{padding-bottom:10px}
+.gallery-page-intro+.section{padding-top:18px}
 .gallery-projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .gallery-project{min-width:0}
 .gallery-project>a{display:block}
@@ -790,8 +792,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .gallery-more{display:block;margin:48px auto 0;padding:11px 0;background:none;border-bottom:1px solid currentColor;font-size:14px;font-weight:600}
 .gallery-detail-intro{padding-top:38px;padding-bottom:24px}
 .gallery-detail-intro .breadcrumbs{margin-bottom:24px}
-.gallery-detail-intro .eyebrow{margin-bottom:10px}
-.gallery-detail-intro h1{font-size:clamp(22px,2.4vw,30px);font-family:inherit;font-weight:500;letter-spacing:0}
+.gallery-detail-intro h1{font-size:14px;font-family:inherit;font-weight:600;letter-spacing:0}
 .gallery-detail-section{padding-top:0}
 .gallery-detail-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .gallery-detail-photos figure:first-child{grid-column:1/-1}
