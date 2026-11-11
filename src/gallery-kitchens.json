@@ -1,0 +1,904 @@
+[
+  {
+    "reviewId": 1,
+    "sourceGroup": "P001",
+    "numbers": [
+      1,
+      2
+    ],
+    "existingId": "edamzona",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/001.webp"
+    ]
+  },
+  {
+    "reviewId": 2,
+    "sourceGroup": "P002",
+    "numbers": [
+      3,
+      4
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/003.webp",
+      "virtuves/galerija/004.webp"
+    ]
+  },
+  {
+    "reviewId": 3,
+    "sourceGroup": "P003",
+    "numbers": [
+      5,
+      6,
+      7
+    ],
+    "existingId": "kompakta",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/006.webp",
+      "virtuves/galerija/007.webp"
+    ]
+  },
+  {
+    "reviewId": 4,
+    "sourceGroup": "P004",
+    "numbers": [
+      8,
+      9,
+      10
+    ],
+    "existingId": "gaisa",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/008.webp",
+      "virtuves/galerija/010.webp"
+    ]
+  },
+  {
+    "reviewId": 5,
+    "sourceGroup": "P005",
+    "numbers": [
+      11,
+      12
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/011.webp",
+      "virtuves/galerija/012.webp"
+    ]
+  },
+  {
+    "reviewId": 6,
+    "sourceGroup": "P006",
+    "numbers": [
+      13
+    ],
+    "existingId": "sala",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": []
+  },
+  {
+    "reviewId": 7,
+    "sourceGroup": "P007",
+    "numbers": [
+      14,
+      15,
+      16
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/014.webp",
+      "virtuves/galerija/015.webp",
+      "virtuves/galerija/016.webp"
+    ]
+  },
+  {
+    "reviewId": 8,
+    "sourceGroup": "P008",
+    "numbers": [
+      17,
+      18
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/017.webp",
+      "virtuves/galerija/018.webp"
+    ]
+  },
+  {
+    "reviewId": 9,
+    "sourceGroup": "P009",
+    "numbers": [
+      19
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/019.webp"
+    ]
+  },
+  {
+    "reviewId": 10,
+    "sourceGroup": "P010",
+    "numbers": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "existingId": "peleka",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/020.webp",
+      "virtuves/galerija/021.webp",
+      "virtuves/galerija/023.webp"
+    ]
+  },
+  {
+    "reviewId": 11,
+    "sourceGroup": "P011",
+    "numbers": [
+      24
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/024.webp"
+    ]
+  },
+  {
+    "reviewId": 12,
+    "sourceGroup": "P012",
+    "numbers": [
+      25,
+      26
+    ],
+    "existingId": "omelnavirtuv",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": []
+  },
+  {
+    "reviewId": 13,
+    "sourceGroup": "P013",
+    "numbers": [
+      27,
+      28
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/027.webp",
+      "virtuves/galerija/028.webp"
+    ]
+  },
+  {
+    "reviewId": 14,
+    "sourceGroup": "P014",
+    "numbers": [
+      29,
+      30
+    ],
+    "existingId": "ozalavirtuve",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": []
+  },
+  {
+    "reviewId": 15,
+    "sourceGroup": "P015",
+    "numbers": [
+      31,
+      32
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/031.webp",
+      "virtuves/galerija/032.webp"
+    ]
+  },
+  {
+    "reviewId": 16,
+    "sourceGroup": "P016",
+    "numbers": [
+      33,
+      34
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/033.webp",
+      "virtuves/galerija/034.webp"
+    ]
+  },
+  {
+    "reviewId": 17,
+    "sourceGroup": "P017",
+    "numbers": [
+      35,
+      36
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/035.webp",
+      "virtuves/galerija/036.webp"
+    ]
+  },
+  {
+    "reviewId": 18,
+    "sourceGroup": "P018",
+    "numbers": [
+      37,
+      70
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/037.webp",
+      "virtuves/galerija/070.webp"
+    ]
+  },
+  {
+    "reviewId": 19,
+    "sourceGroup": "P019",
+    "numbers": [
+      38,
+      39
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/038.webp",
+      "virtuves/galerija/039.webp"
+    ]
+  },
+  {
+    "reviewId": 20,
+    "sourceGroup": "P020",
+    "numbers": [
+      40,
+      41
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/040.webp",
+      "virtuves/galerija/041.webp"
+    ]
+  },
+  {
+    "reviewId": 21,
+    "sourceGroup": "P021",
+    "numbers": [
+      42,
+      43,
+      44
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/042.webp",
+      "virtuves/galerija/043.webp",
+      "virtuves/galerija/044.webp"
+    ]
+  },
+  {
+    "reviewId": 22,
+    "sourceGroup": "P022",
+    "numbers": [
+      45,
+      46,
+      49,
+      50
+    ],
+    "existingId": "ovirtuveart",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/049.webp",
+      "virtuves/galerija/050.webp"
+    ]
+  },
+  {
+    "reviewId": 23,
+    "sourceGroup": "P023",
+    "numbers": [
+      47,
+      48
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/047.webp",
+      "virtuves/galerija/048.webp"
+    ]
+  },
+  {
+    "reviewId": 24,
+    "sourceGroup": "P025",
+    "numbers": [
+      51
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/051.webp"
+    ]
+  },
+  {
+    "reviewId": 25,
+    "sourceGroup": "P026",
+    "numbers": [
+      52,
+      53
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/052.webp",
+      "virtuves/galerija/053.webp"
+    ]
+  },
+  {
+    "reviewId": 26,
+    "sourceGroup": "P027",
+    "numbers": [
+      54,
+      113
+    ],
+    "existingId": "ogaisavirtuv",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": []
+  },
+  {
+    "reviewId": 27,
+    "sourceGroup": "P028",
+    "numbers": [
+      55
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/055.webp"
+    ]
+  },
+  {
+    "reviewId": 28,
+    "sourceGroup": "P029",
+    "numbers": [
+      56,
+      57
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve",
+      "citas"
+    ],
+    "photos": [
+      "virtuves/galerija/056.webp",
+      "virtuves/galerija/057.webp"
+    ]
+  },
+  {
+    "reviewId": 29,
+    "sourceGroup": "P030",
+    "numbers": [
+      58,
+      59
+    ],
+    "existingId": "k10",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/059.webp"
+    ]
+  },
+  {
+    "reviewId": 30,
+    "sourceGroup": "P031",
+    "numbers": [
+      60,
+      61
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/060.webp",
+      "virtuves/galerija/061.webp"
+    ]
+  },
+  {
+    "reviewId": 31,
+    "sourceGroup": "P032",
+    "numbers": [
+      62,
+      63,
+      64
+    ],
+    "existingId": "daudzfunkciju",
+    "categories": [
+      "virtuve",
+      "citas"
+    ],
+    "photos": [
+      "virtuves/galerija/062.webp"
+    ]
+  },
+  {
+    "reviewId": 32,
+    "sourceGroup": "P033",
+    "numbers": [
+      65,
+      66,
+      67
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/065.webp",
+      "virtuves/galerija/066.webp",
+      "virtuves/galerija/067.webp"
+    ]
+  },
+  {
+    "reviewId": 33,
+    "sourceGroup": "P034",
+    "numbers": [
+      68,
+      69
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/068.webp",
+      "virtuves/galerija/069.webp"
+    ]
+  },
+  {
+    "reviewId": 34,
+    "sourceGroup": "P035",
+    "numbers": [
+      71,
+      72
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/071.webp",
+      "virtuves/galerija/072.webp"
+    ]
+  },
+  {
+    "reviewId": 35,
+    "sourceGroup": "P036",
+    "numbers": [
+      73,
+      74
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/073.webp",
+      "virtuves/galerija/074.webp"
+    ]
+  },
+  {
+    "reviewId": 36,
+    "sourceGroup": "P037",
+    "numbers": [
+      75,
+      76,
+      77
+    ],
+    "existingId": "otumsavirtuv",
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/077.webp"
+    ]
+  },
+  {
+    "reviewId": 37,
+    "sourceGroup": "P038",
+    "numbers": [
+      78
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/078.webp"
+    ]
+  },
+  {
+    "reviewId": 38,
+    "sourceGroup": "P039",
+    "numbers": [
+      79,
+      80
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/079.webp",
+      "virtuves/galerija/080.webp"
+    ]
+  },
+  {
+    "reviewId": 39,
+    "sourceGroup": "P040",
+    "numbers": [
+      81,
+      82,
+      83
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/081.webp",
+      "virtuves/galerija/082.webp",
+      "virtuves/galerija/083.webp"
+    ]
+  },
+  {
+    "reviewId": 40,
+    "sourceGroup": "P041",
+    "numbers": [
+      84,
+      85,
+      86
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/084.webp",
+      "virtuves/galerija/085.webp",
+      "virtuves/galerija/086.webp"
+    ]
+  },
+  {
+    "reviewId": 41,
+    "sourceGroup": "P042",
+    "numbers": [
+      87,
+      88
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/087.webp",
+      "virtuves/galerija/088.webp"
+    ]
+  },
+  {
+    "reviewId": 42,
+    "sourceGroup": "P043",
+    "numbers": [
+      89
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/089.webp"
+    ]
+  },
+  {
+    "reviewId": 43,
+    "sourceGroup": "P044",
+    "numbers": [
+      90
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/090.webp"
+    ]
+  },
+  {
+    "reviewId": 44,
+    "sourceGroup": "P045",
+    "numbers": [
+      91,
+      92
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/091.webp",
+      "virtuves/galerija/092.webp"
+    ]
+  },
+  {
+    "reviewId": 45,
+    "sourceGroup": "P046",
+    "numbers": [
+      93,
+      94
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/093.webp",
+      "virtuves/galerija/094.webp"
+    ]
+  },
+  {
+    "reviewId": 46,
+    "sourceGroup": "P047",
+    "numbers": [
+      95
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/095.webp"
+    ]
+  },
+  {
+    "reviewId": 47,
+    "sourceGroup": "P048",
+    "numbers": [
+      96,
+      97
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/096.webp",
+      "virtuves/galerija/097.webp"
+    ]
+  },
+  {
+    "reviewId": 48,
+    "sourceGroup": "P049",
+    "numbers": [
+      98,
+      99
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/098.webp",
+      "virtuves/galerija/099.webp"
+    ]
+  },
+  {
+    "reviewId": 49,
+    "sourceGroup": "P050",
+    "numbers": [
+      100,
+      101
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/100.webp",
+      "virtuves/galerija/101.webp"
+    ]
+  },
+  {
+    "reviewId": 50,
+    "sourceGroup": "P051",
+    "numbers": [
+      102,
+      103
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/102.webp",
+      "virtuves/galerija/103.webp"
+    ]
+  },
+  {
+    "reviewId": 51,
+    "sourceGroup": "P052",
+    "numbers": [
+      104,
+      105
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/104.webp",
+      "virtuves/galerija/105.webp"
+    ]
+  },
+  {
+    "reviewId": 52,
+    "sourceGroup": "P053",
+    "numbers": [
+      106,
+      107
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/106.webp",
+      "virtuves/galerija/107.webp"
+    ]
+  },
+  {
+    "reviewId": 53,
+    "sourceGroup": "P054",
+    "numbers": [
+      108,
+      109
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/108.webp",
+      "virtuves/galerija/109.webp"
+    ]
+  },
+  {
+    "reviewId": 54,
+    "sourceGroup": "P055",
+    "numbers": [
+      110,
+      111
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/110.webp",
+      "virtuves/galerija/111.webp"
+    ]
+  },
+  {
+    "reviewId": 55,
+    "sourceGroup": "P056",
+    "numbers": [
+      112,
+      114,
+      115
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/112.webp",
+      "virtuves/galerija/114.webp",
+      "virtuves/galerija/115.webp"
+    ]
+  },
+  {
+    "reviewId": 56,
+    "sourceGroup": "P057",
+    "numbers": [
+      116,
+      117,
+      118
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/116.webp",
+      "virtuves/galerija/117.webp",
+      "virtuves/galerija/118.webp"
+    ]
+  },
+  {
+    "reviewId": 57,
+    "sourceGroup": "P059",
+    "numbers": [
+      119
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/119.webp"
+    ]
+  }
+]

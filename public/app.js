@@ -87,17 +87,26 @@ $$('[data-select]').forEach(button => button.addEventListener('click', () => {
 $('#clear-context')?.addEventListener('click', () => { clearFormContext(); $('#furniture').focus(); });
 $('#furniture')?.addEventListener('change', clearFormContext);
 const filters = $$('[data-filter]');
+const galleryCards = $$('.gallery-project');
+let galleryLimit = 18;
+let currentGalleryFilter = 'all';
 function applyProjectFilter(filter, updateUrl = true) {
   if (!filters.some(button => button.dataset.filter === filter)) filter = 'all';
+  currentGalleryFilter = filter;
+  galleryLimit = 18;
+  renderGalleryCards();
   filters.forEach(button => { const active = button.dataset.filter === filter; button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
-  $$('.project, .gphoto').forEach(project => { project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter); });
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) $$('.project:not([hidden]), .gphoto:not([hidden])').forEach(project => project.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'}));
-  const count = $$('.project:not([hidden]), .gphoto:not([hidden])').length;
-  $('#gallery-count').textContent = T('Foto: {n}').replace('{n}', count);
   if (updateUrl) { const url = new URL(location.href); if (filter === 'all') url.searchParams.delete('kategorija'); else url.searchParams.set('kategorija',filter); history.replaceState(null,'',url); }
+}
+function renderGalleryCards() {
+  const matching = galleryCards.filter(card => currentGalleryFilter === 'all' || card.dataset.category.split(' ').includes(currentGalleryFilter));
+  galleryCards.forEach(card => { card.hidden = !matching.includes(card) || matching.indexOf(card) >= galleryLimit; });
+  if ($('#gallery-count')) $('#gallery-count').textContent = `Projekti: ${matching.length}`;
+  const more = $('#gallery-more'); if (more) more.hidden = matching.length <= galleryLimit;
 }
 filters.forEach(button => button.addEventListener('click',()=> { applyProjectFilter(button.dataset.filter); track('gallery_filter',{category:button.dataset.filter}); }));
 if (filters.length) applyProjectFilter(new URLSearchParams(location.search).get('kategorija') || 'all',false);
+$('#gallery-more')?.addEventListener('click', () => { galleryLimit += 18; renderGalleryCards(); });
 
 
 const projects = Object.fromEntries((window.LAURAS_PROJECTS || []).map(project=>[project.id,project]));
@@ -220,7 +229,7 @@ document.querySelectorAll('[data-ba]').forEach(frame => {
   const show = () => { const el = list[idx]; img.src = el.currentSrc || el.src; img.alt = el.alt; count.textContent = `${idx + 1} / ${list.length}`; };
   const step = d => { idx = (idx + d + list.length) % list.length; show(); };
   document.querySelectorAll('.gphoto-open').forEach(btn => btn.addEventListener('click', () => {
-    list = [...document.querySelectorAll('.gphoto:not([hidden]) img')];
+    list = [...document.querySelectorAll('.gallery-detail-photos img')];
     idx = list.indexOf(btn.querySelector('img')); if (idx < 0) idx = 0;
     show(); box.showModal();
   }));

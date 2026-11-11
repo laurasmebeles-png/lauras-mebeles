@@ -4,6 +4,7 @@ import { config as i18nConfig, enabledLangs, defaultLang, langPrefix, loadDicts,
 const root = new URL('../', import.meta.url);
 const source = await readFile(new URL('src/home.html', root), 'utf8');
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
+const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));
 // Kanoniskā adrese: SITE_URL (palaišanai: https://laurasmebeles.lv), citādi Vercel produkcijas adrese, citādi lokāli.
 const siteUrl = (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://127.0.0.1:4173')).replace(/\/+$/,'');
 const siteName = 'Lauras mēbeles';
@@ -33,8 +34,29 @@ const baPage = () => pageIntro('Iedvesmai','Virtuves pirms un pēc','Apskatiet, 
 const kcases = id => `<div class="kcases">${projects.filter(p=>p.case&&p.categories.includes(id)&&p.featured).map(kcase).join('')}</div>`;
 import { readFileSync as _rf } from 'node:fs';
 const imgSizes = JSON.parse(_rf(new URL('../src/image-sizes.json', import.meta.url), 'utf8'));
-const gphotos = () => `<div class="gphotos">${projects.flatMap(p=>p.photos.map((f,i)=>{const s=imgSizes[f]||[900,675];return `<figure class="gphoto" data-category="${p.categories.join(' ')}"><button class="gphoto-open" type="button" aria-label="Skatīt lielāku foto: ${esc(p.title)}"><img src="/images/${f}" alt="${esc(p.title)}, foto ${i+1}" width="${s[0]}" height="${s[1]}" loading="lazy"></button></figure>`;})).join('')}</div>`;
-const gphotoCount = projects.reduce((n,p)=>n+p.photos.length,0);
+// Vecās galerijas secība un pagaidu projektu numuri ir atsevišķā failā.
+// Kur vecais kadrs jau ir projektā, attiecīgā grupa papildina esošo ierakstu.
+const usedKitchenIds = new Set(kitchenGroups.map(g=>g.existingId).filter(Boolean));
+const galleryProjects = [
+  ...kitchenGroups.map(g=>{
+    const current = g.existingId ? projects.find(p=>p.id===g.existingId) : null;
+    if(g.existingId && !current) throw Error(`Galerijas projekts nav atrasts: ${g.existingId}`);
+    const photos = [...new Set([...g.photos,...(current?.photos||[])])];
+    return { id:current?.id||`archive-${g.sourceGroup.toLowerCase()}`, reviewId:g.reviewId,
+      categories:g.categories, title:current?.title||'Virtuves projekts',
+      description:current?.description||'', photos, provisional:!current };
+  }),
+  ...projects.filter(p=>!usedKitchenIds.has(p.id)).map(p=>({ ...p, photos:[...new Set(p.photos)] }))
+];
+const galleryCard = p => { const f=p.photos[0],s=imgSizes[f]||[900,675],label=p.reviewId?`Projekts ${p.reviewId}`:p.title;
+  return `<article class="gallery-project" data-category="${p.categories.join(' ')}"><a href="/musu-darbi/${p.id}/" aria-label="Atvērt projektu: ${esc(label)}"><span class="gallery-project-image"><img src="/images/${esc(f)}" alt="${esc(p.title)}" width="${s[0]}" height="${s[1]}" loading="lazy">${p.photos.length>1?`<span class="gallery-project-count">+${p.photos.length-1} foto</span>`:''}</span><span class="gallery-project-label">${esc(label)}</span>${p.reviewId&&p.description?`<span class="gallery-project-title">${esc(p.title)}</span>`:''}</a></article>`;
+};
+const galleryGrid = () => `<div class="gallery-projects">${galleryProjects.map(galleryCard).join('')}</div>`;
+const galleryLightbox = `<dialog id="lightbox" class="lightbox" aria-label="Foto skats"><button class="lb-close" type="button" aria-label="Aizvērt">×</button><button class="lb-nav lb-prev" type="button" aria-label="Iepriekšējais foto">‹</button><img id="lb-img" alt=""><button class="lb-nav lb-next" type="button" aria-label="Nākamais foto">›</button><p id="lb-count" class="lb-count"></p></dialog>`;
+const galleryDetail = p => { const title=p.reviewId?`Projekts ${p.reviewId}`:p.title;
+  const photos=p.photos.map((f,i)=>{const s=imgSizes[f]||[900,675];return `<figure><button class="gphoto-open" type="button" aria-label="Atvērt ${esc(title)} foto ${i+1}"><img src="/images/${esc(f)}" alt="${esc(p.title)}, foto ${i+1}" width="${s[0]}" height="${s[1]}" loading="lazy"></button></figure>`;}).join('');
+  return `<section class="section gallery-detail-intro"><p class="breadcrumbs"><a href="/">Sākums</a><span>/</span><a href="/musu-darbi/">Mūsu darbi</a><span>/</span>${esc(title)}</p><p class="eyebrow">${esc(categories.find(c=>c.id===p.categories[0])?.label||'Mūsu darbi')}</p><h1>${esc(title)}</h1>${p.reviewId&&p.description?`<h2>${esc(p.title)}</h2>`:''}${p.description?`<p>${esc(p.description)}</p>`:''}</section><section class="section section-tight gallery-detail-section"><div class="gallery-detail-photos">${photos}</div>${galleryLightbox}<p class="gallery-detail-back"><a class="text-link" href="/musu-darbi/?kategorija=${p.categories[0]}">Visi šīs kategorijas darbi ${arrow}</a></p>${cta()}</section>`;
+};
 const grid = list => `<div class="projects-grid uniform-grid">${list.map(card).join('')}</div>`;
 // Pakalpojumu bloks: virtuves ir galvenais virziens (kolāža), pārējās kategorijas ir saraksts.
 // Kolāžas foto izvēlēti tā, lai tie nesakristu ar sākumlapas hero un "Realizētie projekti" foto.
@@ -106,7 +128,8 @@ for (const c of categories) {
   <section class="section"><div class="section-heading"><div><p class="eyebrow">Pirms pirmās sarunas</p><h2>${esc(c.discuss||'Ko pārrunāsim?')}</h2></div></div><div class="steps">${c.considerations.map(([title,text],i)=>`<article><span class="step-number">0${i+1}</span><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`).join('')}</div><div class="service-price"><h3>${esc(c.priceTitle)}</h3><p>${esc(c.priceText)}</p><a class="text-link" href="/cenas/">Vairāk par cenu ${arrow}</a></div></section>`;
   await save(c.path,`${c.metaTitle||c.title} | Lauras mēbeles`,body,c.metaDesc||c.intro);
 }
-await save('musu-darbi','Mūsu darbi un mēbeļu fotogalerija | Lauras mēbeles',pageIntro('Mūsu darbi','Mūsu darbi','Virtuves, skapji un citas mēbeles mūsu klientu mājās.','Galerija')+`<section class="section section-tight"><div class="filters" role="group" aria-label="Atlasīt projektus"><button data-filter="all" class="active" aria-pressed="true">Visi darbi</button>${categories.map(c=>`<button data-filter="${c.id}" aria-pressed="false">${esc(c.label)}</button>`).join('')}</div><p id="gallery-count" class="gallery-note" aria-live="polite">Foto: ${gphotoCount}</p>${gphotos()}<dialog id="lightbox" class="lightbox" aria-label="Foto skats"><button class="lb-close" type="button" aria-label="Aizvērt">×</button><button class="lb-nav lb-prev" type="button" aria-label="Iepriekšējais foto">‹</button><img id="lb-img" alt=""><button class="lb-nav lb-next" type="button" aria-label="Nākamais foto">›</button><p id="lb-count" class="lb-count"></p></dialog>${cta()}</section>`,'Apskatiet mūsu izgatavotās virtuves, skapjus un citas mēbeles. Atlasiet darbus pēc mēbeļu veida un atrodiet idejas savām mājām.');
+await save('musu-darbi','Mūsu darbi un mēbeļu fotogalerija | Lauras mēbeles',pageIntro('Mūsu darbi','Mūsu darbi','Virtuves, skapji un citas mēbeles mūsu klientu mājās. Izvēlieties mēbeļu veidu un atveriet projektu, lai apskatītu visus tā foto.','Galerija')+`<section class="section section-tight"><div class="filters" role="group" aria-label="Atlasīt projektus"><button data-filter="all" class="active" aria-pressed="true">Visi darbi</button>${categories.map(c=>`<button data-filter="${c.id}" aria-pressed="false">${esc(c.label)}</button>`).join('')}</div><p id="gallery-count" class="gallery-note" aria-live="polite"></p>${galleryGrid()}<button id="gallery-more" class="gallery-more" type="button" hidden>Rādīt vēl projektus</button>${cta()}</section>`,'Apskatiet mūsu izgatavotās virtuves, skapjus un citas mēbeles. Atlasiet darbus pēc mēbeļu veida un atrodiet idejas savām mājām.');
+for (const p of galleryProjects) await save(`musu-darbi/${p.id}`,`${p.reviewId?`Projekts ${p.reviewId}`:p.title} | Lauras mēbeles`,galleryDetail(p),p.description||`Lauras mēbeļu īstenots projekts. Apskatiet ${p.photos.length} foto no mūsu darbiem.`,{reviewOnly:true,ogPhoto:p.photos[0]});
 await save('iedvesmai','Virtuves pirms un pēc | Lauras mēbeles',baPage(),'Apskatiet Lauras mēbeļu virtuves pirms un pēc mēbeļu izgatavošanas un uzstādīšanas. Salīdziniet reālus virtuves projektus un atrodiet idejas savām mājām.');
 // "Par mums": vērtību punkti ar bildi, kas mainās ritinot (platā ekrānā); mobilajā katram punktam sava bilde.
 // Punktam bez foto (pieredze) labajā pusē rāda lielu gadu skaitli. Komandas un darbnīcas foto vēl jāiegūst no klienta.
@@ -153,9 +176,10 @@ for (const lang of enabledLangs) {
 }
 console.log('Sagatavota sākumlapa un 13 apakšlapas no kopīga satura un projektu datiem.');
 
-async function renderPage(lang,path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.') {
+async function renderPage(lang,path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.',options={}) {
   const pre=langPrefix(lang);const folder=new URL(`public${pre}/${path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
   const pageUrl=`${siteUrl}${pre}/${path?path+'/':''}`;
+  const photo=options.ogPhoto?{path:`/images/${options.ogPhoto}`,width:imgSizes[options.ogPhoto]?.[0]||1200,height:imgSizes[options.ogPhoto]?.[1]||800,alt:title}:ogImage;
   const social=[
     `<link rel="canonical" href="${pageUrl}">`,
     ...(enabledLangs.length>1?[...enabledLangs.map(l=>`<link rel="alternate" hreflang="${l}" href="${siteUrl}${langPrefix(l)}/${path?path+'/':''}">`),`<link rel="alternate" hreflang="x-default" href="${siteUrl}/${path?path+'/':''}">`]:[]),
@@ -165,19 +189,19 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
     `<meta property="og:title" content="${esc(title)}">`,
     `<meta property="og:description" content="${esc(description)}">`,
     `<meta property="og:url" content="${pageUrl}">`,
-    `<meta property="og:image" content="${siteUrl}${ogImage.path}">`,
-    `<meta property="og:image:width" content="${ogImage.width}">`,
-    `<meta property="og:image:height" content="${ogImage.height}">`,
-    `<meta property="og:image:alt" content="${esc(ogImage.alt)}">`,
+    `<meta property="og:image" content="${siteUrl}${photo.path}">`,
+    `<meta property="og:image:width" content="${photo.width}">`,
+    `<meta property="og:image:height" content="${photo.height}">`,
+    `<meta property="og:image:alt" content="${esc(photo.alt)}">`,
     `<meta name="twitter:card" content="summary_large_image">`
   ].join('\n  ');
-  const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`);
+  const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`).replace('<meta name="robots" content="noindex,nofollow">',`<meta name="robots" content="${options.reviewOnly?'noindex,follow':'noindex,nofollow'}">`);
   const switcher=enabledLangs.length>1?`<nav class="lang-switch" aria-label="Language">${enabledLangs.map(l=>l===lang?`<span aria-current="true">${i18nConfig.languages[l].short}</span>`:`<a href="${langPrefix(l)}/${path?path+'/':''}" hreflang="${l}" lang="${l}">${i18nConfig.languages[l].short}</a>`).join('')}</nav>`:'';
   let html=`${pageHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}</body></html>`;
   if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang); }
   await writeFile(new URL('index.html',folder),html);
 }
 
-async function save(path,title,body,description){
-  for (const lang of enabledLangs) await renderPage(lang,path,title,body,description);
+async function save(path,title,body,description,options){
+  for (const lang of enabledLangs) await renderPage(lang,path,title,body,description,options);
 }
