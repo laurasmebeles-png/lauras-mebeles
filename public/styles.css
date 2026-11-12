@@ -623,15 +623,17 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .home-manufacture .eyebrow,.home-export .eyebrow{margin-bottom:18px}
 .home-manufacture h2,.home-export h2{font-size:clamp(32px,3.3vw,48px);line-height:1.14;max-width:18ch;margin:0 0 22px}
 .home-manufacture-copy>p:not(.eyebrow),.home-export-copy>p:not(.eyebrow){font-size:clamp(15px,1.35vw,17px);line-height:1.7;color:var(--ink-soft);max-width:55ch;margin:0 0 27px}
-.home-manufacture-media,.home-export-media{overflow:hidden;background:#dcd5cb}
-.home-manufacture-media img,.home-export-media img{width:100%;height:clamp(310px,32vw,450px);object-fit:cover}
-.home-manufacture-media img{object-position:center 48%}
-.home-export-media img{object-position:center 55%}
+.home-manufacture-media,.home-export-media{overflow:hidden;background:#dcd5cb;width:100%}
+.home-manufacture-media{max-width:420px;justify-self:end}
+.home-export-media{max-width:480px;justify-self:start}
+.home-manufacture-media img,.home-export-media img{display:block;width:100%;height:auto}
+.home-manufacture-media img{aspect-ratio:6/5;object-fit:cover;object-position:center top}
+.home-export-media img{aspect-ratio:3/2;object-fit:contain}
 .home-export-countries{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 16px;padding:0;margin:0 0 28px;max-width:720px}
 .home-export-countries li{display:flex;align-items:center;gap:7px;min-width:0;font-size:13px;line-height:1.35;color:var(--ink)}
 .home-export-countries img{width:24px;height:18px;flex:none;object-fit:cover;border:1px solid rgba(0,0,0,.12)}
-@media(max-width:900px){.home-manufacture,.home-export{grid-template-columns:1fr;gap:25px}.home-manufacture-media{grid-row:1}.home-manufacture-media img,.home-export-media img{height:clamp(280px,48vw,420px)}.home-export-countries{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:560px){.home-manufacture,.home-export{padding-block:40px}.home-manufacture h2,.home-export h2{max-width:none;margin-bottom:16px}.home-manufacture-copy>p:not(.eyebrow),.home-export-copy>p:not(.eyebrow){margin-bottom:22px}.home-manufacture-media img{height:320px}.home-export-media img{height:220px}.home-export-countries{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 12px}}
+@media(max-width:900px){.home-manufacture,.home-export{grid-template-columns:1fr;gap:25px}.home-manufacture-media{grid-row:1;justify-self:start}.home-export-countries{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.home-manufacture,.home-export{padding-block:40px}.home-manufacture h2,.home-export h2{max-width:none;margin-bottom:16px}.home-manufacture-copy>p:not(.eyebrow),.home-export-copy>p:not(.eyebrow){margin-bottom:22px}.home-export-countries{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 12px}}
 
 /* Vienota pogu valoda un kategoriju lapu hero */
 .button,.button-small{border-radius:2px;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:500}
@@ -842,13 +844,20 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-intro h1{margin:8px 0 18px}
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
 .ab-intro-media{display:flex;justify-content:center}
-.ab-intro-media img{display:block;width:min(100%,420px);height:auto;aspect-ratio:3/4;object-fit:cover}
+.ab-intro-media img{display:block;width:min(100%,420px);height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
+.ab-factory{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:clamp(28px,5vw,72px);align-items:center;background:#ebe7e1}
+.ab-factory-copy{max-width:470px}
+.ab-factory h2{margin:8px 0 16px}
+.ab-factory-copy>p:not(.eyebrow){font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
+.ab-factory-clips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.ab-factory-video{min-width:0}
+.ab-factory-video video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#dcd5cb;filter:saturate(.82)}
+.ab-factory-video figcaption{margin-top:8px;font-size:12px;color:var(--ink-soft)}
 .ab-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:32px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .ab-facts dt{font-family:var(--serif);font-size:34px;line-height:1;color:var(--red)}
 .ab-facts dd{margin:8px 0 0;font-size:13px;line-height:1.4;color:var(--muted,#5d564f)}
-.ab-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.ab-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .ab-cards img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin-bottom:16px}
-.ab-cards article:nth-of-type(2) img{object-position:center 15%}
 .ab-cards h2{font-size:24px;margin:0 0 8px}
 .ab-cards p{margin:0;font-size:15px;line-height:1.6}
 .ab-process h2{font-size:34px;margin:6px 0 28px}
@@ -872,7 +881,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-partner-grid strong{display:block;max-width:170px;margin:0 auto;font-size:14px;line-height:1.4;font-weight:600}
 @media(max-width:1100px){.ab-partner-grid li{flex-basis:calc((100% - 40px)/3)}}
 @media(max-width:1050px){.ab-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
+@media(max-width:900px){.ab-intro-grid,.ab-factory{grid-template-columns:1fr;gap:28px}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
+@media(max-width:600px){.ab-factory{gap:24px}.ab-factory-clips{max-width:390px}}
 @media(max-width:560px){.ab-cards{grid-template-columns:1fr}.ab-process ol{grid-template-columns:1fr}.ab-facts{grid-template-columns:1fr 1fr 1fr;gap:14px}.ab-facts dt{font-size:28px}.ab-partners-intro{display:block}.ab-lead{margin-top:12px}.ab-partner-grid{gap:24px 16px}.ab-partner-grid li{flex-basis:calc((100% - 16px)/2)}.ab-partner-badge{width:min(100%,128px)}.ab-partner-grid strong{font-size:13px}}
 
 /* Cenu kalkulators */
