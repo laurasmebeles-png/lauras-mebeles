@@ -844,8 +844,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-intro h1{margin:8px 0 18px}
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
 .ab-intro-media{display:flex;justify-content:center}
-.ab-intro-media img{display:block;width:min(100%,420px);height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
-.ab-factory{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:clamp(28px,5vw,72px);align-items:center;background:#ebe7e1}
+.ab-intro-media img{display:block;width:min(100%,360px);height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
+.ab-factory{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,390px);gap:clamp(28px,5vw,72px);align-items:center;background:#ebe7e1}
 .ab-factory-copy{max-width:470px}
 .ab-factory h2{margin:8px 0 16px}
 .ab-factory-copy>p:not(.eyebrow){font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
