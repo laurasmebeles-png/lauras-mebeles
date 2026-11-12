@@ -47,6 +47,15 @@ export const categories = [
 
 // Each record represents one selected project, with its related views kept together.
 // Project labels describe what is visible; no unconfirmed prices/material claims.
+// These pairs appear only on the inspiration page while the client reviews the gallery selection.
+export const inspirationProjects = [
+  {id:'before-after-ramja-virtuve',categories:['virtuve'],title:'Gaiša virtuve ar rāmja fasādēm',description:'',before:'iedvesmai/ramja-virtuve-pirms.webp',photos:['iedvesmai/ramja-virtuve-pec.webp']},
+  {id:'before-after-gaisa-stura-virtuve',categories:['virtuve'],title:'Gaiša stūra virtuve',description:'',before:'iedvesmai/stura-virtuve-img-9281.webp',photos:['iedvesmai/stura-virtuve-img-0784.webp']},
+  {id:'before-after-peleka-virtuve',categories:['virtuve'],title:'Pelēka virtuve',description:'',before:'iedvesmai/peleka-virtuve-pirms.webp',photos:['iedvesmai/peleka-virtuve-pec.webp','iedvesmai/peleka-virtuve-pec-2.webp']},
+  {id:'before-after-koka-akcenti',categories:['virtuve'],title:'Gaiša virtuve ar koka akcentiem',description:'',before:'iedvesmai/virtuve-ar-salu-pirms.webp',photos:['iedvesmai/virtuve-ar-salu-pec.webp','iedvesmai/virtuve-ar-salu-pec-2.webp']},
+  {id:'before-after-balta-l-virtuve',categories:['virtuve'],title:'Balta virtuve ar akmens raksta virsmu',description:'',before:'iedvesmai/balta-l-virtuve-pirms.webp',photos:['iedvesmai/balta-l-virtuve-pec.webp']},
+  {id:'before-after-balta-koka-virsma',categories:['virtuve'],title:'Balta virtuve ar koka toņa virsmu',description:'',before:'iedvesmai/balta-koka-virsma-pirms.webp',photos:['iedvesmai/balta-koka-virsma-pec.webp']}
+];
 export const projects = [
   {id:'k11',case:true,featured:true,categories:['virtuve'],title:'Gaiša stūra virtuve ar rāmja fasādēm',description:'Gaišās rāmja fasādes papildina misiņa toņa rokturi. Apgaismojums izvietots zem augšējiem skapjiem un pie griestu līstes.',photos:['virtuves/gaisa-stura-virtuve-ar-ramja-fasadem-1.webp','virtuves/gaisa-stura-virtuve-ar-ramja-fasadem-2.webp','virtuves/gaisa-stura-virtuve-ar-ramja-fasadem-3.webp']},
   {id:'k01',case:true,featured:true,categories:['virtuve'],title:'U formas virtuve ar izgaismotu vitrīnu',description:'Gaišas fasādes apvienotas ar augsto skapi koka faktūrā un izgaismotu stikla vitrīnu. Virtuvi papildina melni rokturi un iebūvēta tehnika.',before:'virtuves/u-formas-virtuve-ar-izgaismotu-vitrinu-pirms.webp',photos:['virtuves/u-formas-virtuve-ar-izgaismotu-vitrinu-1.webp','virtuves/u-formas-virtuve-ar-izgaismotu-vitrinu-2.webp','virtuves/u-formas-virtuve-ar-izgaismotu-vitrinu-3.webp']},
