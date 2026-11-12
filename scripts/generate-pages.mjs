@@ -43,7 +43,7 @@ const galleryProjects = [
     const current = g.existingId ? projects.find(p=>p.id===g.existingId) : null;
     if(g.existingId && !current) throw Error(`Galerijas projekts nav atrasts: ${g.existingId}`);
     const photos = [...new Set([...g.photos,...(current?.photos||[])])];
-    return { id:current?.id||`archive-${g.sourceGroup.toLowerCase()}`, reviewId:g.reviewId,
+    return { id:current?.id||`archive-${g.sourceGroup.toLowerCase()}`, reviewId:g.reviewId, reviewPoor:!!g.reviewPoor,
       categories:g.categories, title:current?.title||'Virtuves projekts',
       description:current?.description||'', photos, provisional:!current };
   }),
