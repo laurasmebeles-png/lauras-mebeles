@@ -845,13 +845,14 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:24px}
 .ab-intro h1{margin:8px 0 18px}
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
-.ab-intro-media{display:flex;justify-content:center}
-.ab-intro-media img{display:block;width:min(100%,360px);height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
+.ab-intro-media{display:grid;grid-template-columns:1fr .72fr;gap:12px;align-items:end;width:min(100%,570px);margin-inline:auto}
+.ab-intro-media img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
+.ab-intro-media img+img{margin-bottom:24px}
 .ab-factory{background:#ebe7e1}
 .ab-factory-copy{max-width:650px}
 .ab-factory h2{margin:8px 0 16px}
 .ab-factory-copy>p:not(.eyebrow){font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
-.ab-factory-clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start;margin-top:30px}
+.ab-factory-clips{display:grid;grid-template-columns:repeat(2,minmax(0,320px));justify-content:center;gap:20px;align-items:start;margin:30px auto 0}
 .ab-factory-media{min-width:0;margin:0}
 .ab-factory-media img,.ab-factory-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#dcd5cb;filter:saturate(.82)}
 .ab-factory-media figcaption{margin-top:8px;font-size:12px;color:var(--ink-soft)}
@@ -884,7 +885,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 @media(max-width:1100px){.ab-partner-grid li{flex-basis:calc((100% - 40px)/3)}}
 @media(max-width:1050px){.ab-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-factory-clips{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
-@media(max-width:600px){.ab-factory-clips{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;padding-bottom:12px}.ab-factory-media{flex:0 0 min(72vw,280px);scroll-snap-align:start}}
+@media(max-width:600px){.ab-intro-media{max-width:420px}.ab-factory-clips{grid-template-columns:minmax(0,320px);gap:24px}}
 @media(max-width:560px){.ab-cards{grid-template-columns:1fr}.ab-process ol{grid-template-columns:1fr}.ab-facts{grid-template-columns:1fr 1fr 1fr;gap:14px}.ab-facts dt{font-size:28px}.ab-partners-intro{display:block}.ab-lead{margin-top:12px}.ab-partner-grid{gap:24px 16px}.ab-partner-grid li{flex-basis:calc((100% - 16px)/2)}.ab-partner-badge{width:min(100%,128px)}.ab-partner-grid strong{font-size:13px}}
 
 /* Cenu kalkulators */
@@ -953,9 +954,9 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-step:not(:last-child)::after{content:"";position:absolute;top:10px;left:calc(100% + 18px);width:10px;height:10px;border-top:1.5px solid var(--ink-soft);border-right:1.5px solid var(--ink-soft);transform:rotate(45deg)}
 .ab-step h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2vw,26px);line-height:1.25;margin:0 0 8px}
 .ab-step p{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.6}
-.ab-aftercare{display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:24px;margin-top:32px;padding:22px 0 0;border-top:1px solid var(--line)}
+.ab-aftercare{display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:24px;align-items:center;margin-top:40px;padding:24px 28px;background:#eee9e2;border-left:3px solid var(--ink)}
 .ab-aftercare h3{margin:0;font-family:var(--serif);font-size:clamp(22px,2vw,26px);font-weight:500;line-height:1.25}
-.ab-aftercare p{max-width:740px;color:var(--ink-soft);font-size:16px;line-height:1.6}
+.ab-aftercare p{max-width:740px;margin:0;color:var(--ink-soft);font-size:16px;line-height:1.6}
 @media(max-width:900px){.ab-process ol.ab-process-steps{grid-template-columns:1fr;gap:20px}.ab-step:not(:last-child)::after{display:none}.ab-process-steps .ab-step+.ab-step{border-top:1px solid var(--line);padding-top:20px}}
 @media(max-width:900px){.ab-aftercare{grid-template-columns:1fr;gap:8px}}
 
