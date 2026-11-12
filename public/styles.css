@@ -707,7 +707,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-cat-top-media{margin:0}
 .nk-cat-top-media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;background:var(--surface)}
 .nk-cat-top-media.nk-cat-top-media-portrait img{object-position:center 64%}
-@media(max-width:860px){.nk-cat-top{grid-template-columns:1fr;gap:28px;padding-top:20px}.nk-cat-top-media{order:-1}.nk-cat-top-media img{aspect-ratio:1/1;object-position:center 35%}.nk-cat-top-copy .breadcrumbs{margin-bottom:18px}}
+.nk-cat-top-media.nk-cat-top-media-landscape img{aspect-ratio:4/3;object-position:center}
+@media(max-width:860px){.nk-cat-top{grid-template-columns:1fr;gap:28px;padding-top:20px}.nk-cat-top-media{order:-1}.nk-cat-top-media img{aspect-ratio:1/1;object-position:center 35%}.nk-cat-top-media.nk-cat-top-media-portrait img{object-position:center 64%}.nk-cat-top-copy .breadcrumbs{margin-bottom:18px}}
 
 /* Pakalpojumu pārskats */
 .nk-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}

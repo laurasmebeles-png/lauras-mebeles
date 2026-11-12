@@ -196,6 +196,39 @@ function revealHero() { heroPhoto.classList.add('is-ready'); }
 if (heroPhoto?.complete && heroPhoto.naturalWidth) revealHero();
 else heroPhoto?.addEventListener('load', revealHero, { once: true });
 
+// Vienāds rādīšanas laiks katrai sākumlapas bildei; melnā virtuve ir pirmā.
+(() => {
+  const hero = document.querySelector('[data-hero]');
+  if (!hero) return;
+  const slides = [...hero.querySelectorAll('.nk-hero-slides img')];
+  const button = hero.querySelector('[data-hero-pause]');
+  if (slides.length < 2) { button?.remove(); return; }
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const interval = 5500;
+  let index = 0;
+  let timer;
+  let paused = reducedMotion.matches;
+  const updateButton = () => {
+    button?.classList.toggle('is-paused', paused);
+    button?.setAttribute('aria-label', T(paused ? 'Turpināt bilžu maiņu' : 'Apturēt bilžu maiņu'));
+  };
+  const schedule = () => {
+    clearTimeout(timer);
+    if (paused || document.hidden) return;
+    timer = setTimeout(() => {
+      slides[index].classList.remove('is-active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('is-active');
+      schedule();
+    }, interval);
+  };
+  button?.addEventListener('click', () => { paused = !paused; updateButton(); schedule(); });
+  document.addEventListener('visibilitychange', schedule);
+  reducedMotion.addEventListener('change', () => { paused = reducedMotion.matches; updateButton(); schedule(); });
+  updateButton();
+  schedule();
+})();
+
 // "Par mums": aktīvais vērtību punkts maina bildi (redzams platā ekrānā; mobilajā katram punktam sava bilde).
 const valueItems = $$('.value');
 if (valueItems.length && 'IntersectionObserver' in window) {
