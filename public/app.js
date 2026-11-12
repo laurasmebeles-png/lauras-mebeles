@@ -94,7 +94,9 @@ let currentGalleryFilter = 'all';
 function applyProjectFilter(filter, updateUrl = true) {
   if (!filters.some(button => button.dataset.filter === filter)) filter = 'all';
   currentGalleryFilter = filter;
-  galleryLimit = 18;
+  // Atsevišķā kategorijā rādām visus projektus, lai Jura foto atlase
+  // nepaliktu paslēpta aiz vairākiem "Rādīt vēl" klikšķiem.
+  galleryLimit = filter === 'all' ? 18 : Number.POSITIVE_INFINITY;
   renderGalleryCards();
   filters.forEach(button => { const active = button.dataset.filter === filter; button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
   if (updateUrl) { const url = new URL(location.href); if (filter === 'all') url.searchParams.delete('kategorija'); else url.searchParams.set('kategorija',filter); history.replaceState(null,'',url); }
