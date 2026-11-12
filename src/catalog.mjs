@@ -52,7 +52,7 @@ export const inspirationProjects = [
   {id:'before-after-ramja-virtuve',categories:['virtuve'],title:'Gaiša virtuve ar rāmja fasādēm',description:'',before:'iedvesmai/ramja-virtuve-pirms.webp',photos:['iedvesmai/ramja-virtuve-pec.webp']},
   {id:'before-after-gaisa-stura-virtuve',categories:['virtuve'],title:'Gaiša stūra virtuve',description:'',before:'iedvesmai/stura-virtuve-img-9281.webp',photos:['iedvesmai/stura-virtuve-img-0784.webp']},
   {id:'before-after-peleka-virtuve',categories:['virtuve'],title:'Kompakta pelēka virtuve',description:'',before:'iedvesmai/peleka-virtuve-pirms.webp',photos:['iedvesmai/peleka-virtuve-pec.webp','iedvesmai/peleka-virtuve-pec-2.webp']},
-  {id:'before-after-koka-akcenti',categories:['virtuve'],title:'Gaiša virtuve ar koka akcentiem',description:'',before:'iedvesmai/virtuve-ar-salu-pirms.webp',photos:['iedvesmai/virtuve-ar-salu-pec.webp','iedvesmai/virtuve-ar-salu-pec-2.webp']},
+  {id:'before-after-koka-akcenti',categories:['virtuve'],title:'Gaiša virtuve ar bāra leti',description:'',before:'iedvesmai/virtuve-ar-salu-pirms.webp',photos:['iedvesmai/virtuve-ar-salu-pec.webp','iedvesmai/virtuve-ar-salu-pec-2.webp']},
   {id:'before-after-balta-l-virtuve',categories:['virtuve'],title:'Balta virtuve ar akmens raksta virsmu',description:'',before:'iedvesmai/balta-l-virtuve-pirms.webp',photos:['iedvesmai/balta-l-virtuve-pec.webp']},
   {id:'before-after-balta-koka-virsma',categories:['virtuve'],title:'Balta virtuve ar koka toņa virsmu',description:'',before:'iedvesmai/balta-koka-virsma-pirms.webp',photos:['iedvesmai/balta-koka-virsma-pec.webp']}
 ];
