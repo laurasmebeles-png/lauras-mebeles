@@ -1,43 +1,38 @@
 # WordPress foto atlase ārpus virtuvēm
 
-Pārbaudes datums: 2026. gada 12. novembris. Pusotra gada robeža: 2025. gada 12. maijs. Virtuvju foto šajā atlasē nav iekļauti.
+Pārbaudes datums: 2026. gada 12. novembris. Virtuvju attēli šeit nav iekļauti. Pēc Signes precizējuma atlasām arī vecākus foto, ja kvalitāte un saturs atbilst jaunajai vietnei.
 
-## Kas pārbaudīts
+## Pārbaudītais materiāls
 
-- WordPress eksportā atrasti 195 pielikumu ieraksti, kas dod 146 unikālus attēlus pēc vienādu failu atmešanas. No tiem 65 attiecas uz pārējām mēbeļu kategorijām: 8 viesistabai, 10 vannas istabai, 18 priekšnamam, 26 skapjiem un 3 kadriem ar iespējamu skapju/priekšnama pārklāšanos.
-- Katrs kadrs salīdzināts ar vietnē jau izmantotajiem attēliem. 47 kadriem atrasta ļoti tuva attēla sakritība; tas nozīmē, ka tie jau parādās kaut kur vietnē, bet ne vienmēr pilnajā galerijā.
-- 49 kadriem foto metadatos ir uzņemšanas datums pirms robežas; 3 ir pēc tās; 13 kadriem uzticama uzņemšanas datuma nav. WordPress augšupielādes laiks gandrīz visiem ir 2025. gada septembris, jo arhīvs augšupielādēts vienā reizē. Šis laiks pats par sevi neapliecina projekta vecumu.
-- Esošos vecāko projektu attēlus vietnē šī atlase nedzēš. Vecuma noteikumu izmantojam **jaunu kadru pievienošanai**.
+- WordPress eksportā ir 195 pielikumu ieraksti, kas pēc identisku failu apvienošanas dod 146 unikālus attēlus. No tiem 65 attiecas uz pārējām mēbeļu kategorijām: viesistabu, vannas istabu, priekšnamu un skapjiem.
+- 47 kadri jau ir vietnē vai ir ļoti tuvi tur izmantotiem kadriem. Daļa ir redzami tikai kā kategoriju titulbildes, tāpēc atsevišķi pārbaudīta piederība galerijas projektiem.
+- WordPress gandrīz visus attēlus augšupielādēja 2025. gada septembrī. Tas nav projekta uzņemšanas datums. Pieejamie foto metadati fiksēti [pilnajā atlases tabulā](wp-foto-atlase.csv).
 
-Pilna pārbaudes tabula: [wp-foto-atlase.csv](wp-foto-atlase.csv). Neievietoto kadru kontaktlapa ar WP numuriem: [wp-foto-izskatisanai.jpg](wp-foto-izskatisanai.jpg).
+## Pievienots galerijai
 
-## Pievienotais un jau izmantotais
+- **#1:** viesistabas projekta trešais foto; tas pats projekts, kas #2. Augšmala nedaudz kadrēta, lai nepaliek nogriezta lampa.
+- **#49:** zaļais priekšnama skapis un sēdvieta. Pievienots jau esošajam projektam ar #48, nevis veidots dublikāts.
+- **#145 + #146:** viens koka toņa skapis ar galdiņu. #145 līdz šim bija tikai skapju kategorijas titulbildē; tagad abi kadri vienā galerijas projektā.
+- **#67:** jau bija kopā ar sava projekta #66, tāpēc otrreiz nav pievienots.
 
-- **#1, viesistaba, uzņemts 2025-07-30:** pievienots esošajam projektam “Zaļš skapītis ar koka toņa plauktiem” kā trešais foto. Griestos nogrieztā gaismekļa daļa izņemta ar nelielu augšmalas kadrējumu. Tā paša projekta #2 jau ir vietnē.
-- **#67, skapji, uzņemts 2025-05-28:** jau ir vietnē kopā ar tā paša skapja #66; jaunu projektu neveidojam.
-- Pārējās precīzās sakritības netiek pievienotas otrreiz. Ja attēls ir tikai kategorijas sākuma attēls, tas tabulā joprojām atzīmēts kā “jau vietnē”; to nevajag sajaukt ar apstiprinājumu, ka tas ir galerijā.
+## Atliktie attēli
 
-## Kadri, kam vajadzīgs lēmums
+Atlikšana nav balstīta tikai uz vecumu. Šie attēli prasa Jura izvērtējumu vai labāku kadru:
 
-Šiem kadriem nav uzņemšanas datuma, un tie nav atrodami vietnes pašreizējā attēlu komplektā:
-
-| WP numurs | Iespējamā kategorija un projekta grupa | Piezīme |
+| WP numuri | Kategorija | Iemesls |
 | --- | --- | --- |
-| #63 | Skapji | Atvērta skapja iekšpuse. Nav drošas saites ar kādu citu projektu. |
-| #70 + #79 | Skapji | Abi rāda vienu bīdāmo durvju skapi no diviem leņķiem. Var veidot vienu projektu, ja projekts atbilst vecuma kritērijam. |
-| #71 | Skapji | Gaišs skapis slīpas sienas nišā. Atsevišķs kadrs, datums nav zināms. |
-| #74 + #75 | Skapji | Viens koka toņa guļamistabas skapis ar aizvērtām un atvērtām durvīm. Vizuāli vecāks; datums nav zināms. |
-| #78 | Skapji | Skapis ar violetu apgaismojumu. Foto izskatās nevienmērīgi izgaismots un atšķiras no jaunās lapas vizuālās atlases. |
+| #38 | Priekšnams | Tikai 682 × 910 px; atsevišķs projekts, bet titulkadrs varētu izskatīties graudains. |
+| #54 + #55 | Skapji | Viens projekts; vizuāli novecojis un mazāk pievilcīgs nekā jaunākā izlase. |
+| #56, #57 | Skapis / priekšnams | Divas atšķirīgas telpas, nedrīkst apvienot vienā projektā; kadri nav spēcīgi. |
+| #61, #62 | Skapji | Atsevišķi projekti, bet attēlos ir daudz tukšas telpas un šaurs skata leņķis. |
+| #63, #80 | Skapji | Redzama tikai skapja iekšpuse; nav drošas piesaistes ārskata kadram. |
+| #70 + #79 | Skapji | Viens bīdāmo durvju skapis. Zema izšķirtspēja, vizuāli vecāks projekts. |
+| #71 | Skapji | Atsevišķs, bet nepilnīgs kopskats. |
+| #74 + #75 | Skapji | Viens projekts ar vaļējām un aizvērtām durvīm; vizuāli novecojis. |
+| #78 | Skapji | Violetais apgaismojums padara foto tumšu un neiederīgu pārējā galerijā. |
 
-Atsevišķi kategorijas vai grupas precizēšanai, ja vēlāk atlasīsim arī vecākus projektus:
+Šos var apskatīt [attēlu kontaktlapā](wp-foto-izskatisanai.jpg). Numuri atbilst [atlases tabulai](wp-foto-atlase.csv). Oriģinālie faili paliek `source-photos` mapē; nekas nav dzēsts.
 
-- **#49:** zaļi polsterēts priekšnama risinājums. Tas var būt atsevišķs projekts; tuvumā esošie kadri to nepierāda. Uzņemts 2024-01-11.
-- **#56 un #57:** vienas dienas kadri, bet ar vizuāli atšķirīgām telpām. #56 ir skapis, #57 ir priekšnama iekārtojums; nav droši tos apvienot vienā projektā. Uzņemti 2019. gadā.
-- **#80:** pelēka skapja iekšpuse bez drošas piesaistes projekta ārskata kadram. Uzņemts 2024-05-29.
-- **#145 un #146:** viens skapis ar tualetes galdiņu divos kadros. #145 jau izmantots kategorijas attēlā; abi uzņemti 2024-05-29, tāpēc jaunās galerijas papildinājumā tos pagaidām neliekam.
+## Grupēšana
 
-Pārējie 10 neievietotie kadri ar zināmu datumu ir vecāki par pusotru gadu. Tos neievietoju, arī ja daļai ir pietiekama tehniskā kvalitāte.
-
-## Grupēšanas princips
-
-Vienas mēbeles dažādus leņķus glabājam viena projekta galerijā. Projekta piederību pamato telpas detaļas, mēbeles forma, fasādes un uzņemšanas secība, ne tikai līdzīgs tonis vai failu blakusesība. Ja saikne nav droša, kadri paliek atsevišķi līdz klienta pārbaudei. Pagaidu numuri ir tikai bilžu atlasei.
+Dažādus kadrus apvienojam pēc mēbeles formas, fasādēm, telpas detaļām un uzņemšanas secības. Vienāds datums vai līdzīga krāsa nav pietiekams pamats, lai divus foto pasludinātu par vienu projektu. Vietnē projektu numuri ir pagaidu atlases rīks Jurim.
