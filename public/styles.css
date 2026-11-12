@@ -1140,3 +1140,35 @@ footer{background:#cbbfb0;color:var(--ink)}
 .footer-main a:hover{color:#635146}
 .footer-bottom{color:#514941;border-top-color:rgba(45,39,34,.24)}
 .event-debug,.event-debug p{color:#514941}
+
+/* Kontaktu lapā saziņa un darba laiks ir redzami uzreiz pēc navigācijas. */
+#saturs .contact-crumbs{padding-top:28px;padding-bottom:0}
+.contact-crumbs+.contact-page-main{padding-top:32px}
+.contact-page-main .contact-hours{margin-top:28px;padding:15px 0;border-top:1px solid #cfc4b5;border-bottom:1px solid #cfc4b5}
+.contact-hours .contact-detail-label{margin-bottom:5px}
+.contact-hours>p:last-child{font-size:16px;line-height:1.5;color:var(--ink)}
+.contact-hours strong{font-weight:600}
+.contact-hours [aria-hidden]{margin-inline:6px;color:#968b80}
+.contact-page-main .contact-details{margin-top:24px}
+.contact-page-main .contact-detail-group:first-child{border-top:0;padding-top:0}
+.contact-business{display:grid;grid-template-columns:minmax(180px,.55fr) 1fr;gap:32px;align-items:start;padding-top:34px;padding-bottom:38px}
+.contact-business h2{font-size:clamp(22px,2vw,28px);margin:0}
+.contact-business p{font-size:14px;line-height:1.65}
+
+/* Cenu piemēru noslēgumā skaidrojums, citas mēbeles un jautājumi ir atsevišķi nolasāmi. */
+.price-examples-note{padding-top:38px;padding-bottom:42px;background:#eee9e2;border-top:1px solid var(--line);border-bottom:0}
+.price-examples-note .price-examples-note-label{margin-bottom:9px;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.price-examples-note p:not(.price-examples-note-label){max-width:900px;font-size:14px;line-height:1.65}
+.price-other{display:grid;grid-template-columns:minmax(220px,.65fr) minmax(0,1fr);gap:clamp(28px,5vw,90px);align-items:start;padding-top:60px;padding-bottom:60px;border-bottom:0;background:var(--paper)}
+.price-other .eyebrow{margin:0 0 12px}
+.price-other h2{margin:0}
+.price-other-details{max-width:650px;padding-top:3px}
+.price-other-details p{margin:0 0 22px}
+.price-faq{padding-top:64px;padding-bottom:72px;background:#eee9e2}
+
+/* Ražotnes sadaļa sākas uz tās pašas kreisās līnijas kā pārējais saturs. */
+.ab-factory{grid-template-columns:minmax(0,1fr) minmax(0,600px);justify-content:stretch}
+.ab-factory-clips{justify-content:end}
+
+@media(max-width:900px){.price-other{grid-template-columns:1fr;gap:18px}.ab-factory{grid-template-columns:1fr}.ab-factory-clips{justify-content:start}}
+@media(max-width:760px){#saturs .contact-crumbs{padding-top:18px}.contact-crumbs+.contact-page-main{padding-top:24px}.contact-business{grid-template-columns:1fr;gap:10px}.price-examples-note{padding-top:30px;padding-bottom:34px}.price-other{padding-top:46px;padding-bottom:46px}.price-faq{padding-top:50px;padding-bottom:56px}}
