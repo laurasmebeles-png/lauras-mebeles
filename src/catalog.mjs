@@ -150,5 +150,18 @@ export const projects = [
   {id:'vie-tumsa-tv-siena',case:true,categories:['viesistaba'],title:'Tumša TV siena ar apgaismojumu',description:'Tumša TV siena ar atvērtiem plauktiem un LED apgaismojumu virs un zem televizora.',photos:['viesistaba/tumsa-tv-siena-ar-apgaismojumu-1.webp','viesistaba/tumsa-tv-siena-papildu.webp']},
   {id:'vie-tv-panelis-ar-2',case:true,categories:['viesistaba'],title:'TV panelis ar koka toni un kamīnu',description:'Koka toņa TV panelis un zema mēbele blakus kamīnam.',photos:['viesistaba/tv-panelis-ar-koka-toni-un-kaminu-1.webp']},
   {id:'vie-tv-mebele-ar-k',case:true,categories:['viesistaba'],title:'TV mēbele ar koka toni un stikla vitrīnām',description:'Koka toņa TV mēbeli abās pusēs papildina augstas vitrīnas ar tumšu stiklu.',photos:['viesistaba/tv-mebele-ar-koka-toni-un-stikla-vitrinam-1.webp']},
-  {id:'viesistaba',categories:['viesistaba'],title:'Gaiša TV siena ar slēgtiem skapjiem',description:'Gaišas TV mēbeles ar slēgtiem skapjiem.',photos:['viesistaba.webp']}
+  {id:'viesistaba',categories:['viesistaba'],title:'Gaiša TV siena ar slēgtiem skapjiem',description:'Gaišas TV mēbeles ar slēgtiem skapjiem.',photos:['viesistaba.webp']},
+  // WordPress arhīva foto Jura atlasei. Tie redzami tikai "Mūsu darbi" galerijā.
+  {id:'wp-prieksnams-38',case:true,reviewPoor:true,categories:['prieksnams'],title:'Priekšnama skapis ar koka toņa nišu',description:'',photos:['prieksnams/wp-prieksnams-38.webp']},
+  {id:'wp-skapis-54-55',case:true,reviewPoor:true,categories:['skapis'],title:'Gaišs skapis ar atvērtu iekšējo izkārtojumu',description:'',photos:['skapji/wp-skapis-54.webp','skapji/wp-skapis-55.webp']},
+  {id:'wp-skapis-56',case:true,categories:['skapis'],title:'Skapis ar koka toņa iekšpusi',description:'',photos:['skapji/wp-skapis-56.webp']},
+  {id:'wp-prieksnams-57',case:true,categories:['prieksnams'],title:'Priekšnama mēbeles ar koka toņa fasādēm',description:'',photos:['prieksnams/wp-prieksnams-57.webp']},
+  {id:'wp-skapis-61',case:true,categories:['skapis'],title:'Koka toņa skapis',description:'',photos:['skapji/wp-skapis-61.webp']},
+  {id:'wp-skapis-62',case:true,categories:['skapis'],title:'Koka toņa skapis ar spoguli',description:'',photos:['skapji/wp-skapis-62.webp']},
+  {id:'wp-skapis-63',case:true,reviewPoor:true,categories:['skapis'],title:'Skapja iekšējais izkārtojums',description:'',photos:['skapji/wp-skapis-63.webp']},
+  {id:'wp-skapis-70-79',case:true,reviewPoor:true,categories:['skapis'],title:'Skapis ar bīdāmām stikla durvīm',description:'',photos:['skapji/wp-skapis-70.webp','skapji/wp-skapis-79.webp']},
+  {id:'wp-skapis-71',case:true,categories:['skapis'],title:'Gaišs skapis nišā',description:'',photos:['skapji/wp-skapis-71.webp']},
+  {id:'wp-skapis-74-75',case:true,reviewPoor:true,categories:['skapis'],title:'Koka toņa guļamistabas skapis',description:'',photos:['skapji/wp-skapis-74.webp','skapji/wp-skapis-75.webp']},
+  {id:'wp-skapis-78',case:true,reviewPoor:true,categories:['skapis'],title:'Gaišs skapis ar violetu apgaismojumu',description:'',photos:['skapji/wp-skapis-78.webp']},
+  {id:'wp-skapis-80',case:true,categories:['skapis'],title:'Tumša skapja iekšējais izkārtojums',description:'',photos:['skapji/wp-skapis-80.webp']}
 ];

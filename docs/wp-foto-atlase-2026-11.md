@@ -15,23 +15,26 @@ Pārbaudes datums: 2026. gada 12. novembris. Virtuvju attēli šeit nav iekļaut
 - **#145 + #146:** viens koka toņa skapis ar galdiņu. #145 līdz šim bija tikai skapju kategorijas titulbildē; tagad abi kadri vienā galerijas projektā.
 - **#67:** jau bija kopā ar sava projekta #66, tāpēc otrreiz nav pievienots.
 
-## Atliktie attēli
+## Pagaidu projekti Jura apskatei
 
-Atlikšana nav balstīta tikai uz vecumu. Šie attēli prasa Jura izvērtējumu vai labāku kadru:
+Iepriekš atliktie 15 attēli tagad ir ievietoti 12 atsevišķos galerijas projektos ar numuriem **140–151**. Divi foto apvienoti vienā projektā tikai tur, kur sakritība ir droša. Projekti ir vienīgi galerijā, nevis pakalpojumu lapu atlasītajos piemēros.
 
-| WP numuri | Kategorija | Iemesls |
-| --- | --- | --- |
-| #38 | Priekšnams | Tikai 682 × 910 px; atsevišķs projekts, bet titulkadrs varētu izskatīties graudains. |
-| #54 + #55 | Skapji | Viens projekts; vizuāli novecojis un mazāk pievilcīgs nekā jaunākā izlase. |
-| #56, #57 | Skapis / priekšnams | Divas atšķirīgas telpas, nedrīkst apvienot vienā projektā; kadri nav spēcīgi. |
-| #61, #62 | Skapji | Atsevišķi projekti, bet attēlos ir daudz tukšas telpas un šaurs skata leņķis. |
-| #63, #80 | Skapji | Redzama tikai skapja iekšpuse; nav drošas piesaistes ārskata kadram. |
-| #70 + #79 | Skapji | Viens bīdāmo durvju skapis. Zema izšķirtspēja, vizuāli vecāks projekts. |
-| #71 | Skapji | Atsevišķs, bet nepilnīgs kopskats. |
-| #74 + #75 | Skapji | Viens projekts ar vaļējām un aizvērtām durvīm; vizuāli novecojis. |
-| #78 | Skapji | Violetais apgaismojums padara foto tumšu un neiederīgu pārējā galerijā. |
+| Galerijas numurs | WP foto numuri | Kategorija | Numura krāsa |
+| --- | --- | --- | --- |
+| 140 | 38 | Priekšnams | Sarkana |
+| 141 | 54, 55 | Skapji | Sarkana |
+| 142 | 56 | Skapji | Balta |
+| 143 | 57 | Priekšnams | Balta |
+| 144 | 61 | Skapji | Balta |
+| 145 | 62 | Skapji | Balta |
+| 146 | 63 | Skapji | Sarkana |
+| 147 | 70, 79 | Skapji | Sarkana |
+| 148 | 71 | Skapji | Balta |
+| 149 | 74, 75 | Skapji | Sarkana |
+| 150 | 78 | Skapji | Sarkana |
+| 151 | 80 | Skapji | Balta |
 
-Šos var apskatīt [attēlu kontaktlapā](wp-foto-izskatisanai.jpg). Numuri atbilst [atlases tabulai](wp-foto-atlase.csv). Oriģinālie faili paliek `source-photos` mapē; nekas nav dzēsts.
+Sarkanā krāsa ir pagaidu iekšējās atlases atzīme tehniski vājam vai vizuāli novecojušam projektam, nevis automātisks dzēšanas lēmums. Tādējādi Juris var precīzi nosaukt, kurus projektus vēlas paturēt. [Attēlu kontaktlapa](wp-foto-izskatisanai.jpg) un [pilnā atlases tabula](wp-foto-atlase.csv) saglabāta. Oriģinālie faili paliek `source-photos` mapē; nekas nav dzēsts.
 
 ## Grupēšana
 
