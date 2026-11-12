@@ -845,14 +845,13 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:24px}
 .ab-intro h1{margin:8px 0 18px}
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
-.ab-intro-media{display:grid;grid-template-columns:1fr .72fr;gap:12px;align-items:end;width:min(100%,570px);margin-inline:auto}
+.ab-intro-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:center;width:min(100%,500px);margin-inline:auto}
 .ab-intro-media img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
-.ab-intro-media img+img{margin-bottom:24px}
-.ab-factory{background:#ebe7e1}
-.ab-factory-copy{max-width:650px}
+.ab-factory{display:grid;grid-template-columns:minmax(0,440px) minmax(0,600px);justify-content:center;align-items:center;gap:clamp(36px,5vw,80px);background:#ebe7e1}
+.ab-factory-copy{max-width:440px}
 .ab-factory h2{margin:8px 0 16px}
 .ab-factory-copy>p:not(.eyebrow){font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
-.ab-factory-clips{display:grid;grid-template-columns:repeat(2,minmax(0,320px));justify-content:center;gap:20px;align-items:start;margin:30px auto 0}
+.ab-factory-clips{display:grid;grid-template-columns:repeat(2,minmax(0,280px));justify-content:center;gap:16px;align-items:start}
 .ab-factory-media{min-width:0;margin:0}
 .ab-factory-media img,.ab-factory-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#dcd5cb;filter:saturate(.82)}
 .ab-factory-media figcaption{margin-top:8px;font-size:12px;color:var(--ink-soft)}
@@ -884,8 +883,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-partner-grid strong{display:block;max-width:170px;margin:0 auto;font-size:14px;line-height:1.4;font-weight:600}
 @media(max-width:1100px){.ab-partner-grid li{flex-basis:calc((100% - 40px)/3)}}
 @media(max-width:1050px){.ab-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-factory-clips{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
-@media(max-width:600px){.ab-intro-media{max-width:420px}.ab-factory-clips{grid-template-columns:minmax(0,320px);gap:24px}}
+@media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-factory{grid-template-columns:1fr;gap:24px}.ab-factory-clips{grid-template-columns:repeat(2,minmax(0,260px));justify-content:start}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
+@media(max-width:600px){.ab-intro-media{max-width:420px}.ab-factory-clips{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 @media(max-width:560px){.ab-cards{grid-template-columns:1fr}.ab-process ol{grid-template-columns:1fr}.ab-facts{grid-template-columns:1fr 1fr 1fr;gap:14px}.ab-facts dt{font-size:28px}.ab-partners-intro{display:block}.ab-lead{margin-top:12px}.ab-partner-grid{gap:24px 16px}.ab-partner-grid li{flex-basis:calc((100% - 16px)/2)}.ab-partner-badge{width:min(100%,128px)}.ab-partner-grid strong{font-size:13px}}
 
 /* Cenu kalkulators */
@@ -1134,3 +1133,10 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .contact-visit-note strong{display:block;margin-bottom:5px;color:var(--ink);font-weight:600}
 .contact-visit-note span{display:block}
 @media(max-width:760px){.contact-section{grid-template-columns:1fr;gap:30px}.contact-copy{max-width:none}.contact-details{margin-top:27px;gap:20px}.contact-direct-links a,.contact-address{font-size:17px}.contact-visit-note{margin-top:24px}}
+
+/* Tumši bēša kājene ļauj saglabāt oriģinālā logotipa krāsas. */
+footer{background:#cbbfb0;color:var(--ink)}
+.footer-main p,.footer-main>div{color:#3e3933}
+.footer-main a:hover{color:#635146}
+.footer-bottom{color:#514941;border-top-color:rgba(45,39,34,.24)}
+.event-debug,.event-debug p{color:#514941}
