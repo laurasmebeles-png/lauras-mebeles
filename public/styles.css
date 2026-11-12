@@ -618,22 +618,22 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 /* Sākumlapas ražotnes un eksporta pieredzes stāsti. */
 .home-manufacture,.home-export{display:grid;align-items:center;gap:clamp(32px,5vw,80px);padding-block:clamp(48px,5vw,76px)}
 .home-manufacture{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);background:#ebe7e1}
-.home-export{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);background:#f8f6f2}
+.home-export{grid-template-columns:minmax(0,345px) minmax(0,1fr);background:#f8f6f2}
 .home-manufacture-copy,.home-export-copy{min-width:0}
 .home-manufacture .eyebrow,.home-export .eyebrow{margin-bottom:18px}
 .home-manufacture h2,.home-export h2{font-size:clamp(32px,3.3vw,48px);line-height:1.14;max-width:18ch;margin:0 0 22px}
 .home-manufacture-copy>p:not(.eyebrow),.home-export-copy>p:not(.eyebrow){font-size:clamp(15px,1.35vw,17px);line-height:1.7;color:var(--ink-soft);max-width:55ch;margin:0 0 27px}
 .home-manufacture-media,.home-export-media{overflow:hidden;background:#dcd5cb;width:100%}
-.home-manufacture-media{max-width:420px;justify-self:end}
-.home-export-media{max-width:480px;justify-self:start}
+.home-manufacture-media{max-width:330px;justify-self:end}
+.home-export-media{max-width:345px;justify-self:start}
 .home-manufacture-media img,.home-export-media img{display:block;width:100%;height:auto}
-.home-manufacture-media img{aspect-ratio:6/5;object-fit:cover;object-position:center top}
-.home-export-media img{aspect-ratio:3/2;object-fit:contain}
+.home-manufacture-media img{aspect-ratio:6/5;object-fit:cover;object-position:center top;filter:saturate(.65) contrast(.97)}
+.home-export-media img{aspect-ratio:4/5;object-fit:cover;object-position:center bottom}
 .home-export-countries{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 16px;padding:0;margin:0 0 28px;max-width:720px}
 .home-export-countries li{display:flex;align-items:center;gap:7px;min-width:0;font-size:13px;line-height:1.35;color:var(--ink)}
 .home-export-countries img{width:24px;height:18px;flex:none;object-fit:cover;border:1px solid rgba(0,0,0,.12)}
 @media(max-width:900px){.home-manufacture,.home-export{grid-template-columns:1fr;gap:25px}.home-manufacture-media{grid-row:1;justify-self:start}.home-export-countries{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:560px){.home-manufacture,.home-export{padding-block:40px}.home-manufacture h2,.home-export h2{max-width:none;margin-bottom:16px}.home-manufacture-copy>p:not(.eyebrow),.home-export-copy>p:not(.eyebrow){margin-bottom:22px}.home-export-countries{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 12px}}
+@media(max-width:560px){.home-manufacture,.home-export{padding-block:40px}.home-manufacture h2,.home-export h2{max-width:none;margin-bottom:16px}.home-manufacture-copy>p:not(.eyebrow),.home-export-copy>p:not(.eyebrow){margin-bottom:22px}.home-export-media{max-width:300px}.home-export-countries{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 12px}}
 
 /* Vienota pogu valoda un kategoriju lapu hero */
 .button,.button-small{border-radius:2px;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:500}
