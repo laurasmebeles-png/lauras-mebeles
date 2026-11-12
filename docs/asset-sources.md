@@ -52,4 +52,4 @@ Signe iesūtīja divus oriģinālus no Lauras mēbeļu ražotnes. `par-mums/razo
 
 Sākumlapas eksporta sadaļā pēc Signes izvēles izmantots šaurais Norvēģijas foto `775261300_1690877219709592_6440013728107710343_n (1).jpg` kā `public/images/home/eksports-norvegija.jpg`. Oriģinālās krāsas saglabātas; lapā kadrējums rāda attēla apakšējo daļu ar furgonu un kalniem. Iepriekšējais platais foto paliek projekta failos.
 
-Sākumlapas ražotnes kolāžā izmantots iepriekšējais darbinieka foto un Signes atsūtītais gatavās virtuves kadrs `780097105_1692710209526293_8166731839144628415_n.jpg` kā `public/images/home/razotne-gatava-virtuve.jpg`. Oriģinālās krāsas saglabātas; kadrējumu veido CSS.
+Sākumlapas kvalitātes sadaļā izmantots Signes atsūtītais gatavās virtuves kadrs `780097105_1692710209526293_8166731839144628415_n.jpg` kā `public/images/home/razotne-gatava-virtuve.jpg`. Oriģinālās krāsas un pilns kadrs saglabāts. Ražotnes foto un video ir sadaļā “Par mums”.
