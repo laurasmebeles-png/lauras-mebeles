@@ -51,3 +51,5 @@ Signe iesūtīja divus oriģinālus no Lauras mēbeļu ražotnes. `par-mums/razo
 `VID-20260819-WA0021(1).mp4` ir Signes iesūtīts aptuveni 32 sekunžu time lapse ar darbinieku pie iekārtas. No tā izmantots 14 sekunžu fragments `public/video/razotne-darbs.mp4`; video ir apgriezts tuvāk darbībai, samazināts un bez skaņas. Oriģināla kvalitāte ir ierobežota, tādēļ lapā to rāda tikai nelielā kadrā, ko apmeklētājs atskaņo pats. Abi video veido atsevišķu ražotnes ieskatu; tie netiek automātiski atskaņoti.
 
 Sākumlapas eksporta sadaļā pēc Signes izvēles izmantots šaurais Norvēģijas foto `775261300_1690877219709592_6440013728107710343_n (1).jpg` kā `public/images/home/eksports-norvegija.jpg`. Oriģinālās krāsas saglabātas; lapā kadrējums rāda attēla apakšējo daļu ar furgonu un kalniem. Iepriekšējais platais foto paliek projekta failos.
+
+Sākumlapas ražotnes kolāžā izmantots iepriekšējais darbinieka foto un Signes atsūtītais gatavās virtuves kadrs `780097105_1692710209526293_8166731839144628415_n.jpg` kā `public/images/home/razotne-gatava-virtuve.jpg`. Oriģinālās krāsas saglabātas; kadrējumu veido CSS.
