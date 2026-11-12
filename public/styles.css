@@ -846,8 +846,9 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:32px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .ab-facts dt{font-family:var(--serif);font-size:34px;line-height:1;color:var(--red)}
 .ab-facts dd{margin:8px 0 0;font-size:13px;line-height:1.4;color:var(--muted,#5d564f)}
-.ab-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.ab-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .ab-cards img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin-bottom:16px}
+.ab-cards article:nth-of-type(2) img{object-position:center 15%}
 .ab-cards h2{font-size:24px;margin:0 0 8px}
 .ab-cards p{margin:0;font-size:15px;line-height:1.6}
 .ab-process h2{font-size:34px;margin:6px 0 28px}
@@ -870,8 +871,9 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-partner-badge-tison img{width:94%;height:94%}
 .ab-partner-grid strong{display:block;max-width:170px;margin:0 auto;font-size:14px;line-height:1.4;font-weight:600}
 @media(max-width:1100px){.ab-partner-grid li{flex-basis:calc((100% - 40px)/3)}}
-@media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-cards{grid-template-columns:1fr}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
-@media(max-width:560px){.ab-process ol{grid-template-columns:1fr}.ab-facts{grid-template-columns:1fr 1fr 1fr;gap:14px}.ab-facts dt{font-size:28px}.ab-partners-intro{display:block}.ab-lead{margin-top:12px}.ab-partner-grid{gap:24px 16px}.ab-partner-grid li{flex-basis:calc((100% - 16px)/2)}.ab-partner-badge{width:min(100%,128px)}.ab-partner-grid strong{font-size:13px}}
+@media(max-width:1050px){.ab-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
+@media(max-width:560px){.ab-cards{grid-template-columns:1fr}.ab-process ol{grid-template-columns:1fr}.ab-facts{grid-template-columns:1fr 1fr 1fr;gap:14px}.ab-facts dt{font-size:28px}.ab-partners-intro{display:block}.ab-lead{margin-top:12px}.ab-partner-grid{gap:24px 16px}.ab-partner-grid li{flex-basis:calc((100% - 16px)/2)}.ab-partner-badge{width:min(100%,128px)}.ab-partner-grid strong{font-size:13px}}
 
 /* Cenu kalkulators */
 .calc{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}

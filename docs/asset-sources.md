@@ -43,3 +43,7 @@ Seši attēlotie partneri un to attēli ņemti no [esošās partneru lapas](http
 | partneri/hooligan.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/bubbletea.jpg |
 | partneri/tison.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/cropped-tison-logo.png |
 | partneri/rasa.webp | https://laurasmebeles.lv/wp-content/uploads/2020/01/Screenshot-2020-01-22-at-19.14.46-1.png |
+
+## Ražotnes attēli — 12.11.
+
+Signe iesūtīja divus oriģinālus no Lauras mēbeļu ražotnes. `par-mums/razotne-darbinieks.webp` sagatavots no `1000186649.jpg` un izmantots lapas “Par mums” ievadā; sākumlapā paliek iepriekšējais foto no cita leņķa. `par-mums/razotne-iekarta.webp` sagatavots no `1000186650.jpg` un izmantots pie pašu ražotnes apraksta. Mainīts tikai izmērs un formāts. Iesūtītais `VID-20260819-WA0028.mp4` ir 15 sekunžu vertikāls iekārtas panorāmas kadrs; tas pagaidām nav ievietots lapā, jo nerāda pašu izgatavošanas darbu un atkārtotu jau fotogrāfijās redzamo.
