@@ -6,7 +6,7 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 // Preview-only diagnostics. No external analytics request or personal data.
 const allowedEvents = new Set(['cta_click','phone_click','email_click','category_select','gallery_filter','project_view','project_select','configurator_start','configurator_complete','form_start','form_preview_complete','faq_open','review_filter']);
 const allowedKeys = new Set(['location','category','project_id','question','source']);
-const allowedValues = new Set(['header','hero','price','price_example','topbar','contact','footer','gallery','all','virtuve','skapis','prieksnams','vannasistaba','viesistaba','citas','peleka','kompakta','1','2','3','4','5','google','facebook','website','taisna','gaisa-l-veida','egger-l-veida','vitrina-l-veida', ...(window.LAURAS_PROJECTS || []).map(p => p.id)]);
+const allowedValues = new Set(['header','hero','price','price_example','topbar','contact','footer','gallery','all','virtuve','skapis','prieksnams','vannasistaba','viesistaba','citas','peleka','kompakta','1','2','3','4','5','google','facebook','website','taisna','gaisa-l-veida','egger-l-veida','vitrina-l-veida','ar-salu', ...(window.LAURAS_PROJECTS || []).map(p => p.id)]);
 window.dataLayer = window.dataLayer || [];
 function track(event, parameters = {}) {
   if (!allowedEvents.has(event)) return;
@@ -59,7 +59,8 @@ const priceExamples = {
   taisna: T('Taisna virtuve gar vienu sienu'),
   'gaisa-l-veida': T('Gaiša L veida virtuve'),
   'egger-l-veida': T('L veida virtuve ar EGGER apdari'),
-  'vitrina-l-veida': T('L veida virtuve ar izgaismotu vitrīnu')
+  'vitrina-l-veida': T('L veida virtuve ar izgaismotu vitrīnu'),
+  'ar-salu': T('Virtuve ar salu')
 };
 const selectedPriceExample = new URLSearchParams(location.search).get('piemers');
 if ($('#lead-form') && Object.hasOwn(priceExamples, selectedPriceExample)) {

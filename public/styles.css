@@ -569,7 +569,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin:0 0 20px;font-weight:500}
 .nk-hero{position:relative;min-height:min(84svh,800px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#2a2622}
 .nk-hero-slides,.nk-hero-slides img{position:absolute;inset:0;width:100%;height:100%}
-.nk-hero-slides img{object-fit:cover;opacity:0;transition:opacity 1s ease}
+.nk-hero-slides img{object-fit:cover;object-position:center 58%;opacity:0;transition:opacity 1s ease}
 .nk-hero-slides img.is-active{opacity:1}
 .nk-hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 65% at 50% 48%,rgba(20,18,16,.43),rgba(20,18,16,.16) 72%,transparent 100%),linear-gradient(180deg,rgba(20,18,16,.12),rgba(20,18,16,.26))}
 .nk-hero-copy{position:relative;z-index:2;padding:80px var(--gutter);max-width:1120px}
@@ -678,11 +678,11 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .review-links{display:flex;flex-wrap:wrap;gap:16px 32px;margin-top:38px}
 .stats-band dd strong{font-weight:500}
 .contact-crumbs{padding-bottom:0}
-@media(max-width:760px){.nk-tiles-3 .nk-tile img{aspect-ratio:4/3}.nk-hero-slides img:first-child{object-position:92% 65%}}
+@media(max-width:760px){.nk-tiles-3 .nk-tile img{aspect-ratio:4/3}}
 #saturs .contact-copy h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1.12;margin:0 0 18px;letter-spacing:0}
 .nk-hero-slides picture{position:absolute;inset:0;display:block}
-.nk-hero-slides img:first-child{object-position:center 60%}
-@media(max-width:760px){.nk-hero-slides img:first-child{object-position:60% 55%}}
+.nk-hero-slides picture img{object-position:center 60%}
+@media(max-width:760px){.nk-hero-slides img{object-position:center 50%}.nk-hero-slides picture img{object-position:60% 55%}}
 @media(max-width:760px){.nk-hero h1{margin-bottom:48px}.nk-hero .nk-button{font-size:11px;letter-spacing:.14em;line-height:20px;padding:12px 18px}.review-card{padding:24px 22px 23px}}
 
 /* Apakšējā rinda: mazākas, ainavas formāta flīzes */
@@ -846,14 +846,14 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
 .ab-intro-media{display:flex;justify-content:center}
 .ab-intro-media img{display:block;width:min(100%,360px);height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
-.ab-factory{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,390px);gap:clamp(28px,5vw,72px);align-items:center;background:#ebe7e1}
-.ab-factory-copy{max-width:470px}
+.ab-factory{background:#ebe7e1}
+.ab-factory-copy{max-width:650px}
 .ab-factory h2{margin:8px 0 16px}
 .ab-factory-copy>p:not(.eyebrow){font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
-.ab-factory-clips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
-.ab-factory-video{min-width:0}
-.ab-factory-video video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#dcd5cb;filter:saturate(.82)}
-.ab-factory-video figcaption{margin-top:8px;font-size:12px;color:var(--ink-soft)}
+.ab-factory-clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start;margin-top:30px}
+.ab-factory-media{min-width:0;margin:0}
+.ab-factory-media img,.ab-factory-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#dcd5cb;filter:saturate(.82)}
+.ab-factory-media figcaption{margin-top:8px;font-size:12px;color:var(--ink-soft)}
 .ab-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:32px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .ab-facts dt{font-family:var(--serif);font-size:34px;line-height:1;color:var(--red)}
 .ab-facts dd{margin:8px 0 0;font-size:13px;line-height:1.4;color:var(--muted,#5d564f)}
@@ -882,8 +882,8 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-partner-grid strong{display:block;max-width:170px;margin:0 auto;font-size:14px;line-height:1.4;font-weight:600}
 @media(max-width:1100px){.ab-partner-grid li{flex-basis:calc((100% - 40px)/3)}}
 @media(max-width:1050px){.ab-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.ab-intro-grid,.ab-factory{grid-template-columns:1fr;gap:28px}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
-@media(max-width:600px){.ab-factory{gap:24px}.ab-factory-clips{max-width:390px}}
+@media(max-width:900px){.ab-intro-grid{grid-template-columns:1fr;gap:28px}.ab-factory-clips{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-process ol{grid-template-columns:1fr 1fr}.ab .section{padding-top:36px;padding-bottom:36px}}
+@media(max-width:600px){.ab-factory-clips{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;padding-bottom:12px}.ab-factory-media{flex:0 0 min(72vw,280px);scroll-snap-align:start}}
 @media(max-width:560px){.ab-cards{grid-template-columns:1fr}.ab-process ol{grid-template-columns:1fr}.ab-facts{grid-template-columns:1fr 1fr 1fr;gap:14px}.ab-facts dt{font-size:28px}.ab-partners-intro{display:block}.ab-lead{margin-top:12px}.ab-partner-grid{gap:24px 16px}.ab-partner-grid li{flex-basis:calc((100% - 16px)/2)}.ab-partner-badge{width:min(100%,128px)}.ab-partner-grid strong{font-size:13px}}
 
 /* Cenu kalkulators */
@@ -1059,7 +1059,6 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-hero-since:before,.nk-hero-since:after{content:"";display:block;width:30px;height:1px;background:#ffffffa8}
 .nk-hero h1{font-size:clamp(52px,5.7vw,104px);line-height:1.04;margin-bottom:38px;text-wrap:balance}
 .nk-hero:after{background:linear-gradient(180deg,rgba(18,17,16,.42),rgba(18,17,16,.29) 45%,rgba(18,17,16,.42))}
-.nk-hero-slides img.is-active{object-position:center 58%}
 @media(max-width:1050px){
   .topline{font-size:12px;gap:15px}
   .topline-social{gap:3px;padding-left:12px}
@@ -1075,7 +1074,6 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
   .nk-hero-since{font-size:12px;letter-spacing:.19em;gap:9px;margin-bottom:25px}
   .nk-hero-since:before,.nk-hero-since:after{width:18px}
   .nk-hero h1{font-size:clamp(38px,8.5vw,52px);line-height:1.1;margin-bottom:38px}
-  .nk-hero-slides img.is-active{object-position:center 50%}
 }
 @media(max-width:360px){.topline{font-size:12px}.topline-social a{width:29px;height:32px}}
 
