@@ -704,6 +704,9 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-cat-note strong{color:var(--red);font-weight:700;margin-right:.3em}
 .nk-button-dark{background:var(--ink);color:#fff;margin-top:34px}
 .nk-button-dark:hover{background:var(--red)}
+.nk-cat-top-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.nk-cat-top-actions .nk-button{display:inline-flex;align-items:center;justify-content:center;margin:0;padding:15px 20px;font-size:11px;letter-spacing:.11em;text-align:center}
+@media(max-width:540px){.nk-cat-top-actions{gap:10px}.nk-cat-top-actions .nk-button{width:100%}}
 .nk-cat-top-media{margin:0}
 .nk-cat-top-media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;background:var(--surface)}
 .nk-cat-top-media.nk-cat-top-media-portrait img{object-position:center 64%}
