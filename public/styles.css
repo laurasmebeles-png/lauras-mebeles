@@ -1186,6 +1186,7 @@ footer{background:#cbbfb0;color:var(--ink)}
 .home-inspiration .ba-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,32px)}
 .home-inspiration .ba h3{font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.6vw,22px);line-height:1.25;margin:14px 0 0}
 .home-inspiration-action{display:flex;justify-content:center;margin-top:36px}
+.nk-more .nk-button,.home-inspiration-action .nk-button{padding:13px 28px;font-size:12px;letter-spacing:.13em}
 .inspiration-gallery-bottom{justify-content:center;margin-top:clamp(36px,4vw,60px)}
 .inspiration-gallery-bottom .nk-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-align:center}
 .inspiration-gallery-bottom svg{width:18px;height:18px}
@@ -1199,6 +1200,7 @@ footer{background:#cbbfb0;color:var(--ink)}
   .home-inspiration-head{display:block}
   .home-inspiration-head>p{margin-top:12px}
   .home-inspiration .ba-grid{grid-template-columns:1fr;gap:32px}
+  .nk-more .nk-button,.home-inspiration-action .nk-button{padding:12px 22px}
   .inspiration-gallery-bottom{align-items:center}
   .inspiration-gallery-bottom .nk-button{width:100%;max-width:400px}
   .service-gallery-bottom{align-items:center}
