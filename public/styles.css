@@ -1177,3 +1177,30 @@ footer{background:#cbbfb0;color:var(--ink)}
 
 @media(max-width:900px){.price-other{grid-template-columns:1fr;gap:18px}.ab-factory{grid-template-columns:1fr}.ab-factory-clips{justify-content:start}}
 @media(max-width:760px){#saturs .contact-crumbs{padding-top:18px}.contact-crumbs+.contact-page-main{padding-top:24px}.contact-business{grid-template-columns:1fr;gap:10px}.price-examples-note{padding-top:30px;padding-bottom:34px}.price-other{padding-top:46px;padding-bottom:46px}.price-faq{padding-top:50px;padding-bottom:56px}}
+
+/* Sākumlapā daži pirms un pēc piemēri ved uz pilno iedvesmas lapu. */
+.home-inspiration{padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(56px,6vw,88px);background:var(--paper)}
+.home-inspiration-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.home-inspiration-head h2{margin:0}
+.home-inspiration-head>p{max-width:330px;margin:0 0 4px;color:var(--ink-soft)}
+.home-inspiration .ba-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,32px)}
+.home-inspiration .ba h3{font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.6vw,22px);line-height:1.25;margin:14px 0 0}
+.home-inspiration-action{display:flex;justify-content:center;margin-top:36px}
+.inspiration-gallery-bottom{justify-content:center;margin-top:clamp(36px,4vw,60px)}
+.inspiration-gallery-bottom .nk-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-align:center}
+.inspiration-gallery-bottom svg{width:18px;height:18px}
+
+/* Galerijas saite ir skaidra nākamā darbība katras kategorijas beigās. */
+.service-gallery-bottom{justify-content:center;margin-top:clamp(36px,4vw,60px)}
+.service-gallery-link{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-align:center}
+.service-gallery-link svg{width:18px;height:18px}
+
+@media(max-width:800px){
+  .home-inspiration-head{display:block}
+  .home-inspiration-head>p{margin-top:12px}
+  .home-inspiration .ba-grid{grid-template-columns:1fr;gap:32px}
+  .inspiration-gallery-bottom{align-items:center}
+  .inspiration-gallery-bottom .nk-button{width:100%;max-width:400px}
+  .service-gallery-bottom{align-items:center}
+  .service-gallery-link{width:100%;max-width:400px}
+}

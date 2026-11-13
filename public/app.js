@@ -207,7 +207,7 @@ else heroPhoto?.addEventListener('load', revealHero, { once: true });
   const button = hero.querySelector('[data-hero-pause]');
   if (slides.length < 2) { button?.remove(); return; }
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const interval = 4800;
+  const interval = 4200;
   let index = 0;
   let timer;
   let paused = reducedMotion.matches;
