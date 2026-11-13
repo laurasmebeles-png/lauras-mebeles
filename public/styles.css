@@ -740,6 +740,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .stats-band dt,#saturs .stats-band dt{font-size:clamp(24px,2.1vw,30px);line-height:1.1}
 .stats-band dd,#saturs .stats-band dd{margin:8px 0 0}
 .stats-band dd strong,#saturs .stats-band dd strong{font-size:14px}
+@media(min-width:1100px){.stats-band dl,#saturs .stats-band dl{grid-template-columns:1.05fr .65fr 1.25fr 1.05fr}}
 @media(max-width:760px){.stats-band dl,#saturs .stats-band dl{grid-template-columns:1fr 1fr}.stats-band dt,#saturs .stats-band dt{font-size:24px}}
 .stats-band + .nk-section{padding-top:clamp(32px,3.5vw,52px)}
 
