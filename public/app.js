@@ -199,7 +199,7 @@ function revealHero() { heroPhoto.classList.add('is-ready'); }
 if (heroPhoto?.complete && heroPhoto.naturalWidth) revealHero();
 else heroPhoto?.addEventListener('load', revealHero, { once: true });
 
-// Vienāds rādīšanas laiks katrai sākumlapas bildei; melnā virtuve ir pirmā.
+// Melnā virtuve ir pirmā; tās rādīšanas laiks ir mazliet īsāks.
 (() => {
   const hero = document.querySelector('[data-hero]');
   if (!hero) return;
@@ -208,6 +208,7 @@ else heroPhoto?.addEventListener('load', revealHero, { once: true });
   if (slides.length < 2) { button?.remove(); return; }
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const interval = 4200;
+  const firstInterval = 3900;
   let index = 0;
   let timer;
   let paused = reducedMotion.matches;
@@ -223,7 +224,7 @@ else heroPhoto?.addEventListener('load', revealHero, { once: true });
       index = (index + 1) % slides.length;
       slides[index].classList.add('is-active');
       schedule();
-    }, interval);
+    }, index === 0 ? firstInterval : interval);
   };
   button?.addEventListener('click', () => { paused = !paused; updateButton(); schedule(); });
   document.addEventListener('visibilitychange', schedule);
