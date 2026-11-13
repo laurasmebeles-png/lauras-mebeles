@@ -119,7 +119,7 @@ home=home.replace(/<section class="testimonial[\s\S]*?<\/section>/,homeReviews);
 home=home.replace(homeTiles,homeTiles+homeManufacture).replace(homeFeature,homeFeature+homeExport);
 const statsBand=`<section class="stats-band" aria-label="Lauras mēbeļu pieredze un darba process"><dl>${[
   ['Kopš 2008. gada','Izgatavojam mēbeles pēc pasūtījuma',`<path d="M3 10a9 9 0 1 1 2.8 8.5M3 4v6h6"/><path d="M12 7v5l3 2"/>`],
-  ['4 200+','Izgatavotas virtuves',`<path d="M3 3v18h18v-5H8V3H3Z"/><path d="M3 7h2M3 11h2M3 15h2M7 21v-2M11 21v-2M15 21v-2m-3-7 1-4 6-6 3 3-6 6-4 1Zm5-8 3 3"/>`],
+  ['4 600+','Izgatavotas virtuves',`<path d="M3 3v18h18v-5H8V3H3Z"/><path d="M3 7h2M3 11h2M3 15h2M7 21v-2M11 21v-2M15 21v-2m-3-7 1-4 6-6 3 3-6 6-4 1Zm5-8 3 3"/>`],
   ['Pašu ražotne Rīgā','Mēbeļu detaļas izgatavojam paši',`<path d="M3 21V8l9-5 9 5v13H3Z"/><path d="M8 21v-8h8v8M7 9h.01M12 9h.01M17 9h.01M8 17h8"/>`],
   ['Pilns process','No projekta līdz montāžai',`<path d="M4 12h16"/><circle cx="4" cy="12" r="2" fill="var(--paper)"/><circle cx="12" cy="12" r="2" fill="var(--paper)"/><circle cx="20" cy="12" r="2" fill="var(--paper)"/>`]
 ].map(([n,l,i])=>`<div><svg class="stat-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${i}</svg><dt>${n}</dt><dd><strong>${l}</strong></dd></div>`).join('')}</dl></section>`;
