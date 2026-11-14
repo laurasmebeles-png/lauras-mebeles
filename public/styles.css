@@ -1107,9 +1107,10 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .contact-map{display:block;width:100%;height:360px;border:1px solid var(--line);background:#e7e3dc}
 .ab-partners .export-row{background:#eee9e2;border:1px solid var(--line);padding:26px 30px;margin-top:34px}
 .ab-partners .export-row h3{font-family:var(--serif);font-size:clamp(25px,2.5vw,34px);font-weight:400;margin-bottom:18px}
-.ab-partners .export-row ul{gap:12px 22px}
+.ab-partners .export-row ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 22px}
 .ab-partners .export-row li{color:var(--ink);font-size:15px;gap:8px}
 .ab-partners .export-row li img{width:26px;height:19px}
+@media(max-width:1000px){.ab-partners .export-row ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
   .contact-location{padding-top:36px;padding-bottom:36px}
   .contact-location-intro{display:block}
