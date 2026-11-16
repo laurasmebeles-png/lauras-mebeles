@@ -903,5 +903,118 @@
     "photos": [
       "virtuves/galerija/119.webp"
     ]
+  },
+  {
+    "reviewId": 181,
+    "reviewPoor": true,
+    "sourceGroup": "P060",
+    "numbers": [
+      120,
+      121,
+      122
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/120.webp",
+      "virtuves/galerija/121.webp",
+      "virtuves/galerija/122.webp"
+    ]
+  },
+  {
+    "reviewId": 182,
+    "sourceGroup": "P061",
+    "numbers": [
+      130
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/130.webp"
+    ]
+  },
+  {
+    "reviewId": 183,
+    "sourceGroup": "P062",
+    "numbers": [
+      134,
+      150
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/134.webp",
+      "virtuves/galerija/150.webp"
+    ]
+  },
+  {
+    "reviewId": 184,
+    "sourceGroup": "P063",
+    "numbers": [
+      148,
+      149
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/148.webp",
+      "virtuves/galerija/149.webp"
+    ]
+  },
+  {
+    "reviewId": 185,
+    "sourceGroup": "P064",
+    "numbers": [
+      153
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/153.webp"
+    ]
+  },
+  {
+    "reviewId": 186,
+    "sourceGroup": "P065",
+    "numbers": [
+      207,
+      208
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/207.webp",
+      "virtuves/galerija/208.webp"
+    ]
+  },
+  {
+    "reviewId": 187,
+    "sourceGroup": "P066",
+    "numbers": [
+      209,
+      210,
+      211
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/209.webp",
+      "virtuves/galerija/210.webp",
+      "virtuves/galerija/211.webp"
+    ]
   }
 ]
