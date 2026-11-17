@@ -66,7 +66,6 @@
   "vie-tv-siena-ar-ma": 128,
   "vie-viesistaba-ar-": 129,
   "vie-gaisa-tv-siena": 130,
-  "vie-balti-skapji-a": 131,
   "vie-zema-tv-mebele": 132,
   "vie-balti-skapji-a2": 133,
   "vie-tv-panelis-ar-": 134,
@@ -79,7 +78,6 @@
   "wp-skapis-56": 142,
   "wp-prieksnams-57": 143,
   "wp-skapis-61": 144,
-  "wp-skapis-62": 145,
   "wp-skapis-63": 146,
   "wp-skapis-70-79": 147,
   "wp-skapis-71": 148,
@@ -106,5 +104,6 @@
   "archive-skapis-old-71": 177,
   "archive-skapis-old-80": 178,
   "gaisa-virtuve-ar-pussalu": 179,
-  "van-gaisa-rievota-mebele": 180
+  "van-gaisa-rievota-mebele": 180,
+  "archive-viesistaba-old-5": 192
 }

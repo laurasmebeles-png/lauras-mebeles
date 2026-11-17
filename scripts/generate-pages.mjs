@@ -38,7 +38,7 @@ const imgSizes = JSON.parse(_rf(new URL('../src/image-sizes.json', import.meta.u
 // Vecās galerijas secība un pagaidu projektu numuri ir atsevišķā failā.
 // Kur vecais kadrs jau ir projektā, attiecīgā grupa papildina esošo ierakstu.
 const usedKitchenIds = new Set(kitchenGroups.map(g=>g.existingId).filter(Boolean));
-const galleryProjects = [
+let galleryProjects = [
   ...kitchenGroups.map(g=>{
     const current = g.existingId ? projects.find(p=>p.id===g.existingId) : null;
     if(g.existingId && !current) throw Error(`Galerijas projekts nav atrasts: ${g.existingId}`);
@@ -49,6 +49,25 @@ const galleryProjects = [
   }),
   ...projects.filter(p=>!usedKitchenIds.has(p.id)).map(p=>({ ...p, reviewId:galleryReviewIds[p.id], photos:[...new Set(p.photos)] }))
 ];
+// Jura atlasīto projektu secība galerijā. Numuri paliek nemainīgi arī pēc pārbīdīšanas.
+// Mainām tikai vienas kategorijas projektus, lai vairāku kategoriju projektu vieta citos filtros nemainītos.
+const moveGalleryProjects = (list, category, ids, insertAt) => {
+  const slots = list.flatMap((p,i)=>p.categories.length===1&&p.categories[0]===category?[i]:[]);
+  const categoryProjects = slots.map(i=>list[i]);
+  const selectedIds = new Set(ids);
+  const picked = categoryProjects.filter(p=>selectedIds.has(p.reviewId));
+  const remaining = categoryProjects.filter(p=>!selectedIds.has(p.reviewId));
+  const position = Math.max(0, Math.min(typeof insertAt==='function'?insertAt(remaining):insertAt,remaining.length));
+  const reordered = [...remaining.slice(0,position),...picked,...remaining.slice(position)];
+  const result = [...list];
+  slots.forEach((slot,i)=>{ result[slot]=reordered[i]; });
+  return result;
+};
+galleryProjects = moveGalleryProjects(galleryProjects,'virtuve',[179,58,60,59,68,69,72,74,189,185,181],24);
+// 174. projekts pašreizējā galerijā nav; pārējos Jura nosauktos skapjus izceļam sākumā.
+galleryProjects = moveGalleryProjects(galleryProjects,'skapis',[175,84,93,92,139,90,88,141,142,148,172],0);
+galleryProjects = moveGalleryProjects(galleryProjects,'vannasistaba',[117,157,161,160,163,162],list=>list.findIndex(p=>p.reviewId===113)+1);
+galleryProjects = moveGalleryProjects(galleryProjects,'viesistaba',[77,127],Infinity);
 if(galleryProjects.some(p=>!Number.isInteger(p.reviewId)) || new Set(galleryProjects.map(p=>p.reviewId)).size!==galleryProjects.length) throw Error('Galerijas atlases numuri nav pilnīgi vai atkārtojas');
 const galleryCard = p => { const f=p.photos[0],s=imgSizes[f]||[900,675],label=p.reviewId?`Projekts ${p.reviewId}`:p.title;
   return `<article class="gallery-project" data-category="${p.categories.join(' ')}"><a href="/musu-darbi/${p.id}/" aria-label="Atvērt projektu: ${esc(label)}; ${p.photos.length} foto"><span class="gallery-project-image"><img src="/images/${esc(f)}" alt="${esc(p.title)}" width="${s[0]}" height="${s[1]}" loading="lazy"><span class="gallery-project-index${p.reviewPoor?' is-low-quality':''}" aria-hidden="true">${p.reviewId}</span><span class="gallery-project-count">${p.photos.length>1?`+${p.photos.length-1} foto`:'1 foto'}</span></span></a></article>`;

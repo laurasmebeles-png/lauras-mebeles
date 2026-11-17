@@ -139,7 +139,6 @@ export const projects = [
   {id:'vie-tv-siena-ar-ma',case:true,featured:true,categories:['viesistaba'],title:'TV siena ar marmora rakstu un kamīnu',description:'Televizors un kamīns iekļauti vienotā sienas risinājumā ar gaišu marmora raksta apdari. Sānos izvietota stikla vitrīna.',photos:['viesistaba/tv-siena-ar-marmora-rakstu-un-kaminu-1.webp','viesistaba/tv-siena-ar-marmora-rakstu-un-kaminu-2.webp','viesistaba/tv-siena-ar-marmora-rakstu-papildu.webp']},
   {id:'vie-viesistaba-ar-',case:true,featured:true,categories:['viesistaba'],title:'Viesistaba ar darba vietu un lameļu paneli',description:'Koka lameļu panelis nodala dzīvojamo zonu, savukārt nišā iekārtota darba vieta. Virs galda izvietoti skapji darba lietu glabāšanai.',photos:['viesistaba/viesistaba-ar-lamelu-paneli-un-darba-nisu-1.webp','viesistaba/viesistaba-ar-lamelu-paneli-un-darba-nisu-2.webp']},
   {id:'vie-gaisa-tv-siena',case:true,categories:['viesistaba'],title:'Gaiša TV siena ar izgaismotu vitrīnu',description:'Gaiši augšējie skapīši un stikla vitrīna apvienoti ar garu zemu TV mēbeli.',photos:['viesistaba/gaisa-tv-siena-ar-izgaismotu-vitrinu-1.webp']},
-  {id:'vie-balti-skapji-a',case:true,reviewPoor:true,categories:['viesistaba'],title:'Balti skapji ar koka toņa nišu un mozaīkas paneli',description:'Balti skapji un atvilktnes ietver nišu televizoram ar mozaīkas paneli un izgaismotu plauktu.',photos:['viesistaba/balti-skapji-ar-koka-tona-nisu-un-mozaikas-paneli-1.webp']},
   {id:'vie-zema-tv-mebele',case:true,categories:['viesistaba'],title:'Zema TV mēbele ar koka virsmu',description:'Zema TV mēbele ar koka virsmu, atvērtiem plauktiem un tumšām durtiņām.',photos:['viesistaba/zema-tv-mebele-ar-koka-virsmu-1.webp']},
   {id:'vie-balti-skapji-a2',case:true,categories:['viesistaba'],title:'Balti skapji ar koka toņa plauktu sekciju',description:'Balti skapji apvienoti ar koka toņa atvērtu plauktu sekciju televizoram.',photos:['viesistaba/balti-skapji-ar-koka-tona-plauktu-sekciju-1.webp']},
   {id:'vie-tv-panelis-ar-',case:true,categories:['viesistaba'],title:'TV panelis ar tumšu koka faktūru',description:'Tumša koka faktūras sienas panelis ar apgaismojumu aiz televizora un zema melna mēbele.',photos:['viesistaba/tv-panelis-ar-tumsu-koka-fakturu-1.webp']},
@@ -151,8 +150,7 @@ export const projects = [
   {id:'wp-skapis-54-55',case:true,reviewPoor:true,categories:['skapis'],title:'Gaišs skapis ar atvērtu iekšējo izkārtojumu',description:'',photos:['skapji/wp-skapis-54.webp','skapji/wp-skapis-55.webp']},
   {id:'wp-skapis-56',case:true,categories:['skapis'],title:'Skapis ar koka toņa iekšpusi',description:'',photos:['skapji/wp-skapis-56.webp']},
   {id:'wp-prieksnams-57',case:true,categories:['prieksnams'],title:'Priekšnama mēbeles ar koka toņa fasādēm',description:'',photos:['prieksnams/wp-prieksnams-57.webp']},
-  {id:'wp-skapis-61',case:true,categories:['skapis'],title:'Koka toņa skapis',description:'',photos:['skapji/wp-skapis-61.webp']},
-  {id:'wp-skapis-62',case:true,categories:['skapis'],title:'Koka toņa skapis ar spoguli',description:'',photos:['skapji/wp-skapis-62.webp']},
+  {id:'wp-skapis-61',case:true,categories:['skapis'],title:'Koka toņa skapis',description:'',photos:['skapji/wp-skapis-61.webp','skapji/wp-skapis-62.webp']},
   {id:'wp-skapis-63',case:true,reviewPoor:true,categories:['skapis'],title:'Skapja iekšējais izkārtojums',description:'',photos:['skapji/wp-skapis-63.webp']},
   {id:'wp-skapis-70-79',case:true,reviewPoor:true,categories:['skapis'],title:'Skapis ar bīdāmām stikla durvīm',description:'',photos:['skapji/wp-skapis-70.webp','skapji/wp-skapis-79.webp']},
   {id:'wp-skapis-71',case:true,categories:['skapis'],title:'Gaišs skapis nišā',description:'',photos:['skapji/wp-skapis-71.webp','skapji/klasisks-skapis-ar-valnrieksta-plauktiem-1.webp','skapji/klasisks-skapis-ar-valnrieksta-plauktiem-2.webp']},
@@ -178,4 +176,5 @@ export const projects = [
   {id:"archive-skapis-old-69",case:true,categories:["skapis"],title:"Skapju projekts",description:'',photos:["archive/skapis-old-69.webp"]},
   {id:"archive-skapis-old-71",case:true,featured:true,categories:["skapis"],title:"Atvērta garderobe ar plauktiem un atvilktnēm",description:'Pakaramie, plaukti un atvilktnes izvietoti pa trim sienām, izmantojot arī nelielas telpas stūrus.',photos:["archive/skapis-old-71.webp"]},
   {id:"archive-skapis-old-80",case:true,reviewPoor:true,categories:["skapis"],title:"Skapju projekts",description:'',photos:["archive/skapis-old-80.webp"]},
+  {id:'archive-viesistaba-old-5',case:true,categories:['viesistaba'],title:'Gaiša viesistabas mēbele ar koka virsmu',description:'',photos:['archive/viesistaba-old-5.webp','archive/viesistaba-old-6.webp','archive/viesistaba-old-7.webp']},
 ];
