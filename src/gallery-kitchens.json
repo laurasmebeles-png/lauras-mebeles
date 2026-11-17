@@ -854,24 +854,6 @@
     ]
   },
   {
-    "reviewId": 55,
-    "sourceGroup": "P056",
-    "numbers": [
-      112,
-      114,
-      115
-    ],
-    "existingId": null,
-    "categories": [
-      "virtuve"
-    ],
-    "photos": [
-      "virtuves/galerija/112.webp",
-      "virtuves/galerija/114.webp",
-      "virtuves/galerija/115.webp"
-    ]
-  },
-  {
     "reviewId": 56,
     "sourceGroup": "P057",
     "numbers": [

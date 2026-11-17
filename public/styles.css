@@ -992,7 +992,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 #saturs .price-top .eyebrow{margin:0 0 14px}
 #saturs .price-top h1{font-size:clamp(39px,4vw,56px);line-height:1.08;max-width:760px;margin:0 0 23px}
 #saturs .price-top-main>p:last-child{max-width:590px;font-size:17px;line-height:1.6}
-.price-top-assurance{border-left:3px solid var(--action);padding:5px 0 5px clamp(24px,3vw,42px)}
+.price-top-assurance{background:#fffaf4;border:1px solid var(--line);border-left:4px solid var(--action);padding:clamp(22px,2.8vw,38px)}
 #saturs .price-top-assurance .eyebrow{color:var(--ink);margin-bottom:15px}
 #saturs .price-top-assurance h2{font-family:var(--serif);font-size:clamp(29px,2.9vw,40px);font-weight:500;line-height:1.16;letter-spacing:-.025em;margin:0 0 17px}
 #saturs .price-top-assurance>p:last-child{font-size:16px;line-height:1.65;max-width:480px}
@@ -1027,7 +1027,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .price-other{border-bottom:1px solid var(--line);padding-top:56px;padding-bottom:56px}
 .price-other h2{font-family:var(--serif);font-size:clamp(30px,3vw,42px);font-weight:500;margin:0 0 12px}
 .price-other p{max-width:700px;font-size:16px;margin:0 0 20px}
-@media(max-width:900px){.price-top-layout{grid-template-columns:1fr;gap:30px;align-items:start}.price-top-assurance{border-left:0;border-top:2px solid var(--action);padding:24px 0 0}.price-example{grid-template-columns:1fr}.price-example-media{max-width:760px}.price-example-alt .price-example-media{order:0}.price-example-copy{max-width:760px}}
+@media(max-width:900px){.price-top-layout{grid-template-columns:1fr;gap:30px;align-items:start}.price-top-assurance{border-left:1px solid var(--line);border-top:4px solid var(--action)}.price-example{grid-template-columns:1fr}.price-example-media{max-width:760px}.price-example-alt .price-example-media{order:0}.price-example-copy{max-width:760px}}
 @media(max-width:600px){#saturs .price-top{padding-bottom:48px}#saturs .price-top h1{font-size:clamp(36px,10vw,44px)}.price-top-layout{gap:28px}#saturs .price-top-assurance h2{font-size:30px}.price-example{gap:20px;padding-top:42px;padding-bottom:42px}.price-example-media-label{font-size:12px}.price-example-copy .button{width:100%}.price-examples-note{padding-bottom:30px}}
 @media(prefers-reduced-motion:reduce){.price-example-sketch{display:none}.price-example-render{opacity:1;transition:none}}
 
