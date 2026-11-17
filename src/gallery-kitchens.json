@@ -1016,5 +1016,69 @@
       "virtuves/galerija/210.webp",
       "virtuves/galerija/211.webp"
     ]
+  },
+  {
+    "reviewId": 188,
+    "sourceGroup": "P067",
+    "numbers": [
+      131
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/131.webp"
+    ]
+  },
+  {
+    "reviewId": 189,
+    "sourceGroup": "P068",
+    "numbers": [
+      136
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/136.webp"
+    ]
+  },
+  {
+    "reviewId": 190,
+    "sourceGroup": "P069",
+    "numbers": [
+      156,
+      157,
+      158
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/156.webp",
+      "virtuves/galerija/157.webp",
+      "virtuves/galerija/158.webp"
+    ]
+  },
+  {
+    "reviewId": 191,
+    "sourceGroup": "P070",
+    "numbers": [
+      217,
+      218,
+      219
+    ],
+    "existingId": null,
+    "categories": [
+      "virtuve"
+    ],
+    "photos": [
+      "virtuves/galerija/217.webp",
+      "virtuves/galerija/218.webp",
+      "virtuves/galerija/219.webp"
+    ]
   }
 ]
