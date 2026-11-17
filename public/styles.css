@@ -851,7 +851,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 /* Par mums: kompakts izkārtojums */
 .ab .section{padding-top:48px;padding-bottom:48px}
 .ab-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:24px}
-.ab-intro h1{margin:8px 0 18px}
+#saturs .ab-intro h1{font-size:clamp(32px,3.3vw,46px);line-height:1.12;margin:8px 0 18px}
 .ab-intro-text>p:not(.eyebrow){max-width:520px;color:var(--muted,#5d564f)}
 .ab-intro-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:center;width:min(100%,500px);margin-inline:auto}
 .ab-intro-media img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(.82)}
@@ -870,7 +870,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .ab-cards img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin-bottom:16px}
 .ab-cards h2{font-size:24px;margin:0 0 8px}
 .ab-cards p{margin:0;font-size:15px;line-height:1.6}
-.ab-process h2{font-size:34px;margin:6px 0 28px}
+#saturs .ab-process h2{font-size:clamp(28px,2.5vw,36px);margin:6px 0 28px}
 .ab-process ol{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px 32px}
 .ab-process li{border-top:1px solid var(--line);padding-top:14px}
 .ab-process li span{font-size:12px;color:var(--red);font-weight:600;letter-spacing:.08em}
@@ -990,7 +990,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 #saturs .price-top{padding-top:clamp(34px,5vw,64px);padding-bottom:clamp(48px,6vw,84px)}
 .price-top-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,108px);align-items:center}
 #saturs .price-top .eyebrow{margin:0 0 14px}
-#saturs .price-top h1{font-size:clamp(39px,4vw,56px);line-height:1.08;max-width:760px;margin:0 0 23px}
+#saturs .price-top h1{font-size:clamp(32px,3.3vw,46px);line-height:1.12;max-width:760px;margin:0 0 23px}
 #saturs .price-top-main>p:last-child{max-width:590px;font-size:17px;line-height:1.6}
 .price-top-assurance{background:#fffaf4;border:1px solid var(--line);border-left:4px solid var(--action);padding:clamp(22px,2.8vw,38px)}
 #saturs .price-top-assurance .eyebrow{color:var(--ink);margin-bottom:15px}
@@ -1028,7 +1028,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .price-other h2{font-family:var(--serif);font-size:clamp(30px,3vw,42px);font-weight:500;margin:0 0 12px}
 .price-other p{max-width:700px;font-size:16px;margin:0 0 20px}
 @media(max-width:900px){.price-top-layout{grid-template-columns:1fr;gap:30px;align-items:start}.price-top-assurance{border-left:1px solid var(--line);border-top:4px solid var(--action)}.price-example{grid-template-columns:1fr}.price-example-media{max-width:760px}.price-example-alt .price-example-media{order:0}.price-example-copy{max-width:760px}}
-@media(max-width:600px){#saturs .price-top{padding-bottom:48px}#saturs .price-top h1{font-size:clamp(36px,10vw,44px)}.price-top-layout{gap:28px}#saturs .price-top-assurance h2{font-size:30px}.price-example{gap:20px;padding-top:42px;padding-bottom:42px}.price-example-media-label{font-size:12px}.price-example-copy .button{width:100%}.price-examples-note{padding-bottom:30px}}
+@media(max-width:600px){#saturs .price-top{padding-bottom:48px}#saturs .price-top h1{font-size:32px}.price-top-layout{gap:28px}#saturs .price-top-assurance h2{font-size:30px}.price-example{gap:20px;padding-top:42px;padding-bottom:42px}.price-example-media-label{font-size:12px}.price-example-copy .button{width:100%}.price-examples-note{padding-bottom:30px}}
 @media(prefers-reduced-motion:reduce){.price-example-sketch{display:none}.price-example-render{opacity:1;transition:none}}
 
 /* Pieteikuma forma */
