@@ -23,7 +23,7 @@ Redaktores piezīme: sadaļas seko pašreizējās sākumlapas secībai. Latviski
 |---|---|
 | Since 2008 | Furniture made to measure |
 | 4,600+ | Kitchens made |
-| Our own workshop in Riga | We make the parts for your furniture here |
+| Our own workshop | Made in Riga |
 | From start to finish | Design, delivery and installation |
 
 ## 3. Mēbeļu kategorijas
