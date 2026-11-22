@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
+status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
 updated: 2026-11-22
 source_path: /skapji/
 title: Built-in and fitted wardrobes | Lauras mēbeles

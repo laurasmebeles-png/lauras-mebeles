@@ -83,3 +83,11 @@ Pārbaudes: `npm run check`, `npm run test:i18n` (ietver build), melnrakstu ģen
 Tā paša datuma stila pārskats: pēc Signes apstiprinājuma virtuvju ievads sākas ar “We design custom kitchens to suit your space and the way you cook.” Pārskatīti pārējie uzņēmuma EN teksti, izlaboti vispārīgie un burtiskie formulējumi izvēlētos projektu, plānošanas un uzņēmuma aprakstos. Pārējo lapu melnraksti atjaunoti kā v2; to EN adreses nav ieslēgtas. Atsauksmju LV un EN avoti šajā pārskatā nav mainīti.
 
 Atkārtoti veiksmīgi `npm run check`, `npm run test:i18n`, melnrakstu ģenerēšana un `git diff --check`. Papildus pārbaudīts, ka virtuvju lapas body HTML marķējums sakrīt ar iepriekšējo versiju un visu sešu projektu redzamie/paplašinātie teksti sakrīt ar dialogu pilnajiem aprakstiem. EN sākumlapas rezultāts nav mainījies. Pārlūkā pārbaudīts jaunā virtuvju ievada izkārtojums datora un 390 × 844 telefona skatā.
+
+## 22.11.2026: pārējās piecas mēbeļu kategorijas EN
+
+Pēc Signes apstiprinājuma ieslēgtas `/en/skapji/`, `/en/koridora-iekartas/`, `/en/vannasistabas-mebeles/`, `/en/sekcijas/` un `/en/citas-mebeles/`. Teksti pārnesti no apstiprinātajiem melnrakstiem uz EN vārdnīcu. Saglabāti LV izkārtojumi, sadaļu secība, attēli un projektu atlase. Iztulkoti arī metadati, pieejamības apraksti un 25 šo lapu izmantoto projektu dialogu teksti. EN tagad pieejama sākumlapa un visas sešas mēbeļu kategorijas; atlikušo septiņu pamatlapu EN adreses nav ieslēgtas.
+
+Papildu labojums pēc Signes norādes: “Citas mēbeles” sadaļā “Ko pārrunāsim” abās valodās izņemts tikai piemērs par virtuvi un nolaižamu gultu. Vispārīgā doma par vairāku funkciju apvienošanu un pārējais saturs paliek.
+
+`npm run test:i18n` aptver visas septiņas EN lapas: pārbauda teksta/atribūtu tulkojumu pārklājumu, sadaļu un izkārtojuma marķējumu, attēlus, saites, valodu adreses un kartīšu/dialogu tekstu atbilstību. Pārlūkā pārbaudītas visas piecas jaunās lapas datora un 390 × 844 telefona skatā, nav horizontālas pārplūdes. Pārbaudīts skapja projekta dialogs, foto pāršķiršana, LV/EN pārslēgšana un piemēra izņemšana abās valodās. Atsauksmju avoti un tulkojumi šajā izmaiņā nav mainīti.

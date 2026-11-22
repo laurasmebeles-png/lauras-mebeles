@@ -34,7 +34,7 @@ VS Code ir pievienots arī uzdevums **Terminal → Run Task → Atvērt Lauras m
 | `docs/research/valodas-un-en-izpete-2026-11-22.md` | EN/RU/NO lokalizācijas plāns un pirmā EN frāžu pārbaude Latvijai |
 | `docs/research/2026-11-22/secinajumi-un-lietosana.md` | Pabeigtā EN/RU/NO formulējumu izpēte, 555 frāžu un valstu novērojumi un lapu karte |
 | `content/lv/` | Latviešu lapu satura sagataves |
-| `content/en/` | Apstiprinātie sākumlapas un virtuvju EN teksti, pārējo 12 lapu melnraksti |
+| `content/en/` | Apstiprinātie septiņu EN lapu teksti un atlikušo septiņu lapu melnraksti |
 | `assets/originals/` | Darba foto un logo oriģināli, kas paliek lokāli |
 | `public/images/` | Publicēšanai sagatavotie attēli |
 | `src/home.html` | Sākumlapas avots un koplietoto sadaļu sagatave |
@@ -69,7 +69,7 @@ Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109
 
 ## Priekšskatījums (Vercel)
 
-EN sākumlapa: `/en/`, virtuves: `/en/virtuves/`. Signe apstiprinājusi abu lapu formulējumus. Pārējās 12 lapas sagatavotas [izskatīšanai](content/en/parejo-lapu-melnraksti.md), pagaidām bez EN adresēm. Atsauksmju tulkojumi saglabā oriģinālo secību un izteiksmi. Lapas, kas pieejamas tikai latviski, EN navigācijā marķētas ar LV.
+EN priekšskatījumā ieslēgta sākumlapa un visas sešas mēbeļu kategorijas: `/en/`, `/en/virtuves/`, `/en/skapji/`, `/en/koridora-iekartas/`, `/en/vannasistabas-mebeles/`, `/en/sekcijas/`, `/en/citas-mebeles/`. Signe apstiprinājusi šo lapu tekstus. Atlikušās septiņas pamatlapas vēl ir melnraksti bez EN adresēm. [Teksti un statusi](content/en/parejo-lapu-melnraksti.md). Atsauksmju tulkojumi saglabā oriģinālo secību un izteiksmi. Lapas, kas pieejamas tikai latviski, EN navigācijā marķētas ar LV.
 
 Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, visām atbildēm `X-Robots-Tag: noindex, nofollow`. Pirms īstās palaišanas šo galveni un `robots.txt` aizliegumu izņem (PLAN.md, 8. punkts). Priekšskatījuma saite: https://lauras-mebeles.vercel.app/ (Vercel Hobby, GitHub repo laurasmebeles-png/lauras-mebeles; katrs `git push` uz `main` to atjaunina).
 

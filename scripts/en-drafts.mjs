@@ -1,7 +1,7 @@
 // Izveido izskatāmus EN melnrakstus no aktuālo LV lapu struktūras.
 // pending-translations.json netiek izmantots publisko lapu ģenerēšanā.
 import fs from 'node:fs';
-import {walkHtml,encode,decode} from './i18n.mjs';
+import {walkHtml,encode,decode,hasLanguagePage} from './i18n.mjs';
 const read=path=>JSON.parse(fs.readFileSync(path,'utf8'));
 const dict={...read('src/i18n/en.json'),...read('content/en/pending-translations.json')};
 const reviews=read('src/i18n/reviews.en.json');
@@ -44,16 +44,17 @@ function markdown(html){
     .replace(/<[^>]+>/g,''))
     .replace(/[ \t]+/g,' ').replace(/ *\n */g,'\n').replace(/\n{3,}/g,'\n\n').trim();
 }
-const index=['# Pārējo lapu EN melnraksti','',
-  '22.11.2026. Signes izskatīšanai, stila redakcija v2. Tie vēl nav ievietoti priekšskatījumā. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.',''];
+const index=['# EN lapu teksti un melnraksti','',
+  '22.11.2026. Stila redakcija v2. Pie katras lapas norādīts, vai tās teksts ir ievietots priekšskatījumā vai vēl izskatāms. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.',''];
 for(const page of pages){
+  const approved=hasLanguagePage('en',page.lv_path);
   const name=page.lv_path.split('/').filter(Boolean).join('-')+'.md';
   const note=page.id==='prices'?'\nCenu pārbaudes piezīme: summas un komplektācijas pārceltas no pašreizējā LV priekšskatījuma. Šis tulkojums nav jauns klienta cenu apstiprinājums. Pirms EN cenu lapas ievietošanas jāsalāgo tās ar saskaņotajām cenām.\n':'';
-  const meta=['---','status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai','updated: 2026-11-22',`source_path: ${page.lv_path}`,`title: ${page.en.title}`,`description: ${page.en.description}`,'---','',
+  const meta=['---',`status: ${approved?'Signes apstiprināts teksts, ievietots EN priekšskatījumā':'redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai'}`,'updated: 2026-11-22',`source_path: ${page.lv_path}`,`title: ${page.en.title}`,`description: ${page.en.description}`,'---','',
     `SEO fokuss: ${[page.en.primary,...page.en.secondary].filter(Boolean).join('; ')||'zīmola vai funkcionāls nolūks'}.`,'',
     'Sadaļas un projekti seko pašreizējās LV lapas secībai. Atslēgvārdu saraksts un redaktores piezīmes nav lapā ievietojams teksts.',note,'',markdown(page.html),''].join('\n');
   fs.writeFileSync('content/en/'+name,meta);
-  index.push(`- [${page.en.title.split(' | ')[0]}](${name}) (${page.lv_path})`);
+  index.push(`- [${page.en.title.split(' | ')[0]}](${name}) (${page.lv_path}). ${approved?'Apstiprināts, ievietots EN priekšskatījumā.':'Melnraksts izskatīšanai.'}`);
 }
 fs.writeFileSync('content/en/parejo-lapu-melnraksti.md',index.join('\n')+'\n');
-console.log(`Sagatavoti ${pages.length} pilnu lapu melnraksti un to rādītājs.`);
+console.log(`Atjaunoti ${pages.length} lapu teksti un to statusu rādītājs.`);

@@ -6,7 +6,7 @@ atslēga = latviešu teksta fragments, vērtība = tulkojums. Tukša vērtība `
 ## Kā pievienot valodu
 1. `npm run i18n:extract` ģenerē lapas un papildina visas vārdnīcas ar jaunajiem fragmentiem (`""`).
 2. Aizpilda `src/i18n/<kods>.json` (piem. `en.json`).
-3. Ieslēdz valodu `src/i18n/config.json` laukā `enabled` (piem. `["lv","en"]`). Ja apstiprināta tikai daļa lapu, laukā `pages.<kods>` norāda tikai šo lapu ceļus. EN pašlaik ieslēgtas `/` un `/virtuves/`.
+3. Ieslēdz valodu `src/i18n/config.json` laukā `enabled` (piem. `["lv","en"]`). Ja apstiprināta tikai daļa lapu, laukā `pages.<kods>` norāda tikai šo lapu ceļus. EN pašlaik ieslēgta sākumlapa un visas sešas mēbeļu kategorijas, kopā septiņas lapas.
 4. `npm run build`. Lapas parādās `public/<kods>/...`, parādās valodu pārslēdzējs un `hreflang`.
 
 ## Ko tulko
@@ -22,3 +22,4 @@ atslēga = latviešu teksta fragments, vērtība = tulkojums. Tukša vērtība `
 - Sākumlapas H1 ir marķēts ar `data-i18n-key="home.hero.title"`, lai to tulkotu kā veselumu. Vārdnīcas rindas pārtraukums saglabā esošo vizuālo dalījumu; starp daļām paliek atstarpe arī mobilajā skatā.
 - Valodu pārslēdzējs un `hreflang` rāda tikai konkrētajai lapai pieejamās valodas. EN saites uz vēl netulkotām LV lapām paliek LV adresē un rāda LV marķējumu. Ģenerators un build iztīra iepriekšējo rezultātu, lai nepaliktu atslēgtas EN lapas.
 - `content/en/pending-translations.json` satur pārējo lapu redakcionālos melnrakstus un netiek ielādēts publiskajā ģeneratorā. EN `projects.js` iekļauj tikai ieslēgtajās lapās izmantotos projektus.
+- Apstiprinot nākamo lapu, tās fragmentus pārceļ no `pending-translations.json` uz `en.json`. Pievieno arī metadatus, attēlu un vadības aprakstus un izmantoto projektu pilnos dialogu tekstus. `npm run test:i18n` pārbauda visas ieslēgtās EN lapas, to tulkojumu pārklājumu, struktūru, attēlus, saites un projektu tekstu atbilstību.

@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
+status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
 updated: 2026-11-22
 source_path: /citas-mebeles/
 title: Other made-to-measure furniture | Lauras mēbeles
@@ -89,7 +89,7 @@ Tell us how you plan to use the furniture and what you need that ready-made piec
 
 #### More than one use
 
-We’ll plan how the room can serve different purposes, from storage to work or relaxation. One example is a kitchen and a fold-down bed sharing the same space.
+We’ll plan how the room can serve different purposes, from storage to work or relaxation.
 
 03
 

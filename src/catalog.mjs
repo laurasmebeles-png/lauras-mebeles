@@ -41,7 +41,7 @@ export const categories = [
     short:'Mēbeles nestandarta telpām un vairāku funkciju apvienošanai.',
     metaDesc:'Mēbeles nestandarta telpām un vairāku funkciju apvienošanai. Apskatiet darbu piemērus un pastāstiet, kādas mēbeles jums nepieciešamas.',
     works:'Mūsu izgatavotās mēbeles', gallery:'Skatīt citu mēbeļu galeriju',
-    considerations:[['Jūsu iecere','Pastāstiet, kam mēbele paredzēta un kāpēc gatavās mēbeles jums neder.'],['Vairākas funkcijas','Pārrunājam iespējas vienā telpā apvienot glabāšanu, darbu vai atpūtu. Piemēram, virtuve un nolaižama gulta vienā telpā.'],['Projekta izstrāde','Pirms izgatavošanas vienojamies par risinājumu, materiāliem, izmēriem un cenu.']],
+    considerations:[['Jūsu iecere','Pastāstiet, kam mēbele paredzēta un kāpēc gatavās mēbeles jums neder.'],['Vairākas funkcijas','Pārrunājam iespējas vienā telpā apvienot glabāšanu, darbu vai atpūtu.'],['Projekta izstrāde','Pirms izgatavošanas vienojamies par risinājumu, materiāliem, izmēriem un cenu.']],
     priceTitle:'Kas ietekmē cenu?', priceText:'Cenu ietekmē mēbeles izmēri, materiāli un funkciju skaits. Individuālu piedāvājumu sagatavojam pēc sarunas par jūsu ieceri.' }
 ];
 

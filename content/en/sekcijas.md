@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
+status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
 updated: 2026-11-22
 source_path: /sekcijas/
 title: Living room furniture and TV units | Lauras mēbeles
