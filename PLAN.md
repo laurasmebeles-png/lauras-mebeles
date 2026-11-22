@@ -16,7 +16,7 @@ Pārbaudītas 14 pamatlapas un 174 projektu lapas katrā no LV/EN/RU versijām. 
 
 Turpmākajos 2., 6., 7. un 8. punktos jāņem vērā:
 
-- DNS un Vercel projekts ir kopīgs visām valodām. LV ir saknē, EN zem /en/, RU zem /ru/; norvēģu versijai paredzēts /no/, kad saturs gatavs. Saglabāt esošos e-pasta DNS ierakstus. Valodām nav vajadzīga atsevišķa domēna vai Resend verifikācija.
+- DNS un Vercel projekts ir kopīgs visām valodām. LV ir saknē, EN zem /en/, RU zem /ru/ un norvēģu Bokmål zem /no/. Saglabāt esošos e-pasta DNS ierakstus. Valodām nav vajadzīga atsevišķa domēna vai Resend verifikācija.
 - Kontaktformai viena API plūsma. Kopā ar pieteikumu nosūtīt serverī pārbaudītu valodas kodu un lapas kontekstu; nepamatot valodu uz valsti vai pārlūka valodu. Lokalizēt validāciju, ielādes, kļūdu un veiksmes paziņojumus, Turnstile un iespējamo klienta apstiprinājuma e-pastu. Uzņēmuma saņemtajā e-pastā norādīt pieteikuma valodu. Reālā sūtīšana vēl nav ieviesta.
 - GA4 vienā īpašumā un vienā tīmekļa datu plūsmā. Kopīgi notikumu nosaukumi, papildu page_language parametrs no lapas valodas un vienots lapas identifikators valodu salīdzināšanai. Reģistrēt page_language kā pielāgotu dimensiju. GA4 noklusējuma language ir pārlūka iestatījums. generate_lead tikai pēc servera apstiprinātas pieņemšanas, bez formas personas datiem analītikā. GA4 vēl nav pieslēgts.
 - Piekrišanas saskarne un privātuma informācija katrā publicētajā valodā. Piekrišanas izvēle saglabājas, mainot valodu. Pārbaudīt formas un analītiku katrā valodā, priekšskatījuma testus nodalot no publiskajiem datiem.
@@ -60,7 +60,7 @@ Signe lūdz darba gaitā atgādināt par aizmirstiem darbiem. Sākot kontaktform
 
 ## Atvērtie jautājumi klientam (nebloķē 1. līdz 3. punktu)
 
-1. Valodu apjoms izlemts: LV + EN + RU + norvēģu Bokmål. LV/EN/RU priekšskatījuma satura apjoms gatavs. Nākamā valoda ir norvēģu Bokmål. RU saglabāšana vairs nav atvērts jautājums.
+1. Valodu apjoms izlemts: LV + EN + RU + norvēģu Bokmål. LV/EN/RU/NO priekšskatījuma satura apjoms gatavs. RU saglabāšana vairs nav atvērts jautājums.
 2. Fotogrāfijas (e-pasta melnraksts jau sagatavots Kristapa vārdā).
 3. Kalkulatora likmes, vai vienošanās, ka kalkulators paliek bez cenām.
 4. Atsauksmes: piekrīt manuāli uzturētām kartītēm ar Google/Facebook atsauksmju pārkopēšanu?
@@ -118,7 +118,7 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 - Pāradresāciju karte: docs/migration/redirect-map.md. Pēc klienta un Signes apstiprinājuma pārnest uz vercel.json `redirects` (301). Pārbaudīt katru veco URL pēc palaišanas.
 - sitemap.xml ģenerēt build laikā no lapu saraksta; robots.txt production versijā atļauj indeksēt un norāda sitemap.
 - Strukturētie dati: LocalBusiness (vai FurnitureStore) ar adresi Matīsa iela 78a, Rīga, tālruni, darba laiku; BreadcrumbList apakšlapām; FAQPage sākumlapas BUJ blokam.
-- Canonical un hreflang lv/en/ru/x-default jau ieviesti. Pirms palaišanas pārbaudīt tos uz īstā domēna; NO pievienot, kad attiecīgās lapas gatavas.
+- Canonical un hreflang lv/en/ru/no/x-default jau ieviesti. Pirms palaišanas pārbaudīt tos uz īstā domēna.
 - Pārbaude ar Lighthouse (mobilais) katrai lapu grupai; mērķis 90+ Performance un SEO.
 
 ### 7. GA4 un piekrišana
@@ -138,4 +138,4 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 ### 9. Pēc palaišanas
 
 - Pirmās 2 nedēļas: GSC 404 pārskats, pieteikumu kvalitāte, GA4 notikumi.
-- EN apstiprinātā satura versija jau gatava. Turpināt norvēģu Bokmål versiju; "Padomi" sadaļa no vecajām 2020. g. publikācijām un kalkulators ar reālām likmēm paliek atsevišķi turpmāki darbi.
+- EN/RU/NO apstiprinātie priekšskatījuma teksti gatavi; "Padomi" sadaļa no vecajām 2020. g. publikācijām un kalkulators ar reālām likmēm paliek atsevišķi turpmāki darbi.
