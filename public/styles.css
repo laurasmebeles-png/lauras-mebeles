@@ -979,6 +979,7 @@ html[lang="ru"] .header .button-small{white-space:nowrap;flex-shrink:0}
 @media(max-width:760px){.header .lang-switch{margin-left:auto}.header .menu-toggle{order:2}}
 .lang-fallback{display:inline-block;margin-left:.35em;font-size:.65em;line-height:1;opacity:.65;vertical-align:middle}
 .button .lang-fallback,.text-link .lang-fallback{font-size:.7em}
+.nk-tile>.lang-fallback{position:absolute;right:10px;bottom:10px;z-index:2;margin:0}
 .review-translation{font-size:12px;color:var(--muted);margin:0 0 12px}
 
 /* CTA izmanto neitrālu grafītu; zīmola sarkanais paliek mazajos akcentos. */

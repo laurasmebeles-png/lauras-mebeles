@@ -38,3 +38,5 @@ Veiksmīgi npm run check un npm run test:i18n: 14 EN pamatlapas, 174 EN projektu
 Signes maketa precizējums: tikai sākumlapas faktu joslas ražotnes blokā īsais variants «Собственный цех» / «Детали делаем в Риге», pēc atsevišķas RU valodas pārbaudes. Ražotnes sadaļas mazais virsraksts paliek «Собственное производство в Риге».
 
 Augšējās navigācijas CTA pēc Signes norādes saīsināts uz «Связаться», lai poga paliktu vienā rindā. Sākumlapas galvenās sadaļas «Связаться с нами» un pilnais kontaktu aicinājums saglabāti.
+
+Navigācijā «Для вдохновения» saīsināts uz «Идеи» pēc RU valodas pārbaudes. Sadaļu virsraksti un sākumlapas mazais uzraksts saglabāti. Kartīšu LV marķējums izvietots stūrī ārpus teksta plūsmas, lai tas neveidotu papildu rindu un nepalielinātu cenu kartītes balto joslu.
