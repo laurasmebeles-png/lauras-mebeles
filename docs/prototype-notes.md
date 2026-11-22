@@ -159,3 +159,19 @@ Pēc Signes apstiprinājuma ieslēgtas /no/skapji/, /no/koridora-iekartas/, /no/
 Visas piecas lapas pārbaudītas 1440 px datorā un 390/360 px telefonā: virsraksti un pogas nepārplūst. NO kategoriju H1 pievienots CSS text-wrap:balance, lai pēdējais vārds nepaliktu viens; apstiprinātie vārdi, struktūra un izvietojums nav mainīti. Mobilajā izvēlnē visas sešas kategorijas ved uz NO bez LV norādes. Pārbaudīta NO/EN pārslēgšana tajā pašā vannas mēbeļu lapā, projekta pilnais dialogs, foto 1 / 2 → 2 / 2 un Les mer izvēršana.
 
 Gala npm run test:i18n (EN/RU katrai 14 + 174, NO 7), npm run check un git diff --check veiksmīgi.
+
+
+## 22.11.2026: pārējo NO lapu tekstu sagatavošana
+
+Sagatavoti atlikušās septiņas pamatlapas, galerijas 174 saistīto projektu lapu saskarnes modeļi un deviņi jauni pilni atsauksmju tulkojumi. Trīs AI apakšaģenti nodrošināja savstarpēju valodas redakciju un atsevišķu faktu/struktūras/Keyword Planner auditu. Iestrādāti koka toņa un faktūras precizējumi, plūstošāki jauno nosaukumu un 3D procesa formulējumi. Saglabātas cenas EUR, visas komplektācijas, 11 valstis, garantijas robežas un formas nenosūtīšanas fakts. Ārvalstu piegādes BUJ pielāgots pēc iepriekš apstiprinātās EN pieredzes atbildes.
+
+Automātiski pārbaudīta 1588 papildfragmentu sagatave pret aktuālo LV: 7 atlikušās pamatlapas, 174 galerijā saistītās lapas, 41 izmantots projekta ID un visi 12 pilnie citāti MD/JSON. Trūkstošu fragmentu, savstarpēju konfliktu vai apstiprināto NO vērtību pārrakstīšanas nav; pirmie trīs citāti precīzi nemainīti. Pilnie teksti un pārbaudes: content/no/parejo-lapu-teksti.md. Src/i18n/no.json, aktīvās atsauksmes, konfigurācija un public/ nav mainīti. Šajā posmā nav veiktas jauno lapu pārlūka pārbaudes vai Vercel atjaunināšana; tas seko ievietošanas posmā.
+
+
+## 22.11.2026: pilnais NO priekšskatījums
+
+Pēc Signes apstiprinājuma ieslēgtas atlikušās septiņas NO pamatlapas un 174 galerijas projektu lapas. Pārnesti 1588 apstiprinātie fragmenti, metadati/alt/aria un 12 pilni citāti; pirmie trīs tulkojumi precīzi nemainīti. NO tagad ir 14 pamatlapas, 174 galerijas lapas un 41 izmantots dialoga projekta ID. Neatkarīgais gala ģenerēto lapu audits apstiprina cenas/komplektācijas, apzināto eksporta BUJ lokalizāciju, 13 pirms/pēc projektu secību, pilnos dialogus un 12 atsauksmes. LV fallback nav, valodas pārslēgs saglabā konkrēto lapu. Oriģinālās atsauksmes un apstiprinātie agrākie NO teksti nav pārrakstīti.
+
+Septiņas jaunās lapas pārlūkā pārbaudītas 1440, 390 un 360 px platumā; cenas arī 1024 px. Pārplūdes/apgrieztu pogu nav. Garākiem Par mums/cenu H1 un cenu piemēra pogai līdzsvarots rindu dalījums ar CSS, nemainot vārdus vai fontu. Pārbaudīta cenu piemēra pāreja uz NO kontaktformu, konteksta noņemšana un maketa nenosūtīšanas rezultāts, galerijas 18 → 36 izvēršana un skapju filtrs, projekta foto 1 / 2 → 2 / 2 un EN/NO pārslēgšana, pilnas atsauksmes izvēršana, jaunās zaļās virtuves slīdnis 50 → 51 un Før 1 / 3 → Etter 2 / 3. Apskatītas arī ražotnes, partneru, valstu un noslēguma sadaļas. Konsoles kļūdu nav. Noindex un formas izmēģinājuma statuss saglabāts; DNS, Resend un analītika vēl ir PLAN.md darbi.
+
+Gala npm run test:i18n (EN/RU/NO katrai 14 + 174), npm run check un git diff --check veiksmīgi.

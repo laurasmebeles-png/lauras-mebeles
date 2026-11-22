@@ -68,7 +68,14 @@
       "/koridora-iekartas/",
       "/vannasistabas-mebeles/",
       "/sekcijas/",
-      "/citas-mebeles/"
+      "/citas-mebeles/",
+      "/pakalpojumi/",
+      "/par-mums/",
+      "/kontakti/",
+      "/cenas/",
+      "/musu-darbi/",
+      "/iedvesmai/",
+      "/virtuves-mebeles-atsauksmes-virtuves-iekartas/"
     ]
   },
   "pageTrees": {
@@ -76,6 +83,9 @@
       "/musu-darbi/"
     ],
     "ru": [
+      "/musu-darbi/"
+    ],
+    "no": [
       "/musu-darbi/"
     ]
   }

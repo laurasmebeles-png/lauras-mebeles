@@ -18,9 +18,9 @@ for (const path of ['/skapji/', '/koridora-iekartas/', '/vannasistabas-mebeles/'
 }
 assert.deepEqual(languagesForPage('/'), ['lv', 'en', 'ru', 'no']);
 assert.deepEqual(languagesForPage('/virtuves/'), ['lv', 'en', 'ru', 'no']);
-assert.equal(hasLanguagePage('no', '/kontakti/'), false);
-assert.equal(hasLanguagePage('no', '/musu-darbi/k11/'), false);
-for (const path of ['/pakalpojumi/', '/par-mums/', '/kontakti/', '/cenas/', '/musu-darbi/', '/iedvesmai/', '/virtuves-mebeles-atsauksmes-virtuves-iekartas/']) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
+assert.equal(hasLanguagePage('no', '/kontakti/'), true);
+assert.equal(hasLanguagePage('no', '/musu-darbi/k11/'), true);
+for (const path of ['/pakalpojumi/', '/par-mums/', '/kontakti/', '/cenas/', '/musu-darbi/', '/iedvesmai/', '/virtuves-mebeles-atsauksmes-virtuves-iekartas/']) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru', 'no']);
 const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/nepievienota/">Unavailable</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
 assert.match(links, /href="\/en\/virtuves\/\?x=1#darbi"/);
 assert.match(links, /href="\/en\/kontakti\/#pieteikums"/);
@@ -53,7 +53,7 @@ const projectData = JSON.parse((await read(`public/${lang}/projects.js`)).replac
 const usedProjectIds = new Set();
 const usedReviewIds = new Set();
 const pages = [...config.pages[lang], ...galleryPaths.filter(path => hasLanguagePage(lang, path))];
-if (lang !== 'no') assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r.id).sort());
+assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r.id).sort());
 for (const page of pages) {
   const path = page.slice(1);
   const en = await read(`public/${lang}/${path}index.html`);
@@ -61,10 +61,8 @@ for (const page of pages) {
   assert.ok(en.includes(`<html lang="${lang}">`));
   assert.ok(en.includes(`hreflang="${lang}"`));
   assert.ok(lv.includes(`hreflang="${lang}"`));
-  if (lang === 'no') {
-    assert.match(en, /title="Tilgjengelig på latvisk"/);
-    assert.doesNotMatch(en, /Available in Latvian|in Latvian/);
-  } else assert.doesNotMatch(en, /class="lang-fallback"/);
+  assert.doesNotMatch(en, /class="lang-fallback"/);
+  if (lang === 'no') assert.doesNotMatch(en, /Available in Latvian|in Latvian/);
   assert.match(en, /<meta name="robots" content="noindex,/);
   assert.ok(en.includes(`<link rel="canonical" href="${en.match(/<meta property="og:url" content="([^"]+)"/)[1]}">`));
   for (const alternate of ['lv', 'en', 'ru', 'no']) {
