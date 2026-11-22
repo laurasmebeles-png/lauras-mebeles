@@ -31,8 +31,10 @@ VS Code ir pievienots arī uzdevums **Terminal → Run Task → Atvērt Lauras m
 | `docs/site-map.md` | Lapu struktūra, adreses un satura prioritātes |
 | `docs/homepage-content-plan.md` | Sākumlapas sadaļu secība, pogu mērķi, foto un precizējamie fakti |
 | `docs/research/` | Keyword Planner izpēte un oriģinālie eksporti |
+| `docs/research/valodas-un-en-izpete-2026-11-22.md` | EN/RU/NO lokalizācijas plāns un pirmā EN frāžu pārbaude Latvijai |
+| `docs/research/2026-11-22/secinajumi-un-lietosana.md` | Pabeigtā EN/RU/NO formulējumu izpēte, 555 frāžu un valstu novērojumi un lapu karte |
 | `content/lv/` | Latviešu lapu satura sagataves |
-| `content/en/` | Vieta vēlākai angļu versijai |
+| `content/en/` | Apstiprinātie sākumlapas un virtuvju EN teksti, pārējo 12 lapu melnraksti |
 | `assets/originals/` | Darba foto un logo oriģināli, kas paliek lokāli |
 | `public/images/` | Publicēšanai sagatavotie attēli |
 | `src/home.html` | Sākumlapas avots un koplietoto sadaļu sagatave |
@@ -66,6 +68,8 @@ Oriģinālie attēli un īstās piekļuves atslēgas Git repozitorijā netiek ie
 Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109a5abfa2558b5b02a).
 
 ## Priekšskatījums (Vercel)
+
+EN sākumlapa: `/en/`, virtuves: `/en/virtuves/`. Signe apstiprinājusi abu lapu formulējumus. Pārējās 12 lapas sagatavotas [izskatīšanai](content/en/parejo-lapu-melnraksti.md), pagaidām bez EN adresēm. Atsauksmju tulkojumi saglabā oriģinālo secību un izteiksmi. Lapas, kas pieejamas tikai latviski, EN navigācijā marķētas ar LV.
 
 Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, visām atbildēm `X-Robots-Tag: noindex, nofollow`. Pirms īstās palaišanas šo galveni un `robots.txt` aizliegumu izņem (PLAN.md, 8. punkts). Priekšskatījuma saite: https://lauras-mebeles.vercel.app/ (Vercel Hobby, GitHub repo laurasmebeles-png/lauras-mebeles; katrs `git push` uz `main` to atjaunina).
 

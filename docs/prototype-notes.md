@@ -71,3 +71,11 @@ Pārbaudes: npm run build un npm run check veiksmīgi; pārlūkā pārbaudīta s
 01.11. atsauksmju izkārtojums: no individuālajām mājaslapas atsauksmju kartītēm noņemts avota uzraksts un saite. Oriģinālās avotu adreses saglabātas src/reviews.json. Atsauksmju lapā pievienota viena kopīga saite uz uzņēmuma Facebook profilu; Google CTA pagaidām nav vajadzīgs. Pieslēdzot ārējo atsauksmju avotus, to marķējumu pielāgo izvēlētā risinājuma prasībām.
 
 05.11. atsauksmju atlase: pievienotas trīs Google un trīs Facebook atsauksmes no Signes iesūtītajiem ekrānattēliem. Tās rādām kopā ar sešām agrākās mājaslapas atsauksmēm; sākumlapā redzama viena kartīte no katra avota. Atkārtotie ieraksti no abām platformām atlasē nav iekļauti. Google kartītēm rāda konkrēto piecu zvaigžņu vērtējumu, Facebook kartītēm norādi “Iesaka Lauras mēbeles”. Saite uz katru atsevišķo atsauksmi nav pievienota, jo ekrānattēlos nebija tiešo adrešu; pilnās lapas apakšā ir saites uz uzņēmuma profiliem. Šis ir manuāls satura atlases variants, nevis tiešraides integrācija.
+
+## 22.11.2026: pirmās divas EN lapas
+
+Signe apstiprinājusi sākumlapas un virtuvju tekstu pielāgojumu. Ieslēgtas `/en/` un `/en/virtuves/`, saglabājot LV sadaļas, to secību, attēlus un projektu atlasi. Pārtulkoti arī metadati, attēlu apraksti, kopīgā navigācija un dialogu vadība. Valodu pārslēdzējs saglabā pašreizējo lapu un ir redzams telefonā. `hreflang` norāda tikai esošās valodu versijas. Saites uz vēl netulkotajām lapām paliek LV un ir marķētas ar LV.
+
+Atsauksmes glabā pilnā apjomā atsevišķā EN failā pēc oriģinālā ID. Saglabāta teikumu secība un izteiksme; oriģinālie LV teksti, autori, vērtējumi un avotu dati nav mainīti. EN kartītēs norādīts, ka atsauksme tulkota no latviešu valodas. Pārējo 12 pamatlapu teksti sagatavoti `content/en/`, bet nav ieslēgti priekšskatījumā.
+
+Pārbaudes: `npm run check`, `npm run test:i18n` (ietver build), melnrakstu ģenerēšana un `git diff --check` veiksmīgi. Automātiski pārbaudītas abu EN lapu iekšējās saites/resursi, sadaļu secība, valodu maršruti un atsauksmju pilnā teksta atbilstība atsevišķajam tulkojumu failam. Pārlūkā pārbaudīts datora un 390 × 844 telefona skats, mobilā izvēlne, LV/EN pārslēdzējs, bilžu maiņas pogas, projektu dialogs un atsauksmju izvēršana. Saglabājas priekšskatījuma noindex un esošie formas/integrāciju ierobežojumi.

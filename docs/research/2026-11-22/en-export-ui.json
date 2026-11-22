@@ -1,0 +1,26 @@
+{
+  "observed_on":"2026-11-22",
+  "source":"Google Ads Keyword Planner, Saved keywords, historical metrics, UI transcription",
+  "keyword_language":"English",
+  "language_setting":"All languages (disabled control)",
+  "network":"Google",
+  "period":["2025-11-01","2026-10-31"],
+  "rows_per_market":24,
+  "notes":["Each market was selected alone; no pooled geography","Ranges are not exact monthly counts","Close variants must not be summed","NA means unavailable, not zero","Country sizes, languages and commercial conditions differ; this is terminology research, not a forecast or market-entry ranking","Values in each market array align with keywords by position","No original CSV export obtained"],
+  "keywords":["bathroom furniture","bathroom vanity","bespoke furniture","bespoke kitchens","bespoke tv units","built in wardrobes","custom bathroom cabinets","custom furniture","custom kitchen cabinets","custom kitchens","custom shelving","custom wardrobes","fitted kitchens","fitted wardrobes","furniture from latvia","hallway furniture","kitchen cabinets","kitchen prices","kitchens from latvia","living room furniture","made to measure furniture","made to measure kitchens","walk in wardrobe","wall bed"],
+  "range_codes":{"—":"NA","0 – 10":"R0","10 – 100":"R1","100 – 1K":"R2","1K – 10K":"R3","10K – 100K":"R4"},
+  "market_countries":{"en-NO":"Norway","en-SE":"Sweden","en-FI":"Finland","en-GB":"United Kingdom","en-DE":"Germany","en-NL":"Netherlands","en-AT":"Austria","en-BE":"Belgium","en-EE":"Estonia","en-LU":"Luxembourg","en-HU":"Hungary"},
+  "markets":{
+    "en-NO":["R1","R1","R1","R1","R1","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R2","R1","NA","R1","R0","R0","R1","R1"],
+    "en-SE":["R1","R1","R1","R1","R1","R1","R1","R1","R1","R2","R1","R1","R1","R1","NA","R2","R2","R1","NA","R1","R1","R1","R1","R2"],
+    "en-FI":["R1","R1","R1","R1","R0","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R2","R1","NA","R1","R1","R1","R1","R1"],
+    "en-GB":["R4","R3","R3","R3","R2","R4","R2","R2","R2","R2","R2","R3","R3","R4","NA","R3","R4","R2","NA","R4","R2","R2","R4","R3"],
+    "en-DE":["R2","R2","R1","R1","R1","R1","R1","R1","R1","R1","R1","R1","R2","R1","NA","R2","R3","R1","NA","R2","R1","R1","R2","R2"],
+    "en-NL":["R2","R2","R1","R1","R1","R2","R1","R1","R1","R1","R1","R1","R1","R1","NA","R2","R3","R1","NA","R2","R1","R1","R1","R2"],
+    "en-AT":["R1","R1","R1","R1","R0","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R2","R1","NA","R1","R1","R0","R1","R1"],
+    "en-BE":["R1","R1","R1","R1","R0","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R2","R1","NA","R1","R1","R0","R1","R1"],
+    "en-EE":["R1","R1","R1","R1","R0","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R1","R1","NA","R1","R1","R1","R1","R1"],
+    "en-LU":["R1","R1","R1","R1","R0","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R1","R1","NA","R1","R1","R1","R1","R1"],
+    "en-HU":["R1","R1","R1","R1","R0","R1","R1","R1","R1","R1","R1","R1","R1","R1","NA","R1","R2","R1","NA","R1","R0","R0","R1","R1"]
+  }
+}

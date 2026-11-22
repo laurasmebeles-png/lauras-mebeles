@@ -8,6 +8,9 @@ export const config = JSON.parse(await readFile(cfgUrl, 'utf8'));
 export const defaultLang = config.default;
 export const enabledLangs = config.enabled;
 export const langPrefix = lang => (lang === defaultLang ? '' : `/${lang}`);
+export const pagePath = path => '/' + String(path).replace(/^\/+|\/+$/g, '') + (String(path).replace(/^\/+|\/+$/g, '') ? '/' : '');
+export const hasLanguagePage = (lang, path) => lang === defaultLang || !config.pages?.[lang] || config.pages[lang].includes(pagePath(path));
+export const languagesForPage = path => enabledLangs.filter(lang => hasLanguagePage(lang, path));
 
 export async function loadDicts() {
   const dicts = {};
@@ -84,14 +87,25 @@ export function prefixLinks(html, lang) {
       if (url.startsWith('//')) return m;
       const pathPart = url.split(/[?#]/)[0];
       if (/\.[a-z0-9]+$/i.test(pathPart.split('/').pop())) return m;
+      if (!hasLanguagePage(lang, pathPart)) return m;
       return a + pre + url + q;
     });
+  }).replace(/<a\b([^>]*\shref="(\/[^\"]*)"[^>]*)>([\s\S]*?)<\/a>/g, (all, attrs, url, label) => {
+    if (/\shreflang=/.test(attrs) || url.startsWith('//') || url.startsWith(pre + '/')) return all;
+    const target = url.split(/[?#]/)[0];
+    if (/\.[a-z0-9]+$/i.test(target.split('/').pop()) || hasLanguagePage(lang, target)) return all;
+    return `<a${attrs} hreflang="${defaultLang}" title="Available in Latvian">${label}<span class="lang-fallback" aria-label="in Latvian">LV</span></a>`;
   });
 }
 
 export function translateHtml(html, dict, lang) {
   const used = new Set();
-  const out = walkHtml(html, (key) => {
+  const marked = html.replace(/(<h1\b[^>]*\sdata-i18n-key="([^"]+)"[^>]*>)([\s\S]*?)(<\/h1>)/g, (all, open, key, inner, close) => {
+    if (!dict[key]) return all;
+    const lineBreak = inner.match(/<span class="nk-hero-break"><br><\/span>/)?.[0] || '<br>';
+    return open + dict[key].split('\n').map(encode).join(lineBreak + ' ') + close;
+  });
+  const out = walkHtml(marked, (key) => {
     const t = dict[key];
     if (t) { used.add(key); return t; }
     return key;

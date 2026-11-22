@@ -2,6 +2,10 @@
 
 Atjaunots: 30.10.2026.
 
+22.11.2026. valodu precizējums: plānotas EN, RU un NO versijas. Sākam ar EN izpēti klientiem Latvijā; eksporta tirgus pētām atsevišķi, prioritātes virziens ir Eiropa un Ziemeļvalstis. Saglabājam lapu struktūru un galvenās domas, formulējumus lokalizējam. Šis precizējums aizstāj zemākos vēsturiskos atvērtos jautājumus par RU lomu un valodu apjomu. [Valodu plāns un pirmie dati](research/valodas-un-en-izpete-2026-11-22.md).
+
+Formulējumu izvēlei paredzētā izpēte turpinājumā pabeigta: [EN/RU/NO secinājumi un lapu karte](research/2026-11-22/secinajumi-un-lietosana.md). Tā neaizstāj pilnu tekstu sagatavošanu, valodas redakciju vai valodu tehnisko ieviešanu.
+
 ## Mērķis un auditorija
 
 Mūsdienīga, uzticama mājaslapa, kas palīdz atrast piemērotu pasūtījuma mēbeļu risinājumu un pieteikt pasūtījumu vai sarunu. Galvenais biznesa virziens ir virtuves. Saglabājam skapjus, garderobes un citas iebūvējamās mēbeles.

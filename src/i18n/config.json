@@ -6,5 +6,8 @@
     "ru": { "name": "Русский", "short": "RU", "locale": "ru_RU" },
     "no": { "name": "Norsk", "short": "NO", "locale": "nb_NO" }
   },
-  "enabled": ["lv"]
+  "enabled": ["lv", "en"],
+  "pages": {
+    "en": ["/", "/virtuves/"]
+  }
 }

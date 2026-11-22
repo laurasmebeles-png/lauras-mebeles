@@ -2,6 +2,14 @@
 
 Atjaunots 02.11.2026. Šis fails ir darba saraksts nākamajām sesijām. Katru punktu dari atsevišķā sesijā, sāc ar "Uztaisi N. punktu no PLAN.md". Pirms darba izlasi AGENTS.md un README.md. Komunikācija ar Signi latviski.
 
+## Valodu plāna precizējums, 22.11.2026.
+
+Signe norāda, ka plānotas EN, RU un NO versijas. Sākam ar EN atslēgvārdu izpēti Latvijai; eksportu pētām atsevišķi, ar Eiropu un īpaši Ziemeļvalstīm kā izpētes prioritātes virzienu. Saglabājam lapu struktūru un tēzes, bet drīkstam pielāgot formulējumus valodai un izpētē pamatotai atrodamībai. Šis precizējums aizstāj zemākā sākotnējā jautājuma pieņēmumu par RU nesaglabāšanu. Plāns, eksporta valstu avots un pirmie 62 EN frāžu novērojumi: [valodu izpēte](docs/research/valodas-un-en-izpete-2026-11-22.md).
+
+Turpinājums tajā pašā datumā: [formulējumu izpētes secinājumi](docs/research/2026-11-22/secinajumi-un-lietosana.md) un [lapu formulējumu karte](docs/research/2026-11-22/lapu-formulejumu-karte.md) ir sagatavoti EN/RU/NO tekstu rakstīšanai. Pārbaudītas 111 EN rindas Latvijā, 90 RU Latvijā, 90 norvēģu Norvēģijā un 24 EN frāzes katrā no 11 eksporta valstīm. Saglabāti UI nolasījumi ar intervāliem, kopā 555 novērojumi.
+
+Signe apstiprinājusi sākumlapas un virtuvju EN tekstus. Tie ieslēgti `/en/` un `/en/virtuves/`, saglabājot pašreizējo struktūru. Pārējo 12 lapu [melnraksti](content/en/parejo-lapu-melnraksti.md) sagatavoti izskatīšanai un nav ieslēgti priekšskatījumā. Atsauksmes tulko cieši pēc oriģināla, saglabājot teikumu secību un izteiksmi. Nākamais solis: izskatīt pārējo lapu tekstus un ieslēgt tikai saskaņotās lapas. RU/NO tulkojumi un migrācijas ieviešana vēl priekšā.
+
 ## Konteksts īsumā
 
 - Pamats paliek esošais: statisks HTML/CSS/JS, ģenerēts ar scripts/generate-pages.mjs, bez framework. Nepārej uz Next.js vai CMS.

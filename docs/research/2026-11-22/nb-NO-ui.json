@@ -1,0 +1,18 @@
+{
+  "observed_on":"2026-11-22",
+  "source":"Google Ads Keyword Planner, Saved keywords, historical metrics, UI transcription",
+  "country":"Norway",
+  "keyword_language":"Norwegian Bokmål; one typo and brand query included as controls",
+  "language_setting":"All languages (disabled control)",
+  "network":"Google",
+  "period":["2025-11-01","2026-10-31"],
+  "ui_row_count":90,
+  "notes":["Ranges are not exact monthly counts","Close variants must not be summed","The em dash means unavailable, not zero","veghengt is a typo control; use vegghengt in copy","No original CSV export obtained"],
+  "groups_by_ui_monthly_range":{
+    "1K – 10K":["baderomsmøbler","benkeplate kjøkken","kjøkkenfronter","kjøkkeninnredning","kjøkkenskap","kjøkkenøy","møbelsnekker","servantskap","skapseng","skyvedørsgarderobe"],
+    "—":["baderomsmøbler på mål","bokhylle på mål","garderobe med slagdører","garderobe på mål pris","hjemmekontor på mål","kjøkken etter mål","kjøkken fra baltikum","kjøkken levering og montering","kjøkken priskalkulator","kjøkken produsert i latvia","kjøkken på mål","kjøkken på mål pris","kjøkken til taket","måltilpassede møbler","møbler fra latvia","møbler på mål pris","møbler riga","servantskap på mål","skoskap på mål","skreddersydd innredning","skreddersydd kjøkken pris","skreddersydde baderomsmøbler","tv benk på mål","vegghengt servantskap","veghengt servantskap"],
+    "100 – 1K":["gangmøbler","garderobe gang","garderobe skråtak","garderobeinnredning","garderobeskap på mål","hva koster nytt kjøkken","innebygd garderobe","keramisk benkeplate","kjøkken inspirasjon","kjøkken med øy","kjøkken pris","kjøkkendesign","kvarts benkeplate","laminat benkeplate","lite kjøkken","måltilpasset garderobe","nytt kjøkken pris","oppbevaring gang","plassbygd garderobe","seng i skap","skreddersydd garderobe","skyvedører på mål","små kjøkken","tv møbel","veggseksjon stue","veggseng","walk in garderobe"],
+    "10 – 100":["garderobe på mål","hjørnekjøkken","kjøkken fra latvia","kjøkken før og etter","kjøkken med halvøy","kjøkken uten håndtak","kjøkkenmontering","kjøkkenplanlegging","l formet kjøkken","lauras mebeles","mdf kjøkkenfronter","måltilpasset kjøkken","møbler på mål","plassbygd garderobe gang","plassbygd garderobe pris","plassbygd kjøkken","plassbygd reol","plassbygd tv benk","plassbygde møbler","sittebenk gang med oppbevaring","skreddersydd kjøkken","skreddersydde møbler","snekkerkjøkken","spesialtilpassede møbler","spesialtilpasset kjøkken","stueinnredning","u formet kjøkken"],
+    "10K – 100K":["tv benk"]
+  }
+}

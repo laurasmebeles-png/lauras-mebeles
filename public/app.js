@@ -118,7 +118,7 @@ let photoIndex = 0;
 function showProjectPhoto() {
   const project = projects[currentProject];
   $('#dialog-image').src = `/images/${project.photos[photoIndex]}`;
-  $('#dialog-image').alt = `${project.title}, foto ${photoIndex + 1}`;
+  $('#dialog-image').alt = `${project.title}, ${T('foto')} ${photoIndex + 1}`;
   const label = project.labels?.[photoIndex]; $('#photo-count').textContent = `${label ? label + ' · ' : ''}${photoIndex + 1} / ${project.photos.length}`;
   $('#photo-prev').hidden = project.photos.length < 2;
   $('#photo-next').hidden = project.photos.length < 2;

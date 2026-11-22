@@ -1,0 +1,17 @@
+{
+  "observed_on": "2026-11-22",
+  "source": "Google Ads Keyword Planner, Saved keywords, historical metrics, UI transcription",
+  "country": "Latvia",
+  "keyword_language": "English; brand queries included separately",
+  "language_setting": "All languages (disabled control)",
+  "network": "Google",
+  "period": ["2025-11-01", "2026-10-31"],
+  "ui_row_count": 111,
+  "notes": ["Ranges are not exact monthly counts", "Close variants must not be summed", "The em dash means unavailable, not zero", "UI can group related input variants; 111 rows are not 111 independent audiences", "No original CSV export obtained"],
+  "groups_by_ui_monthly_range": {
+    "10 – 100": ["bathroom cabinets","bathroom furniture","bathroom vanity","bathroom vanity unit","bespoke furniture","bespoke kitchen design","bespoke kitchens","bespoke tv units","bespoke wardrobes","built in closets","built in furniture","built in hallway storage","built in storage","built in tv units","built in wardrobe cost","built in wardrobes","corner kitchens","custom bathroom cabinets","custom closets","custom furniture","custom furniture cost","custom furniture prices","custom kitchen cabinets","custom kitchen cost","custom kitchen design","custom kitchen price","custom kitchens","custom made furniture","custom shelving","custom wardrobes","fitted kitchens","fitted wardrobes","fitted wardrobes cost","floating vanity unit","fold down bed","furniture latvia","furniture riga","hallway bench with storage","hallway cabinets","hallway furniture","hallway storage","handleless kitchens","home office furniture","kitchen before and after","kitchen cabinet doors","kitchen cabinets","kitchen cost","kitchen countertops","kitchen furniture","kitchen ideas","kitchen inspiration","kitchen installation","kitchen island","kitchen peninsula","kitchen prices","kitchen worktops","l shaped kitchen","laminate kitchen worktops","lauras furniture","living room furniture","living room wall units","mdf kitchen doors","media wall","murphy bed","quartz worktops","shoe storage","sliding door wardrobes","small kitchen design","small kitchens","tv units","u shaped kitchen","walk in wardrobe","wall bed","wall mounted tv unit","wardrobe interiors"],
+    "0 – 10": ["bespoke bathroom vanity","bespoke home office furniture","bespoke living room furniture","bespoke shelving","ceramic worktops","custom tv units","fitted furniture","kitchen price calculator","made to measure furniture","made to measure kitchens","made to measure vanity unit","made to measure wardrobes"],
+    "—": ["bespoke furniture riga","custom furniture europe","custom furniture latvia","custom furniture riga","custom hallway furniture","fitted wardrobes riga","furniture from latvia","furniture makers riga","furniture manufacturers latvia","how much does a custom kitchen cost","kitchen delivery and installation","kitchen furniture latvia","kitchen furniture riga","kitchen manufacturers latvia","kitchens from latvia","kitchens latvia","kitchens riga","lauras mebeles reviews","made to measure bathroom furniture","wardrobe under sloping ceiling","wardrobes latvia","wardrobes riga"],
+    "100 – 1K": ["kitchen design","lauras mebeles"]
+  }
+}

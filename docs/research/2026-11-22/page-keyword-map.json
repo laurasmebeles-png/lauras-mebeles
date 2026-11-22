@@ -1,0 +1,92 @@
+{
+  "status":"Research recommendations and copy examples, not implemented translations",
+  "date":"2026-11-22",
+  "language_markets":{"en":"Latvia and the 11 documented export countries, measured separately","ru":"Latvia","nb":"Norway, Bokmål"},
+  "rules":["Preserve page structure, section meaning and approved facts","Primary means editorial relevance, not necessarily highest measured volume","Secondary phrases belong only where they match an existing section or actual project","Functional labels and proposed full sentences do not have measured query volumes","Keep Lauras mēbeles as the brand name","Bathroom furniture is offered only together with other home furniture","No new URLs or pages are approved by this map"],
+  "pages":[
+    {
+      "id":"home","lv_path":"/","meaning_lv":"Virtuves kā specializācija un citas mēbeles pēc pasūtījuma. Tie paši projekti, process un eksporta pieredze.",
+      "en":{"primary":"custom furniture","secondary":["custom kitchens","bespoke furniture","made to measure furniture"],"h1":"Kitchens and other furniture, made to measure","title":"Custom kitchens and furniture | Lauras mēbeles","description":"Kitchens, fitted wardrobes and furniture for your home, made to measure in Riga. Explore our projects and tell us about your ideas."},
+      "ru":{"primary":"мебель на заказ","secondary":["кухни на заказ","встроенная мебель","мебель на заказ рига"],"h1":"Кухни и другая мебель на заказ","title":"Кухни и мебель на заказ | Lauras mēbeles","description":"Кухни, встроенные шкафы и другая мебель по вашим размерам. Изготавливаем в Риге. Посмотрите наши работы и расскажите о своей идее."},
+      "nb":{"primary":"skreddersydde møbler","secondary":["møbler på mål","skreddersydd kjøkken","plassbygde møbler"],"h1":"Skreddersydde kjøkken og andre møbler","title":"Skreddersydde kjøkken og møbler | Lauras mēbeles","description":"Kjøkken, garderober og andre møbler tilpasset hjemmet ditt. Vi produserer i Riga. Se prosjektene våre og fortell oss om dine ønsker."}
+    },
+    {
+      "id":"services","lv_path":"/pakalpojumi/","meaning_lv":"Visu sešu mēbeļu kategoriju pārskats, saglabājot to patstāvīgās lapas.",
+      "en":{"primary":"custom furniture","secondary":["custom kitchens","fitted wardrobes","bathroom furniture","living room furniture"],"h1":"Made-to-measure furniture for your home","title":"Made-to-measure furniture | Lauras mēbeles","description":"Explore our kitchens, wardrobes, hallway, bathroom and living room furniture, along with other made-to-measure solutions."},
+      "ru":{"primary":"мебель на заказ","secondary":["кухни на заказ","встроенные шкафы","мебель для прихожей","мебель для гостиной"],"h1":"Мебель на заказ для вашего дома","title":"Изготовление мебели на заказ | Lauras mēbeles","description":"Кухни, шкафы, мебель для прихожей, ванной и гостиной, а также другие решения по вашим размерам. Выберите нужную категорию."},
+      "nb":{"primary":"møbler på mål","secondary":["skreddersydd kjøkken","garderobe på mål","gangmøbler","baderomsmøbler"],"h1":"Møbler på mål til hjemmet ditt","title":"Møbler på mål | Lauras mēbeles","description":"Utforsk kjøkken, garderober, gangmøbler, baderomsmøbler og møbler til stuen, samt andre løsninger tilpasset hjemmet ditt."}
+    },
+    {
+      "id":"kitchens","lv_path":"/virtuves/","meaning_lv":"Virtuves pēc telpas izmēriem. Plānojums, fasādes, darba virsma, vieta tehnikai, mazas un stūra virtuves, cenu faktori.",
+      "en":{"primary":"custom kitchens","secondary":["bespoke kitchens","fitted kitchens","custom kitchen cabinets","small kitchen design","l shaped kitchen","kitchen island","kitchen worktops"],"h1":"Custom kitchens, made for your space","title":"Custom kitchens, made to measure | Lauras mēbeles","description":"Made-to-measure kitchen furniture for your space. Explore our kitchen projects, layouts and materials, and request an individual quote."},
+      "ru":{"primary":"кухни на заказ","secondary":["кухонная мебель на заказ","маленькие кухни","угловые кухни","кухня с островом","кухни на заказ рига","кухонные фасады","столешница для кухни"],"h1":"Кухни на заказ по вашим размерам","title":"Кухни на заказ по вашим размерам | Lauras mēbeles","description":"Кухонная мебель для вашей планировки. Посмотрите наши кухни, варианты фасадов и столешниц и запросите индивидуальное предложение."},
+      "nb":{"primary":"skreddersydd kjøkken","secondary":["måltilpasset kjøkken","plassbygd kjøkken","kjøkkeninnredning","lite kjøkken","hjørnekjøkken","kjøkken med øy","benkeplate kjøkken"],"h1":"Skreddersydde kjøkken tilpasset rommet ditt","title":"Skreddersydde kjøkken | Lauras mēbeles","description":"Kjøkkeninnredning tilpasset rommet ditt. Se kjøkkenprosjektene våre og les om planløsning, fronter og benkeplater. Be om et pristilbud."}
+    },
+    {
+      "id":"wardrobes","lv_path":"/skapji/","meaning_lv":"Iebūvējamie skapji un garderobes. Izmēri, iekšējais aprīkojums, veramās vai bīdāmās durvis un cenas faktori.",
+      "en":{"primary":"built in wardrobes","secondary":["fitted wardrobes","custom wardrobes","walk in wardrobe","sliding door wardrobes","wardrobe interiors","built in wardrobe cost"],"h1":"Built-in wardrobes and walk-in wardrobes","title":"Built-in and fitted wardrobes | Lauras mēbeles","description":"Wardrobes made to fit your room and storage needs. Choose the doors, shelves and drawers, explore our projects and discuss your ideas."},
+      "ru":{"primary":"встроенные шкафы","secondary":["шкафы на заказ","шкафы купе на заказ","гардеробные","гардеробная на заказ","наполнение шкафа","шкаф с распашными дверями"],"h1":"Встроенные шкафы и гардеробные на заказ","title":"Встроенные шкафы и гардеробные | Lauras mēbeles","description":"Шкафы и гардеробные по размерам вашей комнаты. Подберём двери, полки и ящики для ваших вещей. Посмотрите наши работы."},
+      "nb":{"primary":"garderobe på mål","secondary":["plassbygd garderobe","skreddersydd garderobe","garderobeskap på mål","skyvedørsgarderobe","walk in garderobe","garderobeinnredning"],"h1":"Garderober og walk-in-løsninger på mål","title":"Garderober på mål | Lauras mēbeles","description":"Garderober tilpasset rommet og det du vil oppbevare. Velg dører, hyller og skuffer, se prosjektene våre og fortell oss om dine ønsker."}
+    },
+    {
+      "id":"hallway","lv_path":"/koridora-iekartas/","meaning_lv":"Telpai pielāgoti skapji, plaukti un sēdvietas virsdrēbēm, apaviem un ikdienas lietām.",
+      "en":{"primary":"hallway furniture","secondary":["hallway storage","hallway cabinets","built in hallway storage","hallway bench with storage","shoe storage"],"h1":"Made-to-measure hallway furniture","title":"Made-to-measure hallway furniture | Lauras mēbeles","description":"Hallway cabinets, shelving and seating tailored to your space, with room for coats, shoes and everyday essentials. See our projects."},
+      "ru":{"primary":"мебель для прихожей на заказ","secondary":["мебель для прихожей","прихожая на заказ","шкаф в прихожую","обувница"],"h1":"Мебель для прихожей на заказ","title":"Мебель для прихожей на заказ | Lauras mēbeles","description":"Шкафы, полки и места для сидения по размерам вашей прихожей. Предусмотрим место для верхней одежды, обуви и повседневных вещей."},
+      "nb":{"primary":"gangmøbler","secondary":["oppbevaring gang","garderobe gang","plassbygd garderobe gang","sittebenk gang med oppbevaring"],"h1":"Gangmøbler tilpasset plassen din","title":"Gangmøbler på mål | Lauras mēbeles","description":"Skap, hyller og sittebenker tilpasset gangen, med plass til yttertøy, sko og hverdagslige ting. Se prosjektene våre og fortell om dine ønsker."}
+    },
+    {
+      "id":"bathroom","lv_path":"/vannasistabas-mebeles/","meaning_lv":"Izlietnes skapīši un glabāšana pēc izmēra. Tikai kopā ar citām mājas mēbelēm. Tas jāpasaka arī tulkotajā ievadā.",
+      "en":{"primary":"custom bathroom cabinets","secondary":["bathroom furniture","bathroom vanity","bathroom vanity unit","floating vanity unit"],"h1":"Made-to-measure bathroom furniture","title":"Made-to-measure bathroom furniture | Lauras mēbeles","description":"Bathroom cabinets and vanity units made to measure. Available only together with other home furniture. Explore our completed projects."},
+      "ru":{"primary":"мебель для ванной на заказ","secondary":["мебель для ванной","тумба под раковину на заказ","подвесная тумба под раковину","шкаф для ванной"],"h1":"Мебель для ванной на заказ","title":"Мебель для ванной на заказ | Lauras mēbeles","description":"Мебель для ванной по вашим размерам. Изготавливаем только вместе с другой мебелью для дома. Посмотрите наши работы и расскажите о своей идее."},
+      "nb":{"primary":"baderomsmøbler på mål","secondary":["baderomsmøbler","servantskap","servantskap på mål"],"h1":"Baderomsmøbler på mål","title":"Baderomsmøbler på mål | Lauras mēbeles","description":"Baderomsmøbler tilpasset rommet ditt. Leveres kun sammen med andre møbler til hjemmet. Se prosjektene våre og fortell oss om dine ønsker."}
+    },
+    {
+      "id":"living","lv_path":"/sekcijas/","meaning_lv":"TV mēbeles, sekcijas un plaukti pēc izmēra. Vieta tehnikai, vadiem, grāmatām un slēgtai glabāšanai.",
+      "en":{"primary":"living room furniture","secondary":["built in tv units","bespoke tv units","living room wall units","custom shelving","wall mounted tv unit","media wall"],"h1":"Made-to-measure living room furniture","title":"Living room furniture and TV units | Lauras mēbeles","description":"TV units, shelving and wall units made for your living room. Explore our projects and see how we combine open shelving and closed storage."},
+      "ru":{"primary":"мебель для гостиной","secondary":["мебель для гостиной на заказ","тв тумба на заказ","тв стенка","стенка для гостиной","стеллаж на заказ"],"h1":"Мебель для гостиной на заказ","title":"Мебель для гостиной и ТВ-зоны | Lauras mēbeles","description":"ТВ-тумбы, стенки и стеллажи по размерам вашей гостиной. Предусмотрим место для техники, книг и других вещей. Посмотрите наши работы."},
+      "nb":{"primary":"stueinnredning","secondary":["tv benk","tv møbel","plassbygd tv benk","veggseksjon stue","plassbygd reol"],"h1":"Møbler til stuen, tilpasset rommet ditt","title":"Stueinnredning og TV-møbler | Lauras mēbeles","description":"TV-møbler, hyller og skap tilpasset stuen din. Se hvordan vi kombinerer åpne hyller, lukket oppbevaring og plass til utstyret ditt."}
+    },
+    {
+      "id":"other","lv_path":"/citas-mebeles/","meaning_lv":"Nestandarta telpas un vairāku funkciju apvienošana. Nolaižama gulta ir esošs piemērs, nevis jauna preču veikala kategorija.",
+      "en":{"primary":"custom furniture","secondary":["built in storage","wall bed","fold down bed","murphy bed","home office furniture","bespoke shelving"],"h1":"Furniture for unusual spaces and everyday needs","title":"Other made-to-measure furniture | Lauras mēbeles","description":"Furniture for unusual spaces and rooms with more than one use. Explore our examples and tell us what you need for your home."},
+      "ru":{"primary":"мебель на заказ","secondary":["корпусная мебель на заказ","откидная кровать","шкаф кровать","кровать трансформер","мебель для кабинета на заказ"],"h1":"Мебель для нестандартных помещений и разных задач","title":"Другая мебель на заказ | Lauras mēbeles","description":"Мебель для нестандартных помещений и совмещения нескольких функций в одной комнате. Посмотрите примеры и расскажите о вашей задаче."},
+      "nb":{"primary":"møbler på mål","secondary":["plassbygde møbler","skapseng","veggseng","seng i skap","plassbygd reol"],"h1":"Møbler til rom med flere funksjoner","title":"Andre møbler på mål | Lauras mēbeles","description":"Møbler til uvanlige rom og rom som brukes til flere ting. Se eksemplene våre og fortell oss hva du trenger."}
+    },
+    {
+      "id":"prices","lv_path":"/cenas/","meaning_lv":"Virtuvju cenu piemēri, skaidri komplektācijas un cenas nosacījumi, individuāls piedāvājums. Nav solījuma par interaktīvu cenu kalkulatoru.",
+      "en":{"primary":"custom kitchen cost","secondary":["kitchen prices","custom kitchen price","custom furniture prices","fitted wardrobes cost"],"h1":"How much does a custom kitchen cost?","title":"Kitchen price examples | Lauras mēbeles","description":"See kitchen price examples and find out what affects the final cost. Compare layouts and specifications, then request an individual quote."},
+      "ru":{"primary":"кухни на заказ цена","secondary":["стоимость кухни на заказ","сколько стоит кухня на заказ","мебель на заказ цены","встроенный шкаф цена"],"h1":"Сколько стоит кухня на заказ?","title":"Примеры цен на кухни | Lauras mēbeles","description":"Примеры цен на кухни с разной планировкой и комплектацией. Узнайте, от чего зависит итоговая стоимость, и запросите индивидуальное предложение."},
+      "nb":{"primary":"kjøkken pris","secondary":["hva koster nytt kjøkken","nytt kjøkken pris","plassbygd garderobe pris"],"h1":"Hva koster et skreddersydd kjøkken?","title":"Priseksempler på kjøkken | Lauras mēbeles","description":"Se priseksempler på kjøkken med ulike planløsninger og materialvalg. Les hva som påvirker sluttprisen, og be om et individuelt pristilbud."}
+    },
+    {
+      "id":"projects","lv_path":"/musu-darbi/","meaning_lv":"Viena reālo darbu galerija ar tām pašām kategorijām. Nav atsevišķa plašo preču frāžu lapa.",
+      "en":{"primary":null,"secondary":[],"h1":"Our work","title":"Our furniture projects | Lauras mēbeles","description":"Explore kitchens, wardrobes and other furniture we have made. Browse the gallery by furniture type and find ideas for your home."},
+      "ru":{"primary":null,"secondary":[],"h1":"Наши работы","title":"Наши проекты мебели | Lauras mēbeles","description":"Посмотрите изготовленные нами кухни, шкафы и другую мебель. Выберите категорию в галерее и найдите идеи для своего дома."},
+      "nb":{"primary":null,"secondary":[],"h1":"Prosjektene våre","title":"Møbelprosjektene våre | Lauras mēbeles","description":"Se kjøkken, garderober og andre møbler vi har laget. Velg møbeltype i galleriet og finn ideer til hjemmet ditt."}
+    },
+    {
+      "id":"inspiration","lv_path":"/iedvesmai/","meaning_lv":"Reālu virtuvju pirms un pēc salīdzinājumi. Nav vispārīgs remonta vai dekorēšanas blogs.",
+      "en":{"primary":"kitchen before and after","secondary":["kitchen inspiration","kitchen ideas"],"h1":"Kitchens before and after","title":"Kitchens before and after | Lauras mēbeles","description":"See our kitchens before and after furniture installation. Compare real projects and find inspiration for your own kitchen."},
+      "ru":{"primary":"кухни до и после","secondary":["идеи для кухни","кухни фото"],"h1":"Кухни до и после","title":"Кухни до и после установки | Lauras mēbeles","description":"Посмотрите кухни до и после установки нашей мебели. Сравните реальные проекты и найдите идеи для своей кухни."},
+      "nb":{"primary":"kjøkken før og etter","secondary":["kjøkken inspirasjon"],"h1":"Kjøkken før og etter","title":"Kjøkken før og etter | Lauras mēbeles","description":"Se kjøkken før og etter at møblene våre er montert. Sammenlign virkelige prosjekter og finn inspirasjon til ditt eget kjøkken."}
+    },
+    {
+      "id":"about","lv_path":"/par-mums/","meaning_lv":"No pirmās skices līdz mēbelēm mājās. Saglabā reālo ražotni Rīgā, procesu, partnerus un eksporta pieredzi.",
+      "en":{"primary":null,"secondary":[],"h1":"From the first sketch to furniture in your home","title":"About us | Lauras mēbeles","description":"Meet Lauras mēbeles. We design and make kitchens and other furniture in our Riga workshop. Find out about our process and see our work."},
+      "ru":{"primary":null,"secondary":[],"h1":"От первого эскиза до мебели в вашем доме","title":"О нас | Lauras mēbeles","description":"Познакомьтесь с Lauras mēbeles. Проектируем и изготавливаем кухни и другую мебель в Риге. Узнайте о нашем производстве и работе с клиентами."},
+      "nb":{"primary":null,"secondary":[],"h1":"Fra første skisse til møbler hjemme hos deg","title":"Om oss | Lauras mēbeles","description":"Bli kjent med Lauras mēbeles. Vi designer og produserer kjøkken og andre møbler i Riga. Les om arbeidsprosessen vår og se det vi har laget."}
+    },
+    {
+      "id":"reviews","lv_path":"/virtuves-mebeles-atsauksmes-virtuves-iekartas/","meaning_lv":"Tās pašas īstās klientu atsauksmes un avoti. Tulkojumu marķē, oriģinālus saglabā.",
+      "en":{"primary":null,"secondary":[],"h1":"Customer reviews","title":"Customer reviews | Lauras mēbeles","description":"Read customer reviews of Lauras mēbeles kitchens, wardrobes and other furniture, along with their experience of working with us."},
+      "ru":{"primary":null,"secondary":[],"h1":"Отзывы клиентов","title":"Отзывы клиентов | Lauras mēbeles","description":"Отзывы клиентов Lauras mēbeles о кухнях, шкафах, другой мебели и сотрудничестве с нашей командой."},
+      "nb":{"primary":null,"secondary":[],"h1":"Kundeomtaler","title":"Kundeomtaler | Lauras mēbeles","description":"Les kundenes omtaler av kjøkken, garderober og andre møbler fra Lauras mēbeles, og deres erfaringer med å samarbeide med oss."}
+    },
+    {
+      "id":"contact","lv_path":"/kontakti/","meaning_lv":"Pastāstīt par ieceri un sākt sarunu. Saglabā kontaktus, Rīgas adresi un iepriekšēju apmeklējuma saskaņošanu.",
+      "en":{"primary":null,"secondary":[],"h1":"Tell us about your ideas","title":"Contact and quote enquiries | Lauras mēbeles","description":"Tell us about the furniture you need. Contact Lauras mēbeles in Riga by phone, email or the enquiry form. Please arrange visits in advance."},
+      "ru":{"primary":null,"secondary":[],"h1":"Расскажите о вашей идее","title":"Контакты и запрос предложения | Lauras mēbeles","description":"Расскажите, какая мебель вам нужна. Свяжитесь с Lauras mēbeles в Риге по телефону, электронной почте или через форму. О визите договоритесь заранее."},
+      "nb":{"primary":null,"secondary":[],"h1":"Fortell oss om dine ønsker","title":"Kontakt og prisforespørsel | Lauras mēbeles","description":"Fortell oss hvilke møbler du trenger. Kontakt Lauras mēbeles i Riga på telefon, e-post eller via skjemaet. Avtal besøk på forhånd."}
+    }
+  ]
+}
