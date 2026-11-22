@@ -13,13 +13,14 @@ assert.equal(hasLanguagePage('ru', '/kontakti/'), true);
 assert.equal(hasLanguagePage('ru', '/musu-darbi/k11/'), true);
 for (const path of ['/skapji/', '/koridora-iekartas/', '/vannasistabas-mebeles/', '/sekcijas/', '/citas-mebeles/']) {
   assert.equal(hasLanguagePage('ru', path), true);
-  assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
+  assert.equal(hasLanguagePage('no', path), true);
+  assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru', 'no']);
 }
 assert.deepEqual(languagesForPage('/'), ['lv', 'en', 'ru', 'no']);
 assert.deepEqual(languagesForPage('/virtuves/'), ['lv', 'en', 'ru', 'no']);
 assert.equal(hasLanguagePage('no', '/kontakti/'), false);
 assert.equal(hasLanguagePage('no', '/musu-darbi/k11/'), false);
-for (const path of config.pages.en.filter(path => !['/', '/virtuves/'].includes(path))) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
+for (const path of ['/pakalpojumi/', '/par-mums/', '/kontakti/', '/cenas/', '/musu-darbi/', '/iedvesmai/', '/virtuves-mebeles-atsauksmes-virtuves-iekartas/']) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
 const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/nepievienota/">Unavailable</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
 assert.match(links, /href="\/en\/virtuves\/\?x=1#darbi"/);
 assert.match(links, /href="\/en\/kontakti\/#pieteikums"/);
@@ -72,6 +73,10 @@ for (const page of pages) {
   if (lang === 'ru' && page === '/vannasistabas-mebeles/') {
     assert.match(en, /сейчас мы изготавливаем мебель для ванной только вместе с другой мебелью для дома/);
     assert.match(en.match(/<meta name="description" content="([^"]*)"/)[1], /Сейчас изготавливаем только вместе с другой мебелью для дома/);
+  }
+  if (lang === 'no' && page === '/vannasistabas-mebeles/') {
+    assert.match(en, /Foreløpig lager vi baderomsmøbler kun som del av en bestilling på andre møbler til hjemmet/);
+    assert.match(en.match(/<meta name="description" content="([^"]*)"/)[1], /Vi lager dem foreløpig kun som del av en bestilling på andre møbler til hjemmet/);
   }
   assert.equal([...en.matchAll(/<h1\b/g)].length, 1);
   const sections = html => [...html.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map(m => m[1]);

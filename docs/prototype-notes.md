@@ -151,3 +151,11 @@ Pēc Signes apstiprinājuma ieslēgtas tikai /no/ un /no/virtuves/. Pārnesti vi
 Abas lapas pārbaudītas datora un 390/360 px telefona skatos bez horizontālas pārplūdes. NO datora izvēlne līdz 1399 px pārslēdzas uz izvēršamo veidu, lai nesaspiestu logo vai saites; no 1400 px pilnajā izvēlnē visi uzraksti un Kontakt oss poga ir vienā rindā. Sākumlapas H1 saglabāti visi vārdi, līdzsvarots tikai rindu dalījums. Galerijas pogai telefonā samazinātas atstarpes bez fonta vai teksta maiņas. Pārbaudīta mobilā izvēlne/kategorijas, NO/EN pārslēgšana virtuvju lapā, foto 1 / 3 → 2 / 3, pirms/pēc slīdnis 50 → 51 ar Før/Etter foto apzīmējumiem un pilnas atsauksmes izvēršana. Konsoles kļūdu nav.
 
 Gala npm run test:i18n (EN/RU katrai 14 + 174, NO 2), npm run check un git diff --check veiksmīgi.
+
+## 22.11.2026: piecu pārējo mēbeļu kategoriju NO priekšskatījums
+
+Pēc Signes apstiprinājuma ieslēgtas /no/skapji/, /no/koridora-iekartas/, /no/vannasistabas-mebeles/, /no/sekcijas/ un /no/citas-mebeles/. 205 pārbaudītie fragmenti pārnesti uz aktīvo vārdnīcu, tulkoti arī metadati, alt/aria un projektu pilnie dialogi. Kopā septiņas NO pamatlapas un 33 unikāli projekti; trīs iepriekšējās pilnās atsauksmes nemainītas. Neatkarīgais integrācijas audits apstiprināja MD/ģenerēto lapu atbilstību, 8/4/4/5/6 projektu secību un vannas mēbeļu izgatavošanas ierobežojumu ievadā un meta aprakstā. Pārējās septiņas NO pamatlapas un galerijas apakškoks vēl nav ieslēgti. Noindex saglabāts.
+
+Visas piecas lapas pārbaudītas 1440 px datorā un 390/360 px telefonā: virsraksti un pogas nepārplūst. NO kategoriju H1 pievienots CSS text-wrap:balance, lai pēdējais vārds nepaliktu viens; apstiprinātie vārdi, struktūra un izvietojums nav mainīti. Mobilajā izvēlnē visas sešas kategorijas ved uz NO bez LV norādes. Pārbaudīta NO/EN pārslēgšana tajā pašā vannas mēbeļu lapā, projekta pilnais dialogs, foto 1 / 2 → 2 / 2 un Les mer izvēršana.
+
+Gala npm run test:i18n (EN/RU katrai 14 + 174, NO 7), npm run check un git diff --check veiksmīgi.

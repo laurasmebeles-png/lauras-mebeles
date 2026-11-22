@@ -36,7 +36,7 @@ VS Code ir pievienots arī uzdevums **Terminal → Run Task → Atvērt Lauras m
 | `content/lv/` | Latviešu lapu satura sagataves |
 | `content/en/` | Apstiprinātie visu 14 EN pamatlapu teksti un to statusi |
 | `content/ru/` | Visu 14 RU pamatlapu teksti, 12 atsauksmes un galerijas projektu saskarne |
-| `content/no/` | Apstiprinātie NO sākumlapas un virtuvju teksti un trīs pilnas atsauksmes |
+| `content/no/` | Apstiprinātie NO sākumlapas un visu sešu mēbeļu kategoriju teksti |
 | `assets/originals/` | Darba foto un logo oriģināli, kas paliek lokāli |
 | `public/images/` | Publicēšanai sagatavotie attēli |
 | `src/home.html` | Sākumlapas avots un koplietoto sadaļu sagatave |
@@ -71,7 +71,7 @@ Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109
 
 ## Priekšskatījums (Vercel)
 
-NO Bokmål priekšskatījumā ieslēgtas sākumlapa /no/ un virtuvju lapa /no/virtuves/ ar pārbaudītajiem tekstiem, metadatiem, kopīgo saskarni, astoņu projektu dialogiem un trīs pilnām atsauksmēm. Signe apstiprinājusi ievietošanu pēc neatkarīgām valodas un izpētes pārbaudēm. Pārējās NO lapas vēl nav ieslēgtas; saites uz tām rāda LV norādi. [NO teksti un pārbaudes](content/no/README.md).
+NO Bokmål priekšskatījumā ieslēgtas septiņas pamatlapas: sākumlapa un visas sešas mēbeļu kategorijas ar pārbaudītajiem tekstiem, metadatiem, kopīgo saskarni, 33 unikālu projektu dialogiem un trīs pilnām atsauksmēm. Signe apstiprinājusi ievietošanu pēc neatkarīgām valodas un izpētes pārbaudēm. Pārējās NO lapas vēl nav ieslēgtas; saites uz tām rāda LV norādi. [NO teksti un pārbaudes](content/no/README.md).
 
 RU priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijas projektu lapas. Iekļauti pamatteksti, metadati, alt/aria, kopīgā saskarne, 41 izmantotā projekta dialogs un 12 pilnas atsauksmes. Signe apstiprinājusi publicēšanu pēc neatkarīgām valodas, faktu un izpētes pārbaudēm. Galvenās iekšējās saites paliek RU versijā; pārslēdzējs saglabā konkrēto lapu arī galerijas projektos. [RU teksti un pārbaudes](content/ru/parejo-lapu-teksti.md). Forma joprojām ir izmēģinājums bez e-pastu sūtīšanas.
 
