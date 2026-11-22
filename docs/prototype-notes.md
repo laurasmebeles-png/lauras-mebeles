@@ -112,3 +112,12 @@ Pēc Signes apstiprinājuma ieslēgtas /ru/ un /ru/virtuves/. Saglabāts LV make
 Pēc valodas un faktu/Planner apakšaģentu pārbaudēm un Signes pēdējās norādes kontaktu aicinājumā paliek «Для начала достаточно идеи. Расскажите нам о ней, и мы вместе продумаем, как её воплотить.» Pamatteksti un pārbaudes saglabāti content/ru/.
 
 Veiksmīgi npm run check, npm run test:i18n un git diff --check. i18n pārbaudes aptver EN 14 pamatlapas un 174 projektu lapas, RU abas lapas, teksta pārklājumu, maketa/attēlu identitāti, saites, valodu pieejamību, canonical/hreflang, pilnās atsauksmes un projektu kartīšu/dialogu tekstu atbilstību. Lokāli pārbaudīti 1440 × 900 un 390 × 844 skati, nav horizontālas pārplūdes vai neielādētu satura attēlu. Pārbaudīta mobilā izvēlne, EN/RU pārslēgšana virtuvju lapā, atsauksmes izvēršana, pirms/pēc slīdņa 50 → 51 un projekta dialoga foto 1 / 4 → 2 / 4. Saglabāts noindex; Resend/GA4 un reālā formas nosūtīšana nav pievienota.
+
+
+## 22.11.2026: piecas pārējās RU mēbeļu kategorijas
+
+Pēc Signes apstiprinājuma ieslēgtas /ru/skapji/, /ru/koridora-iekartas/, /ru/vannasistabas-mebeles/, /ru/sekcijas/ un /ru/citas-mebeles/. Kopā septiņas RU pamatlapas un 33 unikālu izmantoto projektu dialogi. Pārnesti pārbaudītie teksti, metadati, alt/aria, kartīšu un pilno dialogu apraksti. Saglabāti bloki, faktori, projektu/foto secība un vannas istabas pasūtījuma ierobežojums ievadā un metadatos. Atsauksmes nav mainītas. Pārējās RU lapas un galerijas projektu apakšlapas nav ieslēgtas.
+
+Neatkarīgā integrācijas pārbaude apstiprina visu 52 pamatteksta bloku un 25 jaunu unikālo projektu atbilstību apstiprinātajiem failiem. Visas piecas lapas pārlūkā pārbaudītas 1440 × 900, 390 × 844 un 360 × 800 skatā bez horizontālas pārplūdes vai apgrieztiem virsrakstiem/pogām. RU kategoriju H1 līdzsvarota aplaušana un nedalāmās atstarpes novērš atsevišķi palikušu «заказ» un «и». Galeriju pogām līdz 540 px pielāgotas atstarpes, lai tās ietilptu vienā rindā, nemainot tekstu vai fonta izmēru. Pārbaudīta mobilā navigācija, EN/RU pārslēgšana ar saglabātu kategoriju, projekta dialoga foto 1 / 4 → 2 / 4 un kartītes apraksta izvēršana; konsoles kļūdu nav. Priekšskatījuma noindex un neieviesto integrāciju statuss saglabāts.
+
+Gala pārbaudes: `npm run test:i18n` (EN 14 + 174, RU 7), `npm run check` un `git diff --check` veiksmīgi.

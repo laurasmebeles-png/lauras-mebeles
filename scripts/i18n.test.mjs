@@ -11,6 +11,10 @@ assert.equal(hasLanguagePage('ru', '/'), true);
 assert.equal(hasLanguagePage('ru', '/virtuves/'), true);
 assert.equal(hasLanguagePage('ru', '/kontakti/'), false);
 assert.equal(hasLanguagePage('ru', '/musu-darbi/k11/'), false);
+for (const path of ['/skapji/', '/koridora-iekartas/', '/vannasistabas-mebeles/', '/sekcijas/', '/citas-mebeles/']) {
+  assert.equal(hasLanguagePage('ru', path), true);
+  assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
+}
 assert.deepEqual(languagesForPage('/'), ['lv', 'en', 'ru']);
 assert.deepEqual(languagesForPage('/virtuves/'), ['lv', 'en', 'ru']);
 assert.deepEqual(languagesForPage('/kontakti/'), ['lv', 'en']);
@@ -63,6 +67,10 @@ for (const page of pages) {
   assert.ok(en.includes(`<link rel="canonical" href="${en.match(/<meta property="og:url" content="([^"]+)"/)[1]}">`));
   for (const alternate of ['lv', 'en', 'ru']) {
     assert.equal(en.includes(`<link rel="alternate" hreflang="${alternate}"`), languagesForPage(page).includes(alternate));
+  }
+  if (lang === 'ru' && page === '/vannasistabas-mebeles/') {
+    assert.match(en, /сейчас мы изготавливаем мебель для ванной только вместе с другой мебелью для дома/);
+    assert.match(en.match(/<meta name="description" content="([^"]*)"/)[1], /Сейчас изготавливаем только вместе с другой мебелью для дома/);
   }
   assert.equal([...en.matchAll(/<h1\b/g)].length, 1);
   const sections = html => [...html.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map(m => m[1]);

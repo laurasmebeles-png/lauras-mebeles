@@ -701,6 +701,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-cat-top{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,96px);align-items:center;max-width:1360px;margin:0 auto;padding:clamp(32px,4vw,64px) var(--gutter) clamp(40px,5vw,80px)}
 .nk-cat-top-copy .breadcrumbs{margin-bottom:28px}
 .nk-cat-top-copy h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,62px);line-height:1.08;letter-spacing:0;margin:0 0 24px;color:var(--ink)}
+html[lang="ru"] .nk-cat-top-copy h1{text-wrap:balance}
 .nk-cat-top-copy p{max-width:46ch;font-size:18px;line-height:1.7;color:var(--ink-soft)}
 .nk-cat-top-copy .nk-cat-note{max-width:50ch;margin-top:22px;padding:12px 0 12px 18px;border-left:3px solid var(--red);font-size:15px;line-height:1.55;color:var(--ink)}
 .nk-cat-note strong{color:var(--red);font-weight:700;margin-right:.3em}
@@ -709,6 +710,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .nk-cat-top-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .nk-cat-top-actions .nk-button{display:inline-flex;align-items:center;justify-content:center;margin:0;padding:15px 20px;font-size:11px;letter-spacing:.11em;text-align:center}
 @media(max-width:540px){.nk-cat-top-actions{gap:10px}.nk-cat-top-actions .nk-button{width:100%}}
+@media(max-width:540px){html[lang="ru"] .service-gallery-link{letter-spacing:.06em;padding:15px 16px;gap:8px;white-space:nowrap}}
 .nk-cat-top-media{margin:0}
 .nk-cat-top-media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;background:var(--surface)}
 .nk-cat-top-media.nk-cat-top-media-portrait img{object-position:center 64%}

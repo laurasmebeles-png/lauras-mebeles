@@ -35,7 +35,7 @@ VS Code ir pievienots arī uzdevums **Terminal → Run Task → Atvērt Lauras m
 | `docs/research/2026-11-22/secinajumi-un-lietosana.md` | Pabeigtā EN/RU/NO formulējumu izpēte, 555 frāžu un valstu novērojumi un lapu karte |
 | `content/lv/` | Latviešu lapu satura sagataves |
 | `content/en/` | Apstiprinātie visu 14 EN pamatlapu teksti un to statusi |
-| `content/ru/` | Apstiprinātie RU sākumlapas un virtuvju teksti un pārbaudes |
+| `content/ru/` | Apstiprinātie RU sākumlapas un visu sešu mēbeļu kategoriju teksti |
 | `assets/originals/` | Darba foto un logo oriģināli, kas paliek lokāli |
 | `public/images/` | Publicēšanai sagatavotie attēli |
 | `src/home.html` | Sākumlapas avots un koplietoto sadaļu sagatave |
@@ -70,7 +70,7 @@ Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109
 
 ## Priekšskatījums (Vercel)
 
-RU priekšskatījumā ieslēgtas sākumlapa un virtuvju lapa (/ru/ un /ru/virtuves/), ieskaitot kopīgo saskarni, metadatus, astoņu izmantoto projektu dialogus un trīs pilnas atsauksmes. Tekstus apstiprinājusi Signe pēc neatkarīgas valodas un faktu/atslēgvārdu pārbaudes. Pārējās RU lapas vēl nav gatavas; saites uz tām rāda LV norādi. [RU teksti un statuss](content/ru/README.md).
+RU priekšskatījumā ieslēgtas septiņas pamatlapas: sākumlapa un visas sešas mēbeļu kategorijas. Iekļauta kopīgā saskarne, metadati, 33 izmantoto projektu dialogi un trīs pilnas atsauksmes. Tekstus apstiprinājusi Signe pēc neatkarīgas valodas un faktu/atslēgvārdu pārbaudes. Pārējās RU lapas vēl nav gatavas; saites uz tām rāda LV norādi. [RU teksti un statuss](content/ru/README.md).
 
 EN priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijā izmantotās projektu lapas. Signe apstiprinājusi tekstus, tostarp cenu piemēru pogu “Get a quote for a similar kitchen” un EN jautājumu/atbildi par piegādi un montāžu ārpus Latvijas. LV/EN pārslēdzējs pieejams arī projektu lapās un saglabā pašreizējo lapu. [Teksti un statusi](content/en/parejo-lapu-melnraksti.md). Atsauksmju oriģināli un pilnie tulkojumi saglabāti bez pārfrāzēšanas. Formai joprojām ir tikai izmēģinājuma darbība bez e-pastu sūtīšanas. Cenu piemēri izmanto pašreizējā LV priekšskatījuma summas un specifikācijas; klienta apstiprinājums publiskai palaišanai vēl jāpārbauda.
 
