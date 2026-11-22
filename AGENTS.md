@@ -16,4 +16,6 @@ Keep secrets outside version control. The agreed delivery direction is a client-
 
 Copy style (Signe, 01.11.2026): use natural, idiomatic Latvian with concrete meaning. Do not use long dashes in site copy or decorative dash strokes before headings. Rephrase sentences with full stops or commas; page-title separators may use |. Preserve original review source data; display typography may be normalized.
 
+Shared English terminology (22.11.2026): use clear English for readers who may not be native speakers. Keep “custom kitchens”, “custom furniture” and “made-to-measure” as the shared vocabulary. Do not introduce “bespoke” into this EN version, including About us, just to cover a UK keyword. Keep established category terms such as “fitted wardrobes” where they describe the furniture. Research synonym lists are references, not requirements to insert every phrase. Preserve the approved structure, facts and customer review fidelity.
+
 Darbu secība un nākamie soļi: PLAN.md (02.11.2026). Pāradresāciju projekts: docs/migration/redirect-map.md.

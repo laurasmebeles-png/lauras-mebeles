@@ -10,6 +10,21 @@ Turpinājums tajā pašā datumā: [formulējumu izpētes secinājumi](docs/rese
 
 Signe apstiprinājusi visu 14 EN pamatlapu tekstus. Tās un galerijas 174 projektu lapas ieslēgtas ar `/en/` prefiksu, saglabājot pašreizējo struktūru. [Teksti un statusi](content/en/parejo-lapu-melnraksti.md). Pēdējie labojumi: cenu pogai “Get a quote for a similar kitchen”; EN BUJ pielāgots ārvalstu auditorijai ar jautājumu par piegādi un montāžu ārpus Latvijas. “Citas mēbeles” plānošanas blokā pēc Signes lūguma abās valodās izņemts piemērs par virtuvi un nolaižamu gultu. Atsauksmju oriģināli un tulkojumi saglabāti cieši pēc oriģināla. EN priekšskatījuma apjoms pabeigts; RU/NO tulkojumi un migrācijas ieviešana vēl priekšā. Cenu piemēru klienta apstiprinājums publiskai palaišanai vēl jāpārbauda.
 
+## Daudzvalodu tehniskais statuss, 22.11.2026.
+
+Pārbaudītas 14 pamatlapas un 174 projektu lapas katrā no LV/EN versijām. Ir lokalizēts title, meta description, viens H1, HTML lang, pašas lapas canonical, savstarpēji LV/EN/x-default hreflang un Open Graph metadati. Priekšskatījumā canonical/hreflang izmanto Vercel adresi; publiskā domēna pāreja vēl nav veikta. Visā priekšskatījumā saglabāts noindex un robots aizliegums. sitemap.xml, strukturētie dati un pāradresācijas vēl nav ieviestas.
+
+Turpmākajos 2., 6., 7. un 8. punktos jāņem vērā:
+
+- DNS un Vercel projekts ir kopīgs visām valodām. LV ir saknē, EN zem /en/; RU/NO paredzēti atsevišķi ceļi, kad to saturs ir gatavs. Saglabāt esošos e-pasta DNS ierakstus. Valodām nav vajadzīga atsevišķa domēna vai Resend verifikācija.
+- Kontaktformai viena API plūsma. Kopā ar pieteikumu nosūtīt serverī pārbaudītu valodas kodu un lapas kontekstu; nepamatot valodu uz valsti vai pārlūka valodu. Lokalizēt validāciju, ielādes, kļūdu un veiksmes paziņojumus, Turnstile un iespējamo klienta apstiprinājuma e-pastu. Uzņēmuma saņemtajā e-pastā norādīt pieteikuma valodu. Reālā sūtīšana vēl nav ieviesta.
+- GA4 vienā īpašumā un vienā tīmekļa datu plūsmā. Kopīgi notikumu nosaukumi, papildu page_language parametrs no lapas valodas un vienots lapas identifikators valodu salīdzināšanai. Reģistrēt page_language kā pielāgotu dimensiju. GA4 noklusējuma language ir pārlūka iestatījums. generate_lead tikai pēc servera apstiprinātas pieņemšanas, bez formas personas datiem analītikā. GA4 vēl nav pieslēgts.
+- Piekrišanas saskarne un privātuma informācija katrā publicētajā valodā. Piekrišanas izvēle saglabājas, mainot valodu. Pārbaudīt formas un analītiku katrā valodā, priekšskatījuma testus nodalot no publiskajiem datiem.
+- Pirms palaišanas SITE_URL iestatīt uz https://laurasmebeles.lv, pārģenerēt un pārbaudīt canonical, hreflang un OG. Katras valodas canonical norāda uz sevi. Hreflang pievienot tikai publicētajām versijām; kopīgajai angļu versijai izmantot en. Izveidot sitemap ar indeksējamām lapām un pieslēgt to Search Console. Numurētās galerijas projektu lapas pašlaik ir pārskatīšanai ar noindex; to indeksēšanu neieslēgt automātiski kopā ar pamatlapām.
+- Pāradresāciju karte jāsalīdzina ar faktiskajiem jaunajiem ceļiem. Piemēram, jaunā virtuvju EN lapa ir /en/virtuves/, nevis vēsturiskajā projektā minētā /en/kitchens/. Vecais priekšlikums par RU atmešanu nav spēkā. Publiskajai versijai atcelt indeksēšanas aizliegumus, saglabājot tos priekšskatījumiem.
+
+Šī sadaļa precizē zemākā vēsturiskā darba saraksta statusu, bet neapliecina DNS, Resend, GA4 vai publiskās migrācijas ieviešanu.
+
 ## Konteksts īsumā
 
 - Pamats paliek esošais: statisks HTML/CSS/JS, ģenerēts ar scripts/generate-pages.mjs, bez framework. Nepārej uz Next.js vai CMS.
