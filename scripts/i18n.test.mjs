@@ -15,9 +15,11 @@ for (const path of ['/skapji/', '/koridora-iekartas/', '/vannasistabas-mebeles/'
   assert.equal(hasLanguagePage('ru', path), true);
   assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
 }
-assert.deepEqual(languagesForPage('/'), ['lv', 'en', 'ru']);
-assert.deepEqual(languagesForPage('/virtuves/'), ['lv', 'en', 'ru']);
-for (const path of config.pages.en) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
+assert.deepEqual(languagesForPage('/'), ['lv', 'en', 'ru', 'no']);
+assert.deepEqual(languagesForPage('/virtuves/'), ['lv', 'en', 'ru', 'no']);
+assert.equal(hasLanguagePage('no', '/kontakti/'), false);
+assert.equal(hasLanguagePage('no', '/musu-darbi/k11/'), false);
+for (const path of config.pages.en.filter(path => !['/', '/virtuves/'].includes(path))) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
 const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/nepievienota/">Unavailable</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
 assert.match(links, /href="\/en\/virtuves\/\?x=1#darbi"/);
 assert.match(links, /href="\/en\/kontakti\/#pieteikums"/);
@@ -39,18 +41,18 @@ assert.match(russianLinks, /aria-label="на латышском"/);
 
 const read = path => readFile(new URL('../' + path, import.meta.url), 'utf8');
 const sourceReviews = JSON.parse(await read('src/reviews.json'));
-const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'RU', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'SIA “Lauras mēbeles”']);
+const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'RU', 'NO', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'SIA “Lauras mēbeles”']);
 const plain = html => decode(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const galleryPaths = [...(await read('public/musu-darbi/index.html')).matchAll(/href="(\/musu-darbi\/[^"/]+\/)"/g)].map(m => m[1]);
 const checkedTargets = new Set();
-for (const lang of ['en', 'ru']) {
+for (const lang of ['en', 'ru', 'no']) {
 const translatedReviews = JSON.parse(await read(`src/i18n/reviews.${lang}.json`));
 const dict = JSON.parse(await read(`src/i18n/${lang}.json`));
 const projectData = JSON.parse((await read(`public/${lang}/projects.js`)).replace('window.LAURAS_PROJECTS = ', '').replace(/;\s*$/, ''));
 const usedProjectIds = new Set();
 const usedReviewIds = new Set();
 const pages = [...config.pages[lang], ...galleryPaths.filter(path => hasLanguagePage(lang, path))];
-assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r.id).sort());
+if (lang !== 'no') assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r.id).sort());
 for (const page of pages) {
   const path = page.slice(1);
   const en = await read(`public/${lang}/${path}index.html`);
@@ -58,10 +60,13 @@ for (const page of pages) {
   assert.ok(en.includes(`<html lang="${lang}">`));
   assert.ok(en.includes(`hreflang="${lang}"`));
   assert.ok(lv.includes(`hreflang="${lang}"`));
-  assert.doesNotMatch(en, /class="lang-fallback"/);
+  if (lang === 'no') {
+    assert.match(en, /title="Tilgjengelig på latvisk"/);
+    assert.doesNotMatch(en, /Available in Latvian|in Latvian/);
+  } else assert.doesNotMatch(en, /class="lang-fallback"/);
   assert.match(en, /<meta name="robots" content="noindex,/);
   assert.ok(en.includes(`<link rel="canonical" href="${en.match(/<meta property="og:url" content="([^"]+)"/)[1]}">`));
-  for (const alternate of ['lv', 'en', 'ru']) {
+  for (const alternate of ['lv', 'en', 'ru', 'no']) {
     assert.equal(en.includes(`<link rel="alternate" hreflang="${alternate}"`), languagesForPage(page).includes(alternate));
   }
   if (lang === 'ru' && page === '/vannasistabas-mebeles/') {
@@ -112,7 +117,7 @@ for (const root of ['public', 'dist']) {
   if (hasLanguagePage(lang, '/musu-darbi/')) assert.deepEqual((await readdir(new URL(`../${root}/${lang}/musu-darbi/`, import.meta.url))).sort(), ['index.html', ...galleryPaths.map(path => path.split('/')[2])].sort());
 }
 assert.deepEqual(projectData.map(p => p.id).sort(), [...usedProjectIds].sort());
-if (lang === 'ru') assert.deepEqual(Object.keys(translatedReviews).sort(), [...usedReviewIds].sort());
+assert.deepEqual(Object.keys(translatedReviews).sort(), [...usedReviewIds].sort());
 console.log(`${lang.toUpperCase()}: ${config.pages[lang].length} pamatlapas un ${pages.length-config.pages[lang].length} projektu lapas pārbaudītas.`);
 }
 assert.match(await read('public/kontakti/index.html'), /hreflang="en"/);

@@ -135,3 +135,19 @@ Veiksmīgi npm run test:i18n (EN un RU katrai 14 + 174) un npm run check. Pārba
 ## 22.11.2026: īsā EN ražotnes norāde faktu joslā
 
 Pēc Signes apstiprinājuma tikai EN sākumlapas joslā zem hero lietots “Our own workshop” / “Made in Riga”. Izmantotas jau esošās konteksta atslēgas home.stats.workshop.title/description; ražotnes sadaļas pilnais uzraksts un citas lapas nav mainītas. Pārbaudīts 1440 × 900 un 390 × 844 skatā: datorā virsraksts vienā rindā, telefonā divās tāpat kā blakus “From start to finish”; pārplūdes nav. npm run test:i18n (EN/RU katrai 14 + 174) un git diff --check veiksmīgi.
+
+
+## 22.11.2026: pirmie norvēģu Bokmål teksti
+
+Sagatavoti sākumlapas un virtuvju pilnie melnraksti content/no/, 211 teksta/meta/alt/aria/UI fragmenti un trīs pilni atsauksmju tulkojumi. Saglabātas deviņas sākumlapas sadaļas, seši virtuvju projekti, trīs sākumlapas pirms/pēc projekti ar astoņiem unikāliem ID un visi apstiprinātie fakti. Atsevišķi apakšaģenti pārbaudīja idiomātisku Bokmål, struktūru/faktus un izpētes atbilstību; atsauksmes salīdzinātas tieši ar LV, saglabājot 6/6/12 teikumus. Pēc valodas redakcijas labotas darba virsmas vietas un vitrīnas detaļu nozīmes, saglabājot īsus nosaukumus.
+
+Automātiski pārbaudīts pilns fragmentu pārklājums, visu sešu kartīšu sadalīto un pilno dialogu tekstu vienādība un trīs atsauksmju MD/JSON burtiska atbilstība. Aktīvais src/i18n/no.json, valodu konfigurācija un oriģinālās atsauksmes nav mainītas. Šis ir tekstu sagatavošanas posms, NO lapas pārlūkā vēl nav ieslēgtas vai pārbaudītas.
+
+
+## 22.11.2026: NO sākumlapas un virtuvju priekšskatījums
+
+Pēc Signes apstiprinājuma ieslēgtas tikai /no/ un /no/virtuves/. Pārnesti visi pārbaudītie pamatteksti, metadati, kopīgā saskarne, alt/aria, astoņu projektu dialogi un trīs pilnie atsauksmju tulkojumi. Neatkarīgā gala integrācijas pārbaude apstiprina tekstu, skaitļu, 11 valstu, projektu secības, cenas iekļāvuma un pilno atsauksmju atbilstību. Oriģinālās atsauksmes nav mainītas. Pārējās NO saites rāda LV ar norvēģisku paskaidrojumu, galerijas apakškoks nav ieslēgts. Priekšskatījuma noindex saglabāts.
+
+Abas lapas pārbaudītas datora un 390/360 px telefona skatos bez horizontālas pārplūdes. NO datora izvēlne līdz 1399 px pārslēdzas uz izvēršamo veidu, lai nesaspiestu logo vai saites; no 1400 px pilnajā izvēlnē visi uzraksti un Kontakt oss poga ir vienā rindā. Sākumlapas H1 saglabāti visi vārdi, līdzsvarots tikai rindu dalījums. Galerijas pogai telefonā samazinātas atstarpes bez fonta vai teksta maiņas. Pārbaudīta mobilā izvēlne/kategorijas, NO/EN pārslēgšana virtuvju lapā, foto 1 / 3 → 2 / 3, pirms/pēc slīdnis 50 → 51 ar Før/Etter foto apzīmējumiem un pilnas atsauksmes izvēršana. Konsoles kļūdu nav.
+
+Gala npm run test:i18n (EN/RU katrai 14 + 174, NO 2), npm run check un git diff --check veiksmīgi.

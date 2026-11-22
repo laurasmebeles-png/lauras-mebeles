@@ -25,7 +25,8 @@
   "enabled": [
     "lv",
     "en",
-    "ru"
+    "ru",
+    "no"
   ],
   "pages": {
     "en": [
@@ -59,6 +60,10 @@
       "/musu-darbi/",
       "/iedvesmai/",
       "/virtuves-mebeles-atsauksmes-virtuves-iekartas/"
+    ],
+    "no": [
+      "/",
+      "/virtuves/"
     ]
   },
   "pageTrees": {
