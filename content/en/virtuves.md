@@ -4,7 +4,7 @@ updated: 2026-11-22
 source_path: /virtuves/
 source_files: src/catalog.mjs, scripts/generate-pages.mjs
 title: Custom kitchens, made to measure | Lauras mēbeles
-description: Kitchen furniture made to fit your room. Explore our completed kitchens, layouts and materials, and request an individual quote for your project.
+description: Kitchen furniture made to measure. Explore our completed kitchens, layouts and materials, and request an individual quote for your project.
 ---
 
 Redaktores piezīme: teksts seko pašreizējās virtuves lapas sadaļām un atlasīto projektu secībai. Latviskie bloku nosaukumi ir tikai izskatīšanai. EN teksts ievietots vārdnīcā un priekšskatījumā. Iztulkota arī kopīgā navigācija, kājene un šo lapu pieejamības teksti.
@@ -15,7 +15,7 @@ Redaktores piezīme: teksts seko pašreizējās virtuves lapas sadaļām un atla
 
 # Custom kitchens, made for your space
 
-Let’s start with your room and how you use it. We’ll plan your kitchen layout together, with space for appliances and everyday storage. Then we’ll choose the cabinet doors and worktop with you.
+We design custom kitchens to suit your space and the way you cook. Together, we’ll plan the layout, with room for appliances and everyday storage. Then we’ll choose the cabinet doors and worktop with you.
 
 **Pogas:** Request a quote · View the gallery
 
@@ -47,7 +47,7 @@ This kitchen has matt black doors, a wood-toned splashback and a display cabinet
 
 ### A white kitchen with a peninsula and slatted details
 
-White cabinet doors contrast with a dark worktop. Slatted wall details and a wood-toned peninsula add to the overall look.
+White cabinet doors contrast with a dark worktop. The design also features slatted wall panels and a wood-toned finish on the peninsula.
 
 **Aprakstu izvēršanas poga:** Read more
 
@@ -61,11 +61,11 @@ Redaktores piezīme: apraksti paliek zem tiem pašiem sešiem projektiem. Atvero
 
 ### Small kitchens
 
-Small kitchens need careful planning. We’ll look at where the cabinets and appliances go, how much worktop space you need for cooking and how to leave room to move around.
+In a small kitchen, the layout needs to make space for cooking, dishes and appliances. We plan the worktop area and cabinet positions so there’s room to move around.
 
 ### Corner kitchens
 
-Corner cabinets need to be easy to use. We look at how you will reach the shelves, which way the doors will open and where the appliances should go.
+We plan corner kitchens with easy access to shelves and enough clearance for doors to open. Appliance positions are part of the layout from the start.
 
 ## 4. Praktiskās izvēles
 
@@ -75,7 +75,7 @@ Corner cabinets need to be easy to use. We look at how you will reach the shelve
 
 ### 01 / Layout
 
-We look at the room dimensions and how to arrange the space for cooking.
+We plan the cooking area and overall layout to suit the dimensions of your room.
 
 ### 02 / Materials and details
 
@@ -93,7 +93,7 @@ The cabinet doors, worktop and fittings you choose all affect the price. The siz
 
 ## Formulējumu pamatojums
 
-- V3 bloki veidoti no saglabājamās domas, brīvi mainot teikumu secību un uzbūvi. Ievads sākas ar klienta telpu un tās lietojumu; atslēgvārdi nav jāievieto katrā teikumā.
+- Pēc Signes precizējuma ievads nomainīts pret konkrētu formulējumu par custom kitchens, telpu un gatavošanu. Pārskatīti arī mazo un stūra virtuvju un projektu apraksti, saglabājot sākotnējo domu un faktus.
 
 - Galvenā frāze ir “custom kitchens”. Katrs sinonīms nav obligāti jāievieto vienā lapā. “Bespoke” nav paturēts tikai atslēgvārda dēļ.
 - “Made for your space” un ievads saglabā pielāgošanu telpas izmēriem un ikdienai.

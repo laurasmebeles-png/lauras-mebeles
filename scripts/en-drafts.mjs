@@ -39,16 +39,17 @@ function markdown(html){
     .replace(/<(?:p|li|label|option)\b[^>]*>/g,'\n\n')
     .replace(/<\/(?:p|article|section|li|div|form|select|label|option|video|figcaption|h[1-6])>/g,'\n\n')
     .replace(/<\/(?:a|button|summary)>/g,'\n\n')
+    .replace(/<\/span><span class="ba-tag ba-tag-after">/g,'</span> / <span class="ba-tag ba-tag-after">')
     .replace(/<\/strong>/g,' ')
     .replace(/<[^>]+>/g,''))
     .replace(/[ \t]+/g,' ').replace(/ *\n */g,'\n').replace(/\n{3,}/g,'\n\n').trim();
 }
 const index=['# Pārējo lapu EN melnraksti','',
-  '22.11.2026. Signes izskatīšanai. Tie vēl nav ievietoti priekšskatījumā. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.',''];
+  '22.11.2026. Signes izskatīšanai, stila redakcija v2. Tie vēl nav ievietoti priekšskatījumā. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.',''];
 for(const page of pages){
   const name=page.lv_path.split('/').filter(Boolean).join('-')+'.md';
   const note=page.id==='prices'?'\nCenu pārbaudes piezīme: summas un komplektācijas pārceltas no pašreizējā LV priekšskatījuma. Šis tulkojums nav jauns klienta cenu apstiprinājums. Pirms EN cenu lapas ievietošanas jāsalāgo tās ar saskaņotajām cenām.\n':'';
-  const meta=['---','status: redakcionāls melnraksts v1, Signes izskatīšanai','updated: 2026-11-22',`source_path: ${page.lv_path}`,`title: ${page.en.title}`,`description: ${page.en.description}`,'---','',
+  const meta=['---','status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai','updated: 2026-11-22',`source_path: ${page.lv_path}`,`title: ${page.en.title}`,`description: ${page.en.description}`,'---','',
     `SEO fokuss: ${[page.en.primary,...page.en.secondary].filter(Boolean).join('; ')||'zīmola vai funkcionāls nolūks'}.`,'',
     'Sadaļas un projekti seko pašreizējās LV lapas secībai. Atslēgvārdu saraksts un redaktores piezīmes nav lapā ievietojams teksts.',note,'',markdown(page.html),''].join('\n');
   fs.writeFileSync('content/en/'+name,meta);

@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /citas-mebeles/
 title: Other made-to-measure furniture | Lauras mēbeles
@@ -15,7 +15,7 @@ Home / Other furniture
 
 ## Other made-to-measure furniture
 
-An unusual room or a space that needs to do more than one job? We make custom furniture for both. Tell us what you need, and we’ll work out how to make it happen.
+We make custom furniture for unusual spaces and rooms with more than one purpose. Tell us what you need, and we’ll work through the options together.
 
 Request a quote
 
@@ -59,7 +59,7 @@ Dark surfaces, lighting and brand graphics give the kiosk a consistent identity.
 
 #### A café counter and seating area
 
-A long service counter and a separate seating area form the furniture layout in this Hooligaan café.
+This Hooligaan café has a long service counter and a separate seating area.
 
 Read more
 
@@ -71,7 +71,7 @@ A low green cabinet sits beneath open wood-toned shelving.
 
 Read more
 
-Slender black supports give the shelving a light, repeated pattern.
+The slender black supports repeat along the shelves, giving them a light, open look.
 
 View our other furniture projects
 
@@ -83,13 +83,13 @@ Before our first conversation
 
 #### Your idea
 
-Tell us what the furniture needs to do and why ready-made pieces do not work for you.
+Tell us how you plan to use the furniture and what you need that ready-made pieces cannot offer.
 
 02
 
 #### More than one use
 
-We’ll explore how one room can combine storage, work or relaxation, such as a kitchen and a fold-down bed in the same space.
+We’ll plan how the room can serve different purposes, from storage to work or relaxation. One example is a kitchen and a fold-down bed sharing the same space.
 
 03
 
@@ -99,6 +99,6 @@ Before we make anything, we’ll agree on the design, materials, dimensions and 
 
 #### What affects the price?
 
-The size, materials and number of functions all affect the price. Once we have talked through your idea, we’ll prepare an individual quote.
+The price depends on the size, materials and the functions the furniture needs to combine. We’ll prepare an individual quote once we’ve discussed your ideas.
 
 More about pricing

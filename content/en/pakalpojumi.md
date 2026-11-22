@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /pakalpojumi/
 title: Made-to-measure furniture | Lauras mēbeles
@@ -15,7 +15,7 @@ Furniture
 
 ## Furniture for every room
 
-Your home, your needs, your style. We make custom kitchens, wardrobes and other furniture to bring them together.
+We make custom kitchens, wardrobes and other furniture to suit your space, needs and style.
 
 ### Kitchens
 

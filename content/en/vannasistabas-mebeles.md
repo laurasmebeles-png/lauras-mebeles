@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /vannasistabas-mebeles/
 title: Made-to-measure bathroom furniture | Lauras mēbeles
@@ -15,9 +15,9 @@ Home / Bathroom furniture
 
 ## Made-to-measure bathroom furniture
 
-Your bathroom furniture needs to fit around the room, the plumbing and the things you keep there. We make custom bathroom cabinets and vanity units to suit the space and the storage you need.
+We design custom bathroom cabinets and vanity units to fit your bathroom, with storage for everyday essentials. Dimensions and layout are planned around the available space and the position of your plumbing.
 
-Please note We currently make bathroom furniture only as part of an order for other home furniture.
+Please note: We currently make bathroom furniture only as part of an order for other home furniture.
 
 Request a quote
 
@@ -33,7 +33,7 @@ This wall-mounted light grey vanity unit provides everyday storage and leaves th
 
 Read more
 
-Gold-tone handles suit the understated finish, with a round illuminated mirror above the basin.
+Gold-tone handles complement the understated finish. A round illuminated mirror sits above the basin.
 
 #### A dark vanity unit with an illuminated mirror
 
@@ -41,7 +41,7 @@ The dark vanity unit contrasts with the light bathroom walls and echoes the marb
 
 Read more
 
-An illuminated mirror completes the basin area used every day.
+An illuminated mirror completes the basin area.
 
 #### A double-basin bathroom unit
 

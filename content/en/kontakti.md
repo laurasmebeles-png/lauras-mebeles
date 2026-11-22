@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /kontakti/
 title: Contact and quote enquiries | Lauras mēbeles
@@ -77,7 +77,7 @@ Our address
 
 ### Find us in Riga
 
-Matīsa iela 78A, Riga, LV-1009. Our office with a display area, workshop and storage are all here.
+Matīsa iela 78A, Riga, LV-1009. Our office, display area, workshop and storage facilities are all at this address.
 
 Planning a visit? Please call or email us in advance to arrange a day and an approximate time.
 

@@ -1,6 +1,6 @@
 # Pārējo lapu EN melnraksti
 
-22.11.2026. Signes izskatīšanai. Tie vēl nav ievietoti priekšskatījumā. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.
+22.11.2026. Signes izskatīšanai, stila redakcija v2. Tie vēl nav ievietoti priekšskatījumā. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.
 
 - [Made-to-measure furniture](pakalpojumi.md) (/pakalpojumi/)
 - [Built-in and fitted wardrobes](skapji.md) (/skapji/)

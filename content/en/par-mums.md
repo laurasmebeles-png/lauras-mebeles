@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /par-mums/
 title: About us | Lauras mēbeles
@@ -17,9 +17,9 @@ About us
 
 ## From the first sketch to furniture in your home
 
-We have been designing and making custom furniture since 2008. Kitchens are our speciality, and we also make wardrobes and furniture for other rooms. Each piece is planned around its place in your home and how you will use it every day.
+We have been designing and making custom furniture since 2008. Kitchens are our speciality, and we also make wardrobes and furniture for other rooms. We tailor each design to the room and your everyday needs.
 
-We handle design, production, delivery and installation ourselves. Our workshop, storage and office with a display area are all at Matīsa iela 78A in Riga. We work with homeowners, designers and businesses, both in Latvia and abroad.
+We handle design, production, delivery and installation ourselves. Our workshop, office, display area and storage facilities are all at Matīsa iela 78A in Riga. We work with homeowners, designers and businesses, both in Latvia and abroad.
 
 How we work
 
@@ -27,7 +27,7 @@ How we work
 
 #### We talk and take measurements
 
-We start with your ideas, budget and the possibilities of the room. Then we measure the space so we can plan furniture that fits.
+We discuss your ideas and budget, then measure the room to see what will fit.
 
 #### We design and agree the details
 
@@ -37,9 +37,9 @@ We prepare a 3D design and choose the materials and fittings with you. Before pr
 
 We make the furniture components in our own workshop, then install the furniture in your home at the agreed time.
 
-#### Warranty and support afterwards
+#### Warranty and ongoing support
 
-We provide a warranty and support after the warranty period for the furniture we make. If it needs a repair or a replacement part later on, get in touch and we’ll work out a solution together.
+Our furniture comes with a warranty, and we also offer support once it has expired. If a repair or replacement part is needed, get in touch and we’ll discuss the options.
 
 Our own workshop in Riga
 
@@ -65,7 +65,7 @@ We plan each piece around the room and your daily routine, with a layout and sto
 
 #### Quality and materials
 
-We choose the doors, surfaces and other details with you, looking for quality materials that suit everyday use.
+We choose the doors, surfaces and other details with you, focusing on quality and suitability for everyday use.
 
 #### Attention to detail
 

@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /koridora-iekartas/
 title: Made-to-measure hallway furniture | Lauras mēbeles
@@ -15,7 +15,7 @@ Home / Hallway furniture
 
 ## Made-to-measure hallway furniture
 
-Coats, shoes and everyday essentials all need a place, even in a small hallway. We make hallway furniture to fit the space, bringing cupboards, shelves and seating together around your needs.
+We design hallway furniture to fit your space, with cupboards for coats, shoe storage and somewhere to sit. Shelves and seating are arranged to suit your daily needs, even in a small hallway.
 
 Request a quote
 
@@ -31,7 +31,7 @@ This grey hallway wardrobe sits beside a wooden slat panel with coat hooks and a
 
 Read more
 
-Lighting beneath the seat picks out the furniture’s lines and lights the floor.
+Lighting beneath the seat highlights the lines of the furniture and illuminates the floor.
 
 #### A grey hallway wardrobe with an open niche
 
@@ -51,7 +51,7 @@ A wooden slat panel on the opposite wall adds texture alongside the smooth cupbo
 
 #### A hallway with a green upholstered panel
 
-A green upholstered panel brings the coat hooks and seating together in this hallway.
+A green upholstered panel ties together the coat hooks and seating in this hallway.
 
 Read more
 
@@ -67,13 +67,13 @@ Before our first conversation
 
 #### Your daily routine
 
-We’ll talk about who uses the hallway and what everyone needs to keep there.
+We’ll discuss how many people use the hallway and what they need to store there.
 
 02
 
 #### Room to move
 
-We’ll plan cupboard depth and door openings around the space and the position of your front door.
+We plan the depth of the cupboards and the way their doors open to suit the hallway and the position of your front door.
 
 03
 

@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /virtuves-mebeles-atsauksmes-virtuves-iekartas/
 title: Customer reviews | Lauras mēbeles

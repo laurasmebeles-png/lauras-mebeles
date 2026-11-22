@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /cenas/
 title: Kitchen price examples | Lauras mēbeles
@@ -25,7 +25,7 @@ What the price includes
 
 ### Design, delivery and installation included
 
-Each starting price includes developing and agreeing the design, delivery and installation. We’ll agree the exact price before making your kitchen.
+Each starting price includes the design process, delivery and installation. We’ll agree the design and final price with you before production starts.
 
 From sketch to 3D design
 

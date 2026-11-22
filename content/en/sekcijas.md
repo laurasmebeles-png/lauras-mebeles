@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v1, Signes izskatīšanai
+status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
 updated: 2026-11-22
 source_path: /sekcijas/
 title: Living room furniture and TV units | Lauras mēbeles
@@ -15,7 +15,7 @@ Home / Living room furniture
 
 ## Made-to-measure living room furniture
 
-Make room for your TV, books and the things you want around you. We build TV units, wall units and custom shelving to fit your living room, with sizes and finishes that work with the rest of the interior.
+We design TV units, wall units and custom shelving to suit your living room, with space for equipment, books and other belongings. The dimensions and finishes are chosen to complement the rest of the interior.
 
 Request a quote
 
@@ -31,7 +31,7 @@ A low green cabinet sits beneath open wood-toned shelving.
 
 Read more
 
-Slender black supports give the shelving a light, repeated pattern.
+The slender black supports repeat along the shelves, giving them a light, open look.
 
 #### A long TV unit with a fluted front
 
@@ -47,11 +47,11 @@ Dark blue doors are combined with open wood-toned shelves and a low TV unit.
 
 Read more
 
-There is room for storage, books and decorative objects.
+The design combines storage with space for books and decorative objects.
 
 #### A marble-effect TV wall with a fireplace
 
-The television and fireplace share a wall arrangement with a light marble-effect finish.
+The television and fireplace are integrated into one wall with a light marble-effect finish.
 
 Read more
 
