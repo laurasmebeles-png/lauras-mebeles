@@ -101,8 +101,9 @@ export function prefixLinks(html, lang, dict = {}) {
 
 export function translateHtml(html, dict, lang) {
   const used = new Set();
-  const marked = html.replace(/(<h1\b[^>]*\sdata-i18n-key="([^"]+)"[^>]*>)([\s\S]*?)(<\/h1>)/g, (all, open, key, inner, close) => {
+  const marked = html.replace(/(<(h1|dt|strong)\b[^>]*\sdata-i18n-key="([^"]+)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (all, open, tag, key, inner, close) => {
     if (!dict[key]) return all;
+    if (tag !== 'h1') return open + encode(dict[key]) + close;
     const lineBreak = inner.match(/<span class="nk-hero-break"><br><\/span>/)?.[0] || '<br>';
     return open + dict[key].split('\n').map(encode).join(lineBreak + ' ') + close;
   });

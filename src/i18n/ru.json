@@ -976,5 +976,7 @@
   "Klienta atsauksme": "Отзыв клиента",
   "5 no 5 zvaigznēm": "5 из 5 звёзд",
   "Pieejams latviešu valodā": "Доступно на латышском",
-  "latviešu valodā": "на латышском"
+  "latviešu valodā": "на латышском",
+  "home.stats.workshop.title": "Свой цех",
+  "home.stats.workshop.description": "Детали делаем в Риге"
 }

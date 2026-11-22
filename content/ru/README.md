@@ -34,3 +34,5 @@ Pirmajām divām RU lapām pārtulkota kopīgā navigācija, kājene, dialogi, p
 Pēc Signes pēdējās izvēles kontaktblokā saglabāts sākotnējais pārbaudītais teikums: «Для начала достаточно идеи. Расскажите нам о ней, и мы вместе продумаем, как её воплотить.» Variants ar «что вы задумали» netiek izmantots.
 
 Veiksmīgi npm run check un npm run test:i18n: 14 EN pamatlapas, 174 EN projektu lapas un 2 RU lapas, tekstu pārklājums, struktūra, attēli, saites, hreflang, pilnās atsauksmes un projektu kartīšu/dialogu atbilstība. Lokāli pārbaudīts datora un mobilais izkārtojums, atsauksmes izvēršana, pirms/pēc slīdnis, projekta dialoga 1 / 4 uz 2 / 4 pāršķiršana, mobilā izvēlne un EN/RU pārslēgšana virtuvju lapā. Priekšskatījuma noindex saglabāts. Reālā forma, privātums, piekrišana un citi palaišanas darbi paliek PLAN.md kontrolsarakstā. Tālāk gatavojamas pārējo RU lapu sagataves ar tādu pašu neatkarīgu valodas un faktu pārbaudi.
+
+Signes maketa precizējums: tikai sākumlapas faktu joslas ražotnes blokā īsais variants «Свой цех» / «Детали делаем в Риге», pēc atsevišķas RU valodas pārbaudes. Ražotnes sadaļas mazais virsraksts paliek «Собственное производство в Риге».
