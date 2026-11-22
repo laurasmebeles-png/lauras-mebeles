@@ -53,3 +53,8 @@ Signe iesūtīja divus oriģinālus no Lauras mēbeļu ražotnes. `par-mums/razo
 Sākumlapas eksporta sadaļā pēc Signes izvēles izmantots šaurais Norvēģijas foto `775261300_1690877219709592_6440013728107710343_n (1).jpg` kā `public/images/home/eksports-norvegija.jpg`. Oriģinālās krāsas saglabātas; lapā kadrējums rāda attēla apakšējo daļu ar furgonu un kalniem. Iepriekšējais platais foto paliek projekta failos.
 
 Sākumlapas kvalitātes sadaļā izmantots Signes atsūtītais gatavās virtuves kadrs `780097105_1692710209526293_8166731839144628415_n.jpg` kā `public/images/home/razotne-gatava-virtuve.jpg`. Oriģinālās krāsas saglabātas; kreisā mala nedaudz nogriezta ar CSS, lai nebūtu redzams vads. Ražotnes foto un video ir sadaļā “Par mums”.
+
+
+## Kirilicas fonts, 22.11.2026.
+
+RU virsrakstiem pievienoti esošā EB Garamond fonta kirilicas 400 normal un italic WOFF2 faili no Google Fonts: https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap. Faili public/fonts/eb-garamond-cyrillic-400-normal.woff2 un eb-garamond-cyrillic-400-italic.woff2 tiek pasniegti lokāli, bez ārēja fontu pieprasījuma lapas apmeklējuma laikā. SIL Open Font License kopija ir public/fonts/eb-garamond-OFL.txt, avots https://github.com/google/fonts/blob/main/ofl/ebgaramond/OFL.txt. Saglabāta esošā fontu saime un makets.

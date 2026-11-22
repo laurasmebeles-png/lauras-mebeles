@@ -44,7 +44,8 @@ Signe lūdz darba gaitā atgādināt par aizmirstiem darbiem. Sākot kontaktform
 
 - EN apstiprinātā satura apjoms ir pabeigts, pending-translations.json ir tukšs. Nav atlikušu neapstiprinātu EN lapu tekstu, kas bloķētu nākamās valodas sagatavošanu. Terminoloģija: custom kitchens, custom furniture un made-to-measure; bespoke nepievienot. Virsraksta paying for aplaušana izlabota priekšskatījumā.
 - EN vēlāk jāpapildina ar jauno kopīgo funkciju tekstiem (reāla forma, privātums, piekrišana, 404) un jāpārbauda pēc integrācijām. Tie ir nākamā tehniskā posma darbi, nevis nepabeigts esošo lapu tulkojums.
-- Ieteiktā nākamā secība: RU, pēc tam norvēģu Bokmål. Šī secība ir priekšlikums, vēl jāapstiprina Signei. Izpēte abām valodām jau sagatavota; nav jāatkārto viss keyword research bez jauna pamatojuma.
+- Signe 22.11.2026. apstiprinājusi RU kā nākamo valodu. Sagatavoti sākumlapas un virtuves lapas melnraksti content/ru/ ar metadatiem un trim pilnām sākumlapas atsauksmēm. Pēc neatkarīgas valodas un satura/atslēgvārdu pārbaudes labojumi iestrādāti un atkārtoti pārbaudīti. Signe apstiprinājusi to ievietošanu: RU priekšskatījumā ieslēgtas /ru/ un /ru/virtuves/ ar kopīgās saskarnes, metadatu, attēlu aprakstu un projektu dialogu tulkojumiem. Pārējās RU lapas vēl jāsagatavo. Norvēģu Bokmål paredzēta pēc RU; izpēte abām valodām jau sagatavota un bez jauna pamatojuma nav jāatkārto viss keyword research.
+- Signe krievu valodu saprot ierobežoti un lūdz izmantot apakšaģentus gramatikas, stila, dabiskuma un Keyword Planner atbilstības pārbaudei. Turpmākajos RU tekstos saglabāt atsevišķu valodas un faktu/atslēgvārdu pārbaudi; būtiskās izvēles izskaidrot Signei latviski, neprasot viņai pašai pārbaudīt krievu gramatiku. Pārbaudes rezultāti un ierobežojumi fiksēti content/ru/README.md.
 - Katrai nākamajai valodai vispirms sākumlapas un virtuvju teksti Signes apskatei, pēc stila saskaņošanas pārējās lapas. Saglabāt struktūru, sadaļu domas, faktus un atslēgvārdu fokusu. Atsauksmes tulkot cieši pēc oriģināla, nepārkārtojot vai SEO nolūkā nepārfrāzējot. Priekšskatījumā ieslēgt tikai apstiprināto saturu.
 
 ## Konteksts īsumā
@@ -57,7 +58,7 @@ Signe lūdz darba gaitā atgādināt par aizmirstiem darbiem. Sākot kontaktform
 
 ## Atvērtie jautājumi klientam (nebloķē 1. līdz 3. punktu)
 
-1. Valodu apjoms izlemts: LV + EN + RU + norvēģu Bokmål. LV/EN priekšskatījums gatavs; RU/NO jāsagatavo. Precizēt tikai nākamās valodas secību, nevis atkārtoti lemt par RU saglabāšanu.
+1. Valodu apjoms izlemts: LV + EN + RU + norvēģu Bokmål. LV/EN priekšskatījums gatavs, RU sākumlapa un virtuves lapa ieslēgtas. Turpināt pārējās RU lapas, pēc tam norvēģu versiju. RU saglabāšana vairs nav atvērts jautājums.
 2. Fotogrāfijas (e-pasta melnraksts jau sagatavots Kristapa vārdā).
 3. Kalkulatora likmes, vai vienošanās, ka kalkulators paliek bez cenām.
 4. Atsauksmes: piekrīt manuāli uzturētām kartītēm ar Google/Facebook atsauksmju pārkopēšanu?
@@ -135,4 +136,4 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 ### 9. Pēc palaišanas
 
 - Pirmās 2 nedēļas: GSC 404 pārskats, pieteikumu kvalitāte, GA4 notikumi.
-- EN apstiprinātā satura versija jau gatava. RU/NO turpinājums pēc iepriekš norādītās secības saskaņošanas; "Padomi" sadaļa no vecajām 2020. g. publikācijām un kalkulators ar reālām likmēm paliek atsevišķi turpmāki darbi.
+- EN apstiprinātā satura versija jau gatava. Turpināt pārējās RU lapas, pēc tam norvēģu versiju; "Padomi" sadaļa no vecajām 2020. g. publikācijām un kalkulators ar reālām likmēm paliek atsevišķi turpmāki darbi.

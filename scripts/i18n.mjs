@@ -79,7 +79,7 @@ export function walkHtml(html, fn) {
 }
 
 // Iekšējās saites uz /<lang>/..., resursi (ar paplašinājumu) paliek
-export function prefixLinks(html, lang) {
+export function prefixLinks(html, lang, dict = {}) {
   const pre = langPrefix(lang);
   if (!pre) return html;
   return html.replace(/<[^>]+>/g, tag => {
@@ -95,7 +95,7 @@ export function prefixLinks(html, lang) {
     if (/\shreflang=/.test(attrs) || url.startsWith('//') || url.startsWith(pre + '/')) return all;
     const target = url.split(/[?#]/)[0];
     if (/\.[a-z0-9]+$/i.test(target.split('/').pop()) || hasLanguagePage(lang, target)) return all;
-    return `<a${attrs} hreflang="${defaultLang}" title="Available in Latvian">${label}<span class="lang-fallback" aria-label="in Latvian">LV</span></a>`;
+    return `<a${attrs} hreflang="${defaultLang}" title="${encode(dict['Pieejams latviešu valodā'] || 'Available in Latvian')}">${label}<span class="lang-fallback" aria-label="${encode(dict['latviešu valodā'] || 'in Latvian')}">LV</span></a>`;
   });
 }
 
@@ -111,7 +111,7 @@ export function translateHtml(html, dict, lang) {
     if (t) { used.add(key); return t; }
     return key;
   });
-  return prefixLinks(out, lang);
+  return prefixLinks(out, lang, dict);
 }
 
 export async function writeDict(lang, dict) {
