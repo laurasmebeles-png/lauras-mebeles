@@ -1,6 +1,6 @@
 # Lauras mēbeles: izstrādes plāns līdz palaišanai
 
-Atjaunots 02.11.2026. Šis fails ir darba saraksts nākamajām sesijām. Katru punktu dari atsevišķā sesijā, sāc ar "Uztaisi N. punktu no PLAN.md". Pirms darba izlasi AGENTS.md un README.md. Komunikācija ar Signi latviski.
+Sākotnējais plāns 02.11.2026., pēdējais precizējums 22.11.2026. Šis fails ir darba saraksts nākamajām sesijām. Katru punktu dari atsevišķā sesijā, sāc ar "Uztaisi N. punktu no PLAN.md". Pirms darba izlasi AGENTS.md un README.md. Komunikācija ar Signi latviski.
 
 ## Valodu plāna precizējums, 22.11.2026.
 
@@ -25,6 +25,28 @@ Turpmākajos 2., 6., 7. un 8. punktos jāņem vērā:
 
 Šī sadaļa precizē zemākā vēsturiskā darba saraksta statusu, bet neapliecina DNS, Resend, GA4 vai publiskās migrācijas ieviešanu.
 
+## Atgādinājumi un pārbaudes pirms palaišanas
+
+Signe lūdz darba gaitā atgādināt par aizmirstiem darbiem. Sākot kontaktformas, DNS, analītikas vai palaišanas darbus, pārskatīt šo sarakstu un norādīt attiecīgajā posmā aktuālo. Atgādinājumi paredzēti projekta sarunās, nevis kā ieplānoti paziņojumi. Atzīmēt punktu par izpildītu tikai pēc ieviešanas un pārbaudes.
+
+- [ ] Vienots sitemap.xml visām publicētajām valodām, katra indeksējamā valodas URL atsevišķi. Ģenerēt build laikā, neiekļaut melnrakstus un noindex projektu lapas. Norādīt sitemap adresi robots.txt un iesniegt Search Console. Atsevišķi valodu sitemap nav vajadzīgi pašreizējam apjomam.
+- [ ] Robots.txt pārmeklēšanas atļaujas un noindex HTML/HTTP norādes pārbaudīt atsevišķi. Robots.txt un sitemap ir dažādi faili; robots pārmeklēšanas aizliegums neaizstāj noindex. Publiskās pamatlapas atvērt indeksēšanai, priekšskatījumus un pārskatāmās projektu lapas saglabāt ar noindex.
+- [ ] Pēc SITE_URL nomaiņas pārbaudīt īstā domēna canonical, savstarpējos hreflang un sociālo saišu metadatus katrā publicētajā valodā. Pievienot tikai gatavas valodu versijas.
+- [ ] Pabeigt un pārbaudīt veco URL pāradresācijas, arī vecajām EN/RU adresēm. Pievienot pārbaudāmus uzņēmuma un navigācijas strukturētos datus.
+- [ ] Verificēt Resend sūtītāja domēnu, ieviest servera validāciju un botu aizsardzību. Saglabāt esošā e-pasta DNS ierakstus un pārbaudīt piegādi pēc domēna pārslēgšanas.
+- [ ] Katrā valodā pārbaudīt formas validāciju, ielādes stāvokli, servera kļūdu, atkārtotu mēģinājumu un veiksmīgu nosūtīšanu ar reālu saņemtu e-pastu. E-pastā uzņēmumam redzama pieteikuma valoda un avota lapa. Ja ievieš klienta apstiprinājuma e-pastu, arī tas lokalizēts.
+- [ ] Pieslēgt GA4 un page_language dimensiju; pārbaudīt notikumus katrā valodā DebugView. generate_lead tikai pēc servera apstiprinātas pieņemšanas, bez dubultas uzskaites un personas datiem. Priekšskatījuma/testa dati nodalīti.
+- [ ] Publicēt privātuma informāciju un piekrišanas saskarni katrā publicētajā valodā; piekrišanas izvēle saglabājas starp valodām. Turnstile paziņojumi atbilst lapas valodai.
+- [ ] Pēc jauno tehnisko funkciju ieviešanas veikt visu valodu gala pārbaudi telefonā un datorā: jaunie teksti, pogu un virsrakstu aplaušana, tiešās saites uz apakšlapām un projektu lapām, valodu pārslēdzējs, kļūdu paziņojumi un 404 lapa.
+- [ ] Pirms publiskas palaišanas apstiprināt cenu piemēru summas un specifikācijas ar klientu visām valodām. EN teksta apstiprinājums neaizstāj šo faktu apstiprinājumu.
+
+## Valodu darbu turpinājums
+
+- EN apstiprinātā satura apjoms ir pabeigts, pending-translations.json ir tukšs. Nav atlikušu neapstiprinātu EN lapu tekstu, kas bloķētu nākamās valodas sagatavošanu. Terminoloģija: custom kitchens, custom furniture un made-to-measure; bespoke nepievienot. Virsraksta paying for aplaušana izlabota priekšskatījumā.
+- EN vēlāk jāpapildina ar jauno kopīgo funkciju tekstiem (reāla forma, privātums, piekrišana, 404) un jāpārbauda pēc integrācijām. Tie ir nākamā tehniskā posma darbi, nevis nepabeigts esošo lapu tulkojums.
+- Ieteiktā nākamā secība: RU, pēc tam norvēģu Bokmål. Šī secība ir priekšlikums, vēl jāapstiprina Signei. Izpēte abām valodām jau sagatavota; nav jāatkārto viss keyword research bez jauna pamatojuma.
+- Katrai nākamajai valodai vispirms sākumlapas un virtuvju teksti Signes apskatei, pēc stila saskaņošanas pārējās lapas. Saglabāt struktūru, sadaļu domas, faktus un atslēgvārdu fokusu. Atsauksmes tulkot cieši pēc oriģināla, nepārkārtojot vai SEO nolūkā nepārfrāzējot. Priekšskatījumā ieslēgt tikai apstiprināto saturu.
+
 ## Konteksts īsumā
 
 - Pamats paliek esošais: statisks HTML/CSS/JS, ģenerēts ar scripts/generate-pages.mjs, bez framework. Nepārej uz Next.js vai CMS.
@@ -35,7 +57,7 @@ Turpmākajos 2., 6., 7. un 8. punktos jāņem vērā:
 
 ## Atvērtie jautājumi klientam (nebloķē 1. līdz 3. punktu)
 
-1. Valodas: tikai LV, vai LV + EN? RU ieteikums: nesaglabāt, ja klients neuzstāj.
+1. Valodu apjoms izlemts: LV + EN + RU + norvēģu Bokmål. LV/EN priekšskatījums gatavs; RU/NO jāsagatavo. Precizēt tikai nākamās valodas secību, nevis atkārtoti lemt par RU saglabāšanu.
 2. Fotogrāfijas (e-pasta melnraksts jau sagatavots Kristapa vārdā).
 3. Kalkulatora likmes, vai vienošanās, ka kalkulators paliek bez cenām.
 4. Atsauksmes: piekrīt manuāli uzturētām kartītēm ar Google/Facebook atsauksmju pārkopēšanu?
@@ -93,7 +115,7 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 - Pāradresāciju karte: docs/migration/redirect-map.md. Pēc klienta un Signes apstiprinājuma pārnest uz vercel.json `redirects` (301). Pārbaudīt katru veco URL pēc palaišanas.
 - sitemap.xml ģenerēt build laikā no lapu saraksta; robots.txt production versijā atļauj indeksēt un norāda sitemap.
 - Strukturētie dati: LocalBusiness (vai FurnitureStore) ar adresi Matīsa iela 78a, Rīga, tālruni, darba laiku; BreadcrumbList apakšlapām; FAQPage sākumlapas BUJ blokam.
-- Canonical katrai lapai; ja būs EN, hreflang lv/en/x-default.
+- Canonical un hreflang lv/en/x-default jau ieviesti. Pirms palaišanas pārbaudīt tos uz īstā domēna; RU/NO pievienot, kad attiecīgās lapas gatavas.
 - Pārbaude ar Lighthouse (mobilais) katrai lapu grupai; mērķis 90+ Performance un SEO.
 
 ### 7. GA4 un piekrišana
@@ -113,4 +135,4 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 ### 9. Pēc palaišanas
 
 - Pirmās 2 nedēļas: GSC 404 pārskats, pieteikumu kvalitāte, GA4 notikumi.
-- Pēc vajadzības: EN versija, "Padomi" sadaļa no vecajām 2020. g. publikācijām, kalkulators ar reālām likmēm.
+- EN apstiprinātā satura versija jau gatava. RU/NO turpinājums pēc iepriekš norādītās secības saskaņošanas; "Padomi" sadaļa no vecajām 2020. g. publikācijām un kalkulators ar reālām likmēm paliek atsevišķi turpmāki darbi.
