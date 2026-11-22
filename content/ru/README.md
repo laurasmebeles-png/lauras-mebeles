@@ -39,4 +39,6 @@ Signes maketa precizējums: tikai sākumlapas faktu joslas ražotnes blokā īsa
 
 Augšējās navigācijas CTA pēc Signes norādes saīsināts uz «Связаться», lai poga paliktu vienā rindā. Sākumlapas galvenās sadaļas «Связаться с нами» un pilnais kontaktu aicinājums saglabāti.
 
-Navigācijā «Для вдохновения» saīsināts uz «Идеи» pēc RU valodas pārbaudes. Sadaļu virsraksti un sākumlapas mazais uzraksts saglabāti. Kartīšu LV marķējums izvietots stūrī ārpus teksta plūsmas, lai tas neveidotu papildu rindu un nepalielinātu cenu kartītes balto joslu.
+Navigācijā pēc Signes gala izvēles lietots «Вдохновение», saglabājot iedvesmas nozīmi. Piemēri pārbaudīti Дятьково (https://dyatkovo.ru/articles/) un Nolte Küchen (https://nolte-kuechen.ru/) lapās. Sadaļu virsraksti un sākumlapas mazais uzraksts saglabāti. Kartīšu LV marķējums izvietots stūrī ārpus teksta plūsmas, lai tas neveidotu papildu rindu un nepalielinātu cenu kartītes balto joslu.
+
+RU augšējā josla pārbaudīta ar gala nosaukumu «Вдохновение». Līdz 1100 px platumam izmanto esošo izvēršamās izvēlnes principu, lai šaurā skatā saites neaplūztu un nesaspiestu logo. LV/EN izvēlnes robežas nemainītas.

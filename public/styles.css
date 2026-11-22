@@ -976,6 +976,18 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .lang-switch [aria-current]{font-weight:600}
 .header .lang-switch{flex-shrink:0}
 html[lang="ru"] .header .button-small{white-space:nowrap;flex-shrink:0}
+@media(min-width:761px) and (max-width:1100px){
+  html[lang="ru"] .header .brand{flex-shrink:0}
+  html[lang="ru"] .header .lang-switch{margin-left:auto}
+  html[lang="ru"] .header .menu-toggle{display:flex;align-items:center;gap:15px;background:transparent;padding:12px 0;font-size:12px;order:2}
+  html[lang="ru"] .header .menu-toggle span{font-size:20px}
+  html[lang="ru"] .header nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);padding:15px var(--gutter) 25px;box-shadow:0 15px 20px #231f1b12;align-items:stretch}
+  html[lang="ru"] .header nav.open{display:flex;flex-direction:column;gap:0;max-height:calc(100dvh - 86px);overflow-y:auto}
+  html[lang="ru"] .header nav.open>a:not(.button){display:block;font-size:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+  html[lang="ru"] .header nav .button{margin-top:18px}
+  html[lang="ru"] .service-menu>summary{font-size:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+  html[lang="ru"] .service-submenu{position:static;width:auto;box-shadow:none;background:var(--surface);margin:6px 0;border:0}
+}
 @media(max-width:760px){.header .lang-switch{margin-left:auto}.header .menu-toggle{order:2}}
 .lang-fallback{display:inline-block;margin-left:.35em;font-size:.65em;line-height:1;opacity:.65;vertical-align:middle}
 .button .lang-fallback,.text-link .lang-fallback{font-size:.7em}
