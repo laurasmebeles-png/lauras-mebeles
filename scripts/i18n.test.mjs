@@ -9,16 +9,15 @@ assert.equal(hasLanguagePage('en', '/musu-darbi/k11/'), true);
 assert.equal(hasLanguagePage('en', '/musu-darbi-other/'), false);
 assert.equal(hasLanguagePage('ru', '/'), true);
 assert.equal(hasLanguagePage('ru', '/virtuves/'), true);
-assert.equal(hasLanguagePage('ru', '/kontakti/'), false);
-assert.equal(hasLanguagePage('ru', '/musu-darbi/k11/'), false);
+assert.equal(hasLanguagePage('ru', '/kontakti/'), true);
+assert.equal(hasLanguagePage('ru', '/musu-darbi/k11/'), true);
 for (const path of ['/skapji/', '/koridora-iekartas/', '/vannasistabas-mebeles/', '/sekcijas/', '/citas-mebeles/']) {
   assert.equal(hasLanguagePage('ru', path), true);
   assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
 }
 assert.deepEqual(languagesForPage('/'), ['lv', 'en', 'ru']);
 assert.deepEqual(languagesForPage('/virtuves/'), ['lv', 'en', 'ru']);
-assert.deepEqual(languagesForPage('/kontakti/'), ['lv', 'en']);
-assert.deepEqual(languagesForPage('/cenas/'), ['lv', 'en']);
+for (const path of config.pages.en) assert.deepEqual(languagesForPage(path), ['lv', 'en', 'ru']);
 const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/nepievienota/">Unavailable</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
 assert.match(links, /href="\/en\/virtuves\/\?x=1#darbi"/);
 assert.match(links, /href="\/en\/kontakti\/#pieteikums"/);
@@ -32,9 +31,10 @@ assert.equal(heading.replace(/<[^>]*>/g, ''), 'Custom kitchens and furniture');
 const emailExample = translateHtml('<input placeholder="vards@epasts.lv"><a href="mailto:info@laurasmebeles.lv">info@laurasmebeles.lv</a>', {'vards@epasts.lv':'name@example.com'}, 'en');
 assert.match(emailExample, /placeholder="name@example.com"/);
 assert.match(emailExample, /href="mailto:info@laurasmebeles.lv">info@laurasmebeles.lv<\/a>/);
-const russianLinks = translateHtml('<a href="/virtuves/">Virtuves</a><a href="/kontakti/#pieteikums">Kontakti</a>', {'Virtuves':'Кухни','Kontakti':'Контакты','Pieejams latviešu valodā':'Доступно на латышском','latviešu valodā':'на латышском'}, 'ru');
+const russianLinks = translateHtml('<a href="/virtuves/">Virtuves</a><a href="/kontakti/#pieteikums">Kontakti</a><a href="/nepievienota/">Cita lapa</a>', {'Virtuves':'Кухни','Kontakti':'Контакты','Pieejams latviešu valodā':'Доступно на латышском','latviešu valodā':'на латышском'}, 'ru');
 assert.match(russianLinks, /href="\/ru\/virtuves\/"/);
-assert.match(russianLinks, /href="\/kontakti\/#pieteikums" hreflang="lv" title="Доступно на латышском"/);
+assert.match(russianLinks, /href="\/ru\/kontakti\/#pieteikums"/);
+assert.match(russianLinks, /href="\/nepievienota\/" hreflang="lv" title="Доступно на латышском"/);
 assert.match(russianLinks, /aria-label="на латышском"/);
 
 const read = path => readFile(new URL('../' + path, import.meta.url), 'utf8');
@@ -50,7 +50,7 @@ const projectData = JSON.parse((await read(`public/${lang}/projects.js`)).replac
 const usedProjectIds = new Set();
 const usedReviewIds = new Set();
 const pages = [...config.pages[lang], ...galleryPaths.filter(path => hasLanguagePage(lang, path))];
-if (lang === 'en') assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r.id).sort());
+assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r.id).sort());
 for (const page of pages) {
   const path = page.slice(1);
   const en = await read(`public/${lang}/${path}index.html`);
@@ -58,11 +58,7 @@ for (const page of pages) {
   assert.ok(en.includes(`<html lang="${lang}">`));
   assert.ok(en.includes(`hreflang="${lang}"`));
   assert.ok(lv.includes(`hreflang="${lang}"`));
-  if (lang === 'en') assert.doesNotMatch(en, /class="lang-fallback"/);
-  if (lang === 'ru') {
-    assert.match(en, /title="Доступно на латышском"/);
-    assert.doesNotMatch(en, /Available in Latvian|in Latvian/);
-  }
+  assert.doesNotMatch(en, /class="lang-fallback"/);
   assert.match(en, /<meta name="robots" content="noindex,/);
   assert.ok(en.includes(`<link rel="canonical" href="${en.match(/<meta property="og:url" content="([^"]+)"/)[1]}">`));
   for (const alternate of ['lv', 'en', 'ru']) {

@@ -1,6 +1,6 @@
 # Krievu valodas teksti
 
-Sākumlapas un virtuves lapas teksti sagatavoti 22.11.2026. pēc Signes norādes. Signe apstiprinājusi to ievietošanu priekšskatījumā. Ieslēgtas septiņas RU pamatlapas: /ru/, /ru/virtuves/, /ru/skapji/, /ru/koridora-iekartas/, /ru/vannasistabas-mebeles/, /ru/sekcijas/ un /ru/citas-mebeles/; teksti ir src/i18n/ru.json, pilnie atsauksmju tulkojumi src/i18n/reviews.ru.json. Pārējās RU lapas vēl nav ieslēgtas.
+Pēc Signes norādes RU priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijas projektu lapas. Pamatteksti, metadati, alt/aria un saskarne ir src/i18n/ru.json. Visu 12 atsauksmju pilnie tulkojumi ir src/i18n/reviews.ru.json. Aktīvie projektu dialogu dati ietver 41 unikālu ierakstu. [Atlikušo septiņu lapu teksti un pārbaudes](parejo-lapu-teksti.md).
 
 | Fails | Saturs | Statuss |
 |---|---|---|
@@ -12,6 +12,13 @@ Sākumlapas un virtuves lapas teksti sagatavoti 22.11.2026. pēc Signes norādes
 | vannasistabas-mebeles.md | Vannas istabas mēbeles, četri projekti, pasūtīšanas ierobežojums, metadati | Apstiprināts un ievietots priekšskatījumā |
 | sekcijas.md | Viesistabas mēbeles, pieci projekti, praktiskās izvēles, metadati | Apstiprināts un ievietots priekšskatījumā |
 | citas-mebeles.md | Citas mēbeles, seši projekti, praktiskās izvēles, metadati | Apstiprināts un ievietots priekšskatījumā |
+| pakalpojumi.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
+| par-mums.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
+| kontakti.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
+| cenas.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
+| iedvesmai.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
+| musu-darbi.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
+| virtuves-mebeles-atsauksmes-virtuves-iekartas.md | Atlikušās pamatlapas pilnais teksts un metadati | Pārbaudīts un ieslēgts pēc Signes norādes |
 
 ## Saglabājamais virziens
 
@@ -34,11 +41,11 @@ Pārbaudes ir AI apakšaģentu redakcija. Tās nav cilvēka dzimtās valodas red
 
 ## Ieviešanas turpinājums
 
-Pirmajām divām RU lapām pārtulkota kopīgā navigācija, kājene, dialogi, pieejamības apraksti, attēlu alt un runtime vadības teksti. Valodu pārslēdzējs un hreflang rāda RU septiņās apstiprinātajās pamatlapās. Saites uz vēl netulkotām lapām saglabā LV adresi ar LV norādi un krievu paskaidrojumu. RU projektu dati aptver septiņās lapās izmantotos 33 unikālos ierakstus. Kirilicai pievienoti tā paša EB Garamond fonta faili.
+Pirmajām divām RU lapām pārtulkota kopīgā navigācija, kājene, dialogi, pieejamības apraksti, attēlu alt un runtime vadības teksti. Valodu pārslēdzējs un hreflang tagad rāda RU visās 14 pamatlapās un 174 galerijas projektu lapās. Galvenās iekšējās saites paliek RU versijā bez LV norādēm. Projektu dialogu dati aptver 41 izmantotu unikālu ierakstu. Kirilicai pievienoti tā paša EB Garamond fonta faili.
 
 Pēc Signes pēdējās izvēles kontaktblokā saglabāts sākotnējais pārbaudītais teikums: «Для начала достаточно идеи. Расскажите нам о ней, и мы вместе продумаем, как её воплотить.» Variants ar «что вы задумали» netiek izmantots.
 
-Veiksmīgi npm run check un npm run test:i18n: 14 EN pamatlapas, 174 EN projektu lapas un 7 RU lapas, tekstu pārklājums, struktūra, attēli, saites, hreflang, pilnās atsauksmes un projektu kartīšu/dialogu atbilstība. Lokāli pārbaudīts datora un mobilais izkārtojums, atsauksmes izvēršana, pirms/pēc slīdnis, projekta dialoga 1 / 4 uz 2 / 4 pāršķiršana, mobilā izvēlne un EN/RU pārslēgšana virtuvju lapā. Priekšskatījuma noindex saglabāts. Reālā forma, privātums, piekrišana un citi palaišanas darbi paliek PLAN.md kontrolsarakstā. Tālāk gatavojamas pārējo RU lapu sagataves ar tādu pašu neatkarīgu valodas un faktu pārbaudi.
+Veiksmīgi npm run check un npm run test:i18n: 14 EN pamatlapas, 174 EN projektu lapas un RU 14 pamatlapas + 174 projektu lapas, tekstu pārklājums, struktūra, attēli, saites, hreflang, pilnās atsauksmes un projektu kartīšu/dialogu atbilstība. Lokāli pārbaudīts datora un mobilais izkārtojums, atsauksmes izvēršana, pirms/pēc slīdnis, projekta dialoga 1 / 4 uz 2 / 4 pāršķiršana, mobilā izvēlne un EN/RU pārslēgšana virtuvju lapā. Priekšskatījuma noindex saglabāts. Reālā forma, privātums, piekrišana un citi palaišanas darbi paliek PLAN.md kontrolsarakstā. Visu pārējo RU lapu sagatavošana un pārbaudes pabeigtas, sk. parejo-lapu-teksti.md.
 
 Signes maketa precizējums: tikai sākumlapas faktu joslas ražotnes blokā īsais variants «Собственный цех» / «Детали делаем в Риге», pēc atsevišķas RU valodas pārbaudes. Ražotnes sadaļas mazais virsraksts paliek «Собственное производство в Риге».
 
@@ -51,7 +58,7 @@ RU augšējā josla pārbaudīta ar gala nosaukumu «Вдохновение». L
 
 ## Piecu pārējo mēbeļu lapu ieviešana
 
-22.11.2026. Signe lūgusi turpināt ar pārējām mēbeļu kategorijām un izmantot neatkarīgus apakšaģentus valodas un izpētes atbilstības pārbaudei. Pilnie teksti ir augstāk norādītajos piecos failos; pārskats Signei latviski ir parejo-mebelu-teksti.md. Pēc pārbaudēm Signe apstiprinājusi visu piecu lapu ievietošanu priekšskatījumā un Vercel atjaunināšanu. Aktīvas septiņas RU pamatlapas.
+22.11.2026. Signe lūgusi turpināt ar pārējām mēbeļu kategorijām un izmantot neatkarīgus apakšaģentus valodas un izpētes atbilstības pārbaudei. Pilnie teksti ir augstāk norādītajos piecos failos; pārskats Signei latviski ir parejo-mebelu-teksti.md. Pēc pārbaudēm Signe apstiprinājusi visu piecu lapu ievietošanu priekšskatījumā un Vercel atjaunināšanu. Tajā posmā ieslēgtas septiņas RU pamatlapas; turpinājumā pabeigtas visas 14 un galerijas projektu lapas.
 
 Visās piecās lapās saglabāti faktiskās LV versijas bloki, projektu secība un pilnie apraksti, galeriju aicinājumi, trīs praktiskie punkti un konkrētās kategorijas cenas faktori. Projektu skaits pa lapām: 8, 4, 4, 5 un 6. Krēmkrāsas skapja un zaļās tumbiņas kopīgie apraksti abās attiecīgajās lapās ir identiski. Vannas istabas pasūtīšanas ierobežojums saglabāts atsevišķi ievadā un meta aprakstā. Izņemtais virtuves/nolaižamās gultas piemērs nav atjaunots; nav pievienoti neesoši projekti izpētes sinonīmu dēļ.
 

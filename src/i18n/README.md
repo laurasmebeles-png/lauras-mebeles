@@ -6,7 +6,7 @@ atslēga = latviešu teksta fragments, vērtība = tulkojums. Tukša vērtība `
 ## Kā pievienot valodu
 1. `npm run i18n:extract` ģenerē lapas un papildina visas vārdnīcas ar jaunajiem fragmentiem (`""`).
 2. Aizpilda `src/i18n/<kods>.json` (piem. `en.json`).
-3. Ieslēdz valodu `src/i18n/config.json` laukā `enabled` (piem. `["lv","en"]`). Laukā `pages.<kods>` norāda apstiprināto pamatlapu ceļus. EN pašlaik ieslēgtas visas 14 pamatlapas, RU sākumlapa un visas sešas mēbeļu kategorijas (septiņas pamatlapas). `pageTrees.en: ["/musu-darbi/"]` ieslēdz arī šīs galerijas ģenerētās projektu apakšlapas.
+3. Ieslēdz valodu `src/i18n/config.json` laukā `enabled` (piem. `["lv","en"]`). Laukā `pages.<kods>` norāda apstiprināto pamatlapu ceļus. EN un RU pašlaik ieslēgtas visas 14 pamatlapas. `pageTrees.en` un `pageTrees.ru` ar `["/musu-darbi/"]` ieslēdz arī galerijas 174 ģenerētās projektu apakšlapas.
 4. `npm run build`. Lapas parādās `public/<kods>/...`, parādās valodu pārslēdzējs un `hreflang`.
 
 ## Ko tulko
