@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
+status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
 updated: 2026-11-22
 source_path: /cenas/
 title: Kitchen price examples | Lauras mēbeles
@@ -10,7 +10,7 @@ SEO fokuss: custom kitchen cost; kitchen prices; custom kitchen price; custom fu
 
 Sadaļas un projekti seko pašreizējās LV lapas secībai. Atslēgvārdu saraksts un redaktores piezīmes nav lapā ievietojams teksts.
 
-Cenu pārbaudes piezīme: summas un komplektācijas pārceltas no pašreizējā LV priekšskatījuma. Šis tulkojums nav jauns klienta cenu apstiprinājums. Pirms EN cenu lapas ievietošanas jāsalāgo tās ar saskaņotajām cenām.
+Cenu pārbaudes piezīme: summas un komplektācijas pārceltas no pašreizējā LV priekšskatījuma. EN formulējumi apstiprināti priekšskatījumam. Cenu un specifikāciju klienta apstiprinājums publiskai palaišanai vēl jāpārbauda.
 
 
 Home / Prices
@@ -39,7 +39,7 @@ Layout. Approximately 3.2 to 3.6 m along one wall.
 
 Specification. Wall units with an upper tier of cupboards, two tall units, a worktop and a splashback.
 
-Enquire about a kitchen like this
+Get a quote for a similar kitchen
 
 From sketch to 3D design
 
@@ -53,7 +53,7 @@ Layout. Approximately 2.2 m + 2.4 m along two walls, with a tall unit.
 
 Specification. Wall units with an upper tier of cupboards, a worktop, a splashback, drawers and space for built-in appliances.
 
-Enquire about a kitchen like this
+Get a quote for a similar kitchen
 
 From sketch to 3D design
 
@@ -67,7 +67,7 @@ Layout. Approximately 2.4 m + 3.2 m along two walls, with tall units and wall un
 
 Specification. This price example is based on EGGER laminate cabinet doors, a worktop and a splashback.
 
-Enquire about a kitchen like this
+Get a quote for a similar kitchen
 
 From sketch to 3D design
 
@@ -81,7 +81,7 @@ Layout. A working area along one wall and a separate island with seating.
 
 Specification. Wall units, a glass display cabinet and space for appliances. We’ll specify the materials and fittings in the quote.
 
-Enquire about a kitchen like this
+Get a quote for a similar kitchen
 
 From sketch to 3D design
 
@@ -95,7 +95,7 @@ Layout. Approximately 3 m + 3.5 m along two walls, with tall units and a display
 
 Specification. Painted MDF cabinet doors, a DEKTON ceramic worktop, an HPL splashback and a display cabinet with LED lighting.
 
-Enquire about a kitchen like this
+Get a quote for a similar kitchen
 
 About these price examples
 
@@ -127,9 +127,9 @@ Do you also make wardrobes and other furniture?
 
 Yes. As well as kitchens, we make built-in wardrobes and furniture for hallways, bathrooms, living rooms and other spaces.
 
-Can I order furniture for a home outside Riga?
+Do you deliver and install furniture outside Latvia?
 
-Yes, we accept orders from across Latvia. Tell us where the property is so we can discuss the arrangements and costs for measuring, delivery and installation.
+Yes. We have delivered and installed furniture across Europe, including the UK, Norway, Sweden and Finland. Tell us where your project is, and we’ll discuss the options and costs for measuring, delivery and installation.
 
 How long will my furniture take to make?
 

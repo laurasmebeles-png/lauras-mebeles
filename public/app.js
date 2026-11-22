@@ -104,7 +104,7 @@ function applyProjectFilter(filter, updateUrl = true) {
 function renderGalleryCards() {
   const matching = galleryCards.filter(card => currentGalleryFilter === 'all' || card.dataset.category.split(' ').includes(currentGalleryFilter));
   galleryCards.forEach(card => { card.hidden = !matching.includes(card) || matching.indexOf(card) >= galleryLimit; });
-  if ($('#gallery-count')) $('#gallery-count').textContent = `Projekti: ${matching.length}`;
+  if ($('#gallery-count')) $('#gallery-count').textContent = `${T('Projekti:')} ${matching.length}`;
   const more = $('#gallery-more'); if (more) more.hidden = matching.length <= galleryLimit;
 }
 filters.forEach(button => button.addEventListener('click',()=> { applyProjectFilter(button.dataset.filter); track('gallery_filter',{category:button.dataset.filter}); }));

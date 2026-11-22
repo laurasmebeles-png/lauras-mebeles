@@ -44,12 +44,12 @@ function markdown(html){
     .replace(/<[^>]+>/g,''))
     .replace(/[ \t]+/g,' ').replace(/ *\n */g,'\n').replace(/\n{3,}/g,'\n\n').trim();
 }
-const index=['# EN lapu teksti un melnraksti','',
+const index=['# EN lapu teksti','',
   '22.11.2026. Stila redakcija v2. Pie katras lapas norādīts, vai tās teksts ir ievietots priekšskatījumā vai vēl izskatāms. Saglabāta pašreizējo LV lapu satura secība un projektu atlase. Atsauksmes tulkotas cieši pēc oriģināla, bez SEO pārrakstīšanas.',''];
 for(const page of pages){
   const approved=hasLanguagePage('en',page.lv_path);
   const name=page.lv_path.split('/').filter(Boolean).join('-')+'.md';
-  const note=page.id==='prices'?'\nCenu pārbaudes piezīme: summas un komplektācijas pārceltas no pašreizējā LV priekšskatījuma. Šis tulkojums nav jauns klienta cenu apstiprinājums. Pirms EN cenu lapas ievietošanas jāsalāgo tās ar saskaņotajām cenām.\n':'';
+  const note=page.id==='prices'?'\nCenu pārbaudes piezīme: summas un komplektācijas pārceltas no pašreizējā LV priekšskatījuma. EN formulējumi apstiprināti priekšskatījumam. Cenu un specifikāciju klienta apstiprinājums publiskai palaišanai vēl jāpārbauda.\n':'';
   const meta=['---',`status: ${approved?'Signes apstiprināts teksts, ievietots EN priekšskatījumā':'redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai'}`,'updated: 2026-11-22',`source_path: ${page.lv_path}`,`title: ${page.en.title}`,`description: ${page.en.description}`,'---','',
     `SEO fokuss: ${[page.en.primary,...page.en.secondary].filter(Boolean).join('; ')||'zīmola vai funkcionāls nolūks'}.`,'',
     'Sadaļas un projekti seko pašreizējās LV lapas secībai. Atslēgvārdu saraksts un redaktores piezīmes nav lapā ievietojams teksts.',note,'',markdown(page.html),''].join('\n');

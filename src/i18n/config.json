@@ -37,7 +37,16 @@
       "/citas-mebeles/",
       "/pakalpojumi/",
       "/par-mums/",
-      "/kontakti/"
+      "/kontakti/",
+      "/cenas/",
+      "/musu-darbi/",
+      "/iedvesmai/",
+      "/virtuves-mebeles-atsauksmes-virtuves-iekartas/"
+    ]
+  },
+  "pageTrees": {
+    "en": [
+      "/musu-darbi/"
     ]
   }
 }

@@ -34,7 +34,7 @@ VS Code ir pievienots arī uzdevums **Terminal → Run Task → Atvērt Lauras m
 | `docs/research/valodas-un-en-izpete-2026-11-22.md` | EN/RU/NO lokalizācijas plāns un pirmā EN frāžu pārbaude Latvijai |
 | `docs/research/2026-11-22/secinajumi-un-lietosana.md` | Pabeigtā EN/RU/NO formulējumu izpēte, 555 frāžu un valstu novērojumi un lapu karte |
 | `content/lv/` | Latviešu lapu satura sagataves |
-| `content/en/` | Apstiprinātie desmit EN lapu teksti un atlikušo četru lapu melnraksti |
+| `content/en/` | Apstiprinātie visu 14 EN pamatlapu teksti un to statusi |
 | `assets/originals/` | Darba foto un logo oriģināli, kas paliek lokāli |
 | `public/images/` | Publicēšanai sagatavotie attēli |
 | `src/home.html` | Sākumlapas avots un koplietoto sadaļu sagatave |
@@ -69,7 +69,7 @@ Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109
 
 ## Priekšskatījums (Vercel)
 
-EN priekšskatījumā ieslēgtas desmit lapas: sākumlapa, visas sešas mēbeļu kategorijas un `/en/pakalpojumi/`, `/en/par-mums/`, `/en/kontakti/`. Signe apstiprinājusi šo lapu tekstus. Kontaktlapā pieejams LV/EN pārslēdzējs un iztulkota formas izmēģinājuma vadība; e-pastu sūtīšana joprojām nav pieslēgta. Atlikušās četras lapas (cenas, mūsu darbi, iedvesmai, atsauksmes) vēl ir melnraksti bez EN adresēm. [Teksti un statusi](content/en/parejo-lapu-melnraksti.md). Atsauksmju tulkojumi saglabā oriģinālo secību un izteiksmi. Lapas, kas pieejamas tikai latviski, EN navigācijā marķētas ar LV.
+EN priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijā izmantotās projektu lapas. Signe apstiprinājusi tekstus, tostarp cenu piemēru pogu “Get a quote for a similar kitchen” un EN jautājumu/atbildi par piegādi un montāžu ārpus Latvijas. LV/EN pārslēdzējs pieejams arī projektu lapās un saglabā pašreizējo lapu. [Teksti un statusi](content/en/parejo-lapu-melnraksti.md). Atsauksmju oriģināli un pilnie tulkojumi saglabāti bez pārfrāzēšanas. Formai joprojām ir tikai izmēģinājuma darbība bez e-pastu sūtīšanas. Cenu piemēri izmanto pašreizējā LV priekšskatījuma summas un specifikācijas; klienta apstiprinājums publiskai palaišanai vēl jāpārbauda.
 
 Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, visām atbildēm `X-Robots-Tag: noindex, nofollow`. Pirms īstās palaišanas šo galveni un `robots.txt` aizliegumu izņem (PLAN.md, 8. punkts). Priekšskatījuma saite: https://lauras-mebeles.vercel.app/ (Vercel Hobby, GitHub repo laurasmebeles-png/lauras-mebeles; katrs `git push` uz `main` to atjaunina).
 

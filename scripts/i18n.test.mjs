@@ -4,14 +4,17 @@ import {config, decode, hasLanguagePage, languagesForPage, prefixLinks, translat
 
 assert.equal(hasLanguagePage('en', 'virtuves'), true);
 assert.equal(hasLanguagePage('en', '/kontakti/'), true);
-assert.equal(hasLanguagePage('en', '/cenas/'), false);
+assert.equal(hasLanguagePage('en', '/cenas/'), true);
+assert.equal(hasLanguagePage('en', '/musu-darbi/k11/'), true);
+assert.equal(hasLanguagePage('en', '/musu-darbi-other/'), false);
 assert.deepEqual(languagesForPage('/'), ['lv', 'en']);
 assert.deepEqual(languagesForPage('/kontakti/'), ['lv', 'en']);
-assert.deepEqual(languagesForPage('/cenas/'), ['lv']);
-const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
+assert.deepEqual(languagesForPage('/cenas/'), ['lv', 'en']);
+const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/nepievienota/">Unavailable</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
 assert.match(links, /href="\/en\/virtuves\/\?x=1#darbi"/);
 assert.match(links, /href="\/en\/kontakti\/#pieteikums"/);
-assert.match(links, /href="\/cenas\/" hreflang="lv"/);
+assert.match(links, /href="\/en\/cenas\/"/);
+assert.match(links, /href="\/nepievienota\/" hreflang="lv"/);
 assert.match(links, /class="lang-fallback"/);
 assert.match(links, /href="\/images\/a.webp"/);
 assert.match(links, /href="\/" hreflang="lv"/);
@@ -30,13 +33,17 @@ const usedProjectIds = new Set();
 const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'SIA “Lauras mēbeles”']);
 assert.deepEqual(Object.keys(englishReviews).sort(), sourceReviews.map(r => r.id).sort());
 const plain = html => decode(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
-for (const page of config.pages.en) {
+const galleryPaths = [...(await read('public/musu-darbi/index.html')).matchAll(/href="(\/musu-darbi\/[^"/]+\/)"/g)].map(m => m[1]);
+const pages = [...config.pages.en, ...galleryPaths];
+const checkedTargets = new Set();
+for (const page of pages) {
   const path = page.slice(1);
   const en = await read(`public/en/${path}index.html`);
   const lv = await read(`public/${path}index.html`);
   assert.match(en, /<html lang="en">/);
   assert.match(en, /hreflang="en"/);
   assert.match(lv, /hreflang="en"/);
+  assert.doesNotMatch(en, /class="lang-fallback"/);
   assert.equal([...en.matchAll(/<h1\b/g)].length, 1);
   const sections = html => [...html.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map(m => m[1]);
   assert.deepEqual(sections(en), sections(lv));
@@ -67,17 +74,19 @@ for (const page of config.pages.en) {
     assert.ok(card.includes(sourceReviews.find(r => r.id === id).author));
   }
   for (const [, target] of en.matchAll(/(?:href|src)="(\/[^"#?]*)/g)) {
-    if (target.startsWith('//')) continue;
+    if (target.startsWith('//') || checkedTargets.has(target)) continue;
     const destination = new URL('../public' + target, import.meta.url);
     const info = await stat(destination);
     if (info.isDirectory()) await stat(new URL('index.html', destination.href.replace(/\/?$/, '/')));
+    checkedTargets.add(target);
   }
 }
 for (const root of ['public', 'dist']) {
   const directories = config.pages.en.filter(path => path !== '/').map(path => path.replaceAll('/', ''));
   assert.deepEqual((await readdir(new URL(`../${root}/en/`, import.meta.url))).sort(), ['index.html', 'projects.js', ...directories].sort());
+  assert.deepEqual((await readdir(new URL(`../${root}/en/musu-darbi/`, import.meta.url))).sort(), ['index.html', ...galleryPaths.map(path => path.split('/')[2])].sort());
 }
 assert.deepEqual(projectData.map(p => p.id).sort(), [...usedProjectIds].sort());
 assert.match(await read('public/kontakti/index.html'), /hreflang="en"/);
-assert.doesNotMatch(await read('public/cenas/index.html'), /hreflang="en"/);
-console.log(`${config.pages.en.length} EN lapas: maršruti, saites, visi tulkojumi, struktūra, attēli, projektu dialogi un atsauksmes pārbaudīti.`);
+assert.match(await read('public/cenas/index.html'), /hreflang="en"/);
+console.log(`${config.pages.en.length} EN pamatlapas un ${galleryPaths.length} projektu lapas: maršruti, saites, tulkojumi, struktūra, attēli, dialogi un atsauksmes pārbaudīti.`);

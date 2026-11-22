@@ -9,7 +9,7 @@ export const defaultLang = config.default;
 export const enabledLangs = config.enabled;
 export const langPrefix = lang => (lang === defaultLang ? '' : `/${lang}`);
 export const pagePath = path => '/' + String(path).replace(/^\/+|\/+$/g, '') + (String(path).replace(/^\/+|\/+$/g, '') ? '/' : '');
-export const hasLanguagePage = (lang, path) => lang === defaultLang || !config.pages?.[lang] || config.pages[lang].includes(pagePath(path));
+export const hasLanguagePage = (lang, path) => lang === defaultLang || !config.pages?.[lang] || config.pages[lang].includes(pagePath(path)) || (config.pageTrees?.[lang] || []).some(root => pagePath(path).startsWith(pagePath(root)));
 export const languagesForPage = path => enabledLangs.filter(lang => hasLanguagePage(lang, path));
 
 export async function loadDicts() {
