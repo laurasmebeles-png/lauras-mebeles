@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
+status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
 updated: 2026-11-22
 source_path: /pakalpojumi/
 title: Made-to-measure furniture | Lauras mēbeles
@@ -27,7 +27,7 @@ Built-in wardrobes and walk-in wardrobes, with shelves and drawers arranged arou
 
 ### Hallway furniture
 
-A place for coats and shoes, and somewhere to sit.
+Hallway cabinets and seating, with storage for coats and shoes.
 
 ### Bathroom furniture
 

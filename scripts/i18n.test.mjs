@@ -3,17 +3,23 @@ import {readFile, readdir, stat} from 'node:fs/promises';
 import {config, decode, hasLanguagePage, languagesForPage, prefixLinks, translateHtml, walkHtml} from './i18n.mjs';
 
 assert.equal(hasLanguagePage('en', 'virtuves'), true);
-assert.equal(hasLanguagePage('en', '/kontakti/'), false);
+assert.equal(hasLanguagePage('en', '/kontakti/'), true);
+assert.equal(hasLanguagePage('en', '/cenas/'), false);
 assert.deepEqual(languagesForPage('/'), ['lv', 'en']);
-assert.deepEqual(languagesForPage('/kontakti/'), ['lv']);
-const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
+assert.deepEqual(languagesForPage('/kontakti/'), ['lv', 'en']);
+assert.deepEqual(languagesForPage('/cenas/'), ['lv']);
+const links = prefixLinks('<a href="/virtuves/?x=1#darbi">Kitchens</a><a href="/kontakti/#pieteikums">Contact</a><a href="/cenas/">Prices</a><a href="/images/a.webp">Photo</a><a href="/" hreflang="lv">LV</a>', 'en');
 assert.match(links, /href="\/en\/virtuves\/\?x=1#darbi"/);
-assert.match(links, /href="\/kontakti\/#pieteikums" hreflang="lv"/);
+assert.match(links, /href="\/en\/kontakti\/#pieteikums"/);
+assert.match(links, /href="\/cenas\/" hreflang="lv"/);
 assert.match(links, /class="lang-fallback"/);
 assert.match(links, /href="\/images\/a.webp"/);
 assert.match(links, /href="\/" hreflang="lv"/);
 const heading = translateHtml('<h1 data-i18n-key="home.hero.title">LV<span class="nk-hero-break"><br></span> title</h1>', {'home.hero.title': 'Custom kitchens\nand furniture'}, 'en');
 assert.equal(heading.replace(/<[^>]*>/g, ''), 'Custom kitchens and furniture');
+const emailExample = translateHtml('<input placeholder="vards@epasts.lv"><a href="mailto:info@laurasmebeles.lv">info@laurasmebeles.lv</a>', {'vards@epasts.lv':'name@example.com'}, 'en');
+assert.match(emailExample, /placeholder="name@example.com"/);
+assert.match(emailExample, /href="mailto:info@laurasmebeles.lv">info@laurasmebeles.lv<\/a>/);
 
 const read = path => readFile(new URL('../' + path, import.meta.url), 'utf8');
 const englishReviews = JSON.parse(await read('src/i18n/reviews.en.json'));
@@ -21,7 +27,7 @@ const sourceReviews = JSON.parse(await read('src/reviews.json'));
 const dict = JSON.parse(await read('src/i18n/en.json'));
 const projectData = JSON.parse((await read('public/en/projects.js')).replace('window.LAURAS_PROJECTS = ', '').replace(/;\s*$/, ''));
 const usedProjectIds = new Set();
-const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN']);
+const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'SIA “Lauras mēbeles”']);
 assert.deepEqual(Object.keys(englishReviews).sort(), sourceReviews.map(r => r.id).sort());
 const plain = html => decode(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 for (const page of config.pages.en) {
@@ -72,5 +78,6 @@ for (const root of ['public', 'dist']) {
   assert.deepEqual((await readdir(new URL(`../${root}/en/`, import.meta.url))).sort(), ['index.html', 'projects.js', ...directories].sort());
 }
 assert.deepEqual(projectData.map(p => p.id).sort(), [...usedProjectIds].sort());
-assert.doesNotMatch(await read('public/kontakti/index.html'), /hreflang="en"/);
+assert.match(await read('public/kontakti/index.html'), /hreflang="en"/);
+assert.doesNotMatch(await read('public/cenas/index.html'), /hreflang="en"/);
 console.log(`${config.pages.en.length} EN lapas: maršruti, saites, visi tulkojumi, struktūra, attēli, projektu dialogi un atsauksmes pārbaudīti.`);

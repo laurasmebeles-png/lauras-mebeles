@@ -91,3 +91,9 @@ Pēc Signes apstiprinājuma ieslēgtas `/en/skapji/`, `/en/koridora-iekartas/`, 
 Papildu labojums pēc Signes norādes: “Citas mēbeles” sadaļā “Ko pārrunāsim” abās valodās izņemts tikai piemērs par virtuvi un nolaižamu gultu. Vispārīgā doma par vairāku funkciju apvienošanu un pārējais saturs paliek.
 
 `npm run test:i18n` aptver visas septiņas EN lapas: pārbauda teksta/atribūtu tulkojumu pārklājumu, sadaļu un izkārtojuma marķējumu, attēlus, saites, valodu adreses un kartīšu/dialogu tekstu atbilstību. Pārlūkā pārbaudītas visas piecas jaunās lapas datora un 390 × 844 telefona skatā, nav horizontālas pārplūdes. Pārbaudīts skapja projekta dialogs, foto pāršķiršana, LV/EN pārslēgšana un piemēra izņemšana abās valodās. Atsauksmju avoti un tulkojumi šajā izmaiņā nav mainīti.
+
+## 22.11.2026: mēbeļu pārskats, “Par mums” un kontakti EN
+
+Pēc Signes apstiprinājuma ieslēgtas `/en/pakalpojumi/`, `/en/par-mums/` un `/en/kontakti/`. Pārnesti abi pēdējie precizējumi: pārskata priekšnama kartīte konkrēti nosauc skapjus, sēdvietu un glabāšanu; ražotnes rindkopā lietots “our own workshop in Riga”. Saglabāta esošā struktūra un izvietojums. Iztulkoti metadati, attēlu/video un kartes apraksti, formas vadība, izvēlētā cenu piemēra konteksts un lokālās formas pārbaudes paziņojums. E-pasta lauka piemērs lokalizēts, īstā uzņēmuma e-pasta adrese saglabāta.
+
+`npm run check`, `npm run test:i18n` (desmit EN lapas un build), melnrakstu ģenerēšana un `git diff --check` veiksmīgi. Pārlūkā pārbaudītas trīs lapas 1440 × 900 un 390 × 844 skatā bez horizontālas pārplūdes. Kontaktlapā pārbaudīta pāreja LV → EN un EN → LV, e-pasta/tālruņa lauku maiņa, izvēlētā cenu piemēra noņemšana un formas izmēģinājums ar skaidru angļu paziņojumu, ka pieteikums nav nosūtīts. Ārējā e-pastu piegāde nav pievienota. Atlikušās četras pamatlapas paliek melnrakstos.

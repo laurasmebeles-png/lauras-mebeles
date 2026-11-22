@@ -48,12 +48,13 @@ export function mapProjects(projects, fn) {
 // Apstaigā HTML un katram fragmentam izsauc fn(teksts) -> jauns teksts. Atgriež jauno HTML.
 export function walkHtml(html, fn) {
   const parts = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[^>]+>)/);
-  const sub = (raw, mode) => {
+  const sub = (raw, mode, placeholder = false) => {
     const lead = raw.match(/^\s*/)[0], trail = raw.match(/\s*$/)[0];
     const core = raw.trim();
     if (!core) return raw;
     const key = decode(core).replace(/\s+/g, ' ');
-    if (!looksTranslatable(key)) return raw;
+    // Lauka piemēru drīkst lokalizēt arī tad, ja tas izskatās pēc e-pasta adreses.
+    if (!looksTranslatable(key) && !(placeholder && hasLetters(key))) return raw;
     const out = fn(key, mode);
     return out === key ? raw : lead + encode(out) + trail;
   };
@@ -69,7 +70,7 @@ export function walkHtml(html, fn) {
     if (part.startsWith('<style') || part.startsWith('<!--')) return part;
     if (part.startsWith('<')) {
       let tag = part;
-      for (const a of TAG_ATTRS) tag = tag.replace(new RegExp(`(\\s${a}=")([^"]*)(")`, 'g'), (_, p, v, q) => p + sub(v, 'attr') + q);
+      for (const a of TAG_ATTRS) tag = tag.replace(new RegExp(`(\\s${a}=")([^"]*)(")`, 'g'), (_, p, v, q) => p + sub(v, 'attr', a === 'placeholder') + q);
       if (META_RE.test(tag)) tag = tag.replace(/(\scontent=")([^"]*)(")/, (_, p, v, q) => p + sub(v, 'attr') + q);
       return tag;
     }

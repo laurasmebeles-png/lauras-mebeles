@@ -1,5 +1,5 @@
 ---
-status: redakcionāls melnraksts v2 pēc stila pārskata, Signes izskatīšanai
+status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
 updated: 2026-11-22
 source_path: /par-mums/
 title: About us | Lauras mēbeles
@@ -45,7 +45,7 @@ Our own workshop in Riga
 
 ### Made in our own workshop
 
-We make our furniture components at our workshop on Matīsa iela. We oversee the work ourselves, from preparing the parts to the finished piece.
+We make our furniture components in our own workshop in Riga. We oversee the work ourselves, from preparing the parts to the finished piece.
 
 Your browser does not support video playback.
 
