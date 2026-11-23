@@ -36,3 +36,5 @@ Katrai valodai ir atbilstoša galvene/kājene, H1, paskaidrojums, sākumlapas un
 4. Pārlūkā pārbauda datoru/telefonu, pogas un valodu maiņu. Pēc push atsevišķi pārbauda Vercel HTTP statusus, jo lokālais serveris nevar apliecināt hostinga maršrutēšanu.
 
 Avoti: [Google sitemap norādes](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap), [Vercel maršrutēšana un statusu iestatījumi](https://vercel.com/docs/project-configuration/vercel-json).
+
+23.11.2026. Vercel gala pārbaude veiksmīga: LV/EN/RU/NO neesoši un dziļi galerijas URL un tiešie error faili atgriež 404 ar pareizo valodu un HTTP noindex, HEAD bez satura. Esošās pamatlapas 200, beigu slīpsvītras normalizācija 308 saglabā query, resursi 200, sitemap XML 0 URL un robots Disallow saglabāti. Vecajam /en/kitchens/ nav aktivizēts migrācijas redirect. Noindex HTTP galvene ir pirmajā zemā līmeņa routes noteikumā ar continue:true.
