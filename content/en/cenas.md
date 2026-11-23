@@ -1,9 +1,9 @@
 ---
 status: Signes apstiprināts teksts, ievietots EN priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /cenas/
 title: Kitchen price examples | Lauras mēbeles
-description: See kitchen price examples and find out what affects the final cost. Compare layouts and specifications, then request an individual quote.
+description: Five kitchen price examples. Starting prices include design, production, delivery and installation in Latvia. Transport and installation abroad are priced separately.
 ---
 
 SEO fokuss: custom kitchen cost; kitchen prices; custom kitchen price; custom furniture prices; fitted wardrobes cost.
@@ -23,9 +23,9 @@ These five kitchen examples give you an idea of the budget. Your final price wil
 
 What the price includes
 
-### Design, delivery and installation included
+### What’s included in the starting price?
 
-Each starting price includes the design process, delivery and installation. We’ll agree the design and final price with you before production starts.
+Each starting price includes design and production, with delivery and installation included throughout Latvia. For orders outside Latvia, transport and installation are priced separately. We agree the final price with you before production begins.
 
 From sketch to 3D design
 
@@ -121,7 +121,7 @@ Yes. Tell us what furniture you have in mind. If you have rough measurements or 
 
 What affects the cost of made-to-measure furniture?
 
-The dimensions, layout, cabinet doors, surface materials, fittings and extras all play a part. Our quote includes design, delivery and installation. We’ll agree on appliances separately.
+The price depends on dimensions, layout, front and worktop materials, fittings and any additional features. We design and make your furniture, deliver it and install it. Transport and installation outside Latvia are priced separately. Appliances are agreed separately.
 
 Do you also make wardrobes and other furniture?
 
@@ -129,7 +129,7 @@ Yes. As well as kitchens, we make built-in wardrobes and furniture for hallways,
 
 Do you deliver and install furniture outside Latvia?
 
-Yes. We have delivered and installed furniture across Europe, including Germany, the Netherlands, Sweden and the UK. Tell us where your project is, and we’ll discuss the options and costs for measuring, delivery and installation.
+Yes. We have delivered and installed furniture across Europe, including Germany, the Netherlands, Sweden and the UK. We handle the full process, from design and production to delivery and installation. Transport and installation outside Latvia are priced separately. Tell us where your project is so we can discuss measuring, delivery and installation arrangements.
 
 How long will my furniture take to make?
 

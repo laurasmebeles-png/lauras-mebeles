@@ -1,10 +1,10 @@
 ---
 status: Signes apstiprināts pēc neatkarīgām pārbaudēm, ieslēgts NO priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /cenas/
 source_files: scripts/generate-pages.mjs, src/catalog.mjs
 title: Priseksempler på kjøkken | Lauras mēbeles
-description: Se fem priseksempler på kjøkken med ulike planløsninger og utførelser. Planlegging, levering og montering er inkludert i startprisen.
+description: Se fem priseksempler på kjøkken med ulike planløsninger og utførelser. Hva er inkludert i startprisen? i startprisen.
 ---
 
 Sadaļas, pieci cenu piemēri, summas, izmēri un komplektācijas saglabātas pašreizējās LV lapas secībā. Sākumcenas nav pārrēķinātas NOK. Klienta apstiprinājums cenu summām un specifikācijām publiskai palaišanai vēl jāpārbauda. Latviskās piezīmes nav vietnes teksts. Lapa ieslēgta NO priekšskatījumā pēc Signes apstiprinājuma.
@@ -19,9 +19,9 @@ Disse fem kjøkkeneksemplene gir en pekepinn på budsjettet. Sluttprisen avhenge
 
 Dette er inkludert
 
-## Planlegging, levering og montering er inkludert
+## Hva er inkludert i startprisen?
 
-Den oppgitte startprisen på kjøkkenet inkluderer planlegging og avklaring av prosjektet, levering og montering. Endelig pris avtaler vi før produksjonen starter.
+Startprisen inkluderer planlegging og produksjon, samt levering og montering i hele Latvia. Ved levering utenfor Latvia beregner vi transport- og monteringskostnader separat. Endelig pris avtaler vi før produksjonen starter.
 
 **Attēla paraksts:** Fra skisse til 3D-visualisering
 
@@ -117,7 +117,7 @@ Ja. Fortell oss hvilke møbler du ønsker. Hvis du kjenner omtrentlige mål elle
 
 ### Hva avgjør prisen på møblene?
 
-Prisen avhenger av størrelse, planløsning, materialene i fronter og overflater, beslag og tilleggsutstyr. Tilbudet inkluderer planlegging, levering og montering. Hvitevarer avtaler vi separat.
+Prisen avhenger av størrelse, planløsning, materialene i fronter og overflater, beslag og tilleggsutstyr. Vi planlegger og produserer møblene og sørger for levering og montering. Ved levering utenfor Latvia beregner vi transport- og monteringskostnader separat. Hvitevarer avtaler vi separat.
 
 ### Lager dere også garderober og andre møbler?
 
@@ -125,7 +125,7 @@ Ja. I tillegg til kjøkken lager vi innebygde garderober og møbler til gangen, 
 
 ### Leverer og monterer dere møbler utenfor Latvia?
 
-Ja. Vi har levert og montert møbler i flere europeiske land, blant annet Storbritannia, Norge, Sverige og Finland. Fortell oss hvor prosjektet er, så går vi gjennom muligheter og kostnader for oppmåling, levering og montering.
+Ja. Vi har levert og montert møbler i flere europeiske land, blant annet Storbritannia, Norge, Sverige og Finland. Vi tar hånd om hele prosessen fra planlegging og produksjon til levering og montering. Ved levering utenfor Latvia beregner vi transport- og monteringskostnader separat. Fortell oss hvor prosjektet er, så kan vi gå gjennom oppmåling og vilkårene for bestillingen.
 
 ### Hvor lang er leveringstiden?
 

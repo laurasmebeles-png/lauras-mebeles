@@ -1,6 +1,6 @@
 ---
 status: Signe apstiprinājusi, teksts ievietots RU priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /
 source_files: scripts/generate-pages.mjs, src/catalog.mjs, src/reviews.json
 title: Кухни и мебель на заказ в Риге | Lauras mēbeles
@@ -82,7 +82,7 @@ Sadaļu secība atbilst pašreizējai LV sākumlapai. Latviskie bloku nosaukumi 
 
 ## Наш опыт работы за рубежом
 
-Изготавливаем мебель в Риге, доставляем и устанавливаем её в том числе за пределами Латвии.
+Для зарубежных заказов берём на себя весь процесс: проектирование, изготовление на собственном производстве в Риге, доставку и установку.
 
 Германия · Австрия · Нидерланды · Великобритания · Норвегия · Финляндия · Бельгия · Швеция · Эстония · Люксембург · Венгрия
 

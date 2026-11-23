@@ -1,6 +1,6 @@
 ---
 status: saskaņotais pamatteksts ievietots EN priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /virtuves/
 source_files: src/catalog.mjs, scripts/generate-pages.mjs
 title: Custom kitchens, made to measure | Lauras mēbeles
@@ -87,7 +87,7 @@ We talk through the built-in appliances you plan to use and where they will go.
 
 ### What affects the cost of a custom kitchen?
 
-The cabinet doors, worktop and fittings you choose all affect the price. The size and layout of your kitchen matter too. Our quote includes design, delivery and installation. We’ll agree on appliances separately.
+The price depends on the size and layout of the room, fronts, worktop and fittings. We design and make your furniture, deliver it and install it. Transport and installation outside Latvia are priced separately. Appliances are agreed separately.
 
 **Saite:** More about pricing
 

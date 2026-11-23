@@ -4,6 +4,6 @@
 
 **Доставляете ли вы мебель по всей Латвии и за границу?**
 
-Да, доставляем и устанавливаем мебель по всей Латвии. Заказы за границей обсуждаем индивидуально. Укажите, где находится объект, чтобы мы могли обсудить возможность, условия и стоимость замера, доставки и установки.
+Да, доставляем и устанавливаем мебель по всей Латвии и за границей. Для зарубежных заказов берём на себя весь процесс: проектирование, изготовление, доставку и установку. Транспортные расходы и стоимость установки за границей рассчитываем отдельно. Укажите, где планируется установить мебель, чтобы мы могли обсудить условия замера, доставки и установки.
 
 Saglabāta esošā jautājuma galvenā doma par pasūtījuma atrašanās vietu un individuāli pārrunājamām uzmērīšanas, piegādes un montāžas iespējām/izmaksām. Konkrētu valstu vai reģionu uzskaitījums nav pievienots. Nav bezmaksas piegādes vai fiksētu eksporta izmaksu solījuma. RU izpēte Latvijai nepamato izmērītu ārvalstu meklējumu priekšrocību.

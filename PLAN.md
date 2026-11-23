@@ -8,7 +8,7 @@ Sākotnējais plāns 02.11.2026., pēdējais precizējums 23.11.2026. Šis fails
 
 **Gatavs priekšskatījumā:** LV/EN/RU/NO katrai 14 pamatlapas un 174 galerijas detaļu lapas, valodu pārslēgšana, title/description, HTML lang, canonical/hreflang/OG, galerijas filtri un foto pāršķiršana, pirms/pēc, atsauksmju atlase un EN/RU oriģināli. Teksti un galvenās darbības pārbaudītas datorā un telefonā. Tas vēl neapliecina reālas formas, analītikas vai publiskās SEO migrācijas darbību.
 
-1. **Jura precizējumi un satura noslēgšana.** Apstiprināt cenu piemēru summas/komplektācijas un piegādes/montāžas teritoriju Latvijā un izmaksu kārtību ārvalstīm. Pēc atbildes saskaņot cenu skaidrojumu visās valodās. Apstiprināt foto atlasi un tad noņemt pagaidu numurus redzamajā saturā, saglabājot tehniskos ID un saites. NO oriģinālā atsauksme vēlama, bet tās saņemšana nav tehnisks palaišanas priekšnosacījums. E-pasta melnraksts sagatavots, nav nosūtīts.
+1. **Jura precizējumi un satura noslēgšana.** Juris apstiprinājis: starta cenā piegāde/montāža visā Latvijā, ārvalstīm transporta/montāžas izmaksas atsevišķi, arī eksportam pilns cikls. Foto atlase apstiprināta. Pēc lietotāja norādes precizēti teksti visās četrās valodās un noņemti redzamie atlases numuri, saglabājot 174 projektu URL, tehniskos ID un foto secību. Cenu piemēru summu/komplektāciju atsevišķs apstiprinājums vēl jāpārbauda. NO oriģinālā atsauksme vēlama, bet tās saņemšana nav tehnisks palaišanas priekšnosacījums.
 2. **Reāla kontaktforma.** Izveidot Vercel servera funkciju, Resend sūtīšanu, servera validāciju un aizsardzību pret spamu. Precizēt saņēmēju un sūtītāju, verificēt domēnu. Viena API visām četrām valodām, lokalizēti darbības paziņojumi, uzņēmuma e-pastā valoda un avota lapa. Gatavs tikai pēc reālas pieteikuma saņemšanas un kļūdu scenāriju pārbaudes. Piekļuve Resend/Turnstile un DNS vajadzīga pieslēgšanai; kodu var sagatavot iepriekš.
 3. **Privātums un analītika.** Sagatavot faktiskajai datu apstrādei atbilstošu privātuma informāciju un piekrišanas saskarni LV/EN/RU/NO. Pieslēgt vienu GA4 īpašumu ar page_language un kopīgiem notikumiem. Apstiprināts pieteikums skaitās tikai pēc servera atbildes; analītikā neiekļaut formas personas datus. Pārbaudīt piekrišanas saglabāšanos, mainot valodu. Vajadzīga piekļuve GA4 un uzņēmuma datu apstrādes nosacījumi.
 4. **SEO migrācija un kļūdu lapas.** Sitemap ģenerators, 56 pamatlapu palaišanas XML sagatave, 55 veco URL aktualizēta karte un četru valodu 404 ir sagatavoti. Vēl paliek publiskās/priekšskatījuma versijas robots/noindex pārslēgšana palaišanas posmā, uzņēmuma un navigācijas strukturētie dati un pāradresāciju ieviešana pēc saskaņošanas. Veco publikāciju/veikala lapu mērķus izvērtēt pēc satura un pieejamajiem GSC datiem. Numurētās galerijas detaļu lapas automātiski neatvērt indeksēšanai. Kodu un kartes projektu var sagatavot, nemainot dzīvo domēnu.
@@ -58,7 +58,7 @@ Signe lūdz darba gaitā atgādināt par aizmirstiem darbiem. Sākot kontaktform
 - [ ] Publicēt privātuma informāciju un piekrišanas saskarni katrā publicētajā valodā; piekrišanas izvēle saglabājas starp valodām. Turnstile paziņojumi atbilst lapas valodai.
 - [ ] Pēc jauno tehnisko funkciju ieviešanas veikt visu valodu gala pārbaudi telefonā un datorā: jaunie teksti, pogu un virsrakstu aplaušana, tiešās saites uz apakšlapām un projektu lapām, valodu pārslēdzējs, kļūdu paziņojumi un 404 lapa.
 - [ ] Pirms publiskas palaišanas apstiprināt cenu piemēru summas un specifikācijas ar klientu visām valodām. EN teksta apstiprinājums neaizstāj šo faktu apstiprinājumu.
-- [ ] Jurim precizēt cenu piemēru piegādes un montāžas teritoriju Latvijā un izmaksu kārtību ārvalstīm. Jautājums pievienots 23.11. e-pasta melnrakstam. Pēc atbildes precizēt cenas skaidrojumu visās valodās, īpaši EN/NO, pie paša iekļauto pakalpojumu bloka. Neizsecināt, ka ārvalstu piegāde/montāža ir iekļauta piemēra sākumcenā vai obligāti aprēķināma papildus, kamēr klients nav apstiprinājis nosacījumus.
+- [x] Juris precizējis un lietotājs apstiprinājis ievietot: piegāde/montāža visā Latvijā ir starta cenā, ārvalstīm transportu/montāžu aprēķina atsevišķi. Arī eksportam pilns cikls. Cenu bloks, metadati, virtuves cenu rindkopa un abu attiecīgo BUJ atbildes aktualizētas visās četrās valodās.
 
 ## Valodu darbu turpinājums
 
@@ -168,7 +168,7 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 - Pēc Signes norādes LV un RU BUJ uzsver piegādi un montāžu visā Latvijā un individuāli pārrunājamus ārvalstu pasūtījumus. RU valoda atkārtoti pārbaudīta; aktuālais teksts content/ru/buj-piegade-priekslikums-2026-11-23.md. Lietuva/Dānija pirms reģionālu apgalvojumu paplašināšanas jāprecizē; esošā saraksta pieredze atbalsta konkrētās minētās valstis.
 - Atsauksmju avoti glabāti nemainīgi. Signes jautājumam par kļūdu korektūru sagatavots izvērtējums: acīmredzamas kļūdas attēlojumā var minimāli labot, nemainot nozīmi un balsi. Četru jauno oriģinālu rakstība šobrīd saglabāta pēc ekrānattēliem.
 
-23.11.2026. E-pasta melnraksts Jurim saglabāts content/lv/epasts-jurim-2026-11-23.txt, nav nosūtīts. Tajā ir norvēģu oriģinālās atsauksmes lūgums, LV/RU piegādes uzsvars un jautājums par bilžu atlases pabeigšanu/pagaidu numuru noņemšanu. Atlases gala apstiprinājums dokumentos nav atrasts; numurējums līdz precizējumam paliek.
+23.11.2026. E-pasta melnraksts Jurim saglabāts content/lv/epasts-jurim-2026-11-23.txt, nav nosūtīts. Tajā ir norvēģu oriģinālās atsauksmes lūgums, LV/RU piegādes uzsvars un jautājums par bilžu atlases pabeigšanu/pagaidu numuru noņemšanu. Vēlāks precizējums tajā pašā datumā: lietotājs ielīmēja Jura atbildi ar apstiprinātu foto atlasi un pēc tam norādīja noņemt redzamo numurējumu.
 
 23.11.2026. EN BUJ eksporta piemēri pēc atkārtotas datu/valstu saraksta pārbaudes: Germany, the Netherlands, Sweden and the UK. Tas nav tirgu prioritāšu reitings. RU BUJ virsrakstam Перед заказом noņemts piespiedu rindas pārtraukums.
 
@@ -177,3 +177,11 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 ## 23.11.2026: tehniskā SEO sagatavošana
 
 Sagatavots sitemap ģenerators, pilna veco 55 lapu mašīnlasāma pārejas karte un LV/EN/RU/NO 404. Detaļas un palaišanas ierobežojumi: docs/seo-preview.md. Vercel migrācijas redirects nav aktivizēti, DNS nav mainīti, priekšskatījuma noindex/robots aizliegumi saglabāti. Neatrisinātajiem 21 URL lēmumiem vēl vajadzīgs izvērtējums; 24 redirects ir kandidāti, nevis klienta apstiprināti lēmumi.
+
+## 23.11.2026: Jura atbilde par piegādi un foto atlasi
+
+- [x] Piegādes teritorijas uzsvars apstiprināts.
+- [x] Latvijā starta cenā piegāde/montāža, ārvalstīm šīs izmaksas atsevišķi; pakalpojumu pilns cikls saglabāts un uzsvērts. Teksti visās četrās valodās precizēti.
+- [x] Foto atlase apstiprināta, redzamā pagaidu numerācija noņemta. Projekta atvērumā/metadata izmantots iepriekš apstiprinātais nosaukums. Foto 1/N skaitītāji un tehniskie ID saglabāti.
+- [ ] NO oriģinālā atsauksme vēl gaidāma. Var būt Google/Facebook vai tieši saņemta; avota marķējumam jāatbilst faktiskajai izcelsmei.
+- [ ] Piecu cenu piemēru konkrētās summas/komplektācijas vēl jāpārbauda pirms publiskas palaišanas. Apstiprināts izmaksu princips nav visu piemēru faktu apstiprinājums.

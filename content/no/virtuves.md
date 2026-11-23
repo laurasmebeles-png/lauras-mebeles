@@ -1,6 +1,6 @@
 ---
 status: Signes apstiprināts Bokmål teksts, ieslēgts NO priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /virtuves/
 source_files: scripts/generate-pages.mjs, src/catalog.mjs, src/reviews.json
 title: Skreddersydde kjøkken | Lauras mēbeles
@@ -85,7 +85,7 @@ Vi går gjennom hvilke integrerte hvitevarer du planlegger å bruke, og hvor de 
 
 ### Hva påvirker prisen på et skreddersydd kjøkken?
 
-Prisen avhenger av rommets størrelse, planløsning, fronter, benkeplate og utstyr. Tilbudet inkluderer planlegging, levering og montering. Hvitevarer avtaler vi separat.
+Prisen avhenger av rommets størrelse, planløsning, fronter, benkeplate og utstyr. Vi planlegger og produserer møblene og sørger for levering og montering. Ved levering utenfor Latvia beregner vi transport- og monteringskostnader separat. Hvitevarer avtaler vi separat.
 
 **Saite:** Mer om priser
 

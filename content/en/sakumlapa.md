@@ -1,6 +1,6 @@
 ---
 status: saskaņotais pamatteksts ievietots EN priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /
 source_files: scripts/generate-pages.mjs, src/catalog.mjs, src/reviews.json
 title: Custom kitchens and furniture | Lauras mēbeles
@@ -82,7 +82,7 @@ Move the slider to compare before and after.
 
 ## Our experience abroad
 
-We make your furniture in Riga and take care of delivery and installation abroad.
+We handle the full process for projects outside Latvia, from design and production in our Riga workshop to delivery and installation.
 
 Germany · Austria · The Netherlands · The United Kingdom · Norway · Finland · Belgium · Sweden · Estonia · Luxembourg · Hungary
 

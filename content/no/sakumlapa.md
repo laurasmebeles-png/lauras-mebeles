@@ -82,7 +82,7 @@ Dra i skillelinjen for å sammenligne før og etter.
 
 ## Våre prosjekter i utlandet
 
-Møblene lager vi på vårt eget verksted i Riga. Vi leverer og monterer også utenfor Latvia.
+For bestillinger utenfor Latvia tar vi hånd om hele prosessen: planlegging, produksjon på vårt eget verksted i Riga, levering og montering.
 
 Tyskland · Østerrike · Nederland · Storbritannia · Norge · Finland · Belgia · Sverige · Estland · Luxembourg · Ungarn
 
