@@ -1,23 +1,19 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "echo 'nav atkarību'",
+  "installCommand": "echo 'nav atkar\u012bbu'",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": false,
   "trailingSlash": true,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    }
-  ],
   "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      },
+      "continue": true
+    },
     {
       "src": "^/404\\.html$",
       "dest": "/404.html",

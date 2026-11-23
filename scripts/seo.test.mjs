@@ -77,8 +77,9 @@ for (const record of map.records) {
 }
 const vercel = JSON.parse(await read('vercel.json'));
 assert.equal(vercel.redirects, undefined, 'Migration redirects are not activated');
-assert.ok(vercel.headers.some(rule => rule.headers.some(header => header.key === 'X-Robots-Tag' && header.value.includes('noindex'))));
-assert.equal(vercel.routes.findIndex(route => route.handle === 'filesystem'), 2);
+assert.equal(vercel.routes[0].headers['X-Robots-Tag'], 'noindex, nofollow');
+assert.equal(vercel.routes[0].continue, true);
+assert.equal(vercel.routes.findIndex(route => route.handle === 'filesystem'), 3);
 assert.ok(vercel.routes.filter(route => route.dest).every(route => route.status === 404));
 assert.equal(await read('public/robots.txt'), 'User-agent: *\nDisallow: /\n');
 console.log('SEO: 56 launch URLs, closed preview, four localized 404 pages and all 55 legacy URLs checked.');
