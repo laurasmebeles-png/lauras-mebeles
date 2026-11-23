@@ -129,7 +129,7 @@ Yes. As well as kitchens, we make built-in wardrobes and furniture for hallways,
 
 Do you deliver and install furniture outside Latvia?
 
-Yes. We have delivered and installed furniture across Europe, including the UK, Norway, Sweden and Finland. Tell us where your project is, and we’ll discuss the options and costs for measuring, delivery and installation.
+Yes. We have delivered and installed furniture across Europe, including Germany, the Netherlands, Sweden and the UK. Tell us where your project is, and we’ll discuss the options and costs for measuring, delivery and installation.
 
 How long will my furniture take to make?
 

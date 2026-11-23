@@ -145,5 +145,11 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 
 - EN sākumlapā trīs EN oriģināli, RU sākumlapā RU oriģināls pirmais un divas esošās tulkotās atsauksmes. Jaunie oriģināli tikai savas valodas versijā; arī attiecīgās atsauksmju lapas papildinātas. LV/NO izlase nav mainīta. Avoti un iestatījumi: docs/reviews-by-language.md, src/reviews.native.json.
 - [ ] Signe palūgs Jurim atsauksmi norvēģu valodā. Pēc saņemšanas pievienot avotu un NO sākumlapas atlasi, pārbaudīt autoru/tekstu un attēlojumu. Neizsecināt klienta pilsonību no atsauksmes valodas.
-- RU BUJ par visu Latviju un ārvalstīm sagatavots izvērtēšanai content/ru/buj-piegade-priekslikums-2026-11-23.md. Tas vēl nav ievietots. Lietuva/Dānija pirms reģionālu apgalvojumu paplašināšanas jāprecizē; esošā saraksta pieredze atbalsta konkrētās minētās valstis.
+- Pēc Signes norādes LV un RU BUJ uzsver piegādi un montāžu visā Latvijā un individuāli pārrunājamus ārvalstu pasūtījumus. RU valoda atkārtoti pārbaudīta; aktuālais teksts content/ru/buj-piegade-priekslikums-2026-11-23.md. Lietuva/Dānija pirms reģionālu apgalvojumu paplašināšanas jāprecizē; esošā saraksta pieredze atbalsta konkrētās minētās valstis.
 - Atsauksmju avoti glabāti nemainīgi. Signes jautājumam par kļūdu korektūru sagatavots izvērtējums: acīmredzamas kļūdas attēlojumā var minimāli labot, nemainot nozīmi un balsi. Četru jauno oriģinālu rakstība šobrīd saglabāta pēc ekrānattēliem.
+
+23.11.2026. E-pasta melnraksts Jurim saglabāts content/lv/epasts-jurim-2026-11-23.txt, nav nosūtīts. Tajā ir norvēģu oriģinālās atsauksmes lūgums, LV/RU piegādes uzsvars un jautājums par bilžu atlases pabeigšanu/pagaidu numuru noņemšanu. Atlases gala apstiprinājums dokumentos nav atrasts; numurējums līdz precizējumam paliek.
+
+23.11.2026. EN BUJ eksporta piemēri pēc atkārtotas datu/valstu saraksta pārbaudes: Germany, the Netherlands, Sweden and the UK. Tas nav tirgu prioritāšu reitings. RU BUJ virsrakstam Перед заказом noņemts piespiedu rindas pārtraukums.
+
+23.11.2026. BUJ pieejams no kopīgās kājenes visās četrās valodās, ar tiešu saiti uz attiecīgās valodas /cenas/#jautajumi. Signe noraidīja papildu saiti pie sākumlapas cenu kartītes, lai saglabātu vizuālo līdzsvaru. Augšējā izvēlne un sākumlapas kartītes nemainās.

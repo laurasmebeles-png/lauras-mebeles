@@ -186,3 +186,14 @@ Pievienotas trīs EN un viena RU oriģinālās atsauksmes no Signes četriem ekr
 Pārbaudīti EN/RU sākumlapu un pilno atsauksmju lapu skati 1440 un 390/360 px, garās EN atsauksmes izvēršana, īstie avotu marķējumi un tulkojuma norāžu neesamība oriģināliem. Pārplūdes nav. npm run test:i18n pārbauda visas valodu lapas, pilnos citātus, atsevišķo sākumlapu secību un jauno atsauksmju neparādīšanos svešās valodās. npm run check veiksmīgs. Norvēģu oriģināls ir PLAN.md atvērts solis; RU BUJ pārmaiņa tikai priekšlikums, aktīvā atbilde nav mainīta.
 
 Gala statiskais build un node scripts/i18n.test.mjs veiksmīgi. Atsevišķi pārbaudīts, ka src/reviews.json un visu trīs valodu atsauksmju tulkojumi ir precīzi nemainīti pret iepriekšējo Git versiju.
+
+
+## 23.11.2026: piegādes BUJ Latvijai un ārvalstīm
+
+Pēc Signes norādes LV un RU jautājums/atbilde tagad aptver visu Latviju un ārvalstis, saglabājot individuāli pārrunājamas ārvalstu uzmērīšanas, piegādes un montāžas iespējas un izmaksas. RU īsais variants atkārtoti neatkarīgi pārbaudīts. EN/NO formulējumi precīzi saglabāti, pārnesot tos uz jauno LV atslēgu; nav izveidotas jaunas sadaļas vai pievienoti valstu/reģionu solījumi. Visu valodu i18n/build pārbaudes izturētas. Bilžu atlases gala apstiprinājums vēl nav noskaidrots, pagaidu numerācija nav noņemta. E-pasts Jurim sagatavots, nevis nosūtīts.
+
+Turpinājumā pēc Signes norādes arī EN BUJ valstu piemēri paplašināti ārpus sākotnējās Ziemeļvalstu/UK izlases: Vācija, Nīderlande, Zviedrija un UK, visas no faktiskās eksporta pieredzes saraksta. Keyword Planner datu intervāli netiek uzdoti par eksporta prioritāšu reitingu. RU Перед заказом noņemts piespiedu br, virsrakstu tulkojot kā vienu fragmentu; dabiska aplaušana šaurā ekrānā paliek iespējama.
+
+BUJ atrodamībai pēc Signes norādes pievienota tulkota teksta saite tikai kopīgajā kājenē uz /cenas/#jautajumi savā valodā. Signe noraidīja papildu sākumlapas saiti, lai saglabātu vizuālo līdzsvaru. Jauna sadaļa vai augšējās navigācijas elements nav izveidots; sākumlapas kartītes saglabātas. Risinājums palīdz BUJ atrast no jebkuras lapas. Kājenes palīdzības saišu lietojuma pamatojums: https://www.nngroup.com/articles/footers/ .
+
+Pēc pēdējās redakcijas veiksmīgi npm run test:i18n un npm run check. Kājenes BUJ saites pārlūkā atver attiecīgās valodas cenu lapu tieši pie jautājumiem. Pārbaudīts LV 1440 px un EN/RU/NO 390 px skats; garais EN saites nosaukums ietilpst. Sākumlapas papildu saite nav pievienota.

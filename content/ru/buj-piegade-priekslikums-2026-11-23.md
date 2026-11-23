@@ -1,9 +1,9 @@
-# RU jautājuma par piegādi priekšlikums
+# RU jautājums par piegādi
 
-23.11.2026. Signes izvērtēšanai. Šis teksts vēl nav ievietots vietnē. Saglabāta esošā jautājuma galvenā doma par pasūtījumu ārpus Rīgas, skaidri aptverot visu Latviju un apstiprināto eksporta pieredzi. Neatkarīgais RU valodas pārbaudītājs atzinis formulējumu par dabisku un profesionālu.
+23.11.2026. Pēc Signes norādes ievietota saīsinātā redakcija ar piegādi visā Latvijā un ārvalstīs. To atkārtoti pārbaudījis neatkarīgais RU valodas apakšaģents. NO formulējums nav mainīts. EN atbildē pēc atsevišķas Signes norādes izmantoti faktiski eksporta piemēri: Vācija, Nīderlande, Zviedrija un UK.
 
 **Доставляете ли вы мебель по всей Латвии и за границу?**
 
-Да, доставляем и устанавливаем мебель по всей Латвии. Заказы за границей обсуждаем индивидуально. У нас есть опыт работы в Эстонии, Норвегии, Швеции, Финляндии, Великобритании и других странах Европы. Укажите, где находится объект, чтобы мы могли обсудить возможность, условия и стоимость замера, доставки и установки.
+Да, доставляем и устанавливаем мебель по всей Латвии. Заказы за границей обсуждаем индивидуально. Укажите, где находится объект, чтобы мы могли обсудить возможность, условия и стоимость замера, доставки и установки.
 
-Ieteikums pamatots ar faktiskās piegādes pieredzes skaidrojumu auditorijai, nevis pieņēmumu, ka visi RU lasītāji dzīvo Latvijā. Keyword Planner RU dati saglabātajā izpētē iegūti Latvijai; ar tiem nepamatojam izmērītu ārvalstu RU meklējumu priekšrocību. Igaunija, Norvēģija, Zviedrija, Somija un Lielbritānija ir apstiprinātajā valstu sarakstā. Lietuva un Dānija tajā nav, tāpēc vispārīgus Baltijas/Skandināvijas piegādes apgalvojumus šeit nepievienojam. Nav bezmaksas piegādes, fiksētu eksporta izmaksu vai visur pieejamas montāžas solījuma.
+Saglabāta esošā jautājuma galvenā doma par pasūtījuma atrašanās vietu un individuāli pārrunājamām uzmērīšanas, piegādes un montāžas iespējām/izmaksām. Konkrētu valstu vai reģionu uzskaitījums nav pievienots. Nav bezmaksas piegādes vai fiksētu eksporta izmaksu solījuma. RU izpēte Latvijai nepamato izmērītu ārvalstu meklējumu priekšrocību.
