@@ -83,3 +83,9 @@ Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, vis
 Canonical un OG adreses ģenerē `scripts/generate-pages.mjs` no vides mainīgā `SITE_URL`; ja tā nav, izmanto Vercel produkcijas adresi, lokāli `http://127.0.0.1:4173`. Katras lapas title un description ir `save(...)` izsaukumos tajā pašā failā.
 
 23.11.2026. Sākumlapas atsauksmju atlase pielāgota valodai: EN izceltas trīs jaunās EN oriģinālās atsauksmes, RU pirmā ir jaunais RU oriģināls. Tās pievienotas tikai savas valodas atsauksmju lapai (EN 15, RU 13); LV un NO paliek 12 līdzšinējie ieraksti. [Atlase un avotu pārbaude](docs/reviews-by-language.md).
+
+## Tehniskā SEO sagatave, 23.11.2026.
+
+Build ģenerē public/sitemap.xml un četru valodu 404.html. Tā kā priekšskatījums ir noindex, aktīvais sitemap satur 0 URL. Palaišanas XML sagatave ar 56 pamatlapām ir docs/migration/sitemap-launch.xml; tā nav izvietota uz īstā domēna. Karte docs/migration/redirect-map.json aptver visus 55 vecos WordPress URL. MD pārģenerē ar node scripts/migration-map.mjs. Migrācijas redirects vēl nav aktivizēti.
+
+Pēc build: npm run test:seo pārbauda sitemap, karti un HTTP 404 valodas/statusus (palaiž īslaicīgu lokālo serveri). npm run test:i18n turpina pārbaudīt pamatlapu un projektu tulkojumus. [Statuss un palaišanas soļi](docs/seo-preview.md).

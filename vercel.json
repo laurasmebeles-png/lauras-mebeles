@@ -10,8 +10,46 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/404\\.html$",
+      "dest": "/404.html",
+      "status": 404
+    },
+    {
+      "src": "^/(en|ru|no)/404\\.html$",
+      "dest": "/$1/404.html",
+      "status": 404
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/en(?:/.*)?$",
+      "dest": "/en/404.html",
+      "status": 404
+    },
+    {
+      "src": "^/ru(?:/.*)?$",
+      "dest": "/ru/404.html",
+      "status": 404
+    },
+    {
+      "src": "^/no(?:/.*)?$",
+      "dest": "/no/404.html",
+      "status": 404
+    },
+    {
+      "src": "^/.*$",
+      "dest": "/404.html",
+      "status": 404
     }
   ]
 }

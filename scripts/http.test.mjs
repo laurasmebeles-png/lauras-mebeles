@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { once } from 'node:events';
+
+const server = spawn(process.execPath, ['scripts/dev.mjs'], { cwd: new URL('../', import.meta.url), env: { ...process.env, PORT: '0' }, stdio: ['ignore', 'pipe', 'pipe'] });
+let log = '';
+try {
+  const base = await new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(Error('Preview server did not start: ' + log)), 10000);
+    const finish = (error, value) => { clearTimeout(timer); error ? reject(error) : resolve(value); };
+    server.on('error', error => finish(error));
+    server.on('exit', code => finish(Error(`Server exited (${code}): ${log}`)));
+    server.stderr.on('data', chunk => { log += chunk; });
+    server.stdout.on('data', chunk => { log += chunk; const url = log.match(/http:\/\/127\.0\.0\.1:\d+/)?.[0]; if (url) finish(null, url); });
+  });
+  const cases = [['/missing-page/', 'lv'], ['/en/missing-page/', 'en'], ['/ru/несуществующая/', 'ru'], ['/no/mangler/side/', 'no'], ['/enough/missing/', 'lv'], ['/no/missing.css', 'no'], ['/no/%ZZ', 'no']];
+  for (const [path, lang] of cases) {
+    const result = await fetch(base + path);
+    assert.equal(result.status, 404, path);
+    assert.match(result.headers.get('content-type'), /text\/html/);
+    assert.match(result.headers.get('x-robots-tag'), /noindex/);
+    const html = await result.text();
+    assert.ok(html.includes(`<html lang="${lang}">`), path);
+  }
+  for (const prefix of ['', '/en', '/ru', '/no']) {
+    assert.equal((await fetch(base + prefix + '/404.html')).status, 404);
+    const head = await fetch(base + prefix + '/missing/', { method: 'HEAD' });
+    assert.equal(head.status, 404);
+    assert.equal(await head.text(), '');
+    assert.equal((await fetch(base + prefix + '/virtuves/')).status, 200);
+  }
+  const xml = await fetch(base + '/sitemap.xml');
+  assert.equal(xml.status, 200);
+  assert.match(xml.headers.get('content-type'), /application\/xml/);
+  assert.equal((await fetch(base + '/styles.css')).status, 200);
+  assert.equal((await fetch(base + '/en/missing/', { method: 'POST' })).status, 405);
+  console.log('HTTP: localized missing paths return 404, HEAD is empty, existing pages/assets remain available.');
+} finally {
+  const exited = once(server, 'exit');
+  if (server.exitCode === null) { server.kill(); await exited; }
+}

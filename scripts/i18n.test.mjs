@@ -124,7 +124,7 @@ for (const page of pages) {
 }
 for (const root of ['public', 'dist']) {
   const directories = config.pages[lang].filter(path => path !== '/').map(path => path.replaceAll('/', ''));
-  assert.deepEqual((await readdir(new URL(`../${root}/${lang}/`, import.meta.url))).sort(), ['index.html', 'projects.js', ...directories].sort());
+  assert.deepEqual((await readdir(new URL(`../${root}/${lang}/`, import.meta.url))).sort(), ['index.html', 'projects.js', '404.html', ...directories].sort());
   if (hasLanguagePage(lang, '/musu-darbi/')) assert.deepEqual((await readdir(new URL(`../${root}/${lang}/musu-darbi/`, import.meta.url))).sort(), ['index.html', ...galleryPaths.map(path => path.split('/')[2])].sort());
 }
 assert.deepEqual(projectData.map(p => p.id).sort(), [...usedProjectIds].sort());

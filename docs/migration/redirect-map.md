@@ -1,123 +1,85 @@
-# Pāradresāciju karte (projekts, 02.11.2026)
+# Pāradresāciju karte, 2026-11-23
 
-Statuss: PRIEKŠLIKUMS. Pirms ieviešanas vercel.json jāapstiprina Signei un klientam, īpaši sadaļas "Vecās virtuves publikācijas" un "Veikals un komplekti".
+Statuss: sagatavots pārejas projekts, **nav aktivizēts**. Avots ir 55 WordPress lapu inventārs. Mašīnlasāmais avots: [redirect-map.json](redirect-map.json). Šo dokumentu ģenerē `node scripts/migration-map.mjs`.
 
-Avots: WordPress eksports 30.10.2026 (55 publicētas lapas) un dzīvā Yoast vietnes karte https://laurasmebeles.lv/page-sitemap.xml (54 URL, pārbaudīts 02.11.2026). Abi saraksti sakrīt; vietnes kartē nav tikai /sakums/. Eksportā nav rakstu (post) vai WooCommerce produktu, tikai lapas. Yoast meta ir tikai sākumlapai.
+Pašreizējā struktūra ir LV, EN, RU un NO. EN/RU mērķi izmanto faktiskos ceļus, piemēram, `/en/virtuves/` un `/ru/virtuves/`. Saglabājam garo atsauksmju URL. RU atmešanas priekšlikums vairs nav spēkā. NO nav vecu adrešu šajā WordPress inventārā.
 
-Nav pārbaudīts: kuri URL saņem trafiku vai ir Google indeksā. Ja ir GSC piekļuve, pirms apstiprināšanas paskatīties Performance pa lapām par pēdējiem 12 mēnešiem.
+Saglabāti visi 55 avota ieraksti: 10 nemainīti URL, 24 pāradresāciju kandidāti un 21 neatrisināts lēmums. `301 kandidāts` nenozīmē aktivizētu vai klienta apstiprinātu pāradresāciju. Nav pārbaudīti GSC meklējumu/indeksēšanas dati; veikala un publikāciju lapas nedrīkst automātiski apvienot tikai tādēļ, ka ir tehniski iespējams redirect.
 
-## A. Paliek tajā pašā adresē (nav jāpāradresē)
+## LV
 
-| Esošais URL | Jaunajā vietnē |
-|---|---|
-| / | / |
-| /virtuves/ | /virtuves/ |
-| /skapji/ | /skapji/ |
-| /koridora-iekartas/ | /koridora-iekartas/ |
-| /vannasistabas-mebeles/ | /vannasistabas-mebeles/ |
-| /sekcijas/ | /sekcijas/ |
-| /citas-mebeles/ | /citas-mebeles/ |
-| /pakalpojumi/ | /pakalpojumi/ |
-| /kontakti/ | /kontakti/ |
-| /virtuves-mebeles-atsauksmes-virtuves-iekartas/ | skat. B, jautājums par /atsauksmes/ |
-| /privatuma-politika/ | /privatuma-politika/ (lapa uzmetumā vēl jāizveido) |
+| WordPress ID | Vecais ceļš | Rīcība | Jaunais ceļš vai kandidāts | Piezīme |
+|---|---|---|---|---|
+| 11 | `/sakums/` | 301 kandidāts | / | Sākumlapas dublikāts. Vēl nav aktivizēta. |
+| 111 | `/vannasistabas-mebeles/` | Saglabājam | /vannasistabas-mebeles/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 113 | `/skapji/` | Saglabājam | /skapji/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 115 | `/sekcijas/` | Saglabājam | /sekcijas/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 117 | `/koridora-iekartas/` | Saglabājam | /koridora-iekartas/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 119 | `/citas-mebeles/` | Saglabājam | /citas-mebeles/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 121 | `/pakalpojumi/` | Saglabājam | /pakalpojumi/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 123 | `/partneri/` | 301 kandidāts | /par-mums/ | Partneru sadaļa ir lapā Par mums. Vēl nav aktivizēta. |
+| 125 | `/kontakti/` | Saglabājam | /kontakti/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 149 | `/` | Saglabājam | / | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 267 | `/veikals/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 719 | `/virtuves-iekarta-stils-un-dizains/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 726 | `/virtuves-iekartas-apdare-un-pedejie-pieskarieni/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 730 | `/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 733 | `/virtuves-mebeles/` | 301 kandidāts | /virtuves/ | Virtuvju piedāvājums pašreizējā virtuvju lapā. Vēl nav aktivizēta. |
+| 736 | `/virtuves-iekarta-iebuveta-vai-brivi-stavosa/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 739 | `/virtuves-mebeles-moderni-risinajumi/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 742 | `/publikacijas-virtuves-mebeles/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 770 | `/privatuma-politika/` | Jāizlemj | /privatuma-politika/ (priekšlikums) | Saglabāt URL un sagatavot aktualizētu privātuma informāciju. Jaunā lapa vēl nav izveidota; redirect neaktivizēt. |
+| 1188 | `/virtuves-mebeles-veikals/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1247 | `/virtuves-iekartas-komplekts-mini/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1251 | `/virtuves-iekartas-komplekts-no1/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1254 | `/virtuves-iekartas-komplekts-no2/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1258 | `/virtuves-iekartas-komplekts-no3/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1262 | `/virtuves-iekartas-komplekts-standarts-mini/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1266 | `/virtuves-mebeles-galds-un-kresli/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1271 | `/virtuves-mebeles-iebuvetais-modulis/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1275 | `/virtuves-mebeles-komplekts-premium/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1279 | `/virtuves-mebeles-komplekts-standarts/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1283 | `/virtuves-mebeles-komplekts-standarts-maxi/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1287 | `/virtuves-mebeles-standarta-komplekts/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
+| 1736 | `/atsauksmes/` | 301 kandidāts | /virtuves-mebeles-atsauksmes-virtuves-iekartas/ | Saglabājam pašreizējo garo atsauksmju adresi; īsā ir vecs dublikāts. Vēl nav aktivizēta. |
+| 1740 | `/virtuves-mebeles-atsauksmes-virtuves-iekartas/` | Saglabājam | /virtuves-mebeles-atsauksmes-virtuves-iekartas/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 2641 | `/virtuves/` | Saglabājam | /virtuves/ | Adrese saglabāta pašreizējā lapas struktūrā. |
+| 2647 | `/test/` | Jāizlemj | Nav apstiprināts | Tukša testa lapa. Apstiprināt 410 vai citu rīcību; nepāradresēt automātiski uz nesaistītu saturu. |
 
-## B. Pāradresācijas 301 (LV)
+## EN
 
-| Esošais URL | Uz | Piezīme |
-|---|---|---|
-| /sakums/ | / | Dublikāts, nav vietnes kartē |
-| /atsauksmes/ | atsauksmju lapa | Ir divas atsauksmju lapas. Ieteikums: par galveno padarīt īso /atsauksmes/ un garo URL 301 uz to. Uzmetumā pašlaik ir garais URL; ja paliek garais, tad otrādi. Jāizlemj. |
-| /partneri/ | /par-mums/ | Partneru saraksts netiek pārņemts bez klienta apstiprinājuma |
-| /virtuves-mebeles/ | /virtuves/ | 2020. g. lapa |
-| /test/ | / | Tukša testa lapa; var arī 410 |
+| WordPress ID | Vecais ceļš | Rīcība | Jaunais ceļš vai kandidāts | Piezīme |
+|---|---|---|---|---|
+| 534 | `/en/other-furniture/` | 301 kandidāts | /en/citas-mebeles/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 538 | `/en/contacts/` | 301 kandidāts | /en/kontakti/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 541 | `/en/corridors/` | 301 kandidāts | /en/koridora-iekartas/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 550 | `/en/partners/` | 301 kandidāts | /en/par-mums/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 555 | `/en/home/` | 301 kandidāts | /en/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 560 | `/en/cabinets/` | 301 kandidāts | /en/skapji/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 564 | `/en/tv-cupboards/` | 301 kandidāts | /en/sekcijas/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 568 | `/en/bathroom-furniture/` | 301 kandidāts | /en/vannasistabas-mebeles/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 572 | `/en/kitchens/` | 301 kandidāts | /en/virtuves/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 598 | `/en/furniture/` | 301 kandidāts | /en/pakalpojumi/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
 
-## C. Veikals un komplekti (2020. g.), ieteikums 301 uz /virtuves/
+## RU
 
-Ja klients saka, ka komplektiem ir sava nozīme vai cenas, alternatīva ir /cenas/.
+| WordPress ID | Vecais ceļš | Rīcība | Jaunais ceļš vai kandidāts | Piezīme |
+|---|---|---|---|---|
+| 612 | `/ru/hачало/` | 301 kandidāts | /ru/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 616 | `/ru/kухня/` | 301 kandidāts | /ru/virtuves/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 673 | `/ru/ванная-мебель/` | 301 kandidāts | /ru/vannasistabas-mebeles/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 678 | `/ru/шкафы/` | 301 kandidāts | /ru/skapji/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 682 | `/ru/секционный/` | 301 kandidāts | /ru/sekcijas/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 686 | `/ru/коридорное-оборудование/` | 301 kandidāts | /ru/koridora-iekartas/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 690 | `/ru/офисная-и-мебель/` | 301 kandidāts | /ru/citas-mebeles/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 695 | `/ru/партнёры/` | 301 kandidāts | /ru/par-mums/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 698 | `/ru/контакты/` | 301 kandidāts | /ru/kontakti/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
+| 710 | `/ru/услуги/` | 301 kandidāts | /ru/pakalpojumi/ | Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta. |
 
-| Esošais URL | Uz |
-|---|---|
-| /veikals/ | /virtuves/ |
-| /virtuves-mebeles-veikals/ | /virtuves/ |
-| /virtuves-iekartas-komplekts-mini/ | /virtuves/ |
-| /virtuves-iekartas-komplekts-no1/ | /virtuves/ |
-| /virtuves-iekartas-komplekts-no2/ | /virtuves/ |
-| /virtuves-iekartas-komplekts-no3/ | /virtuves/ |
-| /virtuves-iekartas-komplekts-standarts-mini/ | /virtuves/ |
-| /virtuves-mebeles-galds-un-kresli/ | /virtuves/ |
-| /virtuves-mebeles-iebuvetais-modulis/ | /virtuves/ |
-| /virtuves-mebeles-komplekts-premium/ | /virtuves/ |
-| /virtuves-mebeles-komplekts-standarts/ | /virtuves/ |
-| /virtuves-mebeles-komplekts-standarts-maxi/ | /virtuves/ |
-| /virtuves-mebeles-standarta-komplekts/ | /virtuves/ |
+## Pirms aktivizēšanas
 
-## D. Vecās virtuves publikācijas (2020. g.)
-
-Sešas teksta lapas par virtuvēm (stils un dizains, apdare, komplektācija un furnitūra, iebūvēta vai brīvi stāvoša, moderni risinājumi, publikāciju saraksts). Tās var dot SEO vērtību frāzēm "virtuves iekārtas" un "virtuves mēbeles".
-
-Ieteikums divos soļos: palaišanā 301 uz /virtuves/; pēc palaišanas, ja GSC rāda, ka tās saņēma trafiku, pārrakstīt kā "Padomi" sadaļu ar tiem pašiem URL vai jauniem URL un 301 uz tiem.
-
-| Esošais URL | Uz (1. solis) |
-|---|---|
-| /virtuves-iekarta-stils-un-dizains/ | /virtuves/ |
-| /virtuves-iekartas-apdare-un-pedejie-pieskarieni/ | /virtuves/ |
-| /virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/ | /virtuves/ |
-| /virtuves-iekarta-iebuveta-vai-brivi-stavosa/ | /virtuves/ |
-| /virtuves-mebeles-moderni-risinajumi/ | /virtuves/ |
-| /publikacijas-virtuves-mebeles/ | /virtuves/ |
-
-## E. Angļu valodas lapas
-
-Ja EN versija tiek palaista, kreisā kolonna 301 uz jauno EN adresi (vidējā kolonna, priekšlikums). Ja EN netiek palaista, 301 uz LV lapu (labā kolonna).
-
-| Esošais URL | Jaunais EN URL | Bez EN: uz LV |
-|---|---|---|
-| /en/home/ | /en/ | / |
-| /en/kitchens/ | /en/kitchens/ | /virtuves/ |
-| /en/cabinets/ | /en/wardrobes/ | /skapji/ |
-| /en/corridors/ | /en/hallway-furniture/ | /koridora-iekartas/ |
-| /en/bathroom-furniture/ | /en/bathroom-furniture/ | /vannasistabas-mebeles/ |
-| /en/tv-cupboards/ | /en/living-room-furniture/ | /sekcijas/ |
-| /en/other-furniture/ | /en/other-furniture/ | /citas-mebeles/ |
-| /en/furniture/ | /en/services/ | /pakalpojumi/ |
-| /en/partners/ | /en/about/ | /par-mums/ |
-| /en/contacts/ | /en/contact/ | /kontakti/ |
-
-## F. Krievu valodas lapas
-
-Ieteikums: RU nesaglabāt, 301 uz LV lapu. Ja klients uzstāj uz RU, tad tāda pati shēma kā EN.
-
-| Esošais URL (dekodēts) | Uz LV |
-|---|---|
-| /ru/hачало/ | / |
-| /ru/kухня/ | /virtuves/ |
-| /ru/шкафы/ | /skapji/ |
-| /ru/коридорное-оборудование/ | /koridora-iekartas/ |
-| /ru/ванная-мебель/ | /vannasistabas-mebeles/ |
-| /ru/секционный/ | /sekcijas/ |
-| /ru/офисная-и-мебель/ | /citas-mebeles/ |
-| /ru/услуги/ | /pakalpojumi/ |
-| /ru/партнёры/ | /par-mums/ |
-| /ru/контакты/ | /kontakti/ |
-
-vercel.json ierakstos RU ceļi jāraksta procentkodētā formā tieši tā, kā tie ir docs/migration/wordpress-pages.json.
-
-## G. Attēli
-
-834 pielikumu ieraksti (wp-content/uploads/...). Attēlu URL netiek pāradresēti; pēc palaišanas tie atgriezīs 404, kas attēliem ir pieņemami. Ja GSC rāda attēlu trafiku konkrētiem failiem, var apsvērt atsevišķas pāradresācijas.
-
-## Ieviešana
-
-vercel.json formāts:
-
-```json
-{
-  "redirects": [
-    { "source": "/sakums", "destination": "/", "permanent": true },
-    { "source": "/sakums/", "destination": "/", "permanent": true }
-  ]
-}
-```
-
-Vercel `source` ir bez slīpsvītras beigās; ierakstīt abus variantus vai izmantot `trailingSlash` iestatījumu projektā un vienu formu. Pēc palaišanas pārbaudīt visus 55 URL ar curl (statuss 301 un pareizs Location).
+- Izvērtēt veikala/komplektu un publikāciju saturu, GSC datus un precizēt galamērķus. Privātuma lapu atjaunot tās esošajā adresē, kad saturs gatavs. `/test/` rīcību apstiprināt atsevišķi.
+- JSON saglabā precīzo vecā URL procentkodējumu un jaukto alfabētu `hачало`/`kухня`; tos nepārrakstīt kā citus URL. Aktivizēšanas posmā pārbaudīt Unicode un procentkodētus pieprasījumus uz hostinga.
+- Pārbaudīt variantus ar/bez beigu slīpsvītras un vaicājuma parametriem. Mērķim jāatgriež 200, jābūt pareizajā valodā, bez pašpāradresācijām, cikliem vai liekām ķēdēm.
+- Vercel 301 norādīt ar `statusCode: 301`. `permanent: true` noklusēti ir 308, nevis 301. Šajā darbā `vercel.json` migrācijas redirects netiek pievienoti.
+- Atsevišķi izvērtēt vecos `/wp-content/uploads/` attēlu URL pēc atbilstības jaunajiem failiem un pieejamā GSC trafika. Neuzskatīt visu veco attēlu pazušanu par automātiski pieņemamu. 55 lapu karte nav 834 pielikumu pilna migrācija.

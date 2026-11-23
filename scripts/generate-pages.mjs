@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { categories, projects, inspirationProjects } from '../src/catalog.mjs';
 import { config as i18nConfig, enabledLangs, defaultLang, langPrefix, loadDicts, translateHtml, mapProjects, hasLanguagePage, languagesForPage } from './i18n.mjs';
+import { sitemap, launchOrigin } from './seo.mjs';
 const root = new URL('../', import.meta.url);
 // Valodu mapes ir ģenerētas. Noņem iepriekšējās versijas, lai nepaliktu vairs neieslēgtas lapas.
 for (const lang of Object.keys(i18nConfig.languages).filter(lang => lang !== defaultLang)) {
@@ -14,6 +15,7 @@ const galleryReviewIds = JSON.parse(await readFile(new URL('src/gallery-review-i
 // Kanoniskā adrese: SITE_URL (palaišanai: https://laurasmebeles.lv), citādi Vercel produkcijas adrese, citādi lokāli.
 const siteUrl = (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://127.0.0.1:4173')).replace(/\/+$/,'');
 const siteName = 'Lauras mēbeles';
+const pageRecords = [];
 const dicts = await loadDicts();
 const reviewTranslations = {};
 for (const lang of enabledLangs.filter(lang => lang !== defaultLang)) {
@@ -241,25 +243,29 @@ for (const lang of enabledLangs) {
   const dir = new URL(`public${langPrefix(lang)}/`, root); await mkdir(dir, { recursive: true });
   await writeFile(new URL('projects.js', dir), `window.LAURAS_PROJECTS = ${JSON.stringify(data)};\n`);
 }
-console.log('Sagatavota sākumlapa un 13 apakšlapas no kopīga satura un projektu datiem.');
+const notFoundBody = `<section class="section not-found"><p class="eyebrow">404</p><h1>Lapa nav atrasta</h1><p class="not-found-copy">Iespējams, adrese ir mainījusies vai ievadīta nepareizi. Izvēlieties kādu no sadaļām vai sazinieties ar mums.</p><div class="not-found-actions"><a class="nk-button nk-button-dark" href="/">Uz sākumlapu</a><a class="nk-button nk-button-outline" href="/pakalpojumi/">Apskatīt mēbeles</a></div><a class="text-link" href="/kontakti/">Sazināties ar mums ${arrow}</a></section>`;
+for (const lang of enabledLangs) await renderPage(lang, '404', 'Lapa nav atrasta | Lauras mēbeles', notFoundBody, 'Lapa nav atrasta. Atgriezieties sākumlapā, apskatiet mēbeles vai sazinieties ar mums.', { notFound: true });
+await writeFile(new URL('public/sitemap.xml', root), sitemap(pageRecords, siteUrl));
+await writeFile(new URL('docs/migration/sitemap-launch.xml', root), sitemap(pageRecords, launchOrigin, { launch: true }));
+console.log('Sagatavotas pamatlapas, projektu lapas, četru valodu 404 un palaišanas sitemap sagatave. Priekšskatījums paliek noindex.');
 
 async function renderPage(lang,path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.',options={}) {
-  const pageLangs = languagesForPage(path);
+  const pageLangs = options.notFound ? enabledLangs : languagesForPage(path);
   if (lang === 'ru') body = body.replace('<h2>Noderīgi pirms<br>pasūtīšanas</h2>', '<h2>Noderīgi pirms pasūtīšanas</h2>');
   body = body.replace(/<!--reviews:(home|all)-->/g, (_, slot) => `<div class="review-grid">${reviewsForLanguage(lang, slot).map(r => reviewCard(r, lang)).join('')}</div>`);
   for (const match of body.matchAll(/data-project="([^"]+)"/g)) pageProjectIds.get(lang).add(match[1]);
-  const pre=langPrefix(lang);const folder=new URL(`public${pre}/${path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
+  const pre=langPrefix(lang);const folder=new URL(`public${pre}/${!options.notFound&&path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
   const pageUrl=`${siteUrl}${pre}/${path?path+'/':''}`;
   const photo=options.ogPhoto?{path:`/images/${options.ogPhoto}`,width:imgSizes[options.ogPhoto]?.[0]||1200,height:imgSizes[options.ogPhoto]?.[1]||800,alt:title}:ogImage;
   const social=[
-    `<link rel="canonical" href="${pageUrl}">`,
-    ...(pageLangs.length>1?[...pageLangs.map(l=>`<link rel="alternate" hreflang="${l}" href="${siteUrl}${langPrefix(l)}/${path?path+'/':''}">`),`<link rel="alternate" hreflang="x-default" href="${siteUrl}/${path?path+'/':''}">`]:[]),
+    ...(!options.notFound ? [`<link rel="canonical" href="${pageUrl}">`] : []),
+    ...(!options.notFound&&pageLangs.length>1?[...pageLangs.map(l=>`<link rel="alternate" hreflang="${l}" href="${siteUrl}${langPrefix(l)}/${path?path+'/':''}">`),`<link rel="alternate" hreflang="x-default" href="${siteUrl}/${path?path+'/':''}">`]:[]),
     `<meta property="og:type" content="website">`,
     `<meta property="og:locale" content="${i18nConfig.languages[lang].locale}">`,
     `<meta property="og:site_name" content="${siteName}">`,
     `<meta property="og:title" content="${esc(title)}">`,
     `<meta property="og:description" content="${esc(description)}">`,
-    `<meta property="og:url" content="${pageUrl}">`,
+    ...(!options.notFound ? [`<meta property="og:url" content="${pageUrl}">`] : []),
     `<meta property="og:image" content="${siteUrl}${photo.path}">`,
     `<meta property="og:image:width" content="${photo.width}">`,
     `<meta property="og:image:height" content="${photo.height}">`,
@@ -267,10 +273,11 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
     `<meta name="twitter:card" content="summary_large_image">`
   ].join('\n  ');
   const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`).replace('<meta name="robots" content="noindex,nofollow">',`<meta name="robots" content="${options.reviewOnly?'noindex,follow':'noindex,nofollow'}">`);
-  const switcher=pageLangs.length>1?`<div class="lang-switch" role="navigation" aria-label="Language">${pageLangs.map(l=>l===lang?`<span aria-current="true">${i18nConfig.languages[l].short}</span>`:`<a href="${langPrefix(l)}/${path?path+'/':''}" hreflang="${l}" lang="${l}">${i18nConfig.languages[l].short}</a>`).join('')}</div>`:'';
+  const switcher=pageLangs.length>1?`<div class="lang-switch" role="navigation" aria-label="Language">${pageLangs.map(l=>l===lang?`<span aria-current="true">${i18nConfig.languages[l].short}</span>`:`<a href="${langPrefix(l)}/${options.notFound?'404.html':path?path+'/':''}" hreflang="${l}" lang="${l}">${i18nConfig.languages[l].short}</a>`).join('')}</div>`:'';
   let html=`${pageHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}</body></html>`;
   if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang).replace(/[\t ]+$/gm,''); }
-  await writeFile(new URL('index.html',folder),html);
+  await writeFile(new URL(options.notFound ? '404.html' : 'index.html',folder),html);
+  pageRecords.push({ lang, path, reviewOnly: !!options.reviewOnly, notFound: !!options.notFound, indexable: !/<meta name="robots" content="[^"]*noindex/.test(html) });
 }
 
 async function save(path,title,body,description,options){

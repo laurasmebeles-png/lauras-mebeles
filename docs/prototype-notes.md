@@ -203,3 +203,13 @@ Pēc pēdējās redakcijas veiksmīgi npm run test:i18n un npm run check. Kājen
 Pēc Signes apstiprinājuma NO sākumlapas ceturtais statistikas punkts ir “Hele veien / Fra idé til montering”. Pirms ievietošanas neatkarīgi valodas un faktu/izpētes apakšaģenti apstiprināja dabiskumu un pilnā procesa domas saglabāšanu. Pakalpojumu uzskaitījuma atslēgvārdi saglabājas citos lapas tekstos. Izkārtojums un fonti nav mainīti.
 
 Pārbaudīts pārlūkā 360, 390 un 430 px telefona platums, kā arī 1440 px datora skats. 430 px visi četri punkti vienādā augstumā; 360/390 px jaunais apakšteksts aizņem divas rindas. Nav horizontālas pārplūdes vai pārklāšanās. LV piegādes BUJ pēc Signes precizējuma lieto “Norādiet, kur mēbeles paredzēts uzstādīt”; EN/RU/NO atbilžu saturs nemainās. npm run test:i18n ar pilno build veiksmīgs.
+
+## 23.11.2026: sitemap, pārejas karte un lokalizētas 404
+
+Sitemap ģenerators no faktiskajām ģenerētajām lapām izslēdz reviewOnly galerijas detaļas, 404 un noindex lapas. Priekšskatījuma sitemap ir tukšs; ārpus izvietojamās public/dist daļas sagatavots docs/migration/sitemap-launch.xml ar 56 paredzētām pamatlapām un pilnām valodu alternatīvām. Nav izdomātu lastmod datumu vai prioritāšu. Robots un globālais noindex saglabāti.
+
+Pārejas JSON/ģenerētais MD aptver 55 oriģinālos WordPress URL, precīzi saglabājot avota procentkodējumu un jaukto RU alfabētu: 10 keep, 24 301 kandidāti, 21 pending. EN/RU mērķi atbilst faktiskajām valodu adresēm. Veikals, publikācijas, privātums un testa lapa nav patvaļīgi pāradresēti. Vercel redirects nav pievienoti, dzīvais domēns nav mainīts.
+
+Četru valodu statiskās 404 izmanto kopīgo galveni/kājeni un savas valodas sākuma, mēbeļu un kontaktu saites. URL valodu nosaka tikai pilns /en/, /ru/ vai /no/ prefikss; nav pārlūka valodas minējuma. Kļūdas lapās nav canonical/HTML alternate norāžu. Lokālais serveris atgriež 404 arī tiešajiem error failiem un tukšu HEAD atbildi; Vercel konfigurācijā sagatavoti tādi paši fallback statusi. Nepieciešama arī izvietotā hostinga pārbaude.
+
+Neatkarīgi apakšaģenti pārbaudīja RU/NO tekstus pēc integrācijas un 55 URL/56 sitemap kopu. Lokāli pārbaudītas 404 visu valodu datora un telefona versijas (360/390 un 1440 px), pogu vienāds augstums, saite uz NO mēbeļu sadaļu un EN→RU valodas pārslēgšana. Pārplūdes nav. SEO un HTTP pārbaudes izturētas; pamatlapu i18n pārbaudes arī veiksmīgas. Dokumentācija: docs/seo-preview.md.
