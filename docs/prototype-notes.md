@@ -197,3 +197,9 @@ Turpinājumā pēc Signes norādes arī EN BUJ valstu piemēri paplašināti ār
 BUJ atrodamībai pēc Signes norādes pievienota tulkota teksta saite tikai kopīgajā kājenē uz /cenas/#jautajumi savā valodā. Signe noraidīja papildu sākumlapas saiti, lai saglabātu vizuālo līdzsvaru. Jauna sadaļa vai augšējās navigācijas elements nav izveidots; sākumlapas kartītes saglabātas. Risinājums palīdz BUJ atrast no jebkuras lapas. Kājenes palīdzības saišu lietojuma pamatojums: https://www.nngroup.com/articles/footers/ .
 
 Pēc pēdējās redakcijas veiksmīgi npm run test:i18n un npm run check. Kājenes BUJ saites pārlūkā atver attiecīgās valodas cenu lapu tieši pie jautājumiem. Pārbaudīts LV 1440 px un EN/RU/NO 390 px skats; garais EN saites nosaukums ietilpst. Sākumlapas papildu saite nav pievienota.
+
+## 23.11.2026: īsāks NO procesa punkts telefona joslā
+
+Pēc Signes apstiprinājuma NO sākumlapas ceturtais statistikas punkts ir “Hele veien / Fra idé til montering”. Pirms ievietošanas neatkarīgi valodas un faktu/izpētes apakšaģenti apstiprināja dabiskumu un pilnā procesa domas saglabāšanu. Pakalpojumu uzskaitījuma atslēgvārdi saglabājas citos lapas tekstos. Izkārtojums un fonti nav mainīti.
+
+Pārbaudīts pārlūkā 360, 390 un 430 px telefona platums, kā arī 1440 px datora skats. 430 px visi četri punkti vienādā augstumā; 360/390 px jaunais apakšteksts aizņem divas rindas. Nav horizontālas pārplūdes vai pārklāšanās. LV piegādes BUJ pēc Signes precizējuma lieto “Norādiet, kur mēbeles paredzēts uzstādīt”; EN/RU/NO atbilžu saturs nemainās. npm run test:i18n ar pilno build veiksmīgs.

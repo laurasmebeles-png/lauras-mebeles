@@ -1,6 +1,6 @@
 ---
 status: Signes apstiprināts Bokmål teksts, ieslēgts NO priekšskatījumā
-updated: 2026-11-22
+updated: 2026-11-23
 source_path: /
 source_files: scripts/generate-pages.mjs, src/catalog.mjs, src/reviews.json
 title: Skreddersydde kjøkken og møbler | Lauras mēbeles
@@ -24,7 +24,7 @@ Sadaļas saglabātas pašreizējās LV lapas secībā. Latviskie apzīmējumi un
 | Siden 2008 | Møbler på mål |
 | 4 600+ | Kjøkken produsert |
 | Eget verksted | Laget i Riga |
-| Fra start til slutt | Planlegging, levering og montering |
+| Hele veien | Fra idé til montering |
 
 ## 3. Mēbeļu kategorijas
 
