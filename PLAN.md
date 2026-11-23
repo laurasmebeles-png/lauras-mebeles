@@ -139,3 +139,11 @@ Mērķis: klientam nosūtāma saite, pēc tam katrs labojums uzreiz redzams.
 
 - Pirmās 2 nedēļas: GSC 404 pārskats, pieteikumu kvalitāte, GA4 notikumi.
 - EN/RU/NO apstiprinātie priekšskatījuma teksti gatavi; "Padomi" sadaļa no vecajām 2020. g. publikācijām un kalkulators ar reālām likmēm paliek atsevišķi turpmāki darbi.
+
+
+## 23.11.2026: atsauksmes oriģinālvalodā
+
+- EN sākumlapā trīs EN oriģināli, RU sākumlapā RU oriģināls pirmais un divas esošās tulkotās atsauksmes. Jaunie oriģināli tikai savas valodas versijā; arī attiecīgās atsauksmju lapas papildinātas. LV/NO izlase nav mainīta. Avoti un iestatījumi: docs/reviews-by-language.md, src/reviews.native.json.
+- [ ] Signe palūgs Jurim atsauksmi norvēģu valodā. Pēc saņemšanas pievienot avotu un NO sākumlapas atlasi, pārbaudīt autoru/tekstu un attēlojumu. Neizsecināt klienta pilsonību no atsauksmes valodas.
+- RU BUJ par visu Latviju un ārvalstīm sagatavots izvērtēšanai content/ru/buj-piegade-priekslikums-2026-11-23.md. Tas vēl nav ievietots. Lietuva/Dānija pirms reģionālu apgalvojumu paplašināšanas jāprecizē; esošā saraksta pieredze atbalsta konkrētās minētās valstis.
+- Atsauksmju avoti glabāti nemainīgi. Signes jautājumam par kļūdu korektūru sagatavots izvērtējums: acīmredzamas kļūdas attēlojumā var minimāli labot, nemainot nozīmi un balsi. Četru jauno oriģinālu rakstība šobrīd saglabāta pēc ekrānattēliem.

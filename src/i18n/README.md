@@ -13,7 +13,7 @@ atslēga = latviešu teksta fragments, vērtība = tulkojums. Tukša vērtība `
 - Visi lapu teksti, `alt`, `title`, `aria-label`, `placeholder`, meta apraksti.
 - Projektu virsraksti un apraksti (`projects.js`), kalkulatora izvēles (`calc-config.json`).
 - `public/app.js` virknes ar `T('...')`.
-- Atsauksmes izmanto pilnu tulkojumu no `reviews.<kods>.json` pēc oriģinālās atsauksmes ID. Saglabā oriģinālo teikumu secību un klienta izteiksmi; SEO pārfrāzēšana uz tām neattiecas. Oriģinālo `src/reviews.json` nemaina.
+- Atsauksmes citā valodā izmanto pilnu tulkojumu no `reviews.<kods>.json` pēc oriģinālās atsauksmes ID. `src/reviews.native.json` papildina kopu ar EN/RU oriģināliem un nosaka to `originalLanguage`, `displayLanguages` un sākumlapas `featured` atlasi. Oriģināla valodā izmanto pašu tekstu bez tulkojuma marķējuma. Saglabā oriģinālo teikumu secību un klienta izteiksmi; SEO pārfrāzēšana uz tām neattiecas. Oriģinālo `src/reviews.json` nemaina.
 
 ## Svarīgi
 - Ja latviešu teksts mainās, vecā atslēga paliek "neizmantota"; palaid `npm run i18n:extract` un pārtulko jauno fragmentu.

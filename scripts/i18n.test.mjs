@@ -42,6 +42,9 @@ assert.match(russianLinks, /aria-label="на латышском"/);
 
 const read = path => readFile(new URL('../' + path, import.meta.url), 'utf8');
 const sourceReviews = JSON.parse(await read('src/reviews.json'));
+const nativeReviews = JSON.parse(await read('src/reviews.native.json'));
+const allSourceReviews = new Map([...sourceReviews, ...nativeReviews.reviews].map(r => [r.id, r]));
+const stripReviewCards = html => html.replace(/<article class="review-card"[\s\S]*?<\/article>/g, '');
 const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'RU', 'NO', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'SIA “Lauras mēbeles”']);
 const plain = html => decode(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const galleryPaths = [...(await read('public/musu-darbi/index.html')).matchAll(/href="(\/musu-darbi\/[^"/]+\/)"/g)].map(m => m[1]);
@@ -82,7 +85,7 @@ for (const page of pages) {
   const main = html => html.split('<main id="saturs">')[1].split('</main>')[0];
   const structure = html => [...main(html).matchAll(/<(section|article|div|h[1-6]|img|figure|details|summary|button)\b([^>]*)>/g)]
     .map(([, tag, attrs]) => [tag, ...['class', 'id', 'src', 'width', 'height', 'data-project'].map(attr => attrs.match(new RegExp(`(?:^|\\s)${attr}="([^"]*)"`))?.[1] || '')]);
-  assert.deepEqual(structure(en), structure(lv), `Layout and imagery: ${page}`);
+  assert.deepEqual(structure(stripReviewCards(en)), structure(stripReviewCards(lv)), `Layout and imagery: ${page}`);
   // Atsauksmes izmanto atsevišķo pilno tulkojumu; marķētais H1 tulkojas kā veselums.
   walkHtml(lv.replace(/<article class="review-card"[\s\S]*?<\/article>/g, '').replace(/<h1\b[^>]*data-i18n-key="[^"]+"[\s\S]*?<\/h1>/g, ''), key => {
     assert.ok(dict[key] || neutral.has(key), `Missing ${lang.toUpperCase()} text or attribute: ${page} ${key}`);
@@ -99,12 +102,17 @@ for (const page of pages) {
   }
   for (const [, id, card] of en.matchAll(/<article class="review-card" data-review-id="([^"]+)"([\s\S]*?)<\/article>/g)) {
     usedReviewIds.add(id);
-    const quote = card.match(/<blockquote>([\s\S]*?)<\/blockquote>/)[1]
+    const quote = card.match(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/)[1]
       .replace(/<span class="rm-dots"[^>]*>[\s\S]*?<\/span>/g, '')
       .replace(/<button[^>]*>[\s\S]*?<\/button>/g, '');
-    assert.equal(plain(quote), translatedReviews[id]);
-    assert.ok(card.includes(dict['Tulkots no latviešu valodas']));
-    assert.ok(card.includes(sourceReviews.find(r => r.id === id).author));
+    const review = allSourceReviews.get(id);
+    assert.ok(review, `Known review: ${id}`);
+    assert.ok(!review.displayLanguages || review.displayLanguages.includes(lang), `Review visibility: ${lang} ${id}`);
+    const original = (review.originalLanguage || 'lv') === lang;
+    assert.equal(plain(quote), plain(original ? review.text.replace(/[\u2013\u2014]/g, '-') : translatedReviews[id]));
+    assert.equal(card.includes('class="review-translation"'), !original, `Translation label: ${lang} ${id}`);
+    if (!original) assert.ok(card.includes(dict['Tulkots no latviešu valodas']));
+    assert.ok(card.includes(review.author));
   }
   for (const [, target] of en.matchAll(/(?:href|src)="(\/[^"#?]*)/g)) {
     if (target.startsWith('//') || checkedTargets.has(target)) continue;
@@ -120,9 +128,33 @@ for (const root of ['public', 'dist']) {
   if (hasLanguagePage(lang, '/musu-darbi/')) assert.deepEqual((await readdir(new URL(`../${root}/${lang}/musu-darbi/`, import.meta.url))).sort(), ['index.html', ...galleryPaths.map(path => path.split('/')[2])].sort());
 }
 assert.deepEqual(projectData.map(p => p.id).sort(), [...usedProjectIds].sort());
-assert.deepEqual(Object.keys(translatedReviews).sort(), [...usedReviewIds].sort());
+assert.deepEqual([...sourceReviews.map(r => r.id), ...nativeReviews.reviews.filter(r => r.displayLanguages.includes(lang)).map(r => r.id)].sort(), [...usedReviewIds].sort());
 console.log(`${lang.toUpperCase()}: ${config.pages[lang].length} pamatlapas un ${pages.length-config.pages[lang].length} projektu lapas pārbaudītas.`);
 }
+
+// Oriģinālvalodas jaunās atsauksmes redzamas tikai savā valodā; LV/NO izlase paliek tā pati.
+const defaultFeatured = ['google-karlina-gatere', 'facebook-dace-milberga', 'web-3'];
+const expectedFeatured = {
+  lv: defaultFeatured,
+  en: ['google-angelika-v', 'facebook-nick-hare', 'facebook-david-sauce'],
+  ru: ['google-studija-kantilena', 'facebook-dace-milberga', 'web-3'],
+  no: defaultFeatured
+};
+const reviewIds = html => [...html.matchAll(/data-review-id="([^"]+)"/g)].map(m => m[1]);
+for (const lang of ['lv', 'en', 'ru', 'no']) {
+  const prefix = lang === 'lv' ? '' : `${lang}/`;
+  const home = await read(`public/${prefix}index.html`);
+  const page = await read(`public/${prefix}virtuves-mebeles-atsauksmes-virtuves-iekartas/index.html`);
+  assert.deepEqual(reviewIds(home), expectedFeatured[lang], `Featured review order: ${lang}`);
+  assert.deepEqual(reviewIds(page).sort(), [...sourceReviews.map(r => r.id), ...nativeReviews.reviews.filter(r => r.displayLanguages.includes(lang)).map(r => r.id)].sort(), `All review selection: ${lang}`);
+  for (const r of nativeReviews.reviews) {
+    if (!r.displayLanguages.includes(lang)) {
+      assert.ok(!home.includes(r.id) && !page.includes(r.id), `No foreign review: ${lang} ${r.id}`);
+      assert.ok(!home.includes(r.author) && !page.includes(r.author), `No foreign review author: ${lang} ${r.id}`);
+    }
+  }
+}
+
 assert.match(await read('public/kontakti/index.html'), /hreflang="en"/);
 assert.match(await read('public/cenas/index.html'), /hreflang="en"/);
 console.log('Maršruti, saites, tulkojumi, struktūra, attēli, dialogi, metadati un atsauksmes pārbaudīti.');

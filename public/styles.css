@@ -673,7 +673,7 @@ h1,h2,h3,.stats-band dt,.steps h3,.steps .step-number,.about-figure span,.proces
 .review-meta .review-source{margin:0;color:#615b54;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .review-stars{display:block;flex-shrink:0;color:#9b762e;font-size:15px;letter-spacing:.08em;line-height:1}
 .review-recommendation{color:#615b54;font-size:12px;font-weight:500}
-.review-card blockquote{margin:0;font-size:15px;line-height:1.65}
+.review-card blockquote{margin:0;font-size:15px;line-height:1.65;white-space:pre-line}
 .review-author{margin:24px 0 0;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink)}
 .review-grid{gap:18px}
 @media(min-width:1000px){.review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}

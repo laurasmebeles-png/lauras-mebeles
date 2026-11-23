@@ -8,6 +8,7 @@ for (const lang of Object.keys(i18nConfig.languages).filter(lang => lang !== def
 }
 const source = await readFile(new URL('src/home.html', root), 'utf8');
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
+const nativeReviews = JSON.parse(await readFile(new URL('src/reviews.native.json',root),'utf8'));
 const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));
 const galleryReviewIds = JSON.parse(await readFile(new URL('src/gallery-review-ids.json',root),'utf8'));
 // Kanoniskā adrese: SITE_URL (palaišanai: https://laurasmebeles.lv), citādi Vercel produkcijas adrese, citādi lokāli.
@@ -105,7 +106,8 @@ const categoryCards = () => {
   const rows = rest.map(c=>`<li><a href="/${c.path}/" data-event="category_select" data-category="${c.id}"><div class="service-row-text"><h3>${esc(c.label)}</h3><p>${esc(c.short)}</p></div>${arrow}</a></li>`).join('');
   return `<div class="services-layout"><a class="service-feature" href="/${feat.path}/" data-event="category_select" data-category="${feat.id}"><div class="collage">${collage}</div><div class="service-feature-copy"><h3>${esc(feat.label)} ${arrow}</h3><p>${esc(feat.short)}</p></div></a><ul class="service-rows">${rows}</ul></div>`;
 };
-const reviewById = new Map(reviews.map(r => [r.id,r]));
+const reviewById = new Map([...reviews,...nativeReviews.reviews].map(r => [r.id,r]));
+if (reviewById.size !== reviews.length + nativeReviews.reviews.length) throw Error('Duplicate review ID');
 const selectReviews = ids => ids.map(id => { const review = reviewById.get(id); if (!review) throw Error(`Missing review ${id}`); return review; });
 const homeReviewIds = ['google-karlina-gatere','facebook-dace-milberga','web-3'];
 const pageReviewIds = [
@@ -114,6 +116,9 @@ const pageReviewIds = [
   'google-kg-knutsson','facebook-lasma-cerina','web-1',
   'web-4','web-5','web-6'
 ];
+const reviewsForLanguage = (lang, slot) => selectReviews(slot === 'home'
+  ? nativeReviews.featured[lang] || homeReviewIds
+  : [...nativeReviews.reviews.filter(r => r.displayLanguages.includes(lang)).map(r => r.id), ...pageReviewIds]);
 const reviewMeta = r => r.source==='google'
   ? `<div class="review-meta"><span class="review-source"><span class="review-source-icon review-source-icon-google" aria-hidden="true">G</span>Google</span><span class="review-stars" role="img" aria-label="${r.rating} no 5 zvaigznēm">★★★★★</span></div>`
   : r.source==='facebook'
@@ -121,19 +126,21 @@ const reviewMeta = r => r.source==='google'
     : `<div class="review-meta"><span class="review-source">Klienta atsauksme</span></div>`;
 const reviewAvatar = `<span class="review-avatar" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><circle cx="20" cy="14" r="6"/><path d="M8 34c0-7 5-11 12-11s12 4 12 11"/></svg></span>`;
 const reviewCard = (r, lang=defaultLang) => {
-  const translated = reviewTranslations[lang]?.[r.id];
-  if (lang !== defaultLang && !translated) throw Error(`Missing ${lang} review translation: ${r.id}`);
+  if (r.displayLanguages && !r.displayLanguages.includes(lang)) throw Error(`Review ${r.id} is not available in ${lang}`);
+  const originalLanguage = r.originalLanguage || defaultLang;
+  const translated = lang === originalLanguage ? undefined : reviewTranslations[lang]?.[r.id];
+  if (lang !== originalLanguage && !translated) throw Error(`Missing ${lang} review translation: ${r.id}`);
   const text = (translated || r.text).replace(/[\u2013\u2014]/g,'-');
   const sentenceEnd = [...text.matchAll(/[.!?](?=\s|$)/g)].map(m=>m.index+1).find(pos=>pos>=120&&pos<=220);
   const cut = text.length>230 ? (sentenceEnd || text.lastIndexOf(' ',200)) : 0;
   const head = cut>0?text.slice(0,cut).trimEnd():text;
   const rest = cut>0?text.slice(cut).trimStart():'';
-  return `<article class="review-card" data-review-id="${r.id}" data-review-source="${r.source}"><div class="review-bubble">${reviewMeta(r)}${translated?`<p class="review-translation">${esc(dicts[lang]['Tulkots no latviešu valodas'])}</p>`:''}<blockquote>${rest?`<p class="rm"><span class="rm-head">${esc(head)}</span><span class="rm-dots" aria-hidden="true"> …</span><span class="rm-tail" hidden> ${esc(rest)}</span> <button type="button" class="rm-btn" aria-expanded="false">Lasīt vairāk</button></p>`:`<p>${esc(text)}</p>`}</blockquote></div><p class="review-author">${reviewAvatar}<span>${esc(r.author)}</span></p></article>`;
+  return `<article class="review-card" data-review-id="${r.id}" data-review-source="${r.source}"><div class="review-bubble">${reviewMeta(r)}${translated?`<p class="review-translation">${esc(dicts[lang]['Tulkots no latviešu valodas'])}</p>`:''}<blockquote lang="${lang}">${rest?`<p class="rm"><span class="rm-head">${esc(head)}</span><span class="rm-dots" aria-hidden="true"> …</span><span class="rm-tail" hidden> ${esc(rest)}</span> <button type="button" class="rm-btn" aria-expanded="false">Lasīt vairāk</button></p>`:`<p>${esc(text)}</p>`}</blockquote></div><p class="review-author">${reviewAvatar}<span>${esc(r.author)}</span></p></article>`;
 };
-const reviewGrid = list => `<div class="review-grid">${list.map(r => reviewCard(r)).join('')}</div>`;
+const reviewGrid = slot => `<!--reviews:${slot}-->`;
 const homeServices = `<section id="mebeles" class="section"><div class="section-heading"><div><p class="eyebrow">01 / Pakalpojumi</p><h2>Ko mēs izgatavojam?</h2></div><p>No virtuves līdz garderobei. Mēbeles, kas iederas jūsu mājās.</p></div>${categoryCards()}</section>`;
 const homeProjects = `<section id="darbi" class="section projects-section"><div class="section-heading"><div><p class="eyebrow">02 / Realizētie projekti</p><h2>Iedvesma jūsu mājām.</h2></div><p>Virtuves, skapji un pārdomāti risinājumi īstās mājās.</p></div>${grid(['peleka','skapis','prieksnams'].map(id=>projects.find(p=>p.id===id)))}<div class="gallery-bottom"><a class="text-link" href="/musu-darbi/">Visi mūsu darbi ${arrow}</a></div></section>`;
-const homeReviews = `<section id="atsauksmes" class="section reviews-section"><div class="section-heading"><div><p class="eyebrow">Klientu pieredze</p><h2>Ko saka mūsu klienti</h2></div><a class="text-link" href="${reviewPath}">Visas atsauksmes ${arrow}</a></div>${reviewGrid(selectReviews(homeReviewIds))}</section>`;
+const homeReviews = `<section id="atsauksmes" class="section reviews-section"><div class="section-heading"><div><p class="eyebrow">Klientu pieredze</p><h2>Ko saka mūsu klienti</h2></div><a class="text-link" href="${reviewPath}">Visas atsauksmes ${arrow}</a></div>${reviewGrid('home')}</section>`;
 let home = source.slice(source.indexOf('<main id="saturs">')+18,source.indexOf('</main>'));
 home=home.replace(section('mebeles'),homeServices).replace(section('darbi'),homeProjects);
 const homePrice=`<section id="cenas" class="section home-price"><div class="home-price-box"><div><p class="eyebrow">Cenas</p><h2>Cik maksās jūsu mēbeles?</h2><p>Apskatiet virtuvju cenu piemērus vai pastāstiet par savu ieceri, un sagatavosim individuālu piedāvājumu. Cenā ietveram projektēšanu, piegādi un montāžu.</p></div><div class="home-price-actions"><a class="button" href="/cenas/">Apskatīt cenu piemērus</a><a class="text-link" href="/kontakti/#pieteikums">Pieteikt konsultāciju ${arrow}</a></div></div></section>`;
@@ -224,7 +231,7 @@ const contactVisitNote = contactMain.slice(visitNoteStart, visitNoteEnd);
 contactMain = contactMain.slice(0, contactAddressStart) + '</div>' + contactMain.slice(visitNoteEnd);
 const contactMap = `<section class="section contact-location" aria-labelledby="contact-location-title"><div class="contact-location-intro"><div><p class="eyebrow">Mūsu adrese</p><h2 id="contact-location-title">Atrodiet mūs Rīgā</h2><p>Matīsa iela 78A, Rīga, LV-1009. Šeit atrodas mūsu birojs ar ekspozīciju, ražotne un noliktavas.</p>${contactVisitNote}</div><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Mat%C4%ABsa+iela+78A%2C+R%C4%ABga" target="_blank" rel="noopener noreferrer">Atvērt Google Maps ${arrow}</a></div><iframe class="contact-map" title="Karte: Lauras mēbeles, Matīsa iela 78A, Rīga" src="https://maps.google.com/maps?q=Mat%C4%ABsa%20iela%2078A%2C%20R%C4%ABga&amp;z=16&amp;output=embed" width="1200" height="360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></section>`;
 await save('kontakti','Kontakti un cenas piedāvājums | Lauras mēbeles',`<div class="section contact-crumbs">${crumbs('Kontakti')}</div>`+contactMain+contactMap+contactBusiness,'Pastāstiet par savu mēbeļu ieceri. Lauras mēbeles, Matīsa iela 78A, Rīga, LV-1009. Darba laiks darbdienās 9.00–17.30. Pirms ierašanās lūdzam saskaņot apmeklējuma laiku.');
-const reviewsBody=pageIntro('Atsauksmes','Ko saka mūsu klienti','Klientu pieredze, pasūtot virtuves, skapjus un citas mēbeles.')+`<section class="section section-tight reviews-section">${reviewGrid(selectReviews(pageReviewIds))}<div class="review-links"><a href="https://www.google.com/search?q=lauras+mebeles&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95c2IqOIwOy0L8e3cPD3gnTWvw9oivWTOHTJ9dtS38E1SjCoN34-rdRJkuCsE6c1Dh1zCAocs%3D" target="_blank" rel="noopener" class="text-link">Lasīt atsauksmes Google ${arrow}</a><a href="https://www.facebook.com/LaurasMebeles/reviews/" target="_blank" rel="noopener" class="text-link">Lasīt atsauksmes Facebook ${arrow}</a></div>${cta('Pastāstiet par savu ieceri','Iesākumam pietiek ar ideju.')}</section>`;
+const reviewsBody=pageIntro('Atsauksmes','Ko saka mūsu klienti','Klientu pieredze, pasūtot virtuves, skapjus un citas mēbeles.')+`<section class="section section-tight reviews-section">${reviewGrid('all')}<div class="review-links"><a href="https://www.google.com/search?q=lauras+mebeles&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95c2IqOIwOy0L8e3cPD3gnTWvw9oivWTOHTJ9dtS38E1SjCoN34-rdRJkuCsE6c1Dh1zCAocs%3D" target="_blank" rel="noopener" class="text-link">Lasīt atsauksmes Google ${arrow}</a><a href="https://www.facebook.com/LaurasMebeles/reviews/" target="_blank" rel="noopener" class="text-link">Lasīt atsauksmes Facebook ${arrow}</a></div>${cta('Pastāstiet par savu ieceri','Iesākumam pietiek ar ideju.')}</section>`;
 await save('virtuves-mebeles-atsauksmes-virtuves-iekartas','Klientu atsauksmes | Lauras mēbeles',reviewsBody,'Lasiet klientu atsauksmes par Lauras mēbeļu izgatavotajām virtuvēm, skapjiem un citām mēbelēm, sadarbību un darba kvalitāti.');
 const projectsData = [...projects,...inspirationProjects].map(p=>p.before?{...p,photos:[p.before,...p.photos],labels:['Pirms',...p.photos.map(()=>'Pēc')]}:p);
 for (const lang of enabledLangs) {
@@ -238,7 +245,7 @@ console.log('Sagatavota sākumlapa un 13 apakšlapas no kopīga satura un projek
 
 async function renderPage(lang,path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.',options={}) {
   const pageLangs = languagesForPage(path);
-  if (lang !== defaultLang) body = body.replace(/<article class="review-card" data-review-id="([^"]+)"[\s\S]*?<\/article>/g, (_, id) => reviewCard(reviewById.get(id), lang));
+  body = body.replace(/<!--reviews:(home|all)-->/g, (_, slot) => `<div class="review-grid">${reviewsForLanguage(lang, slot).map(r => reviewCard(r, lang)).join('')}</div>`);
   for (const match of body.matchAll(/data-project="([^"]+)"/g)) pageProjectIds.get(lang).add(match[1]);
   const pre=langPrefix(lang);const folder=new URL(`public${pre}/${path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
   const pageUrl=`${siteUrl}${pre}/${path?path+'/':''}`;

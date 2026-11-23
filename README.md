@@ -41,7 +41,8 @@ VS Code ir pievienots arī uzdevums **Terminal → Run Task → Atvērt Lauras m
 | `public/images/` | Publicēšanai sagatavotie attēli |
 | `src/home.html` | Sākumlapas avots un koplietoto sadaļu sagatave |
 | `src/catalog.mjs` | Pakalpojumu saturs un vienota projektu/foto datu bāze |
-| `src/reviews.json` | No WordPress eksportētās īstās atsauksmes |
+| `src/reviews.json` | Sākotnējās 12 īstās LV atsauksmes |
+| `src/reviews.native.json` | Jaunie EN/RU oriģināli, valodu ierobežojumi un sākumlapas atlase |
 | `scripts/generate-pages.mjs` | Kopīgās navigācijas un lapu veidnes |
 | `public/**/index.html` | Ģenerētais rezultāts; tieši nelabot |
 | `public/styles.css` | Krāsas, izkārtojums, mobilā versija |
@@ -73,10 +74,12 @@ Izpētes kopsavilkums ir arī [Notion](https://app.notion.com/p/408f611175e98109
 
 NO Bokmål priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijas projektu lapas ar pārbaudītajiem tekstiem, metadatiem, kopīgo saskarni, 41 projekta dialogu un 12 pilnām atsauksmēm. Signe apstiprinājusi ievietošanu pēc neatkarīgām valodas un faktu/izpētes pārbaudēm. Iekšējās saites paliek NO, pārslēdzējs saglabā konkrēto lapu arī galerijā. [NO teksti un pārbaudes](content/no/README.md), [pārējo lapu teksti](content/no/parejo-lapu-teksti.md). Forma joprojām ir izmēģinājums bez e-pastu sūtīšanas.
 
-RU priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijas projektu lapas. Iekļauti pamatteksti, metadati, alt/aria, kopīgā saskarne, 41 izmantotā projekta dialogs un 12 pilnas atsauksmes. Signe apstiprinājusi publicēšanu pēc neatkarīgām valodas, faktu un izpētes pārbaudēm. Galvenās iekšējās saites paliek RU versijā; pārslēdzējs saglabā konkrēto lapu arī galerijas projektos. [RU teksti un pārbaudes](content/ru/parejo-lapu-teksti.md). Forma joprojām ir izmēģinājums bez e-pastu sūtīšanas.
+RU priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijas projektu lapas. Iekļauti pamatteksti, metadati, alt/aria, kopīgā saskarne, 41 izmantotā projekta dialogs, 12 pilnas tulkotās atsauksmes un viens RU oriģināls. Signe apstiprinājusi publicēšanu pēc neatkarīgām valodas, faktu un izpētes pārbaudēm. Galvenās iekšējās saites paliek RU versijā; pārslēdzējs saglabā konkrēto lapu arī galerijas projektos. [RU teksti un pārbaudes](content/ru/parejo-lapu-teksti.md). Forma joprojām ir izmēģinājums bez e-pastu sūtīšanas.
 
 EN priekšskatījumā ieslēgtas visas 14 pamatlapas un 174 galerijā izmantotās projektu lapas. Signe apstiprinājusi tekstus, tostarp cenu piemēru pogu “Get a quote for a similar kitchen” un EN jautājumu/atbildi par piegādi un montāžu ārpus Latvijas. LV/EN pārslēdzējs pieejams arī projektu lapās un saglabā pašreizējo lapu. [Teksti un statusi](content/en/parejo-lapu-melnraksti.md). Atsauksmju oriģināli un pilnie tulkojumi saglabāti bez pārfrāzēšanas. Formai joprojām ir tikai izmēģinājuma darbība bez e-pastu sūtīšanas. Cenu piemēri izmanto pašreizējā LV priekšskatījuma summas un specifikācijas; klienta apstiprinājums publiskai palaišanai vēl jāpārbauda.
 
 Vercel iestatījumi ir `vercel.json`: build `npm run build`, izvade `dist/`, visām atbildēm `X-Robots-Tag: noindex, nofollow`. Pirms īstās palaišanas šo galveni un `robots.txt` aizliegumu izņem (PLAN.md, 8. punkts). Priekšskatījuma saite: https://lauras-mebeles.vercel.app/ (Vercel Hobby, GitHub repo laurasmebeles-png/lauras-mebeles; katrs `git push` uz `main` to atjaunina).
 
 Canonical un OG adreses ģenerē `scripts/generate-pages.mjs` no vides mainīgā `SITE_URL`; ja tā nav, izmanto Vercel produkcijas adresi, lokāli `http://127.0.0.1:4173`. Katras lapas title un description ir `save(...)` izsaukumos tajā pašā failā.
+
+23.11.2026. Sākumlapas atsauksmju atlase pielāgota valodai: EN izceltas trīs jaunās EN oriģinālās atsauksmes, RU pirmā ir jaunais RU oriģināls. Tās pievienotas tikai savas valodas atsauksmju lapai (EN 15, RU 13); LV un NO paliek 12 līdzšinējie ieraksti. [Atlase un avotu pārbaude](docs/reviews-by-language.md).

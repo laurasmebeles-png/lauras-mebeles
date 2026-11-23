@@ -1,0 +1,62 @@
+{
+  "featured": {
+    "en": [
+      "google-angelika-v",
+      "facebook-nick-hare",
+      "facebook-david-sauce"
+    ],
+    "ru": [
+      "google-studija-kantilena",
+      "facebook-dace-milberga",
+      "web-3"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "google-angelika-v",
+      "author": "Angelika V.",
+      "originalLanguage": "en",
+      "displayLanguages": [
+        "en"
+      ],
+      "source": "google",
+      "rating": 5,
+      "evidenceFile": "IMG_3311.jpg",
+      "text": "If anyone needs custom furniture in Latvia, this is the place. 110% recommended"
+    },
+    {
+      "id": "facebook-nick-hare",
+      "author": "Nick Hare",
+      "originalLanguage": "en",
+      "displayLanguages": [
+        "en"
+      ],
+      "source": "facebook",
+      "evidenceFile": "IMG_3315.jpg",
+      "text": "I used Lauras Mebeles for a new kitchen in an apartment refurbishment\n\nI found both workers and Management of Lauras Mebeles friendly and professional\n\nI found the whole process from: initial enquiry, measurements and consultation with our builder, design and material choice to final fitting, ran professionally and efficiently"
+    },
+    {
+      "id": "facebook-david-sauce",
+      "author": "Dávid Sauce",
+      "originalLanguage": "en",
+      "displayLanguages": [
+        "en"
+      ],
+      "source": "facebook",
+      "evidenceFile": "IMG_3314.jpg",
+      "text": "Highly recommended! ⭐⭐⭐⭐⭐\n\nWe are extremely happy with our beautiful new kitchen made by Lauras Mēbeles!\n\nThe team travelled all the way from Latvia to Hungary in just one day, and in only two days they created and installed this absolutely stunning kitchen.\n\nTheir professionalism, precision, attention to detail, and dedication to their work were truly impressive. Everything was done with great care, accuracy, and excellent craftsmanship.\n\nThe result exceeded our expectations, and we couldn’t be happier with our new kitchen!\n\nA huge thank you to the entire team at Lauras Mēbeles for their amazing work. We highly recommend them to anyone looking for beautiful, high-quality custom-made furniture!\n\nThank you for making our dream kitchen a reality! ❤️"
+    },
+    {
+      "id": "google-studija-kantilena",
+      "author": "Studija Kantilēna",
+      "originalLanguage": "ru",
+      "displayLanguages": [
+        "ru"
+      ],
+      "source": "google",
+      "rating": 5,
+      "evidenceFile": "IMG_3312.jpg",
+      "text": "Очень рекомендую.\nНашей кухне уже пять с половиной лет.\nСостояние идеальное.\nВсё сделано очень качественно.\nНичего не покасилось, не развалилось."
+    }
+  ]
+}

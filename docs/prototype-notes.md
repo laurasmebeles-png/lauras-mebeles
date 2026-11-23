@@ -175,3 +175,14 @@ Pēc Signes apstiprinājuma ieslēgtas atlikušās septiņas NO pamatlapas un 17
 Septiņas jaunās lapas pārlūkā pārbaudītas 1440, 390 un 360 px platumā; cenas arī 1024 px. Pārplūdes/apgrieztu pogu nav. Garākiem Par mums/cenu H1 un cenu piemēra pogai līdzsvarots rindu dalījums ar CSS, nemainot vārdus vai fontu. Pārbaudīta cenu piemēra pāreja uz NO kontaktformu, konteksta noņemšana un maketa nenosūtīšanas rezultāts, galerijas 18 → 36 izvēršana un skapju filtrs, projekta foto 1 / 2 → 2 / 2 un EN/NO pārslēgšana, pilnas atsauksmes izvēršana, jaunās zaļās virtuves slīdnis 50 → 51 un Før 1 / 3 → Etter 2 / 3. Apskatītas arī ražotnes, partneru, valstu un noslēguma sadaļas. Konsoles kļūdu nav. Noindex un formas izmēģinājuma statuss saglabāts; DNS, Resend un analītika vēl ir PLAN.md darbi.
 
 Gala npm run test:i18n (EN/RU/NO katrai 14 + 174), npm run check un git diff --check veiksmīgi.
+
+
+## 23.11.2026: oriģinālvalodas atsauksmes pēc valodas
+
+Pievienotas trīs EN un viena RU oriģinālās atsauksmes no Signes četriem ekrānattēliem. Neatkarīgi pārbaudīti autori, pilnie teksti un faktiskie vērtējumi. Jaunie dati ir src/reviews.native.json ar valodas ierobežojumu un atsevišķu sākumlapas atlasi. EN sākumlapā visi trīs oriģināli; RU sākumlapā Studija Kantilēna pirmā, pēc tam Dace Milberga un Toms Panders tulkojumi. Atsauksmju lapā EN 15, RU 13; LV/NO 12 un to sākumlapas izlase nemainīta. Nav automātisku jauno citātu tulkojumu citām valodām. Esošie 12 LV avoti un EN/RU/NO pilnie tulkojumi precīzi saglabāti.
+
+Ģenerators atlasa kartītes pirms HTML tulkošanas; oriģināla valodā izmanto paša autora tekstu bez tulkojuma norādes. Facebook rekomendācijai nav izdomāta skaitliska atzīme, Google abiem jaunajiem 5/5. Tekošās/relatīvās datumu norādes nav pārvērstas izdomātā datumā. Garie teksti izvēršami, rindkopas saglabā white-space:pre-line. Oriģinālā RU drukas kļūda avotā atstāta. Redakcijas politikas izvērtējums un avoti ir docs/reviews-by-language.md.
+
+Pārbaudīti EN/RU sākumlapu un pilno atsauksmju lapu skati 1440 un 390/360 px, garās EN atsauksmes izvēršana, īstie avotu marķējumi un tulkojuma norāžu neesamība oriģināliem. Pārplūdes nav. npm run test:i18n pārbauda visas valodu lapas, pilnos citātus, atsevišķo sākumlapu secību un jauno atsauksmju neparādīšanos svešās valodās. npm run check veiksmīgs. Norvēģu oriģināls ir PLAN.md atvērts solis; RU BUJ pārmaiņa tikai priekšlikums, aktīvā atbilde nav mainīta.
+
+Gala statiskais build un node scripts/i18n.test.mjs veiksmīgi. Atsevišķi pārbaudīts, ka src/reviews.json un visu trīs valodu atsauksmju tulkojumi ir precīzi nemainīti pret iepriekšējo Git versiju.
