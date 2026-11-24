@@ -33,7 +33,7 @@ Visi pieci attēli vizuāli pārbaudīti; nav apgalvots precīzs virsmu materiā
 
 ## Sadarbības partneru attēli — 11.11.
 
-Seši attēlotie partneri un to attēli ņemti no [esošās partneru lapas](https://laurasmebeles.lv/partneri/). SIA “Prenta” ir vecās sākumlapas WordPress eksportā (post ID 149) kā “Sadarbības partneris”, taču pašreizējā partneru lapā tās nav. Pēc Signes lēmuma Prenta jaunajā lapā netiek rādīta, kamēr Juris neprecizēs sarakstu. Attēlu saturs nav mainīts, tikai pārveidots WebP formātā. Pirms gala publicēšanas klientam jāpārbauda, vai visi seši partneri joprojām jāattēlo.
+Pirmie seši partneri un to attēli ņemti no [esošās partneru lapas](https://laurasmebeles.lv/partneri/). Pēc Jura saraksta precizējuma un Signes apstiprinājuma pievienoti vēl četri partneri. Prenta logotips ņemts no klienta WordPress materiāliem, pārējie trīs no uzņēmumu vietnēm. Faili pielāgoti WebP formātam, Prenta attēlam noņemta liekā baltā mala.
 
 | Uzmetuma fails | Avots |
 |---|---|
@@ -43,6 +43,10 @@ Seši attēlotie partneri un to attēli ņemti no [esošās partneru lapas](http
 | partneri/hooligan.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/bubbletea.jpg |
 | partneri/tison.webp | https://laurasmebeles.lv/wp-content/uploads/2022/12/cropped-tison-logo.png |
 | partneri/rasa.webp | https://laurasmebeles.lv/wp-content/uploads/2020/01/Screenshot-2020-01-22-at-19.14.46-1.png |
+| partneri/prenta.webp | https://laurasmebeles.lv/wp-content/uploads/2026/08/prenta-sia_image001-212-1-_420x180.jpg |
+| partneri/decoriga.webp | https://decoriga.lv/wp-content/uploads/2023/09/logo-1.png |
+| partneri/korte.webp | https://korte.lv/wp-content/uploads/2024/11/logo-samazinats-v8-768x304.png |
+| partneri/aristone.webp | https://www.aristone.lv/wp-content/uploads/2021/08/ARI-Stone-logo.png |
 
 ## Ražotnes attēli — 12.11.
 
