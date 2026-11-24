@@ -256,12 +256,12 @@ const contactMap = `
   <div data-cookie-map>
     <div class="cookie-map-placeholder" data-cookie-map-placeholder>
       <h3>Google karte</h3>
-      <p>Ielādējot Google karti, Google saņem jūsu IP adresi un var izmantot sīkdatnes.</p>
-      <button class="nk-button nk-button-outline" type="button" data-cookie-choice="allow" data-cookie-map-allow hidden>Atļaut un rādīt karti</button>
+      <p>Google kartē varat apskatīt, kur atrodamies. Ja izvēlaties rādīt karti, Google saņem jūsu IP adresi un var izmantot sīkdatnes.</p>
+      <button class="nk-button nk-button-outline" type="button" data-cookie-choice="allow" data-cookie-map-allow hidden>Rādīt karti</button>
       <a href="/privatuma-politika/#sikdatnes">Vairāk par sīkdatnēm</a>
     </div>
     <div data-cookie-map-slot></div>
-    <button class="nk-button nk-button-outline cookie-map-revoke" type="button" data-cookie-choice="reject" data-cookie-map-revoke hidden>Atsaukt atļauju kartei</button>
+    <button class="nk-button nk-button-outline cookie-map-revoke" type="button" data-cookie-choice="reject" data-cookie-map-revoke hidden>Paslēpt karti</button>
     <template data-cookie-map-template>
       <iframe class="contact-map" title="Karte: Lauras mēbeles, Matīsa iela 78A, Rīga" data-src="https://maps.google.com/maps?q=Mat%C4%ABsa%20iela%2078A%2C%20R%C4%ABga&amp;z=16&amp;output=embed" width="1200" height="360" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>
     </template>
