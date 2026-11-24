@@ -1,30 +1,39 @@
 (() => {
-  const map = document.querySelector('[data-cookie-map]');
-  if (!map) return;
+  const banner = document.querySelector('[data-cookie-banner]');
+  const settings = document.querySelector('#cookie-settings');
+  if (!banner || !settings || typeof settings.showModal !== 'function') return;
 
   const storageKey = 'lauras-cookie-preferences';
-  const version = 1;
+  const version = 2;
   const validity = 180 * 24 * 60 * 60 * 1000;
-  const mapTemplate = map.querySelector('[data-cookie-map-template]');
-  const mapSlot = map.querySelector('[data-cookie-map-slot]');
-  const mapPlaceholder = map.querySelector('[data-cookie-map-placeholder]');
-  const showMap = map.querySelector('[data-cookie-map-allow]');
-  const hideMap = map.querySelector('[data-cookie-map-revoke]');
+  const form = settings.querySelector('[data-cookie-options]');
+  const categories = [...form.querySelectorAll('input[type="checkbox"]:enabled')];
+  const map = document.querySelector('[data-cookie-map]');
+  const mapTemplate = map?.querySelector('[data-cookie-map-template]');
+  const mapSlot = map?.querySelector('[data-cookie-map-slot]');
+  const mapPlaceholder = map?.querySelector('[data-cookie-map-placeholder]');
 
   function loadChoice() {
     try {
-      const value = localStorage.getItem(storageKey);
-      if (!value) return null;
-      const choice = JSON.parse(value);
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+      if (!saved) return null;
+
       const now = Date.now();
-      if (choice?.version === version && typeof choice.mapsAllowed === 'boolean' &&
-          Number.isSafeInteger(choice.decidedAt) && choice.decidedAt <= now &&
-          choice.expiresAt === choice.decidedAt + validity && choice.expiresAt > now) {
-        return choice;
+      const validDates = Number.isSafeInteger(saved.decidedAt) && saved.decidedAt <= now &&
+        saved.expiresAt === saved.decidedAt + validity && saved.expiresAt > now;
+      if (validDates) {
+        if (saved.version === version && Object.keys(saved.categories || {}).length === categories.length &&
+          categories.every(input => typeof saved.categories?.[input.name] === 'boolean')) {
+          return saved;
+        }
+        if (saved.version === 1 && categories.length === 1 && categories[0].name === 'maps' &&
+          typeof saved.mapsAllowed === 'boolean') {
+          return { version, categories: { maps: saved.mapsAllowed }, decidedAt: saved.decidedAt, expiresAt: saved.expiresAt };
+        }
       }
       localStorage.removeItem(storageKey);
     } catch {
-      // Unavailable or unreadable storage is treated as a missing choice.
+      // An unreadable or unavailable preference leaves every optional category off.
     }
     return null;
   }
@@ -32,10 +41,11 @@
   let choice = loadChoice();
 
   function renderChoice() {
-    const allowed = choice?.mapsAllowed === true && choice.expiresAt > Date.now();
+    banner.hidden = Boolean(choice);
+    if (!map) return;
+
+    const allowed = choice?.categories.maps === true && choice.expiresAt > Date.now();
     mapPlaceholder.hidden = allowed;
-    showMap.hidden = false;
-    hideMap.hidden = !allowed;
     if (!allowed) {
       mapSlot.replaceChildren();
     } else if (!mapSlot.firstElementChild) {
@@ -46,29 +56,47 @@
     }
   }
 
-  function saveChoice(mapsAllowed) {
+  function resetForm() {
+    for (const input of categories) input.checked = choice?.categories[input.name] === true;
+  }
+
+  function saveChoice(selected) {
     const decidedAt = Date.now();
-    choice = { version, mapsAllowed, decidedAt, expiresAt: decidedAt + validity };
+    choice = { version, categories: selected, decidedAt, expiresAt: decidedAt + validity };
     try {
       localStorage.setItem(storageKey, JSON.stringify(choice));
     } catch {
       // An explicit choice can still be applied to the current page.
     }
+    if (settings.open) settings.close();
     renderChoice();
   }
 
-  showMap.addEventListener('click', () => {
-    saveChoice(true);
-    hideMap.focus();
+  for (const trigger of document.querySelectorAll('[data-cookie-open]')) {
+    trigger.hidden = false;
+    trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      resetForm();
+      if (!settings.open) settings.showModal();
+    });
+  }
+  for (const button of document.querySelectorAll('[data-cookie-action]')) {
+    button.addEventListener('click', () => {
+      const allow = button.dataset.cookieAction === 'accept';
+      saveChoice(Object.fromEntries(categories.map(input => [input.name, allow])));
+    });
+  }
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    saveChoice(Object.fromEntries(categories.map(input => [input.name, input.checked])));
   });
-
-  hideMap.addEventListener('click', () => {
-    saveChoice(false);
-    showMap.focus();
-  });
+  settings.querySelector('[data-cookie-info]').addEventListener('click', () => settings.close());
 
   function syncChoice() {
     choice = loadChoice();
+    if (settings.open) resetForm();
     renderChoice();
   }
 

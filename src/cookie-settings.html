@@ -1,0 +1,41 @@
+<section class="cookie-banner" aria-labelledby="cookie-banner-title" data-cookie-banner hidden>
+  <div>
+    <h2 id="cookie-banner-title">Sīkdatnes</h2>
+    <p>Ar jūsu atļauju kontaktu lapā ielādējam Google karti. Iestatījumos varat apskatīt un mainīt savu izvēli. <a href="/privatuma-politika/#sikdatnes">Vairāk par sīkdatnēm</a></p>
+  </div>
+  <div class="cookie-actions">
+    <button class="nk-button nk-button-outline" type="button" data-cookie-action="accept">Pieņemt visas</button>
+    <button class="nk-button nk-button-outline" type="button" data-cookie-action="reject">Tikai nepieciešamās</button>
+    <button class="nk-button nk-button-outline" type="button" data-cookie-open>Sīkdatņu iestatījumi</button>
+  </div>
+</section>
+<dialog id="cookie-settings" class="cookie-settings" aria-labelledby="cookie-settings-title">
+  <div class="cookie-heading">
+    <h2 id="cookie-settings-title">Sīkdatņu iestatījumi</h2>
+    <form method="dialog"><button class="cookie-close" type="submit">Aizvērt</button></form>
+  </div>
+  <p>Izvēlieties, ko vēlaties atļaut. Jūsu izvēli saglabāsim šajā pārlūkā līdz 180 dienām.</p>
+  <form class="cookie-options" data-cookie-options>
+    <div class="cookie-option">
+      <div><strong>Nepieciešamās</strong><p>Saglabā jūsu sīkdatņu izvēli.</p></div>
+      <span class="cookie-status">Vienmēr aktīvas</span>
+    </div>
+    <div class="cookie-option">
+      <div><label for="cookie-maps">Google karte</label><p id="cookie-maps-note">Rāda mūsu atrašanās vietu kontaktu lapā. Ielādējot karti, Google saņem jūsu IP adresi un var izmantot sīkdatnes.</p></div>
+      <input id="cookie-maps" type="checkbox" name="maps" aria-describedby="cookie-maps-note">
+    </div>
+    <div class="cookie-option">
+      <div><label for="cookie-analytics">Analītika</label><p id="cookie-analytics-note">Google Analytics 4 palīdz saprast, kuras lapas apmeklē un kā tās lieto.</p><p class="cookie-status" id="cookie-analytics-status">Priekšskatījumā vēl nav pieslēgta.</p></div>
+      <input id="cookie-analytics" type="checkbox" name="analytics" aria-describedby="cookie-analytics-note cookie-analytics-status" disabled>
+    </div>
+    <div class="cookie-option">
+      <div><label for="cookie-marketing">Reklāma</label><p id="cookie-marketing-note">Meta Pixel un LinkedIn Insight Tag palīdz novērtēt reklāmu rezultātus.</p><p class="cookie-status" id="cookie-marketing-status">Priekšskatījumā vēl nav pieslēgti.</p></div>
+      <input id="cookie-marketing" type="checkbox" name="marketing" aria-describedby="cookie-marketing-note cookie-marketing-status" disabled>
+    </div>
+    <div class="cookie-actions">
+      <button class="nk-button nk-button-outline" type="button" data-cookie-action="reject">Tikai nepieciešamās</button>
+      <button class="nk-button nk-button-outline" type="submit">Saglabāt izvēli</button>
+    </div>
+  </form>
+  <a class="cookie-info" href="/privatuma-politika/#sikdatnes" data-cookie-info>Vairāk par sīkdatnēm</a>
+</dialog>

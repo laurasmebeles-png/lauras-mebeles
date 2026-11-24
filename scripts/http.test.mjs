@@ -33,12 +33,19 @@ try {
     assert.match(privacy.headers.get('x-robots-tag'), /noindex/);
     const privacyHtml = await privacy.text();
     assert.match(privacyHtml, /id="sikdatnes"/);
-    assert.ok(privacyHtml.includes(`href="${prefix}/kontakti/#karte"`), prefix);
-    assert.ok(privacyHtml.includes(`href="${prefix}/privatuma-politika/#sikdatnes"`), prefix);
-    assert.doesNotMatch(privacyHtml, /id="cookie-settings"|src="\/cookie-settings\.js"/);
+    assert.ok(privacyHtml.includes(`href="${prefix}/privatuma-politika/#sikdatnes" data-cookie-open`), prefix);
+    const home = await (await fetch(base + prefix + '/')).text();
+    for (const html of [home, privacyHtml]) {
+      assert.match(html, /data-cookie-banner hidden/);
+      assert.match(html, /id="cookie-settings"/);
+      assert.match(html, /src="\/cookie-settings\.js"/);
+      assert.match(html, /id="cookie-maps"[^>]*name="maps"/);
+      assert.match(html, /id="cookie-analytics"[^>]*disabled/);
+      assert.match(html, /id="cookie-marketing"[^>]*disabled/);
+    }
     const contact = await (await fetch(base + prefix + '/kontakti/')).text();
     assert.match(contact, /id="karte" data-cookie-map/);
-    assert.match(contact, /src="\/cookie-settings\.js"/);
+    assert.ok(contact.includes(`href="${prefix}/privatuma-politika/#sikdatnes" data-cookie-open`), prefix);
     assert.match(contact, /<template data-cookie-map-template>[\s\S]*?\sdata-src="https:\/\/maps\.google\.com\/maps\?/);
     assert.doesNotMatch(contact, /<iframe[^>]*\ssrc=/);
     assert.match(contact, /<form id="lead-form"[^>]*method="post"/);
