@@ -1,18 +1,15 @@
 (() => {
-  const settings = document.querySelector('#cookie-settings');
-  if (!settings || typeof settings.showModal !== 'function') return;
+  const map = document.querySelector('[data-cookie-map]');
+  if (!map) return;
 
   const storageKey = 'lauras-cookie-preferences';
   const version = 1;
   const validity = 180 * 24 * 60 * 60 * 1000;
-  const map = document.querySelector('[data-cookie-map]');
-  const mapTemplate = map?.querySelector('[data-cookie-map-template]');
-  const mapSlot = map?.querySelector('[data-cookie-map-slot]');
-  const mapPlaceholder = map?.querySelector('[data-cookie-map-placeholder]');
-  const showMap = map?.querySelector('[data-cookie-map-allow]');
-  const hideMap = map?.querySelector('[data-cookie-map-revoke]');
-  const allowedNote = settings.querySelector('[data-cookie-allowed]');
-  const blockedNote = settings.querySelector('[data-cookie-blocked]');
+  const mapTemplate = map.querySelector('[data-cookie-map-template]');
+  const mapSlot = map.querySelector('[data-cookie-map-slot]');
+  const mapPlaceholder = map.querySelector('[data-cookie-map-placeholder]');
+  const showMap = map.querySelector('[data-cookie-map-allow]');
+  const hideMap = map.querySelector('[data-cookie-map-revoke]');
 
   function loadChoice() {
     try {
@@ -36,10 +33,6 @@
 
   function renderChoice() {
     const allowed = choice?.mapsAllowed === true && choice.expiresAt > Date.now();
-    allowedNote.hidden = !allowed;
-    blockedNote.hidden = allowed;
-    if (!map) return;
-
     mapPlaceholder.hidden = allowed;
     showMap.hidden = false;
     hideMap.hidden = !allowed;
@@ -64,24 +57,14 @@
     renderChoice();
   }
 
-  document.querySelectorAll('[data-cookie-settings]').forEach(trigger => {
-    trigger.hidden = false;
-    trigger.setAttribute('aria-haspopup', 'dialog');
-    trigger.addEventListener('click', event => {
-      event.preventDefault();
-      if (!settings.open) settings.showModal();
-    });
+  showMap.addEventListener('click', () => {
+    saveChoice(true);
+    hideMap.focus();
   });
 
-  settings.querySelector('[data-cookie-close]').addEventListener('click', () => settings.close());
-  document.querySelectorAll('[data-cookie-choice]').forEach(button => {
-    button.addEventListener('click', () => {
-      const allowed = button.dataset.cookieChoice === 'allow';
-      saveChoice(allowed);
-      if (settings.open) settings.close();
-      if (button === showMap) hideMap.focus();
-      if (button === hideMap) showMap.focus();
-    });
+  hideMap.addEventListener('click', () => {
+    saveChoice(false);
+    showMap.focus();
   });
 
   function syncChoice() {

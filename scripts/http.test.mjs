@@ -31,8 +31,14 @@ try {
     const privacy = await fetch(base + prefix + '/privatuma-politika/');
     assert.equal(privacy.status, 200);
     assert.match(privacy.headers.get('x-robots-tag'), /noindex/);
-    assert.match(await privacy.text(), /id="sikdatnes"/);
+    const privacyHtml = await privacy.text();
+    assert.match(privacyHtml, /id="sikdatnes"/);
+    assert.ok(privacyHtml.includes(`href="${prefix}/kontakti/#karte"`), prefix);
+    assert.ok(privacyHtml.includes(`href="${prefix}/privatuma-politika/#sikdatnes"`), prefix);
+    assert.doesNotMatch(privacyHtml, /id="cookie-settings"|src="\/cookie-settings\.js"/);
     const contact = await (await fetch(base + prefix + '/kontakti/')).text();
+    assert.match(contact, /id="karte" data-cookie-map/);
+    assert.match(contact, /src="\/cookie-settings\.js"/);
     assert.match(contact, /<template data-cookie-map-template>[\s\S]*?\sdata-src="https:\/\/maps\.google\.com\/maps\?/);
     assert.doesNotMatch(contact, /<iframe[^>]*\ssrc=/);
     assert.match(contact, /<form id="lead-form"[^>]*method="post"/);
