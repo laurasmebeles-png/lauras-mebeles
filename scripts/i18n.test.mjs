@@ -45,7 +45,7 @@ const sourceReviews = JSON.parse(await read('src/reviews.json'));
 const nativeReviews = JSON.parse(await read('src/reviews.native.json'));
 const allSourceReviews = new Map([...sourceReviews, ...nativeReviews.reviews].map(r => [r.id, r]));
 const stripReviewCards = html => html.replace(/<article class="review-card"[\s\S]*?<\/article>/g, '');
-const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'RU', 'NO', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'Prenta', 'DecoRiga', 'Korte', 'ARI Stone', 'SIA “Lauras mēbeles”']);
+const neutral = new Set(['Lauras mēbeles', 'ANNO 2008', 'Matīsa iela 78A, Rīga, LV-1009', '© 2026 Lauras mēbeles', 'Language', 'LV', 'EN', 'RU', 'NO', 'Ilze Svence', 'Vita Purcēna', 'HOOLIGAN Bubble tea & coffee', 'Tison Bygg & Snickeri AB', 'R.A.S.A. Co', 'Prenta', 'DecoRiga', 'Korte', 'ARI Stone', 'SIA “Lauras mēbeles”', 'lauras-cookie-preferences']);
 const plain = html => decode(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const galleryPaths = [...(await read('public/musu-darbi/index.html')).matchAll(/href="(\/musu-darbi\/[^"/]+\/)"/g)].map(m => m[1]);
 const checkedTargets = new Set();

@@ -86,6 +86,12 @@ Canonical un OG adreses ģenerē `scripts/generate-pages.mjs` no vides mainīgā
 
 ## Tehniskā SEO sagatave, 23.11.2026.
 
-Build ģenerē public/sitemap.xml un četru valodu 404.html. Tā kā priekšskatījums ir noindex, aktīvais sitemap satur 0 URL. Palaišanas XML sagatave ar 56 pamatlapām ir docs/migration/sitemap-launch.xml; tā nav izvietota uz īstā domēna. Karte docs/migration/redirect-map.json aptver visus 55 vecos WordPress URL. MD pārģenerē ar node scripts/migration-map.mjs. Migrācijas redirects vēl nav aktivizēti.
+Build ģenerē public/sitemap.xml un četru valodu 404.html. Tā kā priekšskatījums ir noindex, aktīvais sitemap satur 0 URL. Lokālā palaišanas XML sagatave ar 60 pamatlapām ir docs/migration/sitemap-launch.xml. Karte docs/migration/redirect-map.json aptver visus 55 vecos WordPress URL. MD pārģenerē ar node scripts/migration-map.mjs. Migrācijas pāradresācijas ir sagatavotas saskaņošanai.
 
 Pēc build: npm run test:seo pārbauda sitemap, karti un HTTP 404 valodas/statusus (palaiž īslaicīgu lokālo serveri). npm run test:i18n turpina pārbaudīt pamatlapu un projektu tulkojumus. [Statuss un palaišanas soļi](docs/seo-preview.md).
+
+## Privātums un sīkdatnes, 24.11.2026
+
+Priekšskatījumā privātuma politikas darba redakcija ir `/privatuma-politika/` un tās EN/RU/NO versijās. Avoti ir `src/privacy.html`, `src/cookie-settings.html` un valodu vārdnīcas. Kājenes saite atver sīkdatņu iestatījumus jebkurā lapā. `public/cookie-settings.js` ielādē Google karti pēc atļaujas. Pārlūks atceras izvēli līdz 180 dienām katrā vietnes adresē. Atsaukšana noņem karti.
+
+Šobrīd iestatījumi aptver Google karti. Aktīvā datu apstrāde un glabāšanai piemērojamie nosacījumi jāprecizē pirms palaišanas kopā ar formas un analītikas pieslēgšanu. Pārbaudes ir [palaišanas plānā](PLAN.md). Politikas pamatojumam izmantotas [DVI sīkdatņu vadlīnijas](https://www.dvi.gov.lv/lv/sikdatnes-un-privatuma-politika) un [VDAR 7., 13. un 77. pants](https://eur-lex.europa.eu/eli/reg/2016/679/oj).

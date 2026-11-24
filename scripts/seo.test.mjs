@@ -9,7 +9,7 @@ const locations = xml => [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => 
 const launchXml = await read('docs/migration/sitemap-launch.xml');
 const expected = enabledLangs.flatMap(lang => config.pages.en.map(path => `${launchOrigin}${langPrefix(lang)}${path}`)).sort();
 assert.deepEqual(locations(launchXml).sort(), expected);
-assert.equal(new Set(expected).size, 56);
+assert.equal(new Set(expected).size, 60);
 assert.match(launchXml, /xmlns:xhtml="http:\/\/www.w3.org\/1999\/xhtml"/);
 assert.doesNotMatch(launchXml, /404|archive-|<lastmod>|<priority>|<changefreq>/);
 for (const block of launchXml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
@@ -60,7 +60,7 @@ assert.equal(map.active, false);
 assert.equal(map.records.length, 55);
 assert.deepEqual(map.records.map(record => record.oldUrl).sort(), inventory.map(record => record.url).sort());
 assert.deepEqual(map.records.map(record => record.wordpressId).sort(), inventory.map(record => record.id).sort());
-assert.deepEqual(['keep', 'redirect', 'pending'].map(action => map.records.filter(record => record.action === action).length), [10, 24, 21]);
+assert.deepEqual(['keep', 'redirect', 'pending'].map(action => map.records.filter(record => record.action === action).length), [11, 24, 20]);
 const destinations = new Set(expected.map(url => new URL(url).pathname));
 const sources = new Set(map.records.filter(record => record.action === 'redirect').map(record => decodeURIComponent(record.oldPath)));
 for (const record of map.records) {
@@ -82,4 +82,4 @@ assert.equal(vercel.routes[0].continue, true);
 assert.equal(vercel.routes.findIndex(route => route.handle === 'filesystem'), 3);
 assert.ok(vercel.routes.filter(route => route.dest).every(route => route.status === 404));
 assert.equal(await read('public/robots.txt'), 'User-agent: *\nDisallow: /\n');
-console.log('SEO: 56 launch URLs, closed preview, four localized 404 pages and all 55 legacy URLs checked.');
+console.log('SEO: 60 launch URLs, closed preview, four localized 404 pages and all 55 legacy URLs checked.');

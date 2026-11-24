@@ -1,10 +1,10 @@
-# Pāradresāciju karte, 2026-11-23
+# Pāradresāciju karte, 2026-11-24
 
 Statuss: sagatavots pārejas projekts, **nav aktivizēts**. Avots ir 55 WordPress lapu inventārs. Mašīnlasāmais avots: [redirect-map.json](redirect-map.json). Šo dokumentu ģenerē `node scripts/migration-map.mjs`.
 
 Pašreizējā struktūra ir LV, EN, RU un NO. EN/RU mērķi izmanto faktiskos ceļus, piemēram, `/en/virtuves/` un `/ru/virtuves/`. Saglabājam garo atsauksmju URL. RU atmešanas priekšlikums vairs nav spēkā. NO nav vecu adrešu šajā WordPress inventārā.
 
-Saglabāti visi 55 avota ieraksti: 10 nemainīti URL, 24 pāradresāciju kandidāti un 21 neatrisināts lēmums. `301 kandidāts` nenozīmē aktivizētu vai klienta apstiprinātu pāradresāciju. Nav pārbaudīti GSC meklējumu/indeksēšanas dati; veikala un publikāciju lapas nedrīkst automātiski apvienot tikai tādēļ, ka ir tehniski iespējams redirect.
+Saglabāti visi 55 avota ieraksti: 11 nemainīti URL, 24 pāradresāciju kandidāti un 20 neatrisināti lēmumi. `301 kandidāts` nenozīmē aktivizētu vai klienta apstiprinātu pāradresāciju. Nav pārbaudīti GSC meklējumu/indeksēšanas dati; veikala un publikāciju lapas nedrīkst automātiski apvienot tikai tādēļ, ka ir tehniski iespējams redirect.
 
 ## LV
 
@@ -28,7 +28,7 @@ Saglabāti visi 55 avota ieraksti: 10 nemainīti URL, 24 pāradresāciju kandid�
 | 736 | `/virtuves-iekarta-iebuveta-vai-brivi-stavosa/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
 | 739 | `/virtuves-mebeles-moderni-risinajumi/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
 | 742 | `/publikacijas-virtuves-mebeles/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
-| 770 | `/privatuma-politika/` | Jāizlemj | /privatuma-politika/ (priekšlikums) | Saglabāt URL un sagatavot aktualizētu privātuma informāciju. Jaunā lapa vēl nav izveidota; redirect neaktivizēt. |
+| 770 | `/privatuma-politika/` | Saglabājam | /privatuma-politika/ | Esošajā adresē sagatavota aktualizēta privātuma informācija. Pirms palaišanas jāpārbauda atbilstība faktiskajām integrācijām. |
 | 1188 | `/virtuves-mebeles-veikals/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
 | 1247 | `/virtuves-iekartas-komplekts-mini/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
 | 1251 | `/virtuves-iekartas-komplekts-no1/` | Jāizlemj | /virtuves/ (priekšlikums) | Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts. |
@@ -78,7 +78,7 @@ Saglabāti visi 55 avota ieraksti: 10 nemainīti URL, 24 pāradresāciju kandid�
 
 ## Pirms aktivizēšanas
 
-- Izvērtēt veikala/komplektu un publikāciju saturu, GSC datus un precizēt galamērķus. Privātuma lapu atjaunot tās esošajā adresē, kad saturs gatavs. `/test/` rīcību apstiprināt atsevišķi.
+- Izvērtēt veikala/komplektu un publikāciju saturu, GSC datus un precizēt galamērķus. Privātuma politiku pirms palaišanas pārbaudīt pret faktiskajām integrācijām. `/test/` rīcību apstiprināt atsevišķi.
 - JSON saglabā precīzo vecā URL procentkodējumu un jaukto alfabētu `hачало`/`kухня`; tos nepārrakstīt kā citus URL. Aktivizēšanas posmā pārbaudīt Unicode un procentkodētus pieprasījumus uz hostinga.
 - Pārbaudīt variantus ar/bez beigu slīpsvītras un vaicājuma parametriem. Mērķim jāatgriež 200, jābūt pareizajā valodā, bez pašpāradresācijām, cikliem vai liekām ķēdēm.
 - Vercel 301 norādīt ar `statusCode: 301`. `permanent: true` noklusēti ir 308, nevis 301. Šajā darbā `vercel.json` migrācijas redirects netiek pievienoti.

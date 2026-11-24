@@ -1212,6 +1212,39 @@ footer{background:#cbbfb0;color:var(--ink)}
 .footer-main p,.footer-main>div{color:#3e3933}
 .footer-main a:hover{color:#635146}
 .footer-bottom{color:#514941;border-top-color:rgba(45,39,34,.24)}
+
+/* Privātuma lapa un Google kartes iestatījumi. */
+.footer-privacy{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:12px}
+.footer-privacy a,.contact-privacy-link a,.privacy-document a,.cookie-map-placeholder a,.cookie-close{text-decoration:underline;text-underline-offset:.2em}
+.contact-privacy-link{margin-top:10px;font-size:13px}
+.privacy-intro,.privacy-document{width:min(100%,900px);margin-inline:auto;padding-inline:var(--gutter)}
+.privacy-intro{padding-block:clamp(32px,5vw,72px) 20px}
+.privacy-intro h1{font-size:clamp(36px,5vw,64px);overflow-wrap:anywhere}
+.privacy-document{display:grid;gap:30px;padding-block:0 clamp(44px,6vw,84px)}
+.privacy-preview-note{font-size:14px;color:var(--ink-soft)}
+.privacy-lead p+p{margin-top:8px}
+.privacy-document section{display:grid;gap:12px;padding-top:22px;border-top:1px solid var(--line)}
+.privacy-document h2,.cookie-settings h2{font-size:clamp(26px,3vw,36px);line-height:1.16}
+.privacy-document p,.privacy-document ul{max-width:72ch}
+.privacy-document ul{margin:0;padding-inline-start:22px}
+.privacy-document button{justify-self:start}
+.privacy-storage{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.privacy-storage code{overflow-wrap:anywhere;font-size:.88em}
+.cookie-settings{width:min(560px,calc(100% - 32px));padding:clamp(16px,4vw,30px);border:1px solid var(--line);border-radius:4px}
+.cookie-settings::backdrop{background:#231f1b9e}
+.cookie-settings-heading{display:flex;align-items:start;justify-content:space-between;gap:10px 16px;margin-bottom:14px}
+.cookie-close{flex:none;background:transparent;padding:4px 0;font-size:13px;min-height:34px}
+.cookie-option{display:grid;gap:8px;margin-block:16px;padding:14px 16px;background:var(--surface)}
+.cookie-option h3,.cookie-map-placeholder h3{font-family:var(--serif);font-size:23px;font-weight:400}
+.cookie-option [data-cookie-allowed],.cookie-option [data-cookie-blocked]{font-size:13px;font-weight:600}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.cookie-actions button{flex:1 1 190px;justify-content:center;text-align:center;white-space:normal;padding:10px 11px;min-height:44px}
+.cookie-map-placeholder{display:grid;justify-items:start;gap:12px;background:var(--paper);border:1px solid var(--line);padding:clamp(16px,4vw,32px)}
+.cookie-map-placeholder p{max-width:55ch}
+.cookie-map-placeholder button,.cookie-map-revoke{padding:10px 14px;min-height:44px;white-space:normal}
+.cookie-map-revoke{margin-top:12px}
+@media(max-width:760px){.footer-privacy{flex-basis:100%;order:3}}
+@media(max-width:520px){.cookie-settings-heading{flex-wrap:wrap}.cookie-close{margin-left:auto}}
 .event-debug,.event-debug p{color:#514941}
 
 /* Kontaktu lapā saziņa un darba laiks ir redzami uzreiz pēc navigācijas. */

@@ -9,6 +9,8 @@ for (const lang of Object.keys(i18nConfig.languages).filter(lang => lang !== def
   await rm(new URL(`public/${lang}/`, root), { recursive:true, force:true });
 }
 const source = await readFile(new URL('src/home.html', root), 'utf8');
+const privacyContent = await readFile(new URL('src/privacy.html', root), 'utf8');
+const cookieSettings = await readFile(new URL('src/cookie-settings.html', root), 'utf8');
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
 const nativeReviews = JSON.parse(await readFile(new URL('src/reviews.native.json',root),'utf8'));
 const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));
@@ -39,7 +41,8 @@ const header = `<a class="skip" href="#saturs">Pāriet uz saturu</a>${top}
 <header class="header"><a href="/" class="brand" aria-label="Lauras mēbeles, sākums"><img src="/images/logo.png" alt="Lauras mēbeles" width="171" height="68"></a>
 <button class="menu-toggle" aria-label="Atvērt izvēlni" aria-expanded="false" aria-controls="navigation">Izvēlne <span aria-hidden="true">☰</span></button>
 <nav id="navigation" aria-label="Galvenā navigācija"><details class="service-menu"><summary>Pakalpojumi</summary><div class="service-submenu"><a href="/pakalpojumi/">Visi pakalpojumi</a>${categories.map(c=>`<a href="/${c.path}/">${esc(c.label)}</a>`).join('')}</div></details><a href="/iedvesmai/">Iedvesmai</a><a href="/musu-darbi/">Mūsu darbi</a><a href="/cenas/">Cenas</a><a href="/par-mums/">Par mums</a><a href="${reviewPath}">Atsauksmes</a><a href="/kontakti/">Kontakti</a><a class="button button-small" href="/kontakti/#pieteikums" data-event="cta_click" data-location="header">Sazināties ar mums ${arrow}</a></nav></header>`;
-const footer = source.match(/<footer>[\s\S]*?<\/footer>/)[0].replace('href="#mebeles"','href="/pakalpojumi/"').replace('>Mēbeles</a>','>Pakalpojumi</a>').replace('href="#darbi"','href="/musu-darbi/"').replace('href="#pieteikums"','href="/kontakti/#pieteikums"').replace('<span>Dizaina uzmetums 02 · LV</span>','').replace('<a href="#" aria-label="Lauras mēbeles, uz sākumu">','<a href="/" aria-label="Lauras mēbeles, uz sākumu">').replace(/<details class="event-debug">[\s\S]*?<\/details>/,'').replace(/<div><a href="\/pakalpojumi\/">Pakalpojumi<\/a>[\s\S]*?Sazināties<\/a><\/div>/,'<div><a href="/pakalpojumi/">Pakalpojumi</a><a href="/iedvesmai/">Iedvesmai</a><a href="/musu-darbi/">Mūsu darbi</a><a href="/cenas/">Cenas</a><a href="/cenas/#jautajumi">Biežākie jautājumi</a><a href="/par-mums/">Par mums</a><a href="/kontakti/">Kontakti</a></div>');
+const privacyLinks = '<div class="footer-privacy"><a href="/privatuma-politika/">Privātuma politika</a><a href="/privatuma-politika/#sikdatnes" data-cookie-settings>Sīkdatņu iestatījumi</a></div>';
+const footer = source.match(/<footer>[\s\S]*?<\/footer>/)[0].replace('href="#mebeles"','href="/pakalpojumi/"').replace('>Mēbeles</a>','>Pakalpojumi</a>').replace('href="#darbi"','href="/musu-darbi/"').replace('href="#pieteikums"','href="/kontakti/#pieteikums"').replace('<span>Dizaina uzmetums 02 · LV</span>',privacyLinks).replace('<a href="#" aria-label="Lauras mēbeles, uz sākumu">','<a href="/" aria-label="Lauras mēbeles, uz sākumu">').replace(/<details class="event-debug">[\s\S]*?<\/details>/,'').replace(/<div><a href="\/pakalpojumi\/">Pakalpojumi<\/a>[\s\S]*?Sazināties<\/a><\/div>/,'<div><a href="/pakalpojumi/">Pakalpojumi</a><a href="/iedvesmai/">Iedvesmai</a><a href="/musu-darbi/">Mūsu darbi</a><a href="/cenas/">Cenas</a><a href="/cenas/#jautajumi">Biežākie jautājumi</a><a href="/par-mums/">Par mums</a><a href="/kontakti/">Kontakti</a></div>');
 const dialog = `<dialog id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Aizvērt projektu">×</button><img id="dialog-image" alt="" width="1600" height="1067"><div class="photo-controls"><button type="button" id="photo-prev" aria-label="Iepriekšējais foto">←</button><p id="photo-count" aria-live="polite"></p><button type="button" id="photo-next" aria-label="Nākamais foto">→</button></div><div class="dialog-body"><p class="eyebrow">Lauras mēbeļu projekts</p><h2 id="dialog-title"></h2><p id="dialog-description"></p></div></dialog>`;
 const cta = (title='Iepatikās kāds no mūsu darbiem?',text='Pastāstiet, kādas mēbeles vēlaties savām mājām.') => `<aside class="project-cta"><div><h2>${esc(title)}</h2><p>${esc(text)}</p></div><a class="button" href="/kontakti/#pieteikums" data-event="cta_click" data-location="gallery">Saņemt cenas piedāvājumu ${arrow}</a></aside>`;
 const crumbs = label => `<p class="breadcrumbs"><a href="/">Sākums</a><span>/</span>${esc(label)}</p>`;
@@ -244,8 +247,29 @@ const visitNoteEnd = contactMain.indexOf('</aside>', visitNoteStart) + '</aside>
 if (contactAddressStart < 0 || visitNoteStart < 0 || visitNoteEnd < '</aside>'.length) throw new Error('Kontaktu lapā nav atrasta adreses un apmeklējuma norāde');
 const contactVisitNote = contactMain.slice(visitNoteStart, visitNoteEnd);
 contactMain = contactMain.slice(0, contactAddressStart) + '</div>' + contactMain.slice(visitNoteEnd);
-const contactMap = `<section class="section contact-location" aria-labelledby="contact-location-title"><div class="contact-location-intro"><div><p class="eyebrow">Mūsu adrese</p><h2 id="contact-location-title">Atrodiet mūs Rīgā</h2><p>Matīsa iela 78A, Rīga, LV-1009. Šeit atrodas mūsu birojs ar ekspozīciju, ražotne un noliktavas.</p>${contactVisitNote}</div><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Mat%C4%ABsa+iela+78A%2C+R%C4%ABga" target="_blank" rel="noopener noreferrer">Atvērt Google Maps ${arrow}</a></div><iframe class="contact-map" title="Karte: Lauras mēbeles, Matīsa iela 78A, Rīga" src="https://maps.google.com/maps?q=Mat%C4%ABsa%20iela%2078A%2C%20R%C4%ABga&amp;z=16&amp;output=embed" width="1200" height="360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></section>`;
+const contactMap = `
+<section class="section contact-location" aria-labelledby="contact-location-title">
+  <div class="contact-location-intro">
+    <div><p class="eyebrow">Mūsu adrese</p><h2 id="contact-location-title">Atrodiet mūs Rīgā</h2><p>Matīsa iela 78A, Rīga, LV-1009. Šeit atrodas mūsu birojs ar ekspozīciju, ražotne un noliktavas.</p>${contactVisitNote}</div>
+    <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Mat%C4%ABsa+iela+78A%2C+R%C4%ABga" target="_blank" rel="noopener noreferrer">Atvērt Google Maps ${arrow}</a>
+  </div>
+  <div data-cookie-map>
+    <div class="cookie-map-placeholder" data-cookie-map-placeholder>
+      <h3>Google karte</h3>
+      <p>Ielādējot Google karti, Google saņem jūsu IP adresi un var izmantot sīkdatnes.</p>
+      <button class="nk-button nk-button-outline" type="button" data-cookie-choice="allow" data-cookie-map-allow hidden>Atļaut un rādīt karti</button>
+      <a href="/privatuma-politika/#sikdatnes">Vairāk par sīkdatnēm</a>
+    </div>
+    <div data-cookie-map-slot></div>
+    <button class="nk-button nk-button-outline cookie-map-revoke" type="button" data-cookie-choice="reject" data-cookie-map-revoke hidden>Atsaukt atļauju kartei</button>
+    <template data-cookie-map-template>
+      <iframe class="contact-map" title="Karte: Lauras mēbeles, Matīsa iela 78A, Rīga" data-src="https://maps.google.com/maps?q=Mat%C4%ABsa%20iela%2078A%2C%20R%C4%ABga&amp;z=16&amp;output=embed" width="1200" height="360" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>
+    </template>
+  </div>
+</section>`;
 await save('kontakti','Kontakti un cenas piedāvājums | Lauras mēbeles',`<div class="section contact-crumbs">${crumbs('Kontakti')}</div>`+contactMain+contactMap+contactBusiness,'Pastāstiet par savu mēbeļu ieceri. Lauras mēbeles, Matīsa iela 78A, Rīga, LV-1009. Darba laiks darbdienās 9.00–17.30. Pirms ierašanās lūdzam saskaņot apmeklējuma laiku.');
+const privacyIntro = `<section class="section privacy-intro">${crumbs('Privātuma politika')}<h1>Privātuma politika</h1></section>`;
+await save('privatuma-politika','Privātuma politika | Lauras mēbeles',privacyIntro+privacyContent,'Kā Lauras mēbeles apstrādā personas datus un kā pārvaldīt sīkdatņu izvēli.');
 const reviewsBody=pageIntro('Atsauksmes','Ko saka mūsu klienti','Klientu pieredze, pasūtot virtuves, skapjus un citas mēbeles.')+`<section class="section section-tight reviews-section">${reviewGrid('all')}<div class="review-links"><a href="https://www.google.com/search?q=lauras+mebeles&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95c2IqOIwOy0L8e3cPD3gnTWvw9oivWTOHTJ9dtS38E1SjCoN34-rdRJkuCsE6c1Dh1zCAocs%3D" target="_blank" rel="noopener" class="text-link">Lasīt atsauksmes Google ${arrow}</a><a href="https://www.facebook.com/LaurasMebeles/reviews/" target="_blank" rel="noopener" class="text-link">Lasīt atsauksmes Facebook ${arrow}</a></div>${cta('Pastāstiet par savu ieceri','Iesākumam pietiek ar ideju.')}</section>`;
 await save('virtuves-mebeles-atsauksmes-virtuves-iekartas','Klientu atsauksmes | Lauras mēbeles',reviewsBody,'Lasiet klientu atsauksmes par Lauras mēbeļu izgatavotajām virtuvēm, skapjiem un citām mēbelēm, sadarbību un darba kvalitāti.');
 const projectsData = [...projects,...inspirationProjects].map(p=>p.before?{...p,photos:[p.before,...p.photos],labels:['Pirms',...p.photos.map(()=>'Pēc')]}:p);
@@ -287,7 +311,7 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
   ].join('\n  ');
   const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`).replace('<meta name="robots" content="noindex,nofollow">',`<meta name="robots" content="${options.reviewOnly?'noindex,follow':'noindex,nofollow'}">`);
   const switcher=pageLangs.length>1?`<div class="lang-switch" role="navigation" aria-label="Language">${pageLangs.map(l=>l===lang?`<span aria-current="true">${i18nConfig.languages[l].short}</span>`:`<a href="${langPrefix(l)}/${options.notFound?'404.html':path?path+'/':''}" hreflang="${l}" lang="${l}">${i18nConfig.languages[l].short}</a>`).join('')}</div>`:'';
-  let html=`${pageHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}</body></html>`;
+  let html=`${pageHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}${cookieSettings}</body></html>`;
   if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang).replace(/[\t ]+$/gm,''); }
   await writeFile(new URL(options.notFound ? '404.html' : 'index.html',folder),html);
   pageRecords.push({ lang, path, reviewOnly: !!options.reviewOnly, notFound: !!options.notFound, indexable: !/<meta name="robots" content="[^"]*noindex/.test(html) });

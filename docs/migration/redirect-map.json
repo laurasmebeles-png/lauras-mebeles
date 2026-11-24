@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "active": false,
   "source": "docs/migration/wordpress-pages.json",
   "note": "Pārejas sagatave. Dzīvais domēns un Vercel redirects netiek mainīti. proposed/pending nav klienta apstiprinājums.",
@@ -458,11 +458,10 @@
       "oldUrl": "https://laurasmebeles.lv/privatuma-politika/",
       "oldPath": "/privatuma-politika/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-content",
-      "suggestedTarget": "/privatuma-politika/",
-      "reason": "Saglabāt URL un sagatavot aktualizētu privātuma informāciju. Jaunā lapa vēl nav izveidota; redirect neaktivizēt."
+      "action": "keep",
+      "target": "/privatuma-politika/",
+      "decision": "current-route",
+      "reason": "Esošajā adresē sagatavota aktualizēta privātuma informācija. Pirms palaišanas jāpārbauda atbilstība faktiskajām integrācijām."
     },
     {
       "wordpressId": "1188",

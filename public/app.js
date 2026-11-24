@@ -190,6 +190,8 @@ $('#lead-form')?.addEventListener('submit', event => {
   $('#form-status').textContent = T('Uzmetuma pārbaude pabeigta. Pieteikums nav nosūtīts. Īstajā lapā šeit būs apstiprinājums pēc veiksmīgas nosūtīšanas.');
   $('#form-status').focus();
 });
+const previewSubmit = $('[data-preview-submit]');
+if (previewSubmit) previewSubmit.disabled = false;
 $('#name')?.addEventListener('input', () => $('#name').setCustomValidity(''));
 $$('.faq-list details').forEach((details, index) => details.addEventListener('toggle', () => { if (details.open) track('faq_open', { question: String(index + 1) }); }));
 

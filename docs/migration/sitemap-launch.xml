@@ -289,6 +289,38 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://laurasmebeles.lv/par-mums/"/>
   </url>
   <url>
+    <loc>https://laurasmebeles.lv/privatuma-politika/</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://laurasmebeles.lv/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laurasmebeles.lv/en/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://laurasmebeles.lv/ru/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://laurasmebeles.lv/no/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laurasmebeles.lv/privatuma-politika/"/>
+  </url>
+  <url>
+    <loc>https://laurasmebeles.lv/en/privatuma-politika/</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://laurasmebeles.lv/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laurasmebeles.lv/en/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://laurasmebeles.lv/ru/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://laurasmebeles.lv/no/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laurasmebeles.lv/privatuma-politika/"/>
+  </url>
+  <url>
+    <loc>https://laurasmebeles.lv/ru/privatuma-politika/</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://laurasmebeles.lv/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laurasmebeles.lv/en/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://laurasmebeles.lv/ru/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://laurasmebeles.lv/no/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laurasmebeles.lv/privatuma-politika/"/>
+  </url>
+  <url>
+    <loc>https://laurasmebeles.lv/no/privatuma-politika/</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://laurasmebeles.lv/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laurasmebeles.lv/en/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://laurasmebeles.lv/ru/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://laurasmebeles.lv/no/privatuma-politika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laurasmebeles.lv/privatuma-politika/"/>
+  </url>
+  <url>
     <loc>https://laurasmebeles.lv/sekcijas/</loc>
     <xhtml:link rel="alternate" hreflang="lv" href="https://laurasmebeles.lv/sekcijas/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://laurasmebeles.lv/en/sekcijas/"/>

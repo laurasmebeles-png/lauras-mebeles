@@ -6,7 +6,7 @@ Dzīvais domēns un DNS nav mainīti. Priekšskatījums paliek ar HTML/HTTP noin
 
 - `scripts/seo.mjs` ģenerē XML no faktiski ģenerēto lapu ierakstiem.
 - `public/sitemap.xml`, ko build pārkopē uz dist, pašlaik satur **0 URL**: priekšskatījumā nav indeksējamu lapu. Tukšais fails nav iesniedzams Search Console.
-- `docs/migration/sitemap-launch.xml` ir **palaišanas sagatave ar 56 URL**: 14 pamatlapas katrā no LV/EN/RU/NO. Domēns ir paredzētais `https://laurasmebeles.lv`. Fails atrodas ārpus public/dist un nav izvietots uz dzīva domēna.
+- `docs/migration/sitemap-launch.xml` ir palaišanas sagatave ar 60 URL, pa 15 pamatlapām katrā no LV/EN/RU/NO. Domēns ir paredzētais `https://laurasmebeles.lv`. Fails atrodas ārpus public/dist.
 - Katrā ierakstā ir savstarpējās valodu un x-default alternatīvas. Nav 404, numurēto galerijas detaļu, filtru parametru, neesošās privātuma lapas vai izdomātu lastmod datumu.
 - Priekšskatījuma robots.txt nemainās un nereklamē palaišanas sagatavi.
 
@@ -20,7 +20,7 @@ Avots `docs/migration/wordpress-pages.json`: 55 lapas. Mašīnlasāmā karte `do
 - 24 neaktivizētus 301 kandidātus, ar faktiskiem EN/RU mērķiem;
 - 21 neatrisinātu lēmumu: 13 veikala/komplektu lapas, 6 publikācijas, privātums un testa lapa.
 
-Šajā posmā Vercel migrācijas redirects nav pievienoti. GSC dati un veco lapu satura nozīme vēl jāizvērtē. Privātuma URL saglabājams, kad sagatavots jaunais saturs. Atsevišķs darbs ir veco mediju URL atbilstības audits. Vercel `statusCode: 301` atšķiras no `permanent: true`, kas pēc noklusējuma dod 308.
+Šajā posmā Vercel migrācijas pāradresācijas ir sagatavotas saskaņošanai. GSC dati un veco lapu satura nozīme vēl jāizvērtē. Lokālajā privātuma politikas redakcijā saglabāta esošā adrese `/privatuma-politika/`. Atsevišķs darbs ir veco mediju URL atbilstības audits. Vercel `statusCode: 301` atšķiras no `permanent: true`, kas pēc noklusējuma dod 308.
 
 ## 404
 
@@ -31,7 +31,7 @@ Katrai valodai ir atbilstoša galvene/kājene, H1, paskaidrojums, sākumlapas un
 ## Pārbaudes
 
 1. `npm run test:i18n` veic pilno build un esošo lapu tulkojumu/struktūras pārbaudes.
-2. `npm run test:seo` pēc build pārbauda 56 URL kopu/alternatīvas, noindex izslēgšanu, 55 veco URL pārklājumu, valodu mērķus, ciklu neesamību un īslaicīgā lokālā serverī 404/HEAD/200 statusus.
+2. `npm run test:seo` pēc build pārbauda 60 URL kopu un alternatīvas, priekšskatījuma noindex, 55 veco URL pārklājumu, valodu mērķus un HTTP statusus lokālajā serverī.
 3. `npm run check` pārbauda JavaScript sintaksi.
 4. Pārlūkā pārbauda datoru/telefonu, pogas un valodu maiņu. Pēc push atsevišķi pārbauda Vercel HTTP statusus, jo lokālais serveris nevar apliecināt hostinga maršrutēšanu.
 

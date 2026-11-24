@@ -28,11 +28,21 @@ try {
     assert.equal(head.status, 404);
     assert.equal(await head.text(), '');
     assert.equal((await fetch(base + prefix + '/virtuves/')).status, 200);
+    const privacy = await fetch(base + prefix + '/privatuma-politika/');
+    assert.equal(privacy.status, 200);
+    assert.match(privacy.headers.get('x-robots-tag'), /noindex/);
+    assert.match(await privacy.text(), /id="sikdatnes"/);
+    const contact = await (await fetch(base + prefix + '/kontakti/')).text();
+    assert.match(contact, /<template data-cookie-map-template>[\s\S]*?\sdata-src="https:\/\/maps\.google\.com\/maps\?/);
+    assert.doesNotMatch(contact, /<iframe[^>]*\ssrc=/);
+    assert.match(contact, /<form id="lead-form"[^>]*method="post"/);
+    assert.match(contact, /data-preview-submit disabled/);
   }
   const xml = await fetch(base + '/sitemap.xml');
   assert.equal(xml.status, 200);
   assert.match(xml.headers.get('content-type'), /application\/xml/);
   assert.equal((await fetch(base + '/styles.css')).status, 200);
+  assert.equal((await fetch(base + '/cookie-settings.js')).status, 200);
   assert.equal((await fetch(base + '/en/missing/', { method: 'POST' })).status, 405);
   console.log('HTTP: localized missing paths return 404, HEAD is empty, existing pages/assets remain available.');
 } finally {
