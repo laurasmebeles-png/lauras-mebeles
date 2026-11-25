@@ -1115,7 +1115,7 @@ html:is([lang="ru"],[lang="no"]) .header .button-small{white-space:nowrap;flex-s
 .topline-social a:hover,.topline-social a:focus-visible{background:#ffffff26}
 .topline-social svg{display:block;width:20px;height:20px}
 .nk-hero-copy{width:100%;max-width:1420px}
-.nk-hero-since{display:flex;align-items:center;justify-content:center;gap:17px;margin:0 0 26px;color:#fff;font-size:27.2px;line-height:1.4;font-weight:700;letter-spacing:.24em}
+.nk-hero-since{display:flex;align-items:center;justify-content:center;gap:17px;margin:0 0 26px;color:#fff;font-size:18px;line-height:1.4;font-weight:600;letter-spacing:.24em}
 .nk-hero-since:before,.nk-hero-since:after{content:"";display:block;width:30px;height:1px;background:#ffffffa8}
 .nk-hero h1{font-size:clamp(52px,5.7vw,104px);line-height:1.04;margin-bottom:38px;text-wrap:balance}
 .nk-hero:after{background:linear-gradient(180deg,rgba(18,17,16,.42),rgba(18,17,16,.29) 45%,rgba(18,17,16,.42))}
@@ -1131,7 +1131,7 @@ html:is([lang="ru"],[lang="no"]) .header .button-small{white-space:nowrap;flex-s
   .topline-social a{width:32px;height:32px}
   .topline-social svg{width:19px;height:19px}
   .nk-hero-copy{padding-inline:var(--gutter)}
-  .nk-hero-since{font-size:18.7px;letter-spacing:.19em;gap:9px;margin-bottom:25px}
+  .nk-hero-since{font-size:14px;letter-spacing:.19em;gap:9px;margin-bottom:25px}
   .nk-hero-since:before,.nk-hero-since:after{width:18px}
   .nk-hero h1{font-size:clamp(38px,8.5vw,52px);line-height:1.1;margin-bottom:38px}
 }
