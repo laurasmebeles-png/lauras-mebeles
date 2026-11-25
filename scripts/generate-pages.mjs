@@ -3,6 +3,7 @@ import { categories, projects, inspirationProjects } from '../src/catalog.mjs';
 import { config as i18nConfig, enabledLangs, defaultLang, langPrefix, loadDicts, translateHtml, mapProjects, hasLanguagePage, languagesForPage } from './i18n.mjs';
 import { sitemap, launchOrigin } from './seo.mjs';
 import { removeStaleGalleryPages } from './generated-gallery.mjs';
+import { trackingConfig } from '../src/tracking-config.mjs';
 const root = new URL('../', import.meta.url);
 // Valodu mapes ir ģenerētas. Noņem iepriekšējās versijas, lai nepaliktu vairs neieslēgtas lapas.
 for (const lang of Object.keys(i18nConfig.languages).filter(lang => lang !== defaultLang)) {
@@ -11,6 +12,7 @@ for (const lang of Object.keys(i18nConfig.languages).filter(lang => lang !== def
 const source = await readFile(new URL('src/home.html', root), 'utf8');
 const privacyContent = await readFile(new URL('src/privacy.html', root), 'utf8');
 const cookieSettings = await readFile(new URL('src/cookie-settings.html', root), 'utf8');
+const tracking = trackingConfig();
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
 const nativeReviews = JSON.parse(await readFile(new URL('src/reviews.native.json',root),'utf8'));
 const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));
@@ -309,7 +311,8 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
   ].join('\n  ');
   const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`).replace('<meta name="robots" content="noindex,nofollow">',`<meta name="robots" content="${options.reviewOnly?'noindex,follow':'noindex,nofollow'}">`);
   const switcher=pageLangs.length>1?`<div class="lang-switch" role="navigation" aria-label="Language">${pageLangs.map(l=>l===lang?`<span aria-current="true">${i18nConfig.languages[l].short}</span>`:`<a href="${langPrefix(l)}/${options.notFound?'404.html':path?path+'/':''}" hreflang="${l}" lang="${l}">${i18nConfig.languages[l].short}</a>`).join('')}</div>`:'';
-  let html=`${pageHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}${cookieSettings}</body></html>`;
+  const trackingHead = pageHead.replace('<script src="/tracking.js"', `<script type="application/json" id="tracking-config">${JSON.stringify(tracking).replace(/</g, '\\u003c')}</script>\n  <script src="/tracking.js"`);
+  let html=`${trackingHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}${cookieSettings}</body></html>`;
   if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang).replace(/[\t ]+$/gm,''); }
   await writeFile(new URL(options.notFound ? '404.html' : 'index.html',folder),html);
   pageRecords.push({ lang, path, reviewOnly: !!options.reviewOnly, notFound: !!options.notFound, indexable: !/<meta name="robots" content="[^"]*noindex/.test(html) });

@@ -7,19 +7,20 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 const allowedEvents = new Set(['cta_click','phone_click','email_click','category_select','gallery_filter','project_view','project_select','configurator_start','configurator_complete','form_start','form_preview_complete','faq_open','review_filter']);
 const allowedKeys = new Set(['location','category','project_id','question','source']);
 const allowedValues = new Set(['header','hero','price','price_example','topbar','contact','footer','gallery','all','virtuve','skapis','prieksnams','vannasistaba','viesistaba','citas','peleka','kompakta','1','2','3','4','5','google','facebook','website','taisna','gaisa-l-veida','egger-l-veida','vitrina-l-veida','ar-salu', ...(window.LAURAS_PROJECTS || []).map(p => p.id)]);
-window.dataLayer = window.dataLayer || [];
 function track(event, parameters = {}) {
   if (!allowedEvents.has(event)) return;
   const record = { event, preview: true };
   for (const [key, value] of Object.entries(parameters)) {
     if (allowedKeys.has(key) && allowedValues.has(value)) record[key] = value;
   }
-  window.dataLayer.push(record);
-  if (window.dataLayer.length > 100) window.dataLayer.shift();
+  const safeParameters = Object.fromEntries(Object.entries(record).filter(([key]) => allowedKeys.has(key)));
+  window.LAURAS_TRACKING?.track(event, safeParameters);
+  const log = $('#event-log');
+  if (!log) return;
   const item = document.createElement('li');
   item.textContent = `${event} ${JSON.stringify(Object.fromEntries(Object.entries(record).filter(([key]) => key !== 'event')))}`;
-  const log = $('#event-log');
-  if (log) { log.prepend(item); if (log.children.length > 30) log.lastElementChild.remove(); }
+  log.prepend(item);
+  if (log.children.length > 30) log.lastElementChild.remove();
 }
 
 const menuButton = $('.menu-toggle');

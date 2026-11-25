@@ -4,10 +4,17 @@
   if (!banner || !settings || typeof settings.showModal !== 'function') return;
 
   const storageKey = 'lauras-cookie-preferences';
-  const version = 2;
+  const version = 3;
   const validity = 180 * 24 * 60 * 60 * 1000;
   const form = settings.querySelector('[data-cookie-options]');
-  const categories = [...form.querySelectorAll('input[type="checkbox"]:enabled')];
+  const categories = [...form.querySelectorAll('input[type="checkbox"]')];
+  const tracking = window.LAURAS_TRACKING;
+  const revision = tracking?.config.revision || 'maps-only';
+  for (const input of categories) {
+    input.disabled = !(tracking?.config.enabled[input.name] ?? input.name === 'maps');
+    const status = settings.querySelector('#cookie-' + input.name + '-status');
+    if (status) status.hidden = !input.disabled;
+  }
   const map = document.querySelector('[data-cookie-map]');
   const mapTemplate = map?.querySelector('[data-cookie-map-template]');
   const mapSlot = map?.querySelector('[data-cookie-map-slot]');
@@ -22,16 +29,14 @@
       const validDates = Number.isSafeInteger(saved.decidedAt) && saved.decidedAt <= now &&
         saved.expiresAt === saved.decidedAt + validity && saved.expiresAt > now;
       if (validDates) {
-        if (saved.version === version && Object.keys(saved.categories || {}).length === categories.length &&
-          categories.every(input => typeof saved.categories?.[input.name] === 'boolean')) {
+        if (saved.version === version && saved.revision === revision &&
+          Object.keys(saved.categories || {}).length === categories.length &&
+          categories.every(input => typeof saved.categories?.[input.name] === 'boolean' && (!input.disabled || !saved.categories[input.name]))) {
           return saved;
         }
-        if (saved.version === 1 && categories.length === 1 && categories[0].name === 'maps' &&
-          typeof saved.mapsAllowed === 'boolean') {
-          return { version, categories: { maps: saved.mapsAllowed }, decidedAt: saved.decidedAt, expiresAt: saved.expiresAt };
-        }
       }
-      localStorage.removeItem(storageKey);
+      const expired = Number.isSafeInteger(saved.expiresAt) && saved.expiresAt <= Date.now();
+      if (expired || (saved.version === version && saved.revision === revision)) localStorage.removeItem(storageKey);
     } catch {
       // An unreadable or unavailable preference leaves every optional category off.
     }
@@ -39,21 +44,29 @@
   }
 
   let choice = loadChoice();
+  let expiryTimer;
 
   function renderChoice() {
-    banner.hidden = Boolean(choice);
-    if (!map) return;
-
-    const allowed = choice?.categories.maps === true && choice.expiresAt > Date.now();
-    mapPlaceholder.hidden = allowed;
-    if (!allowed) {
-      mapSlot.replaceChildren();
-    } else if (!mapSlot.firstElementChild) {
-      const frame = mapTemplate.content.firstElementChild.cloneNode(true);
-      frame.src = frame.dataset.src;
-      frame.removeAttribute('data-src');
-      mapSlot.append(frame);
+    clearTimeout(expiryTimer);
+    if (choice && choice.expiresAt <= Date.now()) {
+      choice = null;
+      try { localStorage.removeItem(storageKey); } catch { /* Storage may be unavailable. */ }
     }
+    if (choice) expiryTimer = setTimeout(syncChoice, Math.min(choice.expiresAt - Date.now(), 2147483647));
+    banner.hidden = Boolean(choice);
+    if (map) {
+      const allowed = choice?.categories.maps === true;
+      mapPlaceholder.hidden = allowed;
+      if (!allowed) {
+        mapSlot.replaceChildren();
+      } else if (!mapSlot.firstElementChild) {
+        const frame = mapTemplate.content.firstElementChild.cloneNode(true);
+        frame.src = frame.dataset.src;
+        frame.removeAttribute('data-src');
+        mapSlot.append(frame);
+      }
+    }
+    tracking?.applyConsent(choice?.categories || {}, choice?.expiresAt || 0);
   }
 
   function resetForm() {
@@ -62,11 +75,12 @@
 
   function saveChoice(selected) {
     const decidedAt = Date.now();
-    choice = { version, categories: selected, decidedAt, expiresAt: decidedAt + validity };
+    choice = { version, revision, categories: selected, decidedAt, expiresAt: decidedAt + validity };
     try {
       localStorage.setItem(storageKey, JSON.stringify(choice));
     } catch {
-      // An explicit choice can still be applied to the current page.
+      // A failed rejection write must not leave an older opt-in for the reload.
+      try { localStorage.removeItem(storageKey); } catch { /* Storage may be unavailable. */ }
     }
     if (settings.open) settings.close();
     renderChoice();
@@ -85,12 +99,12 @@
   for (const button of document.querySelectorAll('[data-cookie-action]')) {
     button.addEventListener('click', () => {
       const allow = button.dataset.cookieAction === 'accept';
-      saveChoice(Object.fromEntries(categories.map(input => [input.name, allow])));
+      saveChoice(Object.fromEntries(categories.map(input => [input.name, allow && !input.disabled])));
     });
   }
   form.addEventListener('submit', event => {
     event.preventDefault();
-    saveChoice(Object.fromEntries(categories.map(input => [input.name, input.checked])));
+    saveChoice(Object.fromEntries(categories.map(input => [input.name, input.checked && !input.disabled])));
   });
   settings.querySelector('[data-cookie-info]').addEventListener('click', () => settings.close());
 
@@ -105,6 +119,9 @@
   });
   window.addEventListener('pageshow', event => {
     if (event.persisted) syncChoice();
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') syncChoice();
   });
   renderChoice();
 })();
