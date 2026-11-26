@@ -78,7 +78,7 @@
       // Its declared purposes must all be accepted before it receives any access.
       if (config.gtmCategories.every(category => consent[category])) {
         if (!scripts.has('gtm')) {
-          window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+          window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js', page_language: language });
           loadScript('gtm', 'https://www.googletagmanager.com/gtm.js?id=' + ids.gtm);
         }
       }
