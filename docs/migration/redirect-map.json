@@ -374,10 +374,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekarta-stils-un-dizains/",
       "oldPath": "/virtuves-iekarta-stils-un-dizains/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "reason": "Saglabāt stila un plānojuma raksta adresi. Pirms palaišanas pārnest un aktualizēt saturu."
+      "action": "redirect",
+      "target": "/virtuves/#stils-un-planojums",
+      "decision": "approved",
+      "reason": "Virtuves stila izvēle pēc telpas izmēriem, gaismas un plānojuma.",
+      "statusCode": 301
     },
     {
       "wordpressId": "726",
@@ -385,10 +386,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-apdare-un-pedejie-pieskarieni/",
       "oldPath": "/virtuves-iekartas-apdare-un-pedejie-pieskarieni/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "reason": "Apdares tēmu iekļaut furnitūras rakstā. Pāreju sagatavot pēc apvienotā raksta ieviešanas."
+      "action": "redirect",
+      "target": "/virtuves/#virtuves-apdare",
+      "decision": "approved",
+      "reason": "Fasāžu, rokturu, cokola un darba virsmas apdares izvēle.",
+      "statusCode": 301
     },
     {
       "wordpressId": "730",
@@ -396,10 +398,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/",
       "oldPath": "/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "reason": "Saglabāt furnitūras raksta adresi un skaidrojumu par risinājumu izvēli."
+      "action": "redirect",
+      "target": "/virtuves/#virtuves-furnitura",
+      "decision": "approved",
+      "reason": "Atvilktņu vadotnes, piekļuve skapīšu saturam un furnitūras izvēle.",
+      "statusCode": 301
     },
     {
       "wordpressId": "733",
@@ -419,10 +422,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekarta-iebuveta-vai-brivi-stavosa/",
       "oldPath": "/virtuves-iekarta-iebuveta-vai-brivi-stavosa/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "reason": "Saglabāt vecajā adresē iebūvēto un brīvi stāvošo virtuvju salīdzinājumu."
+      "action": "redirect",
+      "target": "/virtuves/#iebuveta-vai-brivi-stavosa",
+      "decision": "approved",
+      "reason": "Iebūvēto un brīvi stāvošo mēbeļu salīdzinājums pēc telpas un iespējas pārcelties.",
+      "statusCode": 301
     },
     {
       "wordpressId": "739",
@@ -442,10 +446,11 @@
       "oldUrl": "https://laurasmebeles.lv/publikacijas-virtuves-mebeles/",
       "oldPath": "/publikacijas-virtuves-mebeles/",
       "language": "lv",
-      "action": "pending",
+      "action": "not-found",
       "target": null,
-      "decision": "needs-review",
-      "reason": "Pirms raksta un foto pārnešanas precizēt publicēšanas tiesības."
+      "decision": "article-retired",
+      "reason": "Parakstītajai publikācijai nav līdzvērtīga aizstājēja. Vecajā adresē ir paziņojums ar saiti uz virtuves lapu.",
+      "statusCode": 404
     },
     {
       "wordpressId": "770",

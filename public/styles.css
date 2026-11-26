@@ -1340,3 +1340,8 @@ footer{background:#cbbfb0;color:var(--ink)}
 .not-found-actions{display:flex;flex-wrap:wrap;gap:14px}
 .not-found-actions .nk-button{margin:0;display:inline-flex;align-items:center;justify-content:center;min-height:60px}
 @media(max-width:760px){.not-found{gap:22px;min-height:62svh}.not-found-copy{font-size:16px}.not-found-actions{width:100%;flex-direction:column}.not-found-actions .nk-button{width:100%;text-align:center;justify-content:center}}
+
+.kitchen-guide-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr)); gap: 2.5rem 4rem; margin-top: 2rem; }
+.kitchen-guide-topics article { border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.kitchen-guide-topics h3 { font-size: clamp(1.4rem, 2vw, 1.75rem); line-height: 1.25; }
+.kitchen-guide-topics p { margin: .75rem 0; max-width: 62ch; }

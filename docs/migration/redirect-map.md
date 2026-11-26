@@ -4,7 +4,7 @@ Statuss: publiskā pāreja vēl ir priekšā. Apstiprinātie noteikumi ir sagata
 
 Pašreizējā struktūra ir LV, EN, RU un NO. EN/RU mērķi izmanto faktiskos ceļus, piemēram, `/en/virtuves/` un `/ru/virtuves/`. Saglabājam garo atsauksmju URL. RU atmešanas priekšlikums vairs nav spēkā. NO nav vecu adrešu šajā WordPress inventārā.
 
-Saglabāti visi 55 avota ieraksti: 11 nemainīti URL, 38 apstiprinātas pāradresācijas, 0 pāradresāciju kandidāti un 5 saglabājamā satura lēmumi. Vēl 1 vecajai testa adresei paredzēta 404 atbilde. `301 kandidāts` nenozīmē aktivizētu vai klienta apstiprinātu pāradresāciju. Visām 55 adresēm pārbaudīti pieejamie Google tīmekļa meklēšanas dati. Adrešu indeksēšanas statuss vēl jāpārbauda atsevišķi. [Lapu dati un ieteikumi astoņām neatrisinātajām adresēm ar klikšķiem](gsc-lapas-2026-11-26.md).
+Saglabāti visi 55 avota ieraksti: 11 nemainīti URL, 42 apstiprinātas pāradresācijas, 0 pāradresāciju kandidāti un 0 saglabājamā satura lēmumi. HTTP 404 paredzēts 2 adresēm: vecajai testa lapai un izņemtajai publikācijai. `301 kandidāts` nenozīmē aktivizētu vai klienta apstiprinātu pāradresāciju. Visām 55 adresēm pārbaudīti pieejamie Google tīmekļa meklēšanas dati. Adrešu indeksēšanas statuss vēl jāpārbauda atsevišķi. [Lapu dati un ieteikumi astoņām neatrisinātajām adresēm ar klikšķiem](gsc-lapas-2026-11-26.md).
 
 ## LV
 
@@ -21,13 +21,13 @@ Saglabāti visi 55 avota ieraksti: 11 nemainīti URL, 38 apstiprinātas pāradre
 | 125 | `/kontakti/` | Saglabājam | /kontakti/ | Adrese saglabāta pašreizējā lapas struktūrā. |
 | 149 | `/` | Saglabājam | / | Adrese saglabāta pašreizējā lapas struktūrā. |
 | 267 | `/veikals/` | 301 apstiprināts | /virtuves/ | Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri. |
-| 719 | `/virtuves-iekarta-stils-un-dizains/` | Jāizlemj | Jāizlemj pirms palaišanas | Saglabāt stila un plānojuma raksta adresi. Pirms palaišanas pārnest un aktualizēt saturu. |
-| 726 | `/virtuves-iekartas-apdare-un-pedejie-pieskarieni/` | Jāizlemj | Jāizlemj pirms palaišanas | Apdares tēmu iekļaut furnitūras rakstā. Pāreju sagatavot pēc apvienotā raksta ieviešanas. |
-| 730 | `/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/` | Jāizlemj | Jāizlemj pirms palaišanas | Saglabāt furnitūras raksta adresi un skaidrojumu par risinājumu izvēli. |
+| 719 | `/virtuves-iekarta-stils-un-dizains/` | 301 apstiprināts | /virtuves/#stils-un-planojums | Virtuves stila izvēle pēc telpas izmēriem, gaismas un plānojuma. |
+| 726 | `/virtuves-iekartas-apdare-un-pedejie-pieskarieni/` | 301 apstiprināts | /virtuves/#virtuves-apdare | Fasāžu, rokturu, cokola un darba virsmas apdares izvēle. |
+| 730 | `/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/` | 301 apstiprināts | /virtuves/#virtuves-furnitura | Atvilktņu vadotnes, piekļuve skapīšu saturam un furnitūras izvēle. |
 | 733 | `/virtuves-mebeles/` | 301 apstiprināts | /virtuves/ | Virtuvju piedāvājums pašreizējā virtuvju lapā. |
-| 736 | `/virtuves-iekarta-iebuveta-vai-brivi-stavosa/` | Jāizlemj | Jāizlemj pirms palaišanas | Saglabāt vecajā adresē iebūvēto un brīvi stāvošo virtuvju salīdzinājumu. |
+| 736 | `/virtuves-iekarta-iebuveta-vai-brivi-stavosa/` | 301 apstiprināts | /virtuves/#iebuveta-vai-brivi-stavosa | Iebūvēto un brīvi stāvošo mēbeļu salīdzinājums pēc telpas un iespējas pārcelties. |
 | 739 | `/virtuves-mebeles-moderni-risinajumi/` | 301 apstiprināts | /virtuves/ | Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri. |
-| 742 | `/publikacijas-virtuves-mebeles/` | Jāizlemj | Jāizlemj pirms palaišanas | Pirms raksta un foto pārnešanas precizēt publicēšanas tiesības. |
+| 742 | `/publikacijas-virtuves-mebeles/` | 404 | — | Parakstītajai publikācijai nav līdzvērtīga aizstājēja. Vecajā adresē ir paziņojums ar saiti uz virtuves lapu. |
 | 770 | `/privatuma-politika/` | Saglabājam | /privatuma-politika/ | Esošajā adresē sagatavota aktualizēta privātuma informācija. Pirms palaišanas jāpārbauda atbilstība faktiskajām integrācijām. |
 | 1188 | `/virtuves-mebeles-veikals/` | 301 apstiprināts | /virtuves/ | Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri. |
 | 1247 | `/virtuves-iekartas-komplekts-mini/` | 301 apstiprināts | /cenas/ | Cenu lapā ir taisnas virtuves piemērs gar vienu sienu un aprakstīta sākumcenas komplektācija. |
@@ -78,8 +78,8 @@ Saglabāti visi 55 avota ieraksti: 11 nemainīti URL, 38 apstiprinātas pāradre
 
 ## Pirms aktivizēšanas
 
-- Pirms palaišanas pārnest trīs saglabājamos rakstus, izvērtēt apdares raksta apvienošanu un pārbaudīt parakstītās publikācijas izmantošanas tiesības. Privātuma politiku pirms palaišanas pārbaudīt pret faktiskajām integrācijām.
+- Četru praktisko rakstu tēmas apvienotas virtuves lapā. Katra vecā saite atver atbilstošo sadaļu. Parakstītajai publikācijai vecajā adresē ir paziņojums ar pogu uz virtuves lapu. Privātuma politiku pirms palaišanas pārbaudīt pret faktiskajām integrācijām.
 - JSON saglabā precīzo vecā URL procentkodējumu un jaukto alfabētu `hачало`/`kухня`; tos nepārrakstīt kā citus URL. Aktivizēšanas posmā pārbaudīt Unicode un procentkodētus pieprasījumus uz hostinga.
 - Pārbaudīt variantus ar/bez beigu slīpsvītras un vaicājuma parametriem. Mērķim jāatgriež 200, jābūt pareizajā valodā, bez pašpāradresācijām, cikliem vai liekām ķēdēm.
-- Pirms palaišanas pārbaudīt apstiprinātos 301 noteikumus Vercel priekšskatījumā.
+- Palaišanas dienā atkārtot pāradresāciju un abu 404 lapu pārbaudi uz publiskā domēna.
 - Atsevišķi izvērtēt vecos `/wp-content/uploads/` attēlu URL pēc atbilstības jaunajiem failiem un pieejamā GSC trafika. Neuzskatīt visu veco attēlu pazušanu par automātiski pieņemamu. 55 lapu karte nav 834 pielikumu pilna migrācija.

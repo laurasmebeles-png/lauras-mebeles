@@ -67,6 +67,15 @@ try {
     assert.equal(destination.status, 200, target);
     assert.ok((await destination.text()).includes(`<html lang="${language}">`), target);
   }
+  const article = map.records.find(record => record.decision === 'article-retired');
+  for (const path of [article.oldPath, article.oldPath.slice(0, -1), '/raksts-404.html']) {
+    const response = await fetch(base + path, { redirect: 'manual' });
+    assert.equal(response.status, 404);
+    const body = await response.text();
+    assert.match(body, /<h1>Šis raksts vairs nav pieejams<\/h1>/);
+    assert.match(body, /href="\/virtuves\/">Apskatīt mūsu virtuves/);
+    assert.doesNotMatch(body, /rel="canonical"/);
+  }
   assert.equal((await fetch(base + '/test/')).status, 404);
   const xml = await fetch(base + '/sitemap.xml');
   assert.equal(xml.status, 200);

@@ -22,6 +22,7 @@ if (tracking.enabled.analytics && !tracking.enabled.marketing) {
 }
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
 const nativeReviews = JSON.parse(await readFile(new URL('src/reviews.native.json',root),'utf8'));
+const kitchenGuide = await readFile(new URL('src/virtuves-padomi.html', root), 'utf8');
 const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));
 const galleryReviewIds = JSON.parse(await readFile(new URL('src/gallery-review-ids.json',root),'utf8'));
 // Kanoniskā adrese: SITE_URL (palaišanai: https://laurasmebeles.lv), citādi Vercel produkcijas adrese, citādi lokāli.
@@ -289,11 +290,14 @@ for (const lang of enabledLangs) {
 }
 const notFoundBody = `<section class="section not-found"><p class="eyebrow">404</p><h1>Lapa nav atrasta</h1><p class="not-found-copy">Iespējams, adrese ir mainījusies vai ievadīta nepareizi. Izvēlieties kādu no sadaļām vai sazinieties ar mums.</p><div class="not-found-actions"><a class="nk-button nk-button-dark" href="/">Uz sākumlapu</a><a class="nk-button nk-button-outline" href="/pakalpojumi/">Apskatīt mēbeles</a></div><a class="text-link" href="/kontakti/">Sazināties ar mums ${arrow}</a></section>`;
 for (const lang of enabledLangs) await renderPage(lang, '404', 'Lapa nav atrasta | Lauras mēbeles', notFoundBody, 'Lapa nav atrasta. Atgriezieties sākumlapā, apskatiet mēbeles vai sazinieties ar mums.', { notFound: true });
+const retiredArticleBody = `<section class="section not-found"><p class="eyebrow">404</p><h1>Šis raksts vairs nav pieejams</h1><p class="not-found-copy">Mūsu izgatavotās virtuves un to plānojumus varat apskatīt virtuvju sadaļā.</p><div class="not-found-actions"><a class="nk-button nk-button-dark" href="/virtuves/">Apskatīt mūsu virtuves</a><a class="nk-button nk-button-outline" href="/">Uz sākumlapu</a></div></section>`;
+await renderPage('lv', 'raksts-404', 'Raksts vairs nav pieejams | Lauras mēbeles', retiredArticleBody, 'Šī publikācija vairs nav pieejama. Apskatiet mūsu izgatavotās virtuves.', { notFound: true });
 await writeFile(new URL('public/sitemap.xml', root), sitemap(pageRecords, siteUrl));
 await writeFile(new URL('docs/migration/sitemap-launch.xml', root), sitemap(pageRecords, launchOrigin, { launch: true }));
 console.log('Sagatavotas pamatlapas, projektu lapas, četru valodu 404 un palaišanas sitemap sagatave. Priekšskatījums paliek noindex.');
 
 async function renderPage(lang,path,title,body,description='Lauras mēbeles. Virtuves, skapji un citas mēbeles pēc pasūtījuma. Apskatiet projektus un piesakiet savu ieceri.',options={}) {
+  if (lang === 'lv' && path === 'virtuves') body += kitchenGuide;
   const pageLangs = options.notFound ? enabledLangs : languagesForPage(path);
   if (lang === 'ru') body = body.replace('<h2>Noderīgi pirms<br>pasūtīšanas</h2>', '<h2>Noderīgi pirms pasūtīšanas</h2>');
   body = body.replace(/<!--reviews:(home|all)-->/g, (_, slot) => `<div class="review-grid">${reviewsForLanguage(lang, slot).map(r => reviewCard(r, lang)).join('')}</div>`);
@@ -322,7 +326,7 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
   let html=`${trackingHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}${cookieSettings}</body></html>`;
   if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang).replace(/[\t ]+$/gm,''); }
   html = contactMarkup(html, lang);
-  await writeFile(new URL(options.notFound ? '404.html' : 'index.html',folder),html);
+  await writeFile(new URL(options.notFound ? `${path}.html` : 'index.html',folder),html);
   pageRecords.push({ lang, path, reviewOnly: !!options.reviewOnly, notFound: !!options.notFound, indexable: !/<meta name="robots" content="[^"]*noindex/.test(html) });
 }
 

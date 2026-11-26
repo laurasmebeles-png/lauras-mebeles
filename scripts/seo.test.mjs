@@ -60,7 +60,7 @@ assert.equal(map.active, false);
 assert.equal(map.records.length, 55);
 assert.deepEqual(map.records.map(record => record.oldUrl).sort(), inventory.map(record => record.url).sort());
 assert.deepEqual(map.records.map(record => record.wordpressId).sort(), inventory.map(record => record.id).sort());
-assert.deepEqual(['keep', 'redirect', 'pending', 'not-found'].map(action => map.records.filter(record => record.action === action).length), [11, 38, 5, 1]);
+assert.deepEqual(['keep', 'redirect', 'pending', 'not-found'].map(action => map.records.filter(record => record.action === action).length), [11, 42, 0, 2]);
 const destinations = new Set(expected.map(url => new URL(url).pathname));
 const sources = new Set(map.records.filter(record => record.action === 'redirect').map(record => decodeURIComponent(record.oldPath)));
 for (const record of map.records) {
@@ -71,13 +71,18 @@ for (const record of map.records) {
     continue;
   }
   if (record.action === 'pending') { assert.equal(record.target, null); continue; }
-  assert.ok(destinations.has(record.target), `Existing target: ${record.wordpressId}`);
+  const target = new URL(record.target, launchOrigin);
+  if (target.hash) {
+    const html = await read(`public${target.pathname}index.html`);
+    assert.ok(html.includes(`id="${target.hash.slice(1)}"`), record.target);
+  }
+  assert.ok(destinations.has(target.pathname), `Existing target: ${record.wordpressId}`);
   if (record.language !== 'lv') assert.ok(record.target.startsWith(`/${record.language}/`));
   if (record.action === 'redirect') {
     assert.equal(record.statusCode, 301);
     assert.ok(['proposed', 'approved'].includes(record.decision));
     assert.notEqual(record.target, decodeURIComponent(record.oldPath));
-    assert.ok(!sources.has(record.target), `No redirect chain: ${record.oldPath}`);
+    assert.ok(!sources.has(target.pathname), `No redirect chain: ${record.oldPath}`);
   }
 }
 const vercel = JSON.parse(await read('vercel.json'));

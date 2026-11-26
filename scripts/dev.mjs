@@ -7,6 +7,7 @@ import contact from '../api/contact.js';
 
 const root = path.resolve(fileURLToPath(new URL('../public/', import.meta.url)));
 const routing = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+const articleErrors = routing.routes.filter(route => route.dest === '/raksts-404.html').map(route => new RegExp(route.src));
 const redirects = routing.routes.filter(route => route.status === 301 && route.headers?.Location)
   .map(route => ({ pattern: new RegExp(route.src), location: route.headers.Location }));
 const port = Number(process.env.PORT || 4173);
@@ -26,6 +27,11 @@ const server = http.createServer(async (req, res) => {
     if (redirect) {
       res.writeHead(301, { Location: redirect.location });
       return res.end();
+    }
+    if (articleErrors.some(pattern => pattern.test(requestPath))) {
+      const body = await readFile(path.join(root, 'raksts-404.html'));
+      res.writeHead(404, { 'Content-Type': mime['.html'] });
+      return res.end(req.method === 'HEAD' ? undefined : body);
     }
     const pathname = decodeURIComponent(requestPath);
     const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');

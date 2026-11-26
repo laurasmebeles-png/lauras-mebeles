@@ -61,7 +61,15 @@ assert.deepEqual(Object.keys(translatedReviews).sort(), sourceReviews.map(r => r
 for (const page of pages) {
   const path = page.slice(1);
   const en = await read(`public/${lang}/${path}index.html`);
-  const lv = await read(`public/${path}index.html`);
+  const lvPage = await read(`public/${path}index.html`);
+  // The migrated Latvian articles belong only to their original language.
+  let lv = lvPage;
+  if (page === '/virtuves/') {
+    const guide = await read('src/virtuves-padomi.html');
+    assert.ok(lvPage.includes(guide));
+    assert.ok(!en.includes('class="section kitchen-guide"'));
+    lv = lvPage.replace(guide, '');
+  }
   assert.ok(en.includes(`<html lang="${lang}">`));
   assert.ok(en.includes(`hreflang="${lang}"`));
   assert.ok(lv.includes(`hreflang="${lang}"`));

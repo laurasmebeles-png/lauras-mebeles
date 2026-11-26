@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "echo 'nav atkar\u012bbu'",
+  "installCommand": "echo 'nav atkarību'",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": false,
@@ -283,6 +283,44 @@
       "headers": {
         "Location": "/virtuves-mebeles-atsauksmes-virtuves-iekartas/"
       }
+    },
+    {
+      "src": "^/virtuves-iekarta-stils-un-dizains/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/#stils-un-planojums"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-apdare-un-pedejie-pieskarieni/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/#virtuves-apdare"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-komplektacijafurnitura-un-tehniskie-risinajumi/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/#virtuves-furnitura"
+      }
+    },
+    {
+      "src": "^/virtuves-iekarta-iebuveta-vai-brivi-stavosa/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/#iebuveta-vai-brivi-stavosa"
+      }
+    },
+    {
+      "src": "^/publikacijas-virtuves-mebeles/?$",
+      "dest": "/raksts-404.html",
+      "status": 404
+    },
+    {
+      "src": "^/raksts-404\\.html$",
+      "dest": "/raksts-404.html",
+      "status": 404
     },
     {
       "src": "^/(?!\\.well-known(?:/|$))((?:[^/]+/)*[^/.]+)$",
