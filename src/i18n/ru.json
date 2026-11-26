@@ -2566,5 +2566,15 @@
   "Savu izvēli jebkurā brīdī varat mainīt, jebkuras lapas kājenē atverot «Sīkdatņu iestatījumi». Jau saglabātās trešo pušu sīkdatnes varat pārvaldīt pārlūka iestatījumos.": "Вы можете в любой момент изменить свой выбор. Для этого откройте «Настройки cookie» внизу любой страницы сайта. Уже сохранёнными сторонними файлами cookie можно управлять в настройках браузера.",
   "Izvēle šajā pārlūkā ir spēkā 180 dienas.": "Ваш выбор в этом браузере действует 180 дней.",
   "Nepieciešamais ieraksts pārlūkā ļauj vietnei atcerēties jūsu sīkdatņu iestatījumus. Google kartes, analītikas un reklāmas rīku izmantošanas pamats ir jūsu piekrišana. Arī atsakoties varat apskatīt vietni un sazināties ar mums.": "Необходимая запись в браузере позволяет сайту запоминать ваши настройки cookie. Основанием для использования карты Google, аналитических и рекламных инструментов служит ваше согласие. Даже если вы откажетесь, вы сможете просматривать сайт и связаться с нами.",
-  "Ja pievienosim jaunus rīkus vai mainīsim datu izmantošanas nolūkus, atjaunināsim šo informāciju un lūgsim jūsu piekrišanu attiecīgajām izmaiņām.": "Если мы добавим новые инструменты или изменим цели использования данных, мы обновим эту информацию и запросим ваше согласие на соответствующие изменения."
+  "Ja pievienosim jaunus rīkus vai mainīsim datu izmantošanas nolūkus, atjaunināsim šo informāciju un lūgsim jūsu piekrišanu attiecīgajām izmaiņām.": "Если мы добавим новые инструменты или изменим цели использования данных, мы обновим эту информацию и запросим ваше согласие на соответствующие изменения.",
+  "Šo kategoriju vietnē pašlaik neizmantojam.": "Сейчас эта категория не используется.",
+  "Palīdz saprast, kuras lapas apmeklētāji apskata un kā izmanto vietni.": "Помогает понять, какие страницы посещают пользователи и как они пользуются сайтом.",
+  "Ļauj novērtēt reklāmu rezultātus.": "Позволяет оценить результаты рекламы.",
+  "Atlasīto atsauksmju skaits: {n}": "Количество отзывов: {n}",
+  "Šajā atlasē nav atsauksmju.": "По этому фильтру отзывов нет.",
+  "Ar jūsu piekrišanu Google Tag Manager pārvalda analītikas rīku ielādi.": "С вашего согласия Google Tag Manager управляет загрузкой инструментов аналитики.",
+  "Ar jūsu piekrišanu Google Tag Manager pārvalda reklāmas rīku ielādi.": "С вашего согласия Google Tag Manager управляет загрузкой рекламных инструментов.",
+  "Ar jūsu piekrišanu Meta Pixel palīdz novērtēt reklāmu rezultātus.": "С вашего согласия мы используем Meta Pixel для оценки результатов рекламы.",
+  "Ar jūsu piekrišanu LinkedIn Insight Tag palīdz novērtēt reklāmu rezultātus.": "С вашего согласия мы используем LinkedIn Insight Tag для оценки результатов рекламы.",
+  "Cloudflare Turnstile pārbauda pārlūku, lai aizsargātu kontaktformu pret surogātpastu. Pieteikumu nosūtīšanai pa e-pastu izmantojam Resend.": "Cloudflare Turnstile проверяет браузер для защиты формы от спама. Для отправки вашего сообщения по электронной почте мы используем Resend."
 }

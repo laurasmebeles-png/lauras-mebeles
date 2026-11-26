@@ -14,19 +14,24 @@ const source = await readFile(new URL('src/home.html', root), 'utf8');
 let privacyContent = await readFile(new URL('src/privacy.html', root), 'utf8');
 const cookieSettings = await readFile(new URL('src/cookie-settings.html', root), 'utf8');
 const tracking = trackingConfig();
-if (tracking.enabled.analytics && !tracking.enabled.marketing) {
-  privacyContent = privacyContent
-    .replace(/<p data-preview-diagnostics>[\s\S]*?<\/p>/, '')
-    .replace(/<p data-tracking-description>[\s\S]*?<\/p>/,
-      '<p>Google Analytics 4 palīdz saprast, kā apmeklētāji izmanto vietni.</p>');
-}
+const trackingNotices = [];
+if (tracking.services.ga4) trackingNotices.push('Google Analytics 4 palīdz saprast, kā apmeklētāji izmanto vietni.');
+if (tracking.services.meta) trackingNotices.push('Ar jūsu piekrišanu Meta Pixel palīdz novērtēt reklāmu rezultātus.');
+if (tracking.services.linkedin) trackingNotices.push('Ar jūsu piekrišanu LinkedIn Insight Tag palīdz novērtēt reklāmu rezultātus.');
+if (tracking.services.gtm && tracking.enabled.analytics) trackingNotices.push('Ar jūsu piekrišanu Google Tag Manager pārvalda analītikas rīku ielādi.');
+if (tracking.services.gtm && tracking.enabled.marketing) trackingNotices.push('Ar jūsu piekrišanu Google Tag Manager pārvalda reklāmas rīku ielādi.');
+privacyContent = privacyContent
+  .replace('<!--tracking-tools-->', trackingNotices.map(notice => `<p>${notice}</p>`).join(''))
+  .replace('<!--contact-providers-->', process.env.CONTACT_ENABLED === 'true'
+    ? '<p>Cloudflare Turnstile pārbauda pārlūku, lai aizsargātu kontaktformu pret surogātpastu. Pieteikumu nosūtīšanai pa e-pastu izmantojam Resend.</p>' : '');
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
 const nativeReviews = JSON.parse(await readFile(new URL('src/reviews.native.json',root),'utf8'));
 const kitchenGuide = await readFile(new URL('src/virtuves-padomi.html', root), 'utf8');
 const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));
 const galleryReviewIds = JSON.parse(await readFile(new URL('src/gallery-review-ids.json',root),'utf8'));
 // Kanoniskā adrese: SITE_URL (palaišanai: https://laurasmebeles.lv), citādi Vercel produkcijas adrese, citādi lokāli.
-const siteUrl = (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://127.0.0.1:4173')).replace(/\/+$/,'');
+const previewHost = process.env.VERCEL_ENV === 'preview' && (process.env.VERCEL_BRANCH_URL || process.env.VERCEL_URL);
+const siteUrl = ((previewHost && `https://${previewHost}`) || process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://127.0.0.1:4173')).replace(/\/+$/,'');
 const siteName = 'Lauras mēbeles';
 const pageRecords = [];
 const dicts = await loadDicts();
@@ -40,7 +45,16 @@ const appKeys = [...new Set([
   ...[...(await readFile(new URL('public/app.js',root),'utf8')).matchAll(/\bT\((['`])((?:\\.|(?!\1).)*)\1\)/g)].map(m=>m[2]),
   'Aizvērt izvēlni', 'Apturēt bilžu maiņu', 'Turpināt bilžu maiņu'
 ])];
-const ogImage = { path:'/images/og-default.jpg', width:1200, height:630, alt:'Priekšnama skapis un drēbju pakaramie ar koka latām un dzīvojamo telpu' };
+const homeCard = ['sakums', 'Melna virtuve ar stikla vitrīnām, koka toņa virsmu un apaļu ēdamgaldu'];
+const inspirationCard = ['iedvesmai', 'Virtuve bēšos toņos ar akmens raksta sienas paneli un dzīvojamo zonu'];
+const shareCards = new Map([
+  ...categories.map(category => [category.path, [category.path, category.heroAlt]]),
+  ['cenas', ['cenas', 'Gaiša stūra virtuve ar rāmja fasādēm']],
+  ['par-mums', ['par-mums', 'Lauras mēbeļu darbinieks pie iekārtas uzņēmuma ražotnē']],
+  ['iedvesmai', inspirationCard],
+  ['musu-darbi', inspirationCard],
+  ['pakalpojumi', inspirationCard]
+]);
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const arrow = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
 const reviewPath = '/virtuves-mebeles-atsauksmes-virtuves-iekartas/';
@@ -304,7 +318,9 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
   for (const match of body.matchAll(/data-project="([^"]+)"/g)) pageProjectIds.get(lang).add(match[1]);
   const pre=langPrefix(lang);const folder=new URL(`public${pre}/${!options.notFound&&path?path+'/':''}`,root);await mkdir(folder,{recursive:true});
   const pageUrl=`${siteUrl}${pre}/${path?path+'/':''}`;
-  const photo=options.ogPhoto?{path:`/images/${options.ogPhoto}`,width:imgSizes[options.ogPhoto]?.[0]||1200,height:imgSizes[options.ogPhoto]?.[1]||800,alt:title}:ogImage;
+  const [card, cardAlt] = shareCards.get(path) || homeCard;
+  const photoPath = options.ogPhoto || `og/${card}.jpg`;
+  const [photoWidth, photoHeight] = options.ogPhoto ? imgSizes[photoPath] : [1200, 630];
   const social=[
     ...(!options.notFound ? [`<link rel="canonical" href="${pageUrl}">`] : []),
     ...(!options.notFound&&pageLangs.length>1?[...pageLangs.map(l=>`<link rel="alternate" hreflang="${l}" href="${siteUrl}${langPrefix(l)}/${path?path+'/':''}">`),`<link rel="alternate" hreflang="x-default" href="${siteUrl}/${path?path+'/':''}">`]:[]),
@@ -314,10 +330,11 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
     `<meta property="og:title" content="${esc(title)}">`,
     `<meta property="og:description" content="${esc(description)}">`,
     ...(!options.notFound ? [`<meta property="og:url" content="${pageUrl}">`] : []),
-    `<meta property="og:image" content="${siteUrl}${photo.path}">`,
-    `<meta property="og:image:width" content="${photo.width}">`,
-    `<meta property="og:image:height" content="${photo.height}">`,
-    `<meta property="og:image:alt" content="${esc(photo.alt)}">`,
+    `<meta property="og:image" content="${siteUrl}/images/${photoPath}">`,
+    `<meta property="og:image:type" content="${photoPath.endsWith('.webp') ? 'image/webp' : 'image/jpeg'}">`,
+    `<meta property="og:image:width" content="${photoWidth}">`,
+    `<meta property="og:image:height" content="${photoHeight}">`,
+    `<meta property="og:image:alt" content="${esc(options.ogPhoto ? title : cardAlt)}">`,
     `<meta name="twitter:card" content="summary_large_image">`
   ].join('\n  ');
   const pageHead=head.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(description)}">\n  ${social}`).replace('<script src="/app.js"',`${lang===defaultLang?'':`<script>window.LAURAS_I18N=${JSON.stringify(Object.fromEntries(appKeys.filter(k=>dicts[lang]?.[k]).map(k=>[k,dicts[lang][k]]))).replace(/</g,'\\u003c')};</script>\n  `}<script src="${pre}/projects.js" defer></script>\n  <script src="/app.js"`).replace('<meta name="robots" content="noindex,nofollow">',`<meta name="robots" content="${options.reviewOnly?'noindex,follow':'noindex,nofollow'}">`);

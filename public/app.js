@@ -146,7 +146,7 @@ $$('[data-review-filter]').forEach(button=>button.addEventListener('click',()=>{
   $$('[data-review-filter]').forEach(item=>{item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button));});
   $$('.review-card').forEach(card=>{card.hidden=source!=='all' && card.dataset.reviewSource!==source;});
   const count=$$('.review-card:not([hidden])').length;
-  $('#review-count').textContent=count ? T('{n} atsauksmes no esošās mājaslapas.').replace('{n}', count) : T('Šim avotam uzmetumā vēl nav pievienotu atsauksmju.');
+  $('#review-count').textContent=count ? T('Atlasīto atsauksmju skaits: {n}').replace('{n}', count) : T('Šajā atlasē nav atsauksmju.');
   $('#review-empty').hidden=count>0;
   $('#review-empty-title').textContent=source==='google'?'Google atsauksmes':source==='facebook'?'Facebook atsauksmes':'';
   track('review_filter',{source});

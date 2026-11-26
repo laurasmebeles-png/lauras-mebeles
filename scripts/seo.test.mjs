@@ -19,6 +19,17 @@ for (const block of launchXml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
   const url = new URL(locations(block[0])[0]);
   const html = await read(`public${url.pathname}index.html`);
   assert.match(html, /<h1\b/);
+  const shareImage = new URL(html.match(/property="og:image" content="([^"]+)"/)[1]);
+  const pageUrl = new URL(html.match(/property="og:url" content="([^"]+)"/)[1]);
+  assert.equal(shareImage.origin, pageUrl.origin);
+  assert.match(shareImage.pathname, /^\/images\/og\/[a-z-]+\.jpg$/);
+  assert.match(html, /property="og:image:width" content="1200"/);
+  assert.match(html, /property="og:image:height" content="630"/);
+  await stat(new URL(`public${shareImage.pathname}`, root));
+  for (const file of ['favicon.ico', 'favicon.png', 'apple-touch-icon.png']) {
+    assert.ok(html.includes(`href="/${file}"`));
+    await stat(new URL(`dist/${file}`, root));
+  }
   assert.match(html, /noindex/); // Preview remains closed. Launch file is only a candidate.
 }
 for (const dir of ['public', 'dist']) assert.deepEqual(locations(await read(`${dir}/sitemap.xml`)), []);

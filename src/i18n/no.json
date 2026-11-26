@@ -2578,5 +2578,15 @@
   "Savu izvēli jebkurā brīdī varat mainīt, jebkuras lapas kājenē atverot «Sīkdatņu iestatījumi». Jau saglabātās trešo pušu sīkdatnes varat pārvaldīt pārlūka iestatījumos.": "Du kan når som helst endre valgene dine via «Innstillinger for informasjonskapsler» nederst på alle sider. Informasjonskapsler fra tredjeparter som allerede er lagret, kan du administrere i nettleserinnstillingene.",
   "Izvēle šajā pārlūkā ir spēkā 180 dienas.": "Valgene dine i denne nettleseren gjelder i 180 dager.",
   "Nepieciešamais ieraksts pārlūkā ļauj vietnei atcerēties jūsu sīkdatņu iestatījumus. Google kartes, analītikas un reklāmas rīku izmantošanas pamats ir jūsu piekrišana. Arī atsakoties varat apskatīt vietni un sazināties ar mums.": "En nødvendig oppføring i nettleseren gjør at nettstedet husker innstillingene dine for informasjonskapsler. Bruk av Google-kartet, analyse- og annonseverktøy er basert på samtykket ditt. Du kan fortsatt besøke nettstedet og kontakte oss hvis du avslår.",
-  "Ja pievienosim jaunus rīkus vai mainīsim datu izmantošanas nolūkus, atjaunināsim šo informāciju un lūgsim jūsu piekrišanu attiecīgajām izmaiņām.": "Hvis vi legger til nye verktøy eller endrer formålene med databruken, oppdaterer vi denne informasjonen og ber om samtykke til de aktuelle endringene."
+  "Ja pievienosim jaunus rīkus vai mainīsim datu izmantošanas nolūkus, atjaunināsim šo informāciju un lūgsim jūsu piekrišanu attiecīgajām izmaiņām.": "Hvis vi legger til nye verktøy eller endrer formålene med databruken, oppdaterer vi denne informasjonen og ber om samtykke til de aktuelle endringene.",
+  "Šo kategoriju vietnē pašlaik neizmantojam.": "Denne kategorien er ikke i bruk.",
+  "Palīdz saprast, kuras lapas apmeklētāji apskata un kā izmanto vietni.": "Hjelper oss å forstå hvilke sider folk besøker, og hvordan de bruker nettstedet.",
+  "Ļauj novērtēt reklāmu rezultātus.": "Hjelper oss å måle effekten av annonser.",
+  "Atlasīto atsauksmju skaits: {n}": "Antall viste omtaler: {n}",
+  "Šajā atlasē nav atsauksmju.": "Ingen omtaler passer til dette filteret.",
+  "Ar jūsu piekrišanu Google Tag Manager pārvalda analītikas rīku ielādi.": "Med ditt samtykke styrer Google Tag Manager innlastingen av analyseverktøy.",
+  "Ar jūsu piekrišanu Google Tag Manager pārvalda reklāmas rīku ielādi.": "Med ditt samtykke styrer Google Tag Manager innlastingen av annonseverktøy.",
+  "Ar jūsu piekrišanu Meta Pixel palīdz novērtēt reklāmu rezultātus.": "Med ditt samtykke bruker vi Meta Pixel til å måle effekten av annonser.",
+  "Ar jūsu piekrišanu LinkedIn Insight Tag palīdz novērtēt reklāmu rezultātus.": "Med ditt samtykke bruker vi LinkedIn Insight Tag til å måle effekten av annonser.",
+  "Cloudflare Turnstile pārbauda pārlūku, lai aizsargātu kontaktformu pret surogātpastu. Pieteikumu nosūtīšanai pa e-pastu izmantojam Resend.": "Cloudflare Turnstile sjekker nettleseren for å beskytte skjemaet mot spam. Vi bruker Resend til å sende meldingen din på e-post."
 }

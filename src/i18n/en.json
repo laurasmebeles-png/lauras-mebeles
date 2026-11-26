@@ -2568,5 +2568,15 @@
   "Savu izvēli jebkurā brīdī varat mainīt, jebkuras lapas kājenē atverot «Sīkdatņu iestatījumi». Jau saglabātās trešo pušu sīkdatnes varat pārvaldīt pārlūka iestatījumos.": "You can change your choices at any time by opening “Cookie settings” at the bottom of any page. You can manage any third-party cookies already stored in your browser settings.",
   "Izvēle šajā pārlūkā ir spēkā 180 dienas.": "Your choices in this browser remain valid for 180 days.",
   "Nepieciešamais ieraksts pārlūkā ļauj vietnei atcerēties jūsu sīkdatņu iestatījumus. Google kartes, analītikas un reklāmas rīku izmantošanas pamats ir jūsu piekrišana. Arī atsakoties varat apskatīt vietni un sazināties ar mums.": "A necessary browser record lets the site remember your cookie preferences. We rely on your consent to use Google Maps, analytics and advertising tools. You can still browse the site and contact us if you decline.",
-  "Ja pievienosim jaunus rīkus vai mainīsim datu izmantošanas nolūkus, atjaunināsim šo informāciju un lūgsim jūsu piekrišanu attiecīgajām izmaiņām.": "If we add new tools or change how we use data, we will update this information and ask for your consent to the relevant changes."
+  "Ja pievienosim jaunus rīkus vai mainīsim datu izmantošanas nolūkus, atjaunināsim šo informāciju un lūgsim jūsu piekrišanu attiecīgajām izmaiņām.": "If we add new tools or change how we use data, we will update this information and ask for your consent to the relevant changes.",
+  "Šo kategoriju vietnē pašlaik neizmantojam.": "This category is not currently in use.",
+  "Palīdz saprast, kuras lapas apmeklētāji apskata un kā izmanto vietni.": "Helps us understand which pages people visit and how they use the site.",
+  "Ļauj novērtēt reklāmu rezultātus.": "Helps us measure the results of advertising.",
+  "Atlasīto atsauksmju skaits: {n}": "Reviews shown: {n}",
+  "Šajā atlasē nav atsauksmju.": "There are no reviews for this filter.",
+  "Ar jūsu piekrišanu Google Tag Manager pārvalda analītikas rīku ielādi.": "With your consent, Google Tag Manager manages the loading of analytics tools.",
+  "Ar jūsu piekrišanu Google Tag Manager pārvalda reklāmas rīku ielādi.": "With your consent, Google Tag Manager manages the loading of advertising tools.",
+  "Ar jūsu piekrišanu Meta Pixel palīdz novērtēt reklāmu rezultātus.": "With your consent, we use Meta Pixel to measure advertising results.",
+  "Ar jūsu piekrišanu LinkedIn Insight Tag palīdz novērtēt reklāmu rezultātus.": "With your consent, we use LinkedIn Insight Tag to measure advertising results.",
+  "Cloudflare Turnstile pārbauda pārlūku, lai aizsargātu kontaktformu pret surogātpastu. Pieteikumu nosūtīšanai pa e-pastu izmantojam Resend.": "Cloudflare Turnstile checks your browser to protect the form from spam. We use Resend to send enquiries by email."
 }
