@@ -4,6 +4,7 @@
     "sending": "Sending…",
     "previewNote": "Preview. This form does not send messages yet.",
     "previewSuccess": "The fields are filled in correctly. This is a preview, so your message has not been sent.",
+    "privateTestNotice": "This is a test form. Use a fictional name and message. If you enter an email address, use the address agreed for the test. Cloudflare Turnstile checks your browser to protect the form against spam. We send the enquiry through Resend. If you provide an email address, we also attempt to send a confirmation to that address.",
     "fine": "We will use your contact details to reply to your message. If you provide an email address, we will also send a confirmation.",
     "emailLabel": "Email address",
     "optional": "(optional)",

@@ -4,6 +4,7 @@
     "sending": "Sender…",
     "previewNote": "Forhåndsvisning. Skjemaet sender ikke meldinger ennå.",
     "previewSuccess": "Feltene er fylt ut riktig. Dette er en forhåndsvisning, så meldingen er ikke sendt.",
+    "privateTestNotice": "Dette er et testskjema. Bruk et oppdiktet navn og en oppdiktet melding. Hvis du oppgir en e-postadresse, bruk den vi har avtalt for testen. Cloudflare Turnstile sjekker nettleseren for å beskytte skjemaet mot spam. Vi sender meldingen via Resend. Hvis du har oppgitt en e-postadresse, forsøker vi også å sende en bekreftelse dit.",
     "fine": "Vi bruker kontaktopplysningene dine til å svare på meldingen. Hvis du oppgir en e-postadresse, sender vi også en automatisk bekreftelse på at meldingen er mottatt.",
     "emailLabel": "E-postadresse",
     "optional": "(valgfritt)",
