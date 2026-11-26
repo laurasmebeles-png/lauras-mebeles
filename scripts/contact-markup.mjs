@@ -13,7 +13,7 @@ export function contactMarkup(html, lang, env = process.env) {
   const config = publicContactConfig(env);
   const ui = contactCopy[lang].ui;
   const settings = JSON.stringify({ ...config, language:lang, ui }).replaceAll('<','\\u003c');
-  html = html.replace(/<form id="lead-form" class="lead-form"(?: method="post")?>/,'<form id="lead-form" class="lead-form" method="post" action="/api/contact" aria-describedby="form-fine">')
+  html = html.replace(/<form id="lead-form" class="lead-form"(?: method="post")?>/,'<form id="lead-form" class="lead-form" method="post" action="/api/contact/" aria-describedby="form-fine">')
     .replace(/<p class="form-demo">[\s\S]*?<\/p>/,config.enabled ? (privateTest ? `<p class="form-demo">${esc(testNote)}</p>` : '') : `<p class="form-demo"><span class="dot"></span>${esc(ui.previewNote)}</p>`)
     .replace(/(<label for="email">)[\s\S]*?(<\/label>)/,`$1<span id="email-label-text">${esc(ui.emailLabel)}</span> <span id="email-required">*</span><span id="email-optional" class="optional" hidden>${esc(ui.optional)}</span>$2`)
     .replace(/(id="phone"[^>]*?)pattern="[^"]*"/,'$1pattern="[+0-9 ().-]{7,25}"')

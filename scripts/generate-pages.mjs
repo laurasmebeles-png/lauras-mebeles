@@ -11,9 +11,15 @@ for (const lang of Object.keys(i18nConfig.languages).filter(lang => lang !== def
   await rm(new URL(`public/${lang}/`, root), { recursive:true, force:true });
 }
 const source = await readFile(new URL('src/home.html', root), 'utf8');
-const privacyContent = await readFile(new URL('src/privacy.html', root), 'utf8');
+let privacyContent = await readFile(new URL('src/privacy.html', root), 'utf8');
 const cookieSettings = await readFile(new URL('src/cookie-settings.html', root), 'utf8');
 const tracking = trackingConfig();
+if (tracking.enabled.analytics && !tracking.enabled.marketing) {
+  privacyContent = privacyContent
+    .replace(/<p data-preview-diagnostics>[\s\S]*?<\/p>/, '')
+    .replace(/<p data-tracking-description>[\s\S]*?<\/p>/,
+      '<p>Google Analytics 4 palīdz saprast, kā apmeklētāji izmanto vietni.</p>');
+}
 const reviews = JSON.parse(await readFile(new URL('src/reviews.json',root),'utf8'));
 const nativeReviews = JSON.parse(await readFile(new URL('src/reviews.native.json',root),'utf8'));
 const kitchenGroups = JSON.parse(await readFile(new URL('src/gallery-kitchens.json',root),'utf8'));

@@ -12,7 +12,7 @@ const server = http.createServer(async (req, res) => {
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Cache-Control', 'no-store');
-  if (new URL(req.url,'http://localhost').pathname === '/api/contact') return contact(req,res);
+  if (['/api/contact', '/api/contact/'].includes(new URL(req.url,'http://localhost').pathname)) return contact(req,res);
   if (!['GET', 'HEAD'].includes(req.method)) {
     res.writeHead(405, { Allow: 'GET, HEAD' }); return res.end('Method not allowed');
   }

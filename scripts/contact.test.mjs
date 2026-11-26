@@ -158,7 +158,7 @@ test('all copy complete, localized email documents and UI contains no private se
     assert.ok(!active.includes(env.RESEND_API_KEY) && !active.includes(env.TURNSTILE_SECRET_KEY));
     assert.ok(!active.includes('class="form-demo"'));
     for (const id of ['name','email','phone','furniture','message']) assert.ok(active.includes(`id="${id}-error"`));
-    assert.ok(active.includes('action="/api/contact"'));
+    assert.ok(active.includes('action="/api/contact/"'));
   }
   assert.throws(() => contactMarkup(source,'lv',{ CONTACT_ENABLED:'true' }));
   assert.ok(businessEmail(valid(),'https://example.com/').html.includes('Jauns mājaslapas pieteikums'));

@@ -109,11 +109,12 @@
     status.textContent = ui.sending;
     let resetAfterSuccess = false;
     try {
-      const response = await fetch('/api/contact',{
+      const response = await fetch(form.action,{
         method:'POST',headers:{ 'Content-Type':'application/json' },
         body:JSON.stringify({ ...input,submissionId,turnstileToken:token }), signal:AbortSignal.timeout(30000)
       });
-      const result = await response.json();
+      // The hosting firewall can return its own 429 response before the API runs.
+      const result = response.status === 429 ? { code:'rateLimited' } : await response.json();
       controls.forEach(([el,disabled]) => { el.disabled = disabled; });
       if (response.ok && result.ok === true && result.submissionId === submissionId) {
         if (!recorded.has(submissionId)) {

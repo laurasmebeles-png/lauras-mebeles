@@ -50,7 +50,7 @@ try {
     assert.doesNotMatch(contact, /<iframe[^>]*\ssrc=/);
     assert.match(contact, /<form id="lead-form"[^>]*method="post"/);
     assert.match(contact, /<button class="button" type="submit" disabled><span id="contact-submit-text">/);
-    assert.ok(contact.includes('action="/api/contact"'));
+    assert.ok(contact.includes('action="/api/contact/"'));
     assert.ok(contact.includes('src="/contact.js"'));
   }
   const xml = await fetch(base + '/sitemap.xml');
