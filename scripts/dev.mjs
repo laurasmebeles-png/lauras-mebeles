@@ -6,6 +6,9 @@ import { languageForPath } from './seo.mjs';
 import contact from '../api/contact.js';
 
 const root = path.resolve(fileURLToPath(new URL('../public/', import.meta.url)));
+const routing = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+const redirects = routing.routes.filter(route => route.status === 301 && route.headers?.Location)
+  .map(route => ({ pattern: new RegExp(route.src), location: route.headers.Location }));
 const port = Number(process.env.PORT || 4173);
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8' };
 const server = http.createServer(async (req, res) => {
@@ -19,6 +22,11 @@ const server = http.createServer(async (req, res) => {
   let requestPath = '/';
   try {
     requestPath = new URL(req.url, 'http://localhost').pathname;
+    const redirect = redirects.find(route => route.pattern.test(requestPath));
+    if (redirect) {
+      res.writeHead(301, { Location: redirect.location });
+      return res.end();
+    }
     const pathname = decodeURIComponent(requestPath);
     const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
     let target = path.resolve(root, relative);

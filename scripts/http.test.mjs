@@ -1,3 +1,4 @@
+import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
@@ -53,6 +54,20 @@ try {
     assert.ok(contact.includes('action="/api/contact/"'));
     assert.ok(contact.includes('src="/contact.js"'));
   }
+  const map = JSON.parse(await readFile(new URL('../docs/migration/redirect-map.json', import.meta.url), 'utf8'));
+  for (const { oldPath, target, language } of map.records.filter(record => record.decision === 'approved')) {
+    const variants = new Set([oldPath, oldPath.slice(0, -1), decodeURIComponent(oldPath),
+      oldPath.replace(/%[0-9a-f]{2}/gi, escape => escape.toLowerCase()), oldPath + '?lang=' + language]);
+    for (const source of variants) {
+      const response = await fetch(base + source, { redirect: 'manual' });
+      assert.equal(response.status, 301, source);
+      assert.equal(response.headers.get('location'), target, source);
+    }
+    const destination = await fetch(base + target, { redirect: 'manual' });
+    assert.equal(destination.status, 200, target);
+    assert.ok((await destination.text()).includes(`<html lang="${language}">`), target);
+  }
+  assert.equal((await fetch(base + '/test/')).status, 404);
   const xml = await fetch(base + '/sitemap.xml');
   assert.equal(xml.status, 200);
   assert.match(xml.headers.get('content-type'), /application\/xml/);

@@ -20,6 +20,272 @@
       "continue": true
     },
     {
+      "src": "^/sakums/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "^/partneri/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/par-mums/"
+      }
+    },
+    {
+      "src": "^/veikals/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/en/other-furniture/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/citas-mebeles/"
+      }
+    },
+    {
+      "src": "^/en/contacts/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/kontakti/"
+      }
+    },
+    {
+      "src": "^/en/corridors/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/koridora-iekartas/"
+      }
+    },
+    {
+      "src": "^/en/partners/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/par-mums/"
+      }
+    },
+    {
+      "src": "^/en/home/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/"
+      }
+    },
+    {
+      "src": "^/en/cabinets/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/skapji/"
+      }
+    },
+    {
+      "src": "^/en/tv-cupboards/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/sekcijas/"
+      }
+    },
+    {
+      "src": "^/en/bathroom-furniture/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/vannasistabas-mebeles/"
+      }
+    },
+    {
+      "src": "^/en/kitchens/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/virtuves/"
+      }
+    },
+    {
+      "src": "^/en/furniture/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/en/pakalpojumi/"
+      }
+    },
+    {
+      "src": "^(?:/ru/hачало|/ru/h%[dD]0%[bB]0%[dD]1%87%[dD]0%[bB]0%[dD]0%[bB][bB]%[dD]0%[bB][eE])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/"
+      }
+    },
+    {
+      "src": "^(?:/ru/kухня|/ru/k%[dD]1%83%[dD]1%85%[dD]0%[bB][dD]%[dD]1%8[fF])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/virtuves/"
+      }
+    },
+    {
+      "src": "^(?:/ru/ванная-мебель|/ru/%[dD]0%[bB]2%[dD]0%[bB]0%[dD]0%[bB][dD]%[dD]0%[bB][dD]%[dD]0%[bB]0%[dD]1%8[fF]-%[dD]0%[bB][cC]%[dD]0%[bB]5%[dD]0%[bB]1%[dD]0%[bB]5%[dD]0%[bB][bB]%[dD]1%8[cC])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/vannasistabas-mebeles/"
+      }
+    },
+    {
+      "src": "^(?:/ru/шкафы|/ru/%[dD]1%88%[dD]0%[bB][aA]%[dD]0%[bB]0%[dD]1%84%[dD]1%8[bB])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/skapji/"
+      }
+    },
+    {
+      "src": "^(?:/ru/секционный|/ru/%[dD]1%81%[dD]0%[bB]5%[dD]0%[bB][aA]%[dD]1%86%[dD]0%[bB]8%[dD]0%[bB][eE]%[dD]0%[bB][dD]%[dD]0%[bB][dD]%[dD]1%8[bB]%[dD]0%[bB]9)/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/sekcijas/"
+      }
+    },
+    {
+      "src": "^(?:/ru/коридорное-оборудование|/ru/%[dD]0%[bB][aA]%[dD]0%[bB][eE]%[dD]1%80%[dD]0%[bB]8%[dD]0%[bB]4%[dD]0%[bB][eE]%[dD]1%80%[dD]0%[bB][dD]%[dD]0%[bB][eE]%[dD]0%[bB]5-%[dD]0%[bB][eE]%[dD]0%[bB]1%[dD]0%[bB][eE]%[dD]1%80%[dD]1%83%[dD]0%[bB]4%[dD]0%[bB][eE]%[dD]0%[bB]2%[dD]0%[bB]0%[dD]0%[bB][dD]%[dD]0%[bB]8%[dD]0%[bB]5)/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/koridora-iekartas/"
+      }
+    },
+    {
+      "src": "^(?:/ru/офисная-и-мебель|/ru/%[dD]0%[bB][eE]%[dD]1%84%[dD]0%[bB]8%[dD]1%81%[dD]0%[bB][dD]%[dD]0%[bB]0%[dD]1%8[fF]-%[dD]0%[bB]8-%[dD]0%[bB][cC]%[dD]0%[bB]5%[dD]0%[bB]1%[dD]0%[bB]5%[dD]0%[bB][bB]%[dD]1%8[cC])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/citas-mebeles/"
+      }
+    },
+    {
+      "src": "^(?:/ru/партнёры|/ru/%[dD]0%[bB][fF]%[dD]0%[bB]0%[dD]1%80%[dD]1%82%[dD]0%[bB][dD]%[dD]1%91%[dD]1%80%[dD]1%8[bB])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/par-mums/"
+      }
+    },
+    {
+      "src": "^(?:/ru/контакты|/ru/%[dD]0%[bB][aA]%[dD]0%[bB][eE]%[dD]0%[bB][dD]%[dD]1%82%[dD]0%[bB]0%[dD]0%[bB][aA]%[dD]1%82%[dD]1%8[bB])/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/kontakti/"
+      }
+    },
+    {
+      "src": "^(?:/ru/услуги|/ru/%[dD]1%83%[dD]1%81%[dD]0%[bB][bB]%[dD]1%83%[dD]0%[bB]3%[dD]0%[bB]8)/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/ru/pakalpojumi/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-moderni-risinajumi/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-veikals/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-komplekts-mini/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/cenas/"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-komplekts-no1/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-komplekts-no2/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-komplekts-no3/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-iekartas-komplekts-standarts-mini/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/cenas/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-galds-un-kresli/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-iebuvetais-modulis/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-komplekts-premium/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/cenas/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-komplekts-standarts/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/cenas/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-komplekts-standarts-maxi/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/cenas/"
+      }
+    },
+    {
+      "src": "^/virtuves-mebeles-standarta-komplekts/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves/"
+      }
+    },
+    {
+      "src": "^/atsauksmes/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/virtuves-mebeles-atsauksmes-virtuves-iekartas/"
+      }
+    },
+    {
       "src": "^/api/contact/?$",
       "dest": "/api/contact"
     },

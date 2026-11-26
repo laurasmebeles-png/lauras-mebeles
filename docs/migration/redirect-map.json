@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-26",
   "active": false,
   "source": "docs/migration/wordpress-pages.json",
-  "note": "Pārejas sagatave. Dzīvais domēns un Vercel redirects netiek mainīti. proposed/pending nav klienta apstiprinājums.",
+  "note": "Publiskā migrācija vēl nav aktivizēta. Lēmums approved apzīmē jaunās vietnes konfigurācijā sagatavotu pāreju. proposed/pending apzīmē priekšlikumus un atvērtus lēmumus.",
   "records": [
     {
       "wordpressId": "11",
@@ -13,8 +13,8 @@
       "action": "redirect",
       "target": "/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Sākumlapas dublikāts. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Sākumlapas dublikāts."
     },
     {
       "wordpressId": "111",
@@ -91,8 +91,8 @@
       "action": "redirect",
       "target": "/par-mums/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Partneru sadaļa ir lapā Par mums. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Partneru sadaļa ir lapā Par mums."
     },
     {
       "wordpressId": "125",
@@ -122,11 +122,11 @@
       "oldUrl": "https://laurasmebeles.lv/veikals/",
       "oldPath": "/veikals/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "534",
@@ -137,8 +137,8 @@
       "action": "redirect",
       "target": "/en/citas-mebeles/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "538",
@@ -149,8 +149,8 @@
       "action": "redirect",
       "target": "/en/kontakti/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "541",
@@ -161,8 +161,8 @@
       "action": "redirect",
       "target": "/en/koridora-iekartas/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "550",
@@ -173,8 +173,8 @@
       "action": "redirect",
       "target": "/en/par-mums/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "555",
@@ -185,8 +185,8 @@
       "action": "redirect",
       "target": "/en/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "560",
@@ -197,8 +197,8 @@
       "action": "redirect",
       "target": "/en/skapji/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "564",
@@ -209,8 +209,8 @@
       "action": "redirect",
       "target": "/en/sekcijas/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "568",
@@ -221,8 +221,8 @@
       "action": "redirect",
       "target": "/en/vannasistabas-mebeles/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "572",
@@ -233,8 +233,8 @@
       "action": "redirect",
       "target": "/en/virtuves/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "598",
@@ -245,8 +245,8 @@
       "action": "redirect",
       "target": "/en/pakalpojumi/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "612",
@@ -257,8 +257,8 @@
       "action": "redirect",
       "target": "/ru/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "616",
@@ -269,8 +269,8 @@
       "action": "redirect",
       "target": "/ru/virtuves/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "673",
@@ -281,8 +281,8 @@
       "action": "redirect",
       "target": "/ru/vannasistabas-mebeles/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "678",
@@ -293,8 +293,8 @@
       "action": "redirect",
       "target": "/ru/skapji/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "682",
@@ -305,8 +305,8 @@
       "action": "redirect",
       "target": "/ru/sekcijas/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "686",
@@ -317,8 +317,8 @@
       "action": "redirect",
       "target": "/ru/koridora-iekartas/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "690",
@@ -329,8 +329,8 @@
       "action": "redirect",
       "target": "/ru/citas-mebeles/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "695",
@@ -341,8 +341,8 @@
       "action": "redirect",
       "target": "/ru/par-mums/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "698",
@@ -353,8 +353,8 @@
       "action": "redirect",
       "target": "/ru/kontakti/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "710",
@@ -365,8 +365,8 @@
       "action": "redirect",
       "target": "/ru/pakalpojumi/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Tā paša satura attiecīgās valodas pašreizējā adrese."
     },
     {
       "wordpressId": "719",
@@ -377,8 +377,7 @@
       "action": "pending",
       "target": null,
       "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "reason": "Saglabāt stila un plānojuma raksta adresi. Pirms palaišanas pārnest un aktualizēt saturu."
     },
     {
       "wordpressId": "726",
@@ -389,8 +388,7 @@
       "action": "pending",
       "target": null,
       "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "reason": "Apdares tēmu iekļaut furnitūras rakstā. Pāreju sagatavot pēc apvienotā raksta ieviešanas."
     },
     {
       "wordpressId": "730",
@@ -401,8 +399,7 @@
       "action": "pending",
       "target": null,
       "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "reason": "Saglabāt furnitūras raksta adresi un skaidrojumu par risinājumu izvēli."
     },
     {
       "wordpressId": "733",
@@ -413,8 +410,8 @@
       "action": "redirect",
       "target": "/virtuves/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Virtuvju piedāvājums pašreizējā virtuvju lapā. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Virtuvju piedāvājums pašreizējā virtuvju lapā."
     },
     {
       "wordpressId": "736",
@@ -425,8 +422,7 @@
       "action": "pending",
       "target": null,
       "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "reason": "Saglabāt vecajā adresē iebūvēto un brīvi stāvošo virtuvju salīdzinājumu."
     },
     {
       "wordpressId": "739",
@@ -434,11 +430,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-moderni-risinajumi/",
       "oldPath": "/virtuves-mebeles-moderni-risinajumi/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "742",
@@ -449,8 +445,7 @@
       "action": "pending",
       "target": null,
       "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās publikācijas lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "reason": "Pirms raksta un foto pārnešanas precizēt publicēšanas tiesības."
     },
     {
       "wordpressId": "770",
@@ -469,11 +464,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-veikals/",
       "oldPath": "/virtuves-mebeles-veikals/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1247",
@@ -481,11 +476,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-mini/",
       "oldPath": "/virtuves-iekartas-komplekts-mini/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/cenas/",
+      "decision": "approved",
+      "reason": "Cenu lapā ir taisnas virtuves piemērs gar vienu sienu un aprakstīta sākumcenas komplektācija.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1251",
@@ -493,11 +488,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-no1/",
       "oldPath": "/virtuves-iekartas-komplekts-no1/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecajā No1 lapā aprakstīta virtuves plānošana, tehnika un materiālu izvēle. Atbilstošais galamērķis ir individuāli izgatavotu virtuvju sadaļa.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1254",
@@ -505,11 +500,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-no2/",
       "oldPath": "/virtuves-iekartas-komplekts-no2/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1258",
@@ -517,11 +512,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-no3/",
       "oldPath": "/virtuves-iekartas-komplekts-no3/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1262",
@@ -529,11 +524,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-iekartas-komplekts-standarts-mini/",
       "oldPath": "/virtuves-iekartas-komplekts-standarts-mini/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/cenas/",
+      "decision": "approved",
+      "reason": "Cenu piemēros var salīdzināt virtuves plānojumu un komplektāciju.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1266",
@@ -541,11 +536,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-galds-un-kresli/",
       "oldPath": "/virtuves-mebeles-galds-un-kresli/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1271",
@@ -553,11 +548,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-iebuvetais-modulis/",
       "oldPath": "/virtuves-mebeles-iebuvetais-modulis/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1275",
@@ -565,11 +560,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-komplekts-premium/",
       "oldPath": "/virtuves-mebeles-komplekts-premium/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/cenas/",
+      "decision": "approved",
+      "reason": "Cenu piemēros var salīdzināt virtuves plānojumu un komplektāciju.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1279",
@@ -577,11 +572,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-komplekts-standarts/",
       "oldPath": "/virtuves-mebeles-komplekts-standarts/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/cenas/",
+      "decision": "approved",
+      "reason": "Cenu piemēros var salīdzināt virtuves plānojumu un komplektāciju.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1283",
@@ -589,11 +584,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-komplekts-standarts-maxi/",
       "oldPath": "/virtuves-mebeles-komplekts-standarts-maxi/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/cenas/",
+      "decision": "approved",
+      "reason": "Cenu piemēros var salīdzināt virtuves plānojumu un komplektāciju.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1287",
@@ -601,11 +596,11 @@
       "oldUrl": "https://laurasmebeles.lv/virtuves-mebeles-standarta-komplekts/",
       "oldPath": "/virtuves-mebeles-standarta-komplekts/",
       "language": "lv",
-      "action": "pending",
-      "target": null,
-      "decision": "needs-review",
-      "suggestedTarget": "/virtuves/",
-      "reason": "Vecās veikala/komplektu lapas saturu un GSC datus izvērtēt pirms apvienošanas vai saglabāšanas. Virtuvju lapa ir tikai kandidāts."
+      "action": "redirect",
+      "target": "/virtuves/",
+      "decision": "approved",
+      "reason": "Vecās lapas tēmai atbilst individuāli izgatavotu virtuvju piedāvājums un projektu piemēri.",
+      "statusCode": 301
     },
     {
       "wordpressId": "1736",
@@ -616,8 +611,8 @@
       "action": "redirect",
       "target": "/virtuves-mebeles-atsauksmes-virtuves-iekartas/",
       "statusCode": 301,
-      "decision": "proposed",
-      "reason": "Saglabājam pašreizējo garo atsauksmju adresi; īsā ir vecs dublikāts. Vēl nav aktivizēta."
+      "decision": "approved",
+      "reason": "Saglabājam pašreizējo garo atsauksmju adresi; īsā ir vecs dublikāts."
     },
     {
       "wordpressId": "1740",
@@ -647,11 +642,12 @@
       "oldUrl": "https://laurasmebeles.lv/test/",
       "oldPath": "/test/",
       "language": "lv",
-      "action": "pending",
+      "action": "not-found",
       "target": null,
-      "decision": "needs-review",
+      "decision": "default-404",
       "suggestedStatusCode": 410,
-      "reason": "Tukša testa lapa. Apstiprināt 410 vai citu rīcību; nepāradresēt automātiski uz nesaistītu saturu."
+      "reason": "WordPress eksportā lapa ir tukša. Saglabāt jaunās vietnes parasto HTTP 404 atbildi.",
+      "statusCode": 404
     }
   ]
 }

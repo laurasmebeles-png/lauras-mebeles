@@ -60,23 +60,36 @@ assert.equal(map.active, false);
 assert.equal(map.records.length, 55);
 assert.deepEqual(map.records.map(record => record.oldUrl).sort(), inventory.map(record => record.url).sort());
 assert.deepEqual(map.records.map(record => record.wordpressId).sort(), inventory.map(record => record.id).sort());
-assert.deepEqual(['keep', 'redirect', 'pending'].map(action => map.records.filter(record => record.action === action).length), [11, 24, 20]);
+assert.deepEqual(['keep', 'redirect', 'pending', 'not-found'].map(action => map.records.filter(record => record.action === action).length), [11, 38, 5, 1]);
 const destinations = new Set(expected.map(url => new URL(url).pathname));
 const sources = new Set(map.records.filter(record => record.action === 'redirect').map(record => decodeURIComponent(record.oldPath)));
 for (const record of map.records) {
   assert.equal(record.oldPath, new URL(record.oldUrl).pathname);
+  if (record.action === 'not-found') {
+    assert.equal(record.statusCode, 404);
+    assert.equal(record.target, null);
+    continue;
+  }
   if (record.action === 'pending') { assert.equal(record.target, null); continue; }
   assert.ok(destinations.has(record.target), `Existing target: ${record.wordpressId}`);
   if (record.language !== 'lv') assert.ok(record.target.startsWith(`/${record.language}/`));
   if (record.action === 'redirect') {
     assert.equal(record.statusCode, 301);
-    assert.equal(record.decision, 'proposed');
+    assert.ok(['proposed', 'approved'].includes(record.decision));
     assert.notEqual(record.target, decodeURIComponent(record.oldPath));
     assert.ok(!sources.has(record.target), `No redirect chain: ${record.oldPath}`);
   }
 }
 const vercel = JSON.parse(await read('vercel.json'));
-assert.equal(vercel.redirects, undefined, 'Migration redirects are not activated');
+const approved = map.records.filter(record => record.decision === 'approved');
+const rules = vercel.routes.filter(route => route.status === 301);
+assert.equal(rules.length, approved.length);
+for (const record of approved) {
+  for (const path of [record.oldPath, decodeURIComponent(record.oldPath)]) {
+    const matching = rules.filter(route => new RegExp(route.src).test(path));
+    assert.deepEqual(matching.map(route => route.headers.Location), [record.target], path);
+  }
+}
 assert.equal(vercel.routes[0].headers['X-Robots-Tag'], 'noindex, nofollow');
 assert.equal(vercel.routes[0].continue, true);
 const apiRoute = vercel.routes.findIndex(route => route.src === '^/api/contact/?$');
