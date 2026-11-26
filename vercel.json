@@ -5,7 +5,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": false,
-  "trailingSlash": true,
   "functions": {
     "api/contact.js": {
       "maxDuration": 30
@@ -283,6 +282,20 @@
       "status": 301,
       "headers": {
         "Location": "/virtuves-mebeles-atsauksmes-virtuves-iekartas/"
+      }
+    },
+    {
+      "src": "^/(?!\\.well-known(?:/|$))((?:[^/]+/)*[^/.]+)$",
+      "status": 308,
+      "headers": {
+        "Location": "/$1/"
+      }
+    },
+    {
+      "src": "^/(?!\\.well-known(?:/|$))((?:[^/]+/)*[^/]+\\.\\w+)/$",
+      "status": 308,
+      "headers": {
+        "Location": "/$1"
       }
     },
     {

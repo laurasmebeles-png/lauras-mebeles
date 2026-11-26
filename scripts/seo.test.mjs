@@ -83,9 +83,20 @@ for (const record of map.records) {
 const vercel = JSON.parse(await read('vercel.json'));
 const approved = map.records.filter(record => record.decision === 'approved');
 const rules = vercel.routes.filter(route => route.status === 301);
+// Vercel's global slash normalizer runs before custom legacy redirects.
+assert.equal(vercel.trailingSlash, undefined);
+const redirectRules = vercel.routes.filter(route => route.headers?.Location);
+function firstRedirect(path) {
+  const rule = redirectRules.find(route => new RegExp(route.src).test(path));
+  return rule && [rule.status, path.replace(new RegExp(rule.src), rule.headers.Location)];
+}
+assert.deepEqual(firstRedirect('/virtuves'), [308, '/virtuves/']);
+assert.deepEqual(firstRedirect('/styles.css/'), [308, '/styles.css']);
+assert.equal(firstRedirect('/.well-known/acme-challenge/example'), undefined);
 assert.equal(rules.length, approved.length);
 for (const record of approved) {
   for (const path of [record.oldPath, decodeURIComponent(record.oldPath)]) {
+    assert.deepEqual(firstRedirect(path.slice(0, -1)), [301, record.target]);
     const matching = rules.filter(route => new RegExp(route.src).test(path));
     assert.deepEqual(matching.map(route => route.headers.Location), [record.target], path);
   }
