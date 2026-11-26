@@ -49,7 +49,9 @@ try {
     assert.match(contact, /<template data-cookie-map-template>[\s\S]*?\sdata-src="https:\/\/maps\.google\.com\/maps\?/);
     assert.doesNotMatch(contact, /<iframe[^>]*\ssrc=/);
     assert.match(contact, /<form id="lead-form"[^>]*method="post"/);
-    assert.match(contact, /data-preview-submit disabled/);
+    assert.match(contact, /<button class="button" type="submit" disabled><span id="contact-submit-text">/);
+    assert.ok(contact.includes('action="/api/contact"'));
+    assert.ok(contact.includes('src="/contact.js"'));
   }
   const xml = await fetch(base + '/sitemap.xml');
   assert.equal(xml.status, 200);
@@ -57,6 +59,10 @@ try {
   assert.equal((await fetch(base + '/styles.css')).status, 200);
   assert.equal((await fetch(base + '/cookie-settings.js')).status, 200);
   assert.equal((await fetch(base + '/en/missing/', { method: 'POST' })).status, 405);
+  const contact = await fetch(base + '/api/contact',{ method:'POST',headers:{ 'Content-Type':'application/json' },body:'{}' });
+  assert.equal(contact.status,503);
+  assert.deepEqual(await contact.json(),{ ok:false,code:'unavailable' });
+  assert.equal((await fetch(base + '/api/contact')).status,405);
   console.log('HTTP: localized missing paths return 404, HEAD is empty, existing pages/assets remain available.');
 } finally {
   const exited = once(server, 'exit');

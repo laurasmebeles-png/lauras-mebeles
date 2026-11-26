@@ -1,0 +1,38 @@
+{
+  "ui": {
+    "submit": "Send message",
+    "sending": "Sending…",
+    "previewNote": "Preview. This form does not send messages yet.",
+    "previewSuccess": "The fields are filled in correctly. This is a preview, so your message has not been sent.",
+    "fine": "We will use your contact details to reply to your message. If you provide an email address, we will also send a confirmation.",
+    "emailLabel": "Email address",
+    "optional": "(optional)",
+    "success": "Thank you! Your message has been sent. We will get in touch to discuss the details.",
+    "confirmationNote": "If you cannot find the confirmation email, please check your spam folder.",
+    "validationSummary": "Please check the highlighted fields.",
+    "invalidName": "Please enter your name.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidPhone": "Please enter your phone number, including the country code if you are outside Latvia.",
+    "invalidMessage": "Your message can contain up to 3,000 characters.",
+    "invalidCategory": "Please select a furniture category from the list.",
+    "invalidRequest": "Your message could not be sent. Please reload the page and try again.",
+    "verificationRequired": "Please complete the security check.",
+    "verificationFailed": "The security check failed. Please try again.",
+    "verificationExpired": "The security check has expired. Please complete it again.",
+    "verificationUnavailable": "The security check could not load. Please reload the page or contact us by phone or email.",
+    "rateLimited": "There have been several attempts in a short time. Please wait a few minutes and try again.",
+    "unavailable": "The form is currently unavailable. Please contact us by phone or email.",
+    "networkError": "We could not confirm whether your message was sent. Please check your internet connection and try again.",
+    "sendError": "Your message could not be sent. Please try again or contact us by phone or email.",
+    "tooLarge": "Your message is too long. Please shorten it and try again."
+  },
+  "email": {
+    "subject": "We have received your message | Lauras mēbeles",
+    "greeting": "Hello,",
+    "thanks": "Thank you for contacting Lauras mēbeles.",
+    "received": "We have received your message and will get in touch to discuss the details.",
+    "reply": "If you would like to add anything, simply reply to this email.",
+    "automatic": "This is an automatic confirmation that we have received your message.",
+    "signoff": "The Lauras mēbeles team"
+  }
+}

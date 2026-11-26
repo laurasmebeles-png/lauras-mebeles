@@ -1,0 +1,38 @@
+{
+  "ui": {
+    "submit": "Send melding",
+    "sending": "Sender…",
+    "previewNote": "Forhåndsvisning. Skjemaet sender ikke meldinger ennå.",
+    "previewSuccess": "Feltene er fylt ut riktig. Dette er en forhåndsvisning, så meldingen er ikke sendt.",
+    "fine": "Vi bruker kontaktopplysningene dine til å svare på meldingen. Hvis du oppgir en e-postadresse, sender vi også en automatisk bekreftelse på at meldingen er mottatt.",
+    "emailLabel": "E-postadresse",
+    "optional": "(valgfritt)",
+    "success": "Takk! Meldingen din er sendt. Vi tar kontakt for å gå gjennom detaljene.",
+    "confirmationNote": "Hvis du ikke finner bekreftelsen på e-post, sjekk også søppelpostmappen.",
+    "validationSummary": "Kontroller de markerte feltene.",
+    "invalidName": "Oppgi navnet ditt.",
+    "invalidEmail": "Oppgi en gyldig e-postadresse.",
+    "invalidPhone": "Oppgi telefonnummeret ditt. Ta med landskode for numre fra andre land enn Latvia.",
+    "invalidMessage": "Meldingen kan inneholde opptil 3000 tegn.",
+    "invalidCategory": "Velg en møbeltype fra listen.",
+    "invalidRequest": "Meldingen kunne ikke sendes. Last inn siden på nytt og prøv igjen.",
+    "verificationRequired": "Fullfør sikkerhetskontrollen.",
+    "verificationFailed": "Sikkerhetskontrollen mislyktes. Prøv igjen.",
+    "verificationExpired": "Sikkerhetskontrollen er utløpt. Gjenta kontrollen.",
+    "verificationUnavailable": "Sikkerhetskontrollen kunne ikke lastes inn. Last inn siden på nytt, eller kontakt oss på telefon eller e-post.",
+    "rateLimited": "Det har vært flere forsøk på kort tid. Vent noen minutter og prøv igjen.",
+    "unavailable": "Det er ikke mulig å sende meldingen nå. Kontakt oss på telefon eller e-post.",
+    "networkError": "Vi kunne ikke bekrefte om meldingen ble sendt. Kontroller internettilkoblingen og prøv igjen.",
+    "sendError": "Meldingen kunne ikke sendes. Prøv igjen, eller kontakt oss på telefon eller e-post.",
+    "tooLarge": "Meldingen er for lang. Gjør den kortere og prøv igjen."
+  },
+  "email": {
+    "subject": "Vi har mottatt meldingen din | Lauras mēbeles",
+    "greeting": "Hei!",
+    "thanks": "Takk for at du tok kontakt med Lauras mēbeles.",
+    "received": "Vi har mottatt meldingen din og tar kontakt for å gå gjennom detaljene.",
+    "reply": "Hvis du vil legge til noe, kan du svare på denne e-posten.",
+    "automatic": "Dette er en automatisk bekreftelse på at vi har mottatt meldingen din.",
+    "signoff": "Teamet hos Lauras mēbeles"
+  }
+}

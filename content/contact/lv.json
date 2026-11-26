@@ -1,0 +1,38 @@
+{
+  "ui": {
+    "submit": "Nosūtīt ziņu",
+    "sending": "Nosūta…",
+    "previewNote": "Priekšskatījums. Forma vēl nesūta ziņas.",
+    "previewSuccess": "Lauki aizpildīti pareizi. Šis ir priekšskatījums, tāpēc ziņa nav nosūtīta.",
+    "fine": "Kontaktinformāciju izmantosim, lai atbildētu uz jūsu ziņu. Ja norādīsiet e-pastu, nosūtīsim arī saņemšanas apstiprinājumu.",
+    "emailLabel": "E-pasta adrese",
+    "optional": "(nav obligāti)",
+    "success": "Paldies! Jūsu ziņa ir nosūtīta. Sazināsimies ar jums, lai pārrunātu detaļas.",
+    "confirmationNote": "Ja apstiprinājuma e-pastu neredzat, pārbaudiet arī mēstuļu mapi.",
+    "validationSummary": "Pārbaudiet norādītos laukus.",
+    "invalidName": "Lūdzu, norādiet savu vārdu.",
+    "invalidEmail": "Lūdzu, ievadiet derīgu e-pasta adresi.",
+    "invalidPhone": "Lūdzu, ievadiet tālruņa numuru. Ārvalstu numuram pievienojiet valsts kodu.",
+    "invalidMessage": "Ziņā drīkst būt līdz 3000 rakstzīmēm.",
+    "invalidCategory": "Lūdzu, izvēlieties mēbeļu kategoriju no saraksta.",
+    "invalidRequest": "Neizdevās nosūtīt ziņu. Pārlādējiet lapu un mēģiniet vēlreiz.",
+    "verificationRequired": "Lūdzu, pabeidziet drošības pārbaudi.",
+    "verificationFailed": "Drošības pārbaude neizdevās. Lūdzu, mēģiniet vēlreiz.",
+    "verificationExpired": "Drošības pārbaudes laiks ir beidzies. Lūdzu, atkārtojiet pārbaudi.",
+    "verificationUnavailable": "Drošības pārbaudi neizdevās ielādēt. Pārlādējiet lapu vai sazinieties ar mums pa tālruni vai e-pastā.",
+    "rateLimited": "Īsā laikā saņemti vairāki mēģinājumi. Lūdzu, uzgaidiet dažas minūtes un mēģiniet vēlreiz.",
+    "unavailable": "Nosūtīšana pašlaik nav pieejama. Lūdzu, sazinieties ar mums pa tālruni vai e-pastā.",
+    "networkError": "Neizdevās saņemt nosūtīšanas apstiprinājumu. Pārbaudiet interneta savienojumu un mēģiniet vēlreiz.",
+    "sendError": "Neizdevās nosūtīt ziņu. Mēģiniet vēlreiz vai sazinieties ar mums pa tālruni vai e-pastā.",
+    "tooLarge": "Ziņa ir pārāk gara. Lūdzu, saīsiniet to un mēģiniet vēlreiz."
+  },
+  "email": {
+    "subject": "Esam saņēmuši jūsu ziņu | Lauras mēbeles",
+    "greeting": "Sveiki!",
+    "thanks": "Paldies, ka sazinājāties ar Lauras mēbelēm.",
+    "received": "Esam saņēmuši jūsu ziņu. Sazināsimies ar jums, lai pārrunātu detaļas.",
+    "reply": "Ja vēlaties kaut ko papildināt, varat atbildēt uz šo e-pastu.",
+    "automatic": "Šis ir automātisks saņemšanas apstiprinājums.",
+    "signoff": "Lauras mēbeļu komanda"
+  }
+}

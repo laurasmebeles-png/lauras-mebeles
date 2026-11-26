@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile, readdir, stat} from 'node:fs/promises';
 import {config, decode, hasLanguagePage, languagesForPage, prefixLinks, translateHtml, walkHtml} from './i18n.mjs';
+import { contactCopy } from '../lib/contact-content.mjs';
 
 assert.equal(hasLanguagePage('en', 'virtuves'), true);
 assert.equal(hasLanguagePage('en', '/kontakti/'), true);
@@ -88,7 +89,8 @@ for (const page of pages) {
   assert.deepEqual(structure(stripReviewCards(en)), structure(stripReviewCards(lv)), `Layout and imagery: ${page}`);
   // Atsauksmes izmanto atsevišķo pilno tulkojumu; marķētais H1 tulkojas kā veselums.
   walkHtml(lv.replace(/<article class="review-card"[\s\S]*?<\/article>/g, '').replace(/<h1\b[^>]*data-i18n-key="[^"]+"[\s\S]*?<\/h1>/g, ''), key => {
-    assert.ok(dict[key] || neutral.has(key), `Missing ${lang.toUpperCase()} text or attribute: ${page} ${key}`);
+    const contactKey = Object.keys(contactCopy.lv.ui).find(k => contactCopy.lv.ui[k] === key);
+    assert.ok(dict[key] || neutral.has(key) || key === 'Website' || (contactKey && contactCopy[lang].ui[contactKey]), `Missing ${lang.toUpperCase()} text or attribute: ${page} ${key}`);
     return key;
   });
   for (const [, id] of en.matchAll(/data-project="([^"]+)"/g)) {

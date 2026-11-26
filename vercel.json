@@ -6,6 +6,11 @@
   "outputDirectory": "dist",
   "cleanUrls": false,
   "trailingSlash": true,
+  "functions": {
+    "api/contact.js": {
+      "maxDuration": 30
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
@@ -13,6 +18,10 @@
         "X-Robots-Tag": "noindex, nofollow"
       },
       "continue": true
+    },
+    {
+      "src": "^/api/contact/?$",
+      "dest": "/api/contact"
     },
     {
       "src": "^/404\\.html$",

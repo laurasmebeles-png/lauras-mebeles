@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { categories, projects, inspirationProjects } from '../src/catalog.mjs';
 import { config as i18nConfig, enabledLangs, defaultLang, langPrefix, loadDicts, translateHtml, mapProjects, hasLanguagePage, languagesForPage } from './i18n.mjs';
 import { sitemap, launchOrigin } from './seo.mjs';
+import { contactMarkup } from './contact-markup.mjs';
 import { removeStaleGalleryPages } from './generated-gallery.mjs';
 import { trackingConfig } from '../src/tracking-config.mjs';
 const root = new URL('../', import.meta.url);
@@ -314,6 +315,7 @@ async function renderPage(lang,path,title,body,description='Lauras mēbeles. Vir
   const trackingHead = pageHead.replace('<script src="/tracking.js"', `<script type="application/json" id="tracking-config">${JSON.stringify(tracking).replace(/</g, '\\u003c')}</script>\n  <script src="/tracking.js"`);
   let html=`${trackingHead}<body>${header.replace('</header>',switcher+'</header>')}<main id="saturs">${body}</main>${footer}${dialog}${cookieSettings}</body></html>`;
   if(lang!==defaultLang){ html=translateHtml(html.replace('<html lang="lv">',`<html lang="${lang}">`),dicts[lang]||{},lang).replace(/[\t ]+$/gm,''); }
+  html = contactMarkup(html, lang);
   await writeFile(new URL(options.notFound ? '404.html' : 'index.html',folder),html);
   pageRecords.push({ lang, path, reviewOnly: !!options.reviewOnly, notFound: !!options.notFound, indexable: !/<meta name="robots" content="[^"]*noindex/.test(html) });
 }
