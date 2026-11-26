@@ -65,6 +65,14 @@ test('path, language, category, context and honeypot validated on the server', (
   }
   assert.ok(validateSubmission(valid({ contactMethod:'phone',phone:'+47 123 45 678',email:'' })).data);
 });
+test('private Preview only sends to its designated test mailbox', async () => {
+  const previewEnv = { ...env, VERCEL_ENV:'preview' };
+  const handler = createContactHandler({ env:previewEnv, fetchImpl:() => assert.fail('No external request allowed') });
+  const result = await invoke(handler,valid());
+  assert.equal(result.status,400);
+  assert.equal(result.body.code,'invalidRequest');
+});
+
 test('Turnstile failure, expiry, wrong hostname and wrong action block all email', async () => {
   for (const verification of [{ success:false },{ success:false,'error-codes':['timeout-or-duplicate'] },
     { success:true,hostname:'evil.example',action:'contact' },{ success:true,hostname:new URL(origin).hostname,action:'login' }]) {

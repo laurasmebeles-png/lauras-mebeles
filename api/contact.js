@@ -81,6 +81,10 @@ export function createContactHandler({ env = process.env, fetchImpl = globalThis
     const checked = validateSubmission(body);
     if (!checked.data) return reply(400,{ ok:false,code:checked.code,...(checked.fields ? { fields:checked.fields } : {}) });
     const data = checked.data;
+    // In the private Preview test both email roles belong to the designated test mailbox.
+    if (env.VERCEL_ENV === 'preview' && data.email && data.email.toLowerCase() !== config.to.toLowerCase()) {
+      return reply(400,{ ok:false,code:'invalidRequest' });
+    }
     const source = new URL(data.sourcePage, origin).href;
     const { turnstileToken, website, ...submission } = data;
     const key = `contact/${data.submissionId}/${digest(JSON.stringify({ ...submission, origin }))}`;
